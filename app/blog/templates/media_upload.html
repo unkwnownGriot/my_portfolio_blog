@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../static/assets/magazine/img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="AGRO A.I">
+    <!-- Meta Description -->
+    <meta name="description" content="Verification Files Upload">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="Agritech, Agriculture, Artificial Intelligence, Machine Learning">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Upload Files</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3 mt-3">
+                    <h2 class="mb-3" style="font: weight 300; color: rgb(157, 89, 0);">
+                        UPLOAD YOUR FILES
+                    </h2>
+
+                    <div class="form-group mb-3">
+                        <label for="Name">Your Name</label>
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Your Name">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="file_input" id="file_input"
+                                multiple="true" oninput="input_filename();">
+                            <label id="file_input_label" class="custom-file-label" for="image">Select file(s)</label>
+                        </div>
+                    </div>
+
+                    <button onclick="upload('{{ request.url }}');" id="upload_btn"
+                        class="btn btn-primary">Upload</button>
+
+                    <button class="btn btn-primary d-none" id="loading_btn" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Uploading...
+                    </button>
+
+                    <button type="button" id="cancel_btn" class="btn btn-secondary d-none">Cancel upload</button>
+                </div>
+
+                <div id="progress_wrapper" class="d-none">
+                    <label id="progress_status"></label>
+                    <div class="progress mb-3">
+                        <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div id="alert_wrapper"></div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Get a reference to the progress bar, wrapper & status label
+        var progress = document.getElementById("progress");
+        var progress_wrapper = document.getElementById("progress_wrapper");
+        var progress_status = document.getElementById("progress_status");
+
+        // Get a reference to the 3 buttons
+        var upload_btn = document.getElementById("upload_btn");
+        var loading_btn = document.getElementById("loading_btn");
+        var cancel_btn = document.getElementById("cancel_btn");
+
+        // Get a reference to the alert wrapper
+        var alert_wrapper = document.getElementById("alert_wrapper");
+
+        // Get a reference to the file input element & input label 
+        var workerName = document.getElementById("Name");
+        var input = document.getElementById("file_input");
+        var file_input_label = document.getElementById("file_input_label");
+
+        // Function to show alerts
+        function show_alert(message, alert) {
+
+            alert_wrapper.innerHTML = `
+            <div id="alert" class="alert alert-${alert} alert-dismissible fade show" role="alert">
+            <span>${message}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        `
+
+        }
+
+        // Function to upload file
+        function upload(url) {
+
+            // Reject if the file input is empty & throw alert
+            if (!input.value) {
+
+                show_alert("No file selected", "warning")
+
+                return;
+
+            }
+
+            var usersname = workerName.value
+
+            var data = new FormData();
+
+            var request = new XMLHttpRequest();
+
+            request.responseType = "json";
+
+            alert_wrapper.innerHTML = "";
+
+            input.disabled = true;
+
+            upload_btn.classList.add("d-none");
+
+            loading_btn.classList.remove("d-none");
+
+            cancel_btn.classList.remove("d-none");
+
+            progress_wrapper.classList.remove("d-none");
+
+            var files_length = input.files.length;
+            for (i = 0; i < files_length; i++) {
+
+                var file = input.files[i];
+
+                // Get a reference to the filename
+                var filename = file.name;
+
+                // Get a reference to the filesize & set a cookie
+                var filesize = file.size;
+                document.cookie = `filesize=${filesize}`;
+
+                // Append the file to the FormData instance
+                data.append("workerName", usersname)
+                data.append("ver_files[]", file);
+
+
+                // request progress handler
+                request.upload.addEventListener("progress", function (e) {
+
+                    // Get the loaded amount and total filesize (bytes)
+                    var loaded = e.loaded;
+                    var total = e.total
+
+                    // Calculate percent uploaded
+                    var percent_complete = (loaded / total) * 100;
+
+                    // Update the progress text and progress bar
+                    progress.setAttribute("style", `width: ${Math.floor(percent_complete)}%`);
+                    progress_status.innerText = `${Math.floor(percent_complete)}% uploaded`;
+
+                });
+                // request load handler (transfer complete)
+                request.addEventListener("load", function (e) {
+
+                    if (request.status == 200) {
+
+                        show_alert(`Upload Completed`, "success");
+
+                    }
+                    else {
+
+                        show_alert(`Error uploading file`, "danger");
+
+                    }
+
+                    reset();
+
+                });
+
+                // request error handler
+                request.addEventListener("error", function (e) {
+
+                    reset();
+
+                    show_alert(`Error uploading file`, "warning");
+
+                    });
+
+                // request abort handler
+                request.addEventListener("abort", function (e) {
+
+                    reset();
+
+                    show_alert(`Upload cancelled`, "primary");
+
+                    });
+            
+                // Open and send the request
+                request.open("post", url);
+                request.send(data);
+
+                cancel_btn.addEventListener("click", function () {
+
+                    request.abort();
+
+                })
+            
+            }
+
+        }
+
+        // Function to update the input placeholder
+        function input_filename() {
+            var file_list_length = input.files.length;
+            var file_list_name = ""
+            if (file_list_name.length == 0) {
+                file_list_name = input.files[0].name
+                console.log(file_list_name)
+            }
+
+            if (file_list_length > 3) {
+                file_list_name = file_list_name + ',' + input.files[1].name + ',...,' + input.files[file_list_length - 1].name
+                console.log(file_list_name)
+            } else {
+                for (i = 1; i < file_list_length; i++) {
+                    file_list_name = file_list_name + ',' + input.files[i].name
+                    console.log(file_list_name)
+                }
+            }
+
+            file_input_label.innerText = file_list_name
+
+        }
+
+        // Function to reset the page
+        function reset() {
+
+            input.value = null;
+
+            cancel_btn.classList.add("d-none");
+
+            input.disabled = false;
+
+            upload_btn.classList.remove("d-none");
+
+            loading_btn.classList.add("d-none");
+
+            progress_wrapper.classList.add("d-none");
+
+            progress.setAttribute("style", `width: 0%`);
+
+            file_input_label.innerText = "Select file";
+
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

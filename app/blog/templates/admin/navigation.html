@@ -1,0 +1,83 @@
+<div class="sidebar close">
+    <div class="logo_details">
+        <i class="las la-dungeon"></i>        
+
+        <span class="logo_name">
+            My Blog
+        </span>
+    </div>
+
+    <ul class="nav_links">
+        <li>
+            <a href="">
+                <i class="las la-boxes"></i>
+                <span class="link_name">Dashboard</span>
+            </a>
+            <ul class="sub_menu blank">
+                <li>
+                    <a href="" class="link_name">Dashboard </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="icon_link">
+                <a href="">
+                    <i class="las la-list"></i>
+                    <span class="link_name">Accounts</span>
+                </a>
+                <i class="las la-caret-down arrow"></i>
+            </div>
+            <ul class="sub_menu">
+                <li><a href="" class="link_name">Accounts</a></li>
+                <li><a href="">Add Account</a></li>
+                <li><a href="">Update Account</a></li>
+                <li><a href="">Delete Account</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">
+                <i class="las la-shapes"></i>
+                <span class="link_name">Articles</span>
+            </a>
+            <ul class="sub_menu blank">
+                <li>
+                    <a href="" class="link_name">Manage Articles</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Profile Info -->
+        <div class="profile_details">
+            <div class="profile_content">
+              <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="profileImg">
+            </div>
+            <div class="name_job">
+              <div class="profile_name">Adefolahan</div>
+              <div class="job">Blog Owner</div>
+            </div>
+            <i class="las la-sign-out-alt"></i>
+          </div>
+</div>
+
+<section class="home_section">
+    <div class="home_content">
+        <i class="las la-list-ul"></i>
+    </div>
+</section>
+
+
+<script>
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e)=>{
+     let arrowParent = e.target.parentElement.parentElement;
+     arrowParent.classList.toggle("showMenu");
+      });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".la-list-ul");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("close");
+    });
+    </script>

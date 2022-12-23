@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="static/assets/magazine/img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="AGRO A.I">
+		<!-- Meta Description -->
+		{% for content in Content: %}
+		<meta name="description" content="{{content.Title}}">
+		{% endfor %}
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="Agriculture, Artificial Intelligence, Agritech, Machine Learning">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>View My Post</title>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+		<!--
+		CSS
+		============================================= -->
+		<link rel="stylesheet" href="static/assets/css/bootstrap.css">
+        <link rel="stylesheet" href="static/assets/magazine/css/main.css">
+        <link rel="stylesheet" href="static/assets/css/main.css">
+		<!-- 
+		ADSENSE INTEGRATION
+		============================================ -->
+		<script data-ad-client="ca-pub-9758572711641070" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	</head>
+    <body>
+        <div class="relavent-story-post-wrap mt-30">
+            <h4 class="title"> STORIES VIEW</h4>
+            {% for Blog in Blog_List: %}
+                {% if Blog.Blog_Type in ["Gallery Post","Image Post"] %}
+            <div class="relavent-story-list-wrap">
+                <div class="single-relavent-post row align-items-center">
+                    <div class="col-lg-5 post-left">
+                        <div class="feature-img relative">
+                            <div class="overlay overlay-bg"></div>
+                            <img class="img-fluid" src="static/assets/magazine/img/{{Blog.Image1}}" alt="">
+                        </div>
+                        {% if Blog.Blog_Type in ["Gallery Post"]: %}
+                        <ul class="tags">
+                            <li><a href="/gallery_post/{{Blog.Title}}">{{Blog.Category}}</a></li>
+                        </ul>
+                        {% else: %}
+                        <ul class="tags">
+                            <li><a href="/image_post/{{Blog.Title}}">{{Blog.Category}}</a></li>
+                        </ul>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="col-lg-7 post-right">
+                        {% if Blog.Blog_Type in ["Gallery Post"]: %}
+
+                        <a href="/gallery_post/{{Blog.Title}}">
+                            <h4>{{ Blog.Title }}</h4>
+                        </a>
+
+                        <ul class="meta">
+                            <li><a href="/gallery_post/{{Blog.Title}}"><span class="lnr lnr-user"></span>{{Blog.Author_Name}}</a></li>
+                            <li><a href="/gallery_post/{{Blog.Title}}"><span class="lnr lnr-calendar-full"></span>{{Blog.Date_Posted.date()}}</a></li>
+                            <li><a href="/gallery_post/{{Blog.Title}}"><span class="lnr lnr-bubble"></span>{{Blog.NoC}} comments</a></li>
+                        </ul>
+
+                        {% else: %}
+
+                        <a href="/image_post/{{Blog.Title}}">
+                            <h4>{{ Blog.Title }}</h4>
+                        </a>
+
+                        <ul class="meta">
+                            <li><a href="/image_post/{{Blog.Title}}"><span class="lnr lnr-user"></span>{{Blog.Author_Name}}</a></li>
+                            <li><a href="/image_post/{{Blog.Title}}"><span class="lnr lnr-calendar-full"></span>{{Blog.Date_Posted.date()}}</a></li>
+                            <li><a href="/image_post/{{Blog.Title}}"><span class="lnr lnr-bubble"></span>{{Blog.NoC}} comments</a></li>
+                        </ul>
+
+                        {% endif %}
+
+                        <p class="excert">
+                            {% print(Blog.Content[:200]) %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="/blogger_page" style="background-color: black; color: white; padding: 5px;">BACK TO PANEL</a>
+                {% endif %}
+
+                {% if Blog.Blog_Type in ["Audio Post"] %}
+                <div class="relavent-story-list-wrap">
+                    <div class="single-relavent-post row align-items-center">
+                        <div class="col-lg-5 post-left">
+                            <div class="feature-img relative">
+                                <div class="overlay overlay-bg"></div>
+                                <img class="img-fluid" src="static/assets/magazine/img/audio2.jpg" alt="">
+                            </div>
+                            <ul class="tags">
+                                <li><a href="/audio_post/{{Blog.Title}}">{{Blog.Category}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-7 post-right">
+                            <a href="/audio_post/{{Blog.Title}}">
+                                <h4>{% print(Blog.Title) %}</h4>
+                            </a>
+                            <ul class="meta">
+                                <li><a href="/audio_post/{{Blog.Title}}"><span class="lnr lnr-user"></span>{{Blog.Author_Name}}</a></li>
+                                <li><a href="/audio_post/{{Blog.Title}}"><span class="lnr lnr-calendar-full"></span>{{ Blog.Date_Posted.date() }}</a></li>
+                                <li><a href="/audio_post/{{Blog.Title}}"><span class="lnr lnr-bubble"></span>{{Blog.NoC}} comments</a></li>
+                            </ul>
+                            <p class="excert">
+                                {% print(Blog.Content[:200]) %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/blogger_page" style="background-color: black; color: white; padding: 5px;">BACK TO PANEL</a>
+                    {% endif %}
+
+
+                    {% if Blog.Blog_Type in ["Plain Post"] %}
+                <div class="relavent-story-list-wrap">
+                    <div class="single-relavent-post row align-items-center">
+                        <div class="col-lg-5 post-left">
+                            <div class="feature-img relative">
+                                <div class="overlay overlay-bg"></div>
+                                <img class="img-fluid" src="static/assets/magazine/img/plain.jpg" alt="">
+                            </div>
+                            <ul class="tags">
+                                <li><a href="/plain_post/{{Blog.Title}}">{{Blog.Category}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-7 post-right">
+                            <a href="/plain_post/{{Blog.Title}}">
+                                <h4>{% print(Blog.Title) %}</h4>
+                            </a>
+                            <ul class="meta">
+                                <li><a href="/plain_post/{{Blog.Title}}"><span class="lnr lnr-user"></span>{{Blog.Author_Name}}</a></li>
+                                <li><a href="/plain_post/{{Blog.Title}}"><span class="lnr lnr-calendar-full"></span>{{ Blog.Date_Posted.date() }}</a></li>
+                                <li><a href="/plain_post/{{Blog.Title}}"><span class="lnr lnr-bubble"></span>{{Blog.NoC}} comments</a></li>
+                            </ul>
+                            <p class="excert">
+                                {% print(Blog.Content[:200]) %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/blogger_page" style="background-color: black; color: white; padding: 5px;">BACK TO PANEL</a>
+                    {% endif %}
+
+                    {% if Blog.Blog_Type in ["Video Post"] %}
+                    <div class="relavent-story-list-wrap">
+                        <div class="single-relavent-post row align-items-center">
+                            <div class="col-lg-5 post-left">
+                                <div class="feature-img relative">
+                                    <div class="overlay overlay-bg"></div>
+                                    <img class="img-fluid" src="static/assets/img/{{Blog.Image1}}" alt="">
+                                </div>
+                                <ul class="tags">
+                                    <li><a href="/video_post/{{Blog.Title}}">{{Blog.Category}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-7 post-right">
+                                <a href="/video_post/{{Blog.Title}}">
+                                    <h4>{% print(Blog.Title) %}</h4>
+                                </a>
+                                <ul class="meta">
+                                    <li><a href="/video_post/{{Blog.Title}}"><span class="lnr lnr-user"></span>{{Blog.Author_Name}}</a></li>
+                                    <li><a href="/video_post/{{Blog.Title}}"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+                                    <li><a href="/video_post/{{Blog.Title}}"><span class="lnr lnr-bubble"></span>{{Blog.NoC}} comments</a></li>
+                                </ul>
+                                <p class="excert">
+                                    {% print(Blog.Content[:200]) %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/blogger_page" style="background-color: black; color: white; padding: 5px;">BACK TO PANEL</a>
+                        {% endif %}
+            {% endfor %}
+        </div>
+    </body>

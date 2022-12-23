@@ -1,0 +1,867 @@
+2022-12-20 14:59:35,030:DEBUG::
+2022-12-20 14:59:35,030:DEBUG::====================================================================================================
+2022-12-20 14:59:35,031:INFO::Database logger :: Logging Active
+2022-12-20 14:59:35,031:DEBUG::
+2022-12-20 15:02:02,915:DEBUG::
+2022-12-20 15:02:02,915:DEBUG::====================================================================================================
+2022-12-20 15:02:02,916:INFO::Database logger :: Logging Active
+2022-12-20 15:02:02,916:DEBUG::
+2022-12-20 15:02:51,207:DEBUG::
+2022-12-20 15:02:51,207:DEBUG::====================================================================================================
+2022-12-20 15:02:51,208:INFO::Database logger :: Logging Active
+2022-12-20 15:02:51,211:DEBUG::
+2022-12-20 15:02:52,456:DEBUG::
+2022-12-20 15:02:52,457:DEBUG::====================================================================================================
+2022-12-20 15:02:52,457:INFO::Database logger :: Logging Active
+2022-12-20 15:02:52,458:DEBUG::
+2022-12-20 15:04:58,587:DEBUG::
+2022-12-20 15:04:58,588:DEBUG::====================================================================================================
+2022-12-20 15:04:58,588:INFO::Database logger :: Logging Active
+2022-12-20 15:04:58,588:DEBUG::
+2022-12-20 15:06:37,217:DEBUG::
+2022-12-20 15:06:37,217:DEBUG::====================================================================================================
+2022-12-20 15:06:37,217:INFO::Database logger :: Logging Active
+2022-12-20 15:06:37,218:DEBUG::
+2022-12-20 15:10:43,782:DEBUG::
+2022-12-20 15:10:43,782:DEBUG::====================================================================================================
+2022-12-20 15:10:43,783:INFO::Database logger :: Logging Active
+2022-12-20 15:10:43,783:DEBUG::
+2022-12-20 15:12:36,412:DEBUG::
+2022-12-20 15:12:36,413:DEBUG::====================================================================================================
+2022-12-20 15:12:36,413:INFO::Database logger :: Logging Active
+2022-12-20 15:12:36,414:DEBUG::
+2022-12-20 15:14:51,699:DEBUG::
+2022-12-20 15:14:51,699:DEBUG::====================================================================================================
+2022-12-20 15:14:51,700:INFO::Database logger :: Logging Active
+2022-12-20 15:14:51,700:DEBUG::
+2022-12-20 15:26:19,021:DEBUG::
+2022-12-20 15:26:19,021:DEBUG::====================================================================================================
+2022-12-20 15:26:19,021:INFO::Database logger :: Logging Active
+2022-12-20 15:26:19,022:DEBUG::
+2022-12-20 15:31:31,497:DEBUG::
+2022-12-20 15:31:31,497:DEBUG::====================================================================================================
+2022-12-20 15:31:31,498:INFO::Database logger :: Logging Active
+2022-12-20 15:31:31,498:DEBUG::
+2022-12-20 15:36:12,019:DEBUG::
+2022-12-20 15:36:12,020:DEBUG::====================================================================================================
+2022-12-20 15:36:12,020:INFO::Database logger :: Logging Active
+2022-12-20 15:36:12,021:DEBUG::
+2022-12-20 18:36:49,693:DEBUG::
+2022-12-20 18:36:49,694:DEBUG::====================================================================================================
+2022-12-20 18:36:49,694:INFO::Database logger :: Logging Active
+2022-12-20 18:36:49,695:DEBUG::
+2022-12-20 18:37:22,664:DEBUG::
+2022-12-20 18:37:22,664:DEBUG::====================================================================================================
+2022-12-20 18:37:22,664:INFO::Database logger :: Logging Active
+2022-12-20 18:37:22,665:DEBUG::
+2022-12-20 18:50:14,851:DEBUG::
+2022-12-20 18:50:14,852:DEBUG::====================================================================================================
+2022-12-20 18:50:14,852:INFO::Database logger :: Logging Active
+2022-12-20 18:50:14,853:DEBUG::
+2022-12-20 18:51:00,117:DEBUG::
+2022-12-20 18:51:00,117:DEBUG::====================================================================================================
+2022-12-20 18:51:00,118:INFO::Database logger :: Logging Active
+2022-12-20 18:51:00,118:DEBUG::
+2022-12-20 18:51:55,562:DEBUG::
+2022-12-20 18:51:55,562:DEBUG::====================================================================================================
+2022-12-20 18:51:55,562:INFO::Database logger :: Logging Active
+2022-12-20 18:51:55,563:DEBUG::
+2022-12-20 18:54:04,332:DEBUG::
+2022-12-20 18:54:04,332:DEBUG::====================================================================================================
+2022-12-20 18:54:04,333:INFO::Database logger :: Logging Active
+2022-12-20 18:54:04,333:DEBUG::
+2022-12-20 18:57:43,134:DEBUG::
+2022-12-20 18:57:43,134:DEBUG::====================================================================================================
+2022-12-20 18:57:43,135:INFO::Database logger :: Logging Active
+2022-12-20 18:57:43,135:DEBUG::
+2022-12-20 18:59:14,272:DEBUG::
+2022-12-20 18:59:14,272:DEBUG::====================================================================================================
+2022-12-20 18:59:14,273:INFO::Database logger :: Logging Active
+2022-12-20 18:59:14,273:DEBUG::
+2022-12-20 19:14:40,619:DEBUG::
+2022-12-20 19:14:40,620:DEBUG::====================================================================================================
+2022-12-20 19:14:40,620:INFO::Database logger :: Logging Active
+2022-12-20 19:14:40,621:DEBUG::
+2022-12-20 19:14:41,846:DEBUG::
+2022-12-20 19:14:41,847:DEBUG::====================================================================================================
+2022-12-20 19:14:41,847:INFO::Database logger :: Logging Active
+2022-12-20 19:14:41,848:DEBUG::
+2022-12-20 19:18:43,245:DEBUG::
+2022-12-20 19:18:43,245:DEBUG::====================================================================================================
+2022-12-20 19:18:43,246:INFO::Database logger :: Logging Active
+2022-12-20 19:18:43,246:DEBUG::
+2022-12-20 19:19:12,135:DEBUG::
+2022-12-20 19:19:12,135:DEBUG::====================================================================================================
+2022-12-20 19:19:12,135:INFO::Database logger :: Logging Active
+2022-12-20 19:19:12,136:DEBUG::
+2022-12-20 22:45:39,952:DEBUG::
+2022-12-20 22:45:39,953:DEBUG::====================================================================================================
+2022-12-20 22:45:39,953:INFO::Database logger :: Logging Active
+2022-12-20 22:45:39,954:DEBUG::
+2022-12-20 22:46:33,407:DEBUG::
+2022-12-20 22:46:33,408:DEBUG::====================================================================================================
+2022-12-20 22:46:33,408:INFO::Database logger :: Logging Active
+2022-12-20 22:46:33,409:DEBUG::
+2022-12-20 23:09:34,867:DEBUG::
+2022-12-20 23:09:34,868:DEBUG::====================================================================================================
+2022-12-20 23:09:34,868:INFO::Database logger :: Logging Active
+2022-12-20 23:09:34,869:DEBUG::
+2022-12-20 23:15:39,531:DEBUG::
+2022-12-20 23:15:39,531:DEBUG::====================================================================================================
+2022-12-20 23:15:39,532:INFO::Database logger :: Logging Active
+2022-12-20 23:15:39,533:DEBUG::
+2022-12-20 23:16:06,426:DEBUG::
+2022-12-20 23:16:06,427:DEBUG::====================================================================================================
+2022-12-20 23:16:06,427:INFO::Database logger :: Logging Active
+2022-12-20 23:16:06,428:DEBUG::
+2022-12-21 00:49:41,108:DEBUG::
+2022-12-21 00:49:41,109:DEBUG::====================================================================================================
+2022-12-21 00:49:41,109:INFO::Database logger :: Logging Active
+2022-12-21 00:49:41,110:DEBUG::
+2022-12-21 00:50:57,975:DEBUG::
+2022-12-21 00:50:57,975:DEBUG::====================================================================================================
+2022-12-21 00:50:57,976:INFO::Database logger :: Logging Active
+2022-12-21 00:50:57,976:DEBUG::
+2022-12-21 00:50:59,155:DEBUG::
+2022-12-21 00:50:59,155:DEBUG::====================================================================================================
+2022-12-21 00:50:59,156:INFO::Database logger :: Logging Active
+2022-12-21 00:50:59,156:DEBUG::
+2022-12-21 00:51:33,931:DEBUG::
+2022-12-21 00:51:33,932:DEBUG::====================================================================================================
+2022-12-21 00:51:33,932:INFO::Database logger :: Logging Active
+2022-12-21 00:51:33,932:DEBUG::
+2022-12-21 00:55:35,686:DEBUG::
+2022-12-21 00:55:35,687:DEBUG::====================================================================================================
+2022-12-21 00:55:35,687:INFO::Database logger :: Logging Active
+2022-12-21 00:55:35,687:DEBUG::
+2022-12-21 02:13:31,261:ERROR::Could not determine join condition between parent/child tables on relationship Blog.Comments - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2756, in _determine_joins
+    self.primaryjoin = join_condition(
+  File "<string>", line 2, in join_condition
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\selectable.py", line 1229, in _join_condition
+    raise exc.NoForeignKeysError(
+sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships between 'blog' and 'comment'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 142, in mail_is_available
+    is_available = db.session.query(Blogger).filter(Blogger.Email == email).first()
+  File "<string>", line 2, in query
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2161, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 180, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 187, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 188, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\coercions.py", line 181, in expect
+    insp._post_inspect
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1184, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 2199, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 1941, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3527, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3566, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 1958, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\interfaces.py", line 231, in init
+    self.do_init()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2154, in do_init
+    self._setup_join_conditions()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2250, in _setup_join_conditions
+    self._join_condition = jc = JoinCondition(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2645, in __init__
+    self._determine_joins()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2778, in _determine_joins
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship Blog.Comments - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2022-12-21 02:14:09,383:ERROR::One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class Blog->blog'. Original exception was: Could not determine join condition between parent/child tables on relationship Blog.Comments - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 142, in mail_is_available
+    is_available = db.session.query(Blogger).filter(Blogger.Email == email).first()
+  File "<string>", line 2, in query
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2161, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 180, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 187, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 188, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\coercions.py", line 181, in expect
+    insp._post_inspect
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1184, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 2199, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 1941, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3527, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3562, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class Blog->blog'. Original exception was: Could not determine join condition between parent/child tables on relationship Blog.Comments - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2022-12-21 02:15:20,651:DEBUG::
+2022-12-21 02:15:20,652:DEBUG::====================================================================================================
+2022-12-21 02:15:20,652:INFO::Database logger :: Logging Active
+2022-12-21 02:15:20,652:DEBUG::
+2022-12-21 02:23:05,177:DEBUG::
+2022-12-21 02:23:05,177:DEBUG::====================================================================================================
+2022-12-21 02:23:05,177:INFO::Database logger :: Logging Active
+2022-12-21 02:23:05,178:DEBUG::
+2022-12-21 02:26:48,407:DEBUG::
+2022-12-21 02:26:48,408:DEBUG::====================================================================================================
+2022-12-21 02:26:48,408:INFO::Database logger :: Logging Active
+2022-12-21 02:26:48,408:DEBUG::
+2022-12-21 02:28:08,235:DEBUG::
+2022-12-21 02:28:08,235:DEBUG::====================================================================================================
+2022-12-21 02:28:08,236:INFO::Database logger :: Logging Active
+2022-12-21 02:28:08,236:DEBUG::
+2022-12-21 02:29:27,297:DEBUG::
+2022-12-21 02:29:27,297:DEBUG::====================================================================================================
+2022-12-21 02:29:27,297:INFO::Database logger :: Logging Active
+2022-12-21 02:29:27,298:DEBUG::
+2022-12-21 02:29:35,319:DEBUG::
+2022-12-21 02:29:35,320:DEBUG::====================================================================================================
+2022-12-21 02:29:35,320:INFO::Database logger :: Logging Active
+2022-12-21 02:29:35,320:DEBUG::
+2022-12-21 23:11:15,892:DEBUG::
+2022-12-21 23:11:15,892:DEBUG::====================================================================================================
+2022-12-21 23:11:15,893:INFO::Database logger :: Logging Active
+2022-12-21 23:11:15,893:DEBUG::
+2022-12-21 23:12:22,880:DEBUG::
+2022-12-21 23:12:22,880:DEBUG::====================================================================================================
+2022-12-21 23:12:22,881:INFO::Database logger :: Logging Active
+2022-12-21 23:12:22,881:DEBUG::
+2022-12-21 23:14:03,971:DEBUG::
+2022-12-21 23:14:03,973:DEBUG::====================================================================================================
+2022-12-21 23:14:03,973:INFO::Database logger :: Logging Active
+2022-12-21 23:14:03,973:DEBUG::
+2022-12-21 23:29:40,036:DEBUG::
+2022-12-21 23:29:40,037:DEBUG::====================================================================================================
+2022-12-21 23:29:40,037:INFO::Database logger :: Logging Active
+2022-12-21 23:29:40,038:DEBUG::
+2022-12-21 23:34:35,164:DEBUG::
+2022-12-21 23:34:35,164:DEBUG::====================================================================================================
+2022-12-21 23:34:35,165:INFO::Database logger :: Logging Active
+2022-12-21 23:34:35,165:DEBUG::
+2022-12-21 23:34:36,347:DEBUG::
+2022-12-21 23:34:36,347:DEBUG::====================================================================================================
+2022-12-21 23:34:36,348:INFO::Database logger :: Logging Active
+2022-12-21 23:34:36,348:DEBUG::
+2022-12-21 23:41:21,314:ERROR::When initializing mapper mapped class Posts->posts, expression 'Comment' failed to locate a name ('Comment'). If this is a class name, consider adding this relationship() to the <class 'app.model.Posts'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 393, in _resolve_name
+    rval = d[token]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\_collections.py", line 746, in __missing__
+    self[key] = val = self.creator(key)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 372, in _access_cls
+    return self.fallback[key]
+KeyError: 'Comment'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 144, in mail_is_available
+    is_available = db.session.query(Blogger).filter(Blogger.Email == email).first()
+  File "<string>", line 2, in query
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2161, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 180, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 187, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 188, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\coercions.py", line 181, in expect
+    insp._post_inspect
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1184, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 2199, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 1941, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3527, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3566, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 1958, in _post_configure_properties
+    prop.init()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\interfaces.py", line 231, in init
+    self.do_init()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2152, in do_init
+    self._process_dependent_arguments()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2247, in _process_dependent_arguments
+    self.target = self.entity.persist_selectable
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1113, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\relationships.py", line 2114, in entity
+    argument = self._clsregistry_resolve_name(self.argument)()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 397, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\clsregistry.py", line 375, in _raise_for_name
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Posts->posts, expression 'Comment' failed to locate a name ('Comment'). If this is a class name, consider adding this relationship() to the <class 'app.model.Posts'> class after both dependent classes have been defined.
+2022-12-21 23:45:20,718:ERROR::One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class Posts->posts'. Original exception was: When initializing mapper mapped class Posts->posts, expression 'Comment' failed to locate a name ('Comment'). If this is a class name, consider adding this relationship() to the <class 'app.model.Posts'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 144, in mail_is_available
+    is_available = db.session.query(Blogger).filter(Blogger.Email == email).first()
+  File "<string>", line 2, in query
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2161, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 180, in __init__
+    self._set_entities(entities)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 187, in _set_entities
+    self._raw_columns = [
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\query.py", line 188, in <listcomp>
+    coercions.expect(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\coercions.py", line 181, in expect
+    insp._post_inspect
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1184, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 2199, in _post_inspect
+    self._check_configure()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 1941, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3527, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\mapper.py", line 3562, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'mapped class Posts->posts'. Original exception was: When initializing mapper mapped class Posts->posts, expression 'Comment' failed to locate a name ('Comment'). If this is a class name, consider adding this relationship() to the <class 'app.model.Posts'> class after both dependent classes have been defined.
+2022-12-21 23:48:54,271:DEBUG::
+2022-12-21 23:48:54,272:DEBUG::====================================================================================================
+2022-12-21 23:48:54,272:INFO::Database logger :: Logging Active
+2022-12-21 23:48:54,273:DEBUG::
+2022-12-21 23:49:51,705:DEBUG::
+2022-12-21 23:49:51,705:DEBUG::====================================================================================================
+2022-12-21 23:49:51,706:INFO::Database logger :: Logging Active
+2022-12-21 23:49:51,706:DEBUG::
+2022-12-21 23:54:14,448:DEBUG::
+2022-12-21 23:54:14,449:DEBUG::====================================================================================================
+2022-12-21 23:54:14,449:INFO::Database logger :: Logging Active
+2022-12-21 23:54:14,449:DEBUG::
+2022-12-22 00:00:32,297:DEBUG::
+2022-12-22 00:00:32,297:DEBUG::====================================================================================================
+2022-12-22 00:00:32,298:INFO::Database logger :: Logging Active
+2022-12-22 00:00:32,298:DEBUG::
+2022-12-22 00:28:03,396:DEBUG::
+2022-12-22 00:28:03,396:DEBUG::====================================================================================================
+2022-12-22 00:28:03,397:INFO::Database logger :: Logging Active
+2022-12-22 00:28:03,397:DEBUG::
+2022-12-22 00:28:52,244:ERROR::(sqlite3.InterfaceError) Error binding parameter 4 - probably unsupported type.
+[SQL: INSERT INTO blogger ("Name", "Email", "Password", "Position", "Blogger_id") VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Adefolahan Akinsola', 'adefolahanakinsola@gmail.com', 'pbkdf2:sha512:80000$xBEoLg2kiC9Ga7jj$692e870ff16ae7805c7d6f6623026b3da6db2cd2a2e2b301f776fbadad08cf01cc236f14b979985886d2565db42f95db45e6e0eb52a726026626c44f055ac5c9', 'Proof Reader', UUID('d892c9a5-ee37-46b8-8fb2-d02b5aa999e5'))]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 4 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 101, in add_blogger
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 4 - probably unsupported type.
+[SQL: INSERT INTO blogger ("Name", "Email", "Password", "Position", "Blogger_id") VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Adefolahan Akinsola', 'adefolahanakinsola@gmail.com', 'pbkdf2:sha512:80000$xBEoLg2kiC9Ga7jj$692e870ff16ae7805c7d6f6623026b3da6db2cd2a2e2b301f776fbadad08cf01cc236f14b979985886d2565db42f95db45e6e0eb52a726026626c44f055ac5c9', 'Proof Reader', UUID('d892c9a5-ee37-46b8-8fb2-d02b5aa999e5'))]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2022-12-22 00:31:24,323:ERROR::(sqlite3.InterfaceError) Error binding parameter 4 - probably unsupported type.
+[SQL: INSERT INTO blogger ("Name", "Email", "Password", "Position", "Blogger_id") VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Adefolahan Akinsola', 'adefolahanakinsola@gmail.com', 'pbkdf2:sha512:80000$kpjJDdEmxF2bHQt4$24499a6f91cfaed5496056e2f1e05b77aa78fc6a710c57ea5826358af4e9bdd0e2c1f31066e29fb3b86cf1c7f8dc8267c1e7e2fa8ad200dfba313155f0e5c81a', 'Proof Reader', UUID('2e0658ce-894c-443b-91b8-d8415a21dba4'))]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 4 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 101, in add_blogger
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 4 - probably unsupported type.
+[SQL: INSERT INTO blogger ("Name", "Email", "Password", "Position", "Blogger_id") VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Adefolahan Akinsola', 'adefolahanakinsola@gmail.com', 'pbkdf2:sha512:80000$kpjJDdEmxF2bHQt4$24499a6f91cfaed5496056e2f1e05b77aa78fc6a710c57ea5826358af4e9bdd0e2c1f31066e29fb3b86cf1c7f8dc8267c1e7e2fa8ad200dfba313155f0e5c81a', 'Proof Reader', UUID('2e0658ce-894c-443b-91b8-d8415a21dba4'))]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2022-12-22 00:32:44,523:DEBUG::
+2022-12-22 00:32:44,524:DEBUG::====================================================================================================
+2022-12-22 00:32:44,524:INFO::Database logger :: Logging Active
+2022-12-22 00:32:44,525:DEBUG::
+2022-12-22 00:32:45,840:DEBUG::
+2022-12-22 00:32:45,841:DEBUG::====================================================================================================
+2022-12-22 00:32:45,841:INFO::Database logger :: Logging Active
+2022-12-22 00:32:45,842:DEBUG::
+2022-12-22 00:34:03,274:DEBUG::
+2022-12-22 00:34:03,275:DEBUG::====================================================================================================
+2022-12-22 00:34:03,276:INFO::Database logger :: Logging Active
+2022-12-22 00:34:03,276:DEBUG::
+2022-12-22 00:44:17,887:DEBUG::
+2022-12-22 00:44:17,888:DEBUG::====================================================================================================
+2022-12-22 00:44:17,888:INFO::Database logger :: Logging Active
+2022-12-22 00:44:17,889:DEBUG::
+2022-12-22 00:46:19,254:DEBUG::
+2022-12-22 00:46:19,254:DEBUG::====================================================================================================
+2022-12-22 00:46:19,255:INFO::Database logger :: Logging Active
+2022-12-22 00:46:19,255:DEBUG::
+2022-12-22 00:47:29,429:DEBUG::
+2022-12-22 00:47:29,429:DEBUG::====================================================================================================
+2022-12-22 00:47:29,430:INFO::Database logger :: Logging Active
+2022-12-22 00:47:29,430:DEBUG::
+2022-12-22 00:47:43,089:DEBUG::
+2022-12-22 00:47:43,090:DEBUG::====================================================================================================
+2022-12-22 00:47:43,090:INFO::Database logger :: Logging Active
+2022-12-22 00:47:43,091:DEBUG::
+2022-12-22 00:48:12,626:DEBUG::
+2022-12-22 00:48:12,626:DEBUG::====================================================================================================
+2022-12-22 00:48:12,627:INFO::Database logger :: Logging Active
+2022-12-22 00:48:12,627:DEBUG::
+2022-12-22 00:48:30,679:DEBUG::
+2022-12-22 00:48:30,680:DEBUG::====================================================================================================
+2022-12-22 00:48:30,680:INFO::Database logger :: Logging Active
+2022-12-22 00:48:30,680:DEBUG::
+2022-12-22 00:52:48,079:DEBUG::
+2022-12-22 00:52:48,079:DEBUG::====================================================================================================
+2022-12-22 00:52:48,080:INFO::Database logger :: Logging Active
+2022-12-22 00:52:48,080:DEBUG::
+2022-12-22 00:53:03,707:DEBUG::
+2022-12-22 00:53:03,707:DEBUG::====================================================================================================
+2022-12-22 00:53:03,708:INFO::Database logger :: Logging Active
+2022-12-22 00:53:03,708:DEBUG::
+2022-12-22 00:53:28,317:DEBUG::
+2022-12-22 00:53:28,317:DEBUG::====================================================================================================
+2022-12-22 00:53:28,318:INFO::Database logger :: Logging Active
+2022-12-22 00:53:28,318:DEBUG::
+2022-12-22 00:58:56,835:DEBUG::
+2022-12-22 00:58:56,835:DEBUG::====================================================================================================
+2022-12-22 00:58:56,836:INFO::Database logger :: Logging Active
+2022-12-22 00:58:56,836:DEBUG::
+2022-12-22 00:59:07,448:DEBUG::
+2022-12-22 00:59:07,448:DEBUG::====================================================================================================
+2022-12-22 00:59:07,448:INFO::Database logger :: Logging Active
+2022-12-22 00:59:07,449:DEBUG::
+2022-12-22 04:00:52,952:DEBUG::
+2022-12-22 04:00:52,953:DEBUG::====================================================================================================
+2022-12-22 04:00:52,953:INFO::Database logger :: Logging Active
+2022-12-22 04:00:52,953:DEBUG::
+2022-12-22 04:00:54,271:DEBUG::
+2022-12-22 04:00:54,272:DEBUG::====================================================================================================
+2022-12-22 04:00:54,272:INFO::Database logger :: Logging Active
+2022-12-22 04:00:54,272:DEBUG::
+2022-12-22 04:03:15,345:DEBUG::
+2022-12-22 04:03:15,345:DEBUG::====================================================================================================
+2022-12-22 04:03:15,346:INFO::Database logger :: Logging Active
+2022-12-22 04:03:15,346:DEBUG::
+2022-12-22 04:03:16,607:DEBUG::
+2022-12-22 04:03:16,607:DEBUG::====================================================================================================
+2022-12-22 04:03:16,608:INFO::Database logger :: Logging Active
+2022-12-22 04:03:16,608:DEBUG::
+2022-12-22 04:36:11,599:DEBUG::
+2022-12-22 04:36:11,599:DEBUG::====================================================================================================
+2022-12-22 04:36:11,600:INFO::Database logger :: Logging Active
+2022-12-22 04:36:11,600:DEBUG::
+2022-12-22 04:42:53,886:DEBUG::
+2022-12-22 04:42:53,886:DEBUG::====================================================================================================
+2022-12-22 04:42:53,887:INFO::Database logger :: Logging Active
+2022-12-22 04:42:53,887:DEBUG::
+2022-12-22 04:43:02,305:DEBUG::
+2022-12-22 04:43:02,306:DEBUG::====================================================================================================
+2022-12-22 04:43:02,306:INFO::Database logger :: Logging Active
+2022-12-22 04:43:02,306:DEBUG::
+2022-12-22 04:43:13,803:DEBUG::
+2022-12-22 04:43:13,803:DEBUG::====================================================================================================
+2022-12-22 04:43:13,804:INFO::Database logger :: Logging Active
+2022-12-22 04:43:13,804:DEBUG::
+2022-12-22 04:43:25,298:DEBUG::
+2022-12-22 04:43:25,299:DEBUG::====================================================================================================
+2022-12-22 04:43:25,299:INFO::Database logger :: Logging Active
+2022-12-22 04:43:25,299:DEBUG::
+2022-12-22 04:44:24,401:DEBUG::
+2022-12-22 04:44:24,402:DEBUG::====================================================================================================
+2022-12-22 04:44:24,402:INFO::Database logger :: Logging Active
+2022-12-22 04:44:24,402:DEBUG::
+2022-12-22 23:25:52,557:DEBUG::
+2022-12-22 23:25:52,557:DEBUG::====================================================================================================
+2022-12-22 23:25:52,558:INFO::Database logger :: Logging Active
+2022-12-22 23:25:52,558:DEBUG::
+2022-12-22 23:29:11,536:DEBUG::
+2022-12-22 23:29:11,537:DEBUG::====================================================================================================
+2022-12-22 23:29:11,537:INFO::Database logger :: Logging Active
+2022-12-22 23:29:11,537:DEBUG::
+2022-12-22 23:29:24,768:DEBUG::
+2022-12-22 23:29:24,768:DEBUG::====================================================================================================
+2022-12-22 23:29:24,769:INFO::Database logger :: Logging Active
+2022-12-22 23:29:24,769:DEBUG::
+2022-12-22 23:46:56,384:DEBUG::
+2022-12-22 23:46:56,384:DEBUG::====================================================================================================
+2022-12-22 23:46:56,385:INFO::Database logger :: Logging Active
+2022-12-22 23:46:56,385:DEBUG::
+2022-12-22 23:47:14,597:DEBUG::
+2022-12-22 23:47:14,597:DEBUG::====================================================================================================
+2022-12-22 23:47:14,598:INFO::Database logger :: Logging Active
+2022-12-22 23:47:14,598:DEBUG::
+2022-12-22 23:47:47,176:DEBUG::
+2022-12-22 23:47:47,177:DEBUG::====================================================================================================
+2022-12-22 23:47:47,177:INFO::Database logger :: Logging Active
+2022-12-22 23:47:47,178:DEBUG::
+2022-12-22 23:47:57,455:DEBUG::
+2022-12-22 23:47:57,456:DEBUG::====================================================================================================
+2022-12-22 23:47:57,456:INFO::Database logger :: Logging Active
+2022-12-22 23:47:57,457:DEBUG::
+2022-12-22 23:49:26,197:DEBUG::
+2022-12-22 23:49:26,197:DEBUG::====================================================================================================
+2022-12-22 23:49:26,197:INFO::Database logger :: Logging Active
+2022-12-22 23:49:26,198:DEBUG::
+2022-12-22 23:49:27,398:DEBUG::
+2022-12-22 23:49:27,398:DEBUG::====================================================================================================
+2022-12-22 23:49:27,399:INFO::Database logger :: Logging Active
+2022-12-22 23:49:27,400:DEBUG::
+2022-12-22 23:51:04,050:DEBUG::
+2022-12-22 23:51:04,051:DEBUG::====================================================================================================
+2022-12-22 23:51:04,051:INFO::Database logger :: Logging Active
+2022-12-22 23:51:04,051:DEBUG::
+2022-12-22 23:51:38,151:DEBUG::
+2022-12-22 23:51:38,151:DEBUG::====================================================================================================
+2022-12-22 23:51:38,151:INFO::Database logger :: Logging Active
+2022-12-22 23:51:38,152:DEBUG::
+2022-12-22 23:52:59,455:DEBUG::
+2022-12-22 23:52:59,456:DEBUG::====================================================================================================
+2022-12-22 23:52:59,456:INFO::Database logger :: Logging Active
+2022-12-22 23:52:59,457:DEBUG::
+2022-12-22 23:53:50,110:DEBUG::
+2022-12-22 23:53:50,111:DEBUG::====================================================================================================
+2022-12-22 23:53:50,111:INFO::Database logger :: Logging Active
+2022-12-22 23:53:50,112:DEBUG::
+2022-12-23 00:12:00,144:DEBUG::
+2022-12-23 00:12:00,144:DEBUG::====================================================================================================
+2022-12-23 00:12:00,145:INFO::Database logger :: Logging Active
+2022-12-23 00:12:00,145:DEBUG::
+2022-12-23 00:12:11,663:DEBUG::
+2022-12-23 00:12:11,664:DEBUG::====================================================================================================
+2022-12-23 00:12:11,664:INFO::Database logger :: Logging Active
+2022-12-23 00:12:11,665:DEBUG::
+2022-12-23 00:12:30,484:DEBUG::
+2022-12-23 00:12:30,485:DEBUG::====================================================================================================
+2022-12-23 00:12:30,485:INFO::Database logger :: Logging Active
+2022-12-23 00:12:30,486:DEBUG::
+2022-12-23 00:16:30,538:DEBUG::
+2022-12-23 00:16:30,538:DEBUG::====================================================================================================
+2022-12-23 00:16:30,539:INFO::Database logger :: Logging Active
+2022-12-23 00:16:30,539:DEBUG::
+2022-12-23 00:20:28,409:DEBUG::
+2022-12-23 00:20:28,410:DEBUG::====================================================================================================
+2022-12-23 00:20:28,410:INFO::Database logger :: Logging Active
+2022-12-23 00:20:28,410:DEBUG::
+2022-12-23 00:41:53,138:DEBUG::
+2022-12-23 00:41:53,138:DEBUG::====================================================================================================
+2022-12-23 00:41:53,139:INFO::Database logger :: Logging Active
+2022-12-23 00:41:53,139:DEBUG::
+2022-12-23 00:47:17,963:DEBUG::
+2022-12-23 00:47:17,963:DEBUG::====================================================================================================
+2022-12-23 00:47:17,964:INFO::Database logger :: Logging Active
+2022-12-23 00:47:17,964:DEBUG::
+2022-12-23 00:47:41,344:DEBUG::
+2022-12-23 00:47:41,345:DEBUG::====================================================================================================
+2022-12-23 00:47:41,345:INFO::Database logger :: Logging Active
+2022-12-23 00:47:41,345:DEBUG::
+2022-12-23 00:47:42,549:DEBUG::
+2022-12-23 00:47:42,549:DEBUG::====================================================================================================
+2022-12-23 00:47:42,550:INFO::Database logger :: Logging Active
+2022-12-23 00:47:42,550:DEBUG::
+2022-12-23 00:55:19,701:DEBUG::
+2022-12-23 00:55:19,701:DEBUG::====================================================================================================
+2022-12-23 00:55:19,702:INFO::Database logger :: Logging Active
+2022-12-23 00:55:19,702:DEBUG::
+2022-12-23 00:56:09,177:DEBUG::
+2022-12-23 00:56:09,177:DEBUG::====================================================================================================
+2022-12-23 00:56:09,178:INFO::Database logger :: Logging Active
+2022-12-23 00:56:09,178:DEBUG::
+2022-12-23 00:56:24,848:DEBUG::
+2022-12-23 00:56:24,848:DEBUG::====================================================================================================
+2022-12-23 00:56:24,849:INFO::Database logger :: Logging Active
+2022-12-23 00:56:24,849:DEBUG::
+2022-12-23 00:56:51,829:DEBUG::
+2022-12-23 00:56:51,830:DEBUG::====================================================================================================
+2022-12-23 00:56:51,830:INFO::Database logger :: Logging Active
+2022-12-23 00:56:51,831:DEBUG::
+2022-12-23 00:57:00,351:DEBUG::
+2022-12-23 00:57:00,351:DEBUG::====================================================================================================
+2022-12-23 00:57:00,352:INFO::Database logger :: Logging Active
+2022-12-23 00:57:00,352:DEBUG::
+2022-12-23 00:58:33,889:DEBUG::
+2022-12-23 00:58:33,889:DEBUG::====================================================================================================
+2022-12-23 00:58:33,890:INFO::Database logger :: Logging Active
+2022-12-23 00:58:33,890:DEBUG::
+2022-12-23 00:58:44,374:DEBUG::
+2022-12-23 00:58:44,374:DEBUG::====================================================================================================
+2022-12-23 00:58:44,375:INFO::Database logger :: Logging Active
+2022-12-23 00:58:44,375:DEBUG::
+2022-12-23 01:00:44,551:DEBUG::
+2022-12-23 01:00:44,552:DEBUG::====================================================================================================
+2022-12-23 01:00:44,552:INFO::Database logger :: Logging Active
+2022-12-23 01:00:44,552:DEBUG::
+2022-12-23 01:01:51,313:DEBUG::
+2022-12-23 01:01:51,313:DEBUG::====================================================================================================
+2022-12-23 01:01:51,314:INFO::Database logger :: Logging Active
+2022-12-23 01:01:51,314:DEBUG::
+2022-12-23 01:03:37,981:DEBUG::
+2022-12-23 01:03:37,981:DEBUG::====================================================================================================
+2022-12-23 01:03:37,981:INFO::Database logger :: Logging Active
+2022-12-23 01:03:37,982:DEBUG::
+2022-12-23 01:04:51,975:DEBUG::
+2022-12-23 01:04:51,975:DEBUG::====================================================================================================
+2022-12-23 01:04:51,976:INFO::Database logger :: Logging Active
+2022-12-23 01:04:51,976:DEBUG::
+2022-12-23 01:05:12,880:DEBUG::
+2022-12-23 01:05:12,880:DEBUG::====================================================================================================
+2022-12-23 01:05:12,881:INFO::Database logger :: Logging Active
+2022-12-23 01:05:12,882:DEBUG::
+2022-12-23 01:12:30,350:DEBUG::
+2022-12-23 01:12:30,350:DEBUG::====================================================================================================
+2022-12-23 01:12:30,351:INFO::Database logger :: Logging Active
+2022-12-23 01:12:30,351:DEBUG::
+2022-12-23 01:14:24,420:DEBUG::
+2022-12-23 01:14:24,421:DEBUG::====================================================================================================
+2022-12-23 01:14:24,421:INFO::Database logger :: Logging Active
+2022-12-23 01:14:24,422:DEBUG::
+2022-12-23 01:14:29,952:DEBUG::
+2022-12-23 01:14:29,953:DEBUG::====================================================================================================
+2022-12-23 01:14:29,953:INFO::Database logger :: Logging Active
+2022-12-23 01:14:29,953:DEBUG::
+2022-12-23 01:16:21,885:DEBUG::
+2022-12-23 01:16:21,885:DEBUG::====================================================================================================
+2022-12-23 01:16:21,885:INFO::Database logger :: Logging Active
+2022-12-23 01:16:21,885:DEBUG::
+2022-12-23 01:18:48,756:DEBUG::
+2022-12-23 01:18:48,757:DEBUG::====================================================================================================
+2022-12-23 01:18:48,757:INFO::Database logger :: Logging Active
+2022-12-23 01:18:48,758:DEBUG::
+2022-12-23 01:19:46,828:DEBUG::
+2022-12-23 01:19:46,828:DEBUG::====================================================================================================
+2022-12-23 01:19:46,829:INFO::Database logger :: Logging Active
+2022-12-23 01:19:46,829:DEBUG::
+2022-12-23 01:19:48,112:DEBUG::
+2022-12-23 01:19:48,112:DEBUG::====================================================================================================
+2022-12-23 01:19:48,113:INFO::Database logger :: Logging Active
+2022-12-23 01:19:48,113:DEBUG::
+2022-12-23 03:54:01,129:DEBUG::
+2022-12-23 03:54:01,129:DEBUG::====================================================================================================
+2022-12-23 03:54:01,130:INFO::Database logger :: Logging Active
+2022-12-23 03:54:01,130:DEBUG::
+2022-12-23 03:54:08,718:DEBUG::
+2022-12-23 03:54:08,718:DEBUG::====================================================================================================
+2022-12-23 03:54:08,718:INFO::Database logger :: Logging Active
+2022-12-23 03:54:08,719:DEBUG::
+2022-12-23 04:00:08,420:DEBUG::
+2022-12-23 04:00:08,421:DEBUG::====================================================================================================
+2022-12-23 04:00:08,421:INFO::Database logger :: Logging Active
+2022-12-23 04:00:08,422:DEBUG::
+2022-12-23 04:00:45,640:DEBUG::
+2022-12-23 04:00:45,641:DEBUG::====================================================================================================
+2022-12-23 04:00:45,641:INFO::Database logger :: Logging Active
+2022-12-23 04:00:45,642:DEBUG::
+2022-12-23 04:03:35,008:DEBUG::
+2022-12-23 04:03:35,008:DEBUG::====================================================================================================
+2022-12-23 04:03:35,008:INFO::Database logger :: Logging Active
+2022-12-23 04:03:35,009:DEBUG::
+2022-12-23 04:04:48,208:DEBUG::
+2022-12-23 04:04:48,208:DEBUG::====================================================================================================
+2022-12-23 04:04:48,209:INFO::Database logger :: Logging Active
+2022-12-23 04:04:48,209:DEBUG::
+2022-12-23 04:07:48,840:DEBUG::
+2022-12-23 04:07:48,841:DEBUG::====================================================================================================
+2022-12-23 04:07:48,841:INFO::Database logger :: Logging Active
+2022-12-23 04:07:48,841:DEBUG::
+2022-12-23 04:08:08,675:DEBUG::
+2022-12-23 04:08:08,675:DEBUG::====================================================================================================
+2022-12-23 04:08:08,676:INFO::Database logger :: Logging Active
+2022-12-23 04:08:08,676:DEBUG::
+2022-12-23 04:09:23,868:DEBUG::
+2022-12-23 04:09:23,868:DEBUG::====================================================================================================
+2022-12-23 04:09:23,869:INFO::Database logger :: Logging Active
+2022-12-23 04:09:23,869:DEBUG::
+2022-12-23 04:09:45,607:DEBUG::
+2022-12-23 04:09:45,608:DEBUG::====================================================================================================
+2022-12-23 04:09:45,608:INFO::Database logger :: Logging Active
+2022-12-23 04:09:45,609:DEBUG::
+2022-12-23 04:10:05,664:DEBUG::
+2022-12-23 04:10:05,664:DEBUG::====================================================================================================
+2022-12-23 04:10:05,665:INFO::Database logger :: Logging Active
+2022-12-23 04:10:05,665:DEBUG::
+2022-12-23 04:10:06,999:DEBUG::
+2022-12-23 04:10:06,999:DEBUG::====================================================================================================
+2022-12-23 04:10:07,000:INFO::Database logger :: Logging Active
+2022-12-23 04:10:07,000:DEBUG::
+2022-12-23 04:11:13,955:DEBUG::
+2022-12-23 04:11:13,956:DEBUG::====================================================================================================
+2022-12-23 04:11:13,956:INFO::Database logger :: Logging Active
+2022-12-23 04:11:13,956:DEBUG::
+2022-12-23 04:12:08,568:DEBUG::
+2022-12-23 04:12:08,569:DEBUG::====================================================================================================
+2022-12-23 04:12:08,569:INFO::Database logger :: Logging Active
+2022-12-23 04:12:08,570:DEBUG::
+2022-12-23 04:17:16,051:DEBUG::
+2022-12-23 04:17:16,051:DEBUG::====================================================================================================
+2022-12-23 04:17:16,052:INFO::Database logger :: Logging Active
+2022-12-23 04:17:16,052:DEBUG::
+2022-12-23 04:17:32,811:DEBUG::
+2022-12-23 04:17:32,811:DEBUG::====================================================================================================
+2022-12-23 04:17:32,811:INFO::Database logger :: Logging Active
+2022-12-23 04:17:32,812:DEBUG::
+2022-12-23 04:17:35,216:DEBUG::
+2022-12-23 04:17:35,216:DEBUG::====================================================================================================
+2022-12-23 04:17:35,217:INFO::Database logger :: Logging Active
+2022-12-23 04:17:35,217:DEBUG::
+2022-12-23 04:19:02,725:DEBUG::
+2022-12-23 04:19:02,725:DEBUG::====================================================================================================
+2022-12-23 04:19:02,726:INFO::Database logger :: Logging Active
+2022-12-23 04:19:02,726:DEBUG::
+2022-12-23 04:19:09,142:DEBUG::
+2022-12-23 04:19:09,142:DEBUG::====================================================================================================
+2022-12-23 04:19:09,143:INFO::Database logger :: Logging Active
+2022-12-23 04:19:09,143:DEBUG::
+2022-12-23 04:25:37,045:DEBUG::
+2022-12-23 04:25:37,045:DEBUG::====================================================================================================
+2022-12-23 04:25:37,046:INFO::Database logger :: Logging Active
+2022-12-23 04:25:37,046:DEBUG::
+2022-12-23 04:27:48,440:DEBUG::
+2022-12-23 04:27:48,440:DEBUG::====================================================================================================
+2022-12-23 04:27:48,441:INFO::Database logger :: Logging Active
+2022-12-23 04:27:48,441:DEBUG::
+2022-12-23 04:33:49,275:DEBUG::
+2022-12-23 04:33:49,276:DEBUG::====================================================================================================
+2022-12-23 04:33:49,276:INFO::Database logger :: Logging Active
+2022-12-23 04:33:49,276:DEBUG::
+2022-12-23 04:34:21,294:DEBUG::
+2022-12-23 04:34:21,294:DEBUG::====================================================================================================
+2022-12-23 04:34:21,295:INFO::Database logger :: Logging Active
+2022-12-23 04:34:21,295:DEBUG::
+2022-12-23 04:35:24,072:DEBUG::
+2022-12-23 04:35:24,072:DEBUG::====================================================================================================
+2022-12-23 04:35:24,072:INFO::Database logger :: Logging Active
+2022-12-23 04:35:24,072:DEBUG::
+2022-12-23 04:38:08,109:DEBUG::
+2022-12-23 04:38:08,109:DEBUG::====================================================================================================
+2022-12-23 04:38:08,110:INFO::Database logger :: Logging Active
+2022-12-23 04:38:08,110:DEBUG::
+2022-12-23 04:39:03,721:DEBUG::
+2022-12-23 04:39:03,722:DEBUG::====================================================================================================
+2022-12-23 04:39:03,722:INFO::Database logger :: Logging Active
+2022-12-23 04:39:03,723:DEBUG::
+2022-12-23 13:25:23,482:DEBUG::
+2022-12-23 13:25:23,483:DEBUG::====================================================================================================
+2022-12-23 13:25:23,483:INFO::Database logger :: Logging Active
+2022-12-23 13:25:23,483:DEBUG::
+2022-12-23 13:25:56,565:DEBUG::
+2022-12-23 13:25:56,565:DEBUG::====================================================================================================
+2022-12-23 13:25:56,565:INFO::Database logger :: Logging Active
+2022-12-23 13:25:56,566:DEBUG::
+2022-12-23 13:26:36,857:DEBUG::
+2022-12-23 13:26:36,857:DEBUG::====================================================================================================
+2022-12-23 13:26:36,858:INFO::Database logger :: Logging Active
+2022-12-23 13:26:36,858:DEBUG::
+2022-12-23 13:28:32,516:DEBUG::
+2022-12-23 13:28:32,516:DEBUG::====================================================================================================
+2022-12-23 13:28:32,517:INFO::Database logger :: Logging Active
+2022-12-23 13:28:32,517:DEBUG::
+2022-12-23 13:28:33,763:DEBUG::
+2022-12-23 13:28:33,764:DEBUG::====================================================================================================
+2022-12-23 13:28:33,765:INFO::Database logger :: Logging Active
+2022-12-23 13:28:33,765:DEBUG::

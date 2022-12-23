@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- Article Type Seclector -->
+    <div class="article_type">
+        <div class="plain_post">
+            PLAIN POST
+        </div>
+        
+        <div class="image_post">
+            IMAGE POST
+        </div>
+
+        <div class="images_post">
+            IMAGES POST
+        </div>
+
+        <div class="video_post">
+            VIDEO POST
+        </div>
+
+        <div class="audio_post">
+            AUDIO POST
+        </div>
+    </div>
+
+    <!-- Section For Writing Articles -->
+    <div class="article_writer">
+        <div class="articles_view">
+            <div class="article_search">
+
+                <div class="serach_field">
+                    <input type="text" class="search">
+                </div>
+        
+                <div class="search_icon">
+                    <i class="las la-search"></i>
+                </div>
+        
+            </div>
+        </div>
+
+        <div class="articles_list">
+            <div class="article">
+                <!-- Display Image -->
+                <div class="article_preview_icon">
+                    <img src="" alt="" class="article_img">
+                </div>
+
+                <!-- Preview Text Content -->
+                <div class="article_content_preview">
+                    <div class="article_preview_header">
+                        Header
+                    </div>
+                    <div class="article_preview_content">
+                        Lorem ipsum, dolor sit amet consectetur 
+                        adipisicing elit. Sunt fuga similique eum 
+                        eos quam reprehenderit voluptatum dolorum, 
+                        eaque nisi. Nulla qui consequatur quidem 
+                        maiores! Quo totam architecto sit voluptates sunt.
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="article_actions">
+                    
+                    <div class="preview">
+                        <i class="las la-right-arrow"></i>
+                    </div>
+
+                    <div class="edit">
+                        <i class="las la-brush"></i>
+                    </div>
+
+                    <div class="delete">
+                        <i class="las la-bin"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create and Preview Articles -->
+        <div class="show_artcle">
+            
+            <!-- Create Article -->
+            <div class="article_content">
+                <div class="create_write">
+                    # LOREM TITLE
+        
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Eum, maxime debitis! Facilis excepturi repellendus dicta 
+                    asperiores autem assumenda dignissimos? Sit aliquid doloribus 
+                    quis tempora cum, praesentium blanditiis unde magnam facilis. 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Aspernatur neque rerum mollitia distinctio ab iste veritatis 
+                    quae assumenda aut. Tempore non corporis quas quo quos laudantium 
+                    at magni. Repudiandae, veniam.
+        
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Eum, maxime debitis! Facilis excepturi repellendus dicta 
+                    asperiores autem assumenda dignissimos? Sit aliquid doloribus 
+                    quis tempora cum, praesentium blanditiis unde magnam facilis. 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Aspernatur neque rerum mollitia distinctio ab iste veritatis 
+                    quae assumenda aut. Tempore non corporis quas quo quos laudantium 
+                    at magni. Repudiandae, veniam.            
+                </div>
+        
+                <div class="draft">
+                    <button class="save_to_draft">
+                        SAVE TO DRAFT
+                    </button>
+                </div>
+        
+                <div class="publish">
+                    <button class="publish">
+                        PUBLISH
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preview Article -->
+            <div class="preview_article">
+                {{ content | markdown }}
+            </div>
+
+        </div>
+
+        <!-- Media Files -->
+        <div class="media_files">
+            
+            <!-- Files used for the current article -->
+            <div class="file_upload">
+                <input type="file" class="upload">
+            </div>
+
+            <div class="files_in_use">
+                <img src="" alt="" class="in_use">
+            </div>
+
+            <div class="available_files">
+                <img src="" alt="" class="is_available">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

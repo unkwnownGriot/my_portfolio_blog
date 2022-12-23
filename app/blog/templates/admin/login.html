@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/register.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="intro_section">
+      <div class="image_container">
+        <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="Adefolahan" class="my_image">
+      </div>
+
+      <div class="intro">
+        WELCOME </br> AKINSOLA ADEFOLAHAN
+      </div>
+
+      <div class="intro_links">
+        <a href="{{url_for('blog_bp.blogger_create')}}">Register</a>
+        <a href="#">Change Password</a>
+      </div>
+      
+    </div>
+
+    <div class="registration_section">
+
+      <div class="register_form">
+
+        <div class="form_header">
+
+          <h2 class="header">Sign In</h2>
+        
+        </div>
+
+        <form action="{{url_for('blog_bp.blogger_login')}}" class="form_content" method="POST">
+
+          {{Loginform.hidden_tag()}}
+  
+          <div class="email">
+            {{ Loginform.email.label }}
+            {{ Loginform.email }}
+            {% if Loginform.email.errors %}
+                <ul class="errors">
+                {% for error in Loginform.email.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+          </div>
+  
+          <div class="password">
+            {{ Loginform.password.label }}
+            {{ Loginform.password }}
+            {% if Loginform.password.errors %}
+                <ul class="errors">
+                {% for error in Loginform.password.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+          </div>
+
+          <div class="show_password">
+            {{ Loginform.show_password.label }}
+            {{ Loginform.show_password }}
+          </div>
+  
+          {{ Loginform.submit }}
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    var checkbox  = document.getElementById('{{Loginform.show_password.id}}');
+    var x1 = document.getElementById('{{Loginform.password.id}}');
+    checkbox.addEventListener('change', function() {
+        if(this.checked) {
+            x1.type = 'text';
+        } else {
+            x1.type = 'password'; 
+        }
+    });
+</script>
+
+{% endblock %}
