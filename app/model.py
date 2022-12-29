@@ -1,8 +1,7 @@
-
 from app import db, login_manager
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
-from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Float, TIMESTAMP, Text, BIGINT, null
+from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text
 from datetime import datetime, timedelta
 import pytz
 import logging
@@ -249,6 +248,8 @@ class Posts(db.Model):
 
     Content = Column(Text, nullable=False)
     Title = Column(String, unique=True, nullable=False)
+    is_draft = Column(Boolean, nullable=False, default=True)
+    is_published = Column(Boolean, nullable=False, default=False)
     Author_uid = Column(String, ForeignKey('blogger.Blogger_id'))
     Date_Posted = Column(DATETIME, nullable=False,onupdate=datetime.now(app_tz))
 
@@ -259,6 +260,12 @@ class Posts(db.Model):
 
     def get_post_category(self):
         return self.Category
+
+    @staticmethod
+    def get_all_categories():
+        categories = db.session.query(Posts.Category).all()
+        categories = tuple(categories)
+        return categories
 
     def get_post_type(self):
         return self.Post_Type
@@ -312,7 +319,7 @@ class Posts(db.Model):
 
 
     @classmethod
-    def add_post(**kwargs):
+    def add_post(cls,**kwargs):
         """ 
         This method adds a new post to the posts table 
         
@@ -324,14 +331,17 @@ class Posts(db.Model):
             - Video Post
             - Image Post
             - Mixed Post
+
         Post_Uuid: The identity token of the post
         Content: The posts content
-        Author_Name: The name of the post writer
         Title: The tite of the post
+        is_draft: sets the articles status to draft
+        is_published: sets the articles status to published
+        Author_uid: The uniqued id of the post creator
         Date_Posted: The date the post was made
         Comments: The comments written on the post
-        Video: The attached video for the post
-        Audio: The attached audio for the post
+        Videos: The attached video for the post
+        Audios: The attached audio for the post
         Images: The attached pictures for the post
 
         Returns:
@@ -351,6 +361,36 @@ class Posts(db.Model):
             logger.exception(e)
 
             return {"message":"An error occurred while adding post","status":"failed"}
+
+
+    @staticmethod
+    def save_as_draft(
+        category: str, post_type: str, post_uuid: str, content: str, title: str,
+        author_uid: str, videos: list = [], images: list = [], audios: list = []
+        ):
+        """ This function saves an article as a draft """
+        kwargs = {
+            "Category": category, "Post_Type": post_type, "Post_Uuid": post_uuid,
+            "Content": content, "Title": title, "is_draft": True, "is_published": False,
+            "Author_uid": author_uid, "Date_Posted": datetime.now(app_tz), "Videos": videos, 
+            "Audios": audios, "Images": images
+        }
+        Posts.add_post(**kwargs)
+
+    
+    @staticmethod
+    def save_as_published(
+        category: str, post_type: str, post_uuid: str, content: str, title: str,
+        author_uid: str, videos: list = [], images: list = [], audios: list = []
+        ):
+        """ This function saves an article as a draft """
+        kwargs = {
+            "Category": category, "Post_Type": post_type, "Post_Uuid": post_uuid,
+            "Content": content, "Title": title, "is_draft": False, "is_published": True,
+            "Author_uid": author_uid, "Date_Posted": datetime.now(app_tz), "Videos": videos, 
+            "Audios": audios, "Images": images
+        }
+        Posts.add_post(**kwargs)
 
 
     @staticmethod

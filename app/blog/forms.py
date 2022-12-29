@@ -152,3 +152,6 @@ class LoginForm(FlaskForm):
         if response["status"] == "failed":
             logger.debug(f"Error: {response['message']}")
             raise ValidationError(message=response["message"])
+
+class UploadForm(FlaskForm):
+    """ Form used when uploading files """

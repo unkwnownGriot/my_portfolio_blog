@@ -1,0 +1,26 @@
+.container{
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.sidebar.close ~ .container{
+    left: 78px;
+    width: calc(100% - 78px);
+}
+
+@media (max-width: 400px) {
+
+    .container{
+      left: 78px;
+      width: calc(100% - 78px);
+    }
+    
+    .sidebar.close ~ .container{
+      width: 100%;
+      left: 0;
+    }
+
+    .article_type{
+        font-size: 5px;
+    }
+}

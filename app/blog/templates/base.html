@@ -211,10 +211,9 @@
     <!-- Page Body -->
     <body>
         <!-- Add Navigation -->
-        {% include 'admin/navigation.html' %}
-        <!-- {% if current_user.is_authenticated: %}
-            {% include 'navigation.html' %}
-        {% endif %} -->
+        {% if current_user.is_authenticated: %}
+            {% include 'admin/navigation.html' %}
+        {% endif %}
         
         <!-- Notification Section -->
         {% with messages = get_flashed_messages(with_categories=true) %}

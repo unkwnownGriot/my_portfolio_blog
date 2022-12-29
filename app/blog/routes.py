@@ -1,5 +1,8 @@
+from fileinput import filename
 import os
 import uuid
+import string
+import random
 import logging
 
 from flask import session
@@ -15,6 +18,7 @@ from flask_login import login_user
 from flask_login import logout_user
 from flask_login import current_user
 from app.blog.forms import LoginForm
+from app.blog.forms import UploadForm
 from flask_login import login_required
 from werkzeug.utils import secure_filename
 from app.blog.forms import RegisterBloggerForm
@@ -131,7 +135,7 @@ def blogger_login():
                 login_user(response["message"], remember=True, duration=timedelta(minutes=30))
 
                 if current_user.is_authenticated:
-                    return redirect(url_for('blog_bp.blogger_home'))
+                    return redirect(url_for('blog_bp.blogger_dashboard'))
 
                 else:
                     flash("Unable to authenticate user","warning")
@@ -144,21 +148,68 @@ def blogger_login():
     return render_template("admin/login.html", Loginform = loginform, content = {"page_title":"Login to blogger account"})
 
 
-@blog_bp.route('/blogger_home', methods=["GET"])
-# @login_required
-def blogger_home():
-    try:
-        return render_template('blogger.html', Blogger_Name=current_user.get_blogger_name(), Blogger_Position = current_user.get_blogger_position())
+@blog_bp.route('/blogger_dashboard', methods=["GET"])
+@login_required
+def blogger_dashboard():
+    if current_user.is_authenticated:
+        form = UploadForm()
 
-    except Exception as e:
-        logger.exception(e)
-        flash("Not logged in","warning")
-        return redirect(url_for("blog_bp.blogger_login"))
+        # folder paths
+        audio_route = f"app/blog/static/audios"
+        image_route = f"app/blog/static/images"
+        video_route = f"app/blog/static/videos"
 
+        # files list
+        audio_files = os.listdir(audio_route)
+        image_files = os.listdir(image_route)
+        video_files = os.listdir(video_route)
 
-@blog_bp.route('/navigation')
-def navigation():
-    return render_template("admin/navigation.html")
+        # files collection
+        audio_collection = []
+        image_collection = []
+        video_collection = []
+        all_files = {}
+
+        # for audio
+        for audio in audio_files: 
+            file_name = audio.split(".")[0]
+            file_dict = {"filename":file_name,"file_path":f"static/audios/{audio}"}
+            audio_collection.append(file_dict)
+        all_files["audio"] = audio_collection
+
+        # for images
+        for image in image_files:
+            file_name = image.split(".")[0]
+            file_dict = {"filename":file_name,"file_path":f"/blog/static/images/{image}"}
+            image_collection.append(file_dict)
+        all_files["image"] = image_collection
+
+        # for video
+        for video in video_files:
+            file_name = video.split(".")[0]
+            file_dict = {"filename":file_name,"file_path":f"/blog/static/videos/{video}"}
+            video_collection.append(file_dict)
+        all_files["video"] = video_collection
+
+        print(Posts.get_all_categories())
+
+        return render_template(
+            'admin/dashboard.html', 
+            UploadForm = form,
+            Page_name = "Dashboard",
+            Blogger_Id = current_user.get_blogger_id(),
+            Blogger_Name = current_user.get_blogger_name(), 
+            Blogger_Position = current_user.get_blogger_position(),
+            files = all_files,
+            content = {"page_title":"Admin dashboard"},
+            categories = Posts.get_all_categories()
+            )
+
+    else:
+        logout_user()
+        flash("Please login to access page","warning")
+        return(redirect(url_for("blog_bp.blogger_login")))
+
 
 @blog_bp.route('/blogger')
 def nblogger():
@@ -172,6 +223,93 @@ def nblogger():
             return(render_template('demo1.html', info=info))
     else:
         return render_template('the_covid/blogger.html')
+
+
+
+@blog_bp.route("/file_upload", methods=["POST"])
+@login_required
+def file_upload():
+    
+    # Check For Post Method
+    if request.method == "POST":
+        # Get request data
+        file = request.files["file"]
+        doc_type = request.form["type"]
+        fileName = request.form["fileName"]
+
+        # Verify File 
+        approved_files = ["mp3","m4a","wav","mp4","avi","mov","wmv","png","jpg","jpeg",]
+        doc_type = doc_type.split("/")
+        file_type = doc_type[1]
+
+        if file_type not in approved_files:
+            return{"message":"Invalid file type","status":"failed"}
+
+        # Save file
+        folder = doc_type[0]
+
+        # Create parent folder if not exist
+        parent_folder = f"app/blog/static/{folder}s"
+        os.makedirs(parent_folder, exist_ok=True)
+
+        # check name is unique
+        if fileName in os.listdir(parent_folder):
+            fileName = random.choices(string.ascii_lowercase + string.digits, k=16)
+
+        # write files
+        file.save(f"{parent_folder}/{fileName}")
+
+        return {"message":"Upload complete","status":"success"}
+
+
+@blog_bp.route("/save_draft", methods=["POST"])
+@login_required
+def save_draft():
+    if request.method == "POST":
+        # Get request data
+        article_title = request.form["title"]
+        article_body = request.form["body"]
+        post_type = request.form["post_type"]
+        category = request.form["category"]
+        author_uid = request.form["author_uid"]
+        post_uuid = uuid.uuid4().hex()
+
+        try:
+            # Save as draft
+            Posts.save_as_draft(
+                category,post_type,post_uuid,article_body,article_title,
+                author_uid,videos=[], images=[], audios=[]
+                )
+            return{"message":"Save complete","status":"success"}
+            
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"Failed to save article","status":"failed"}
+
+
+@blog_bp.route("/publish", methods=["POST"])
+@login_required
+def publish():
+    if request.method == "POST":
+        # Get request data
+        article_title = request.form["title"]
+        article_body = request.form["body"]
+        post_type = request.form["post_type"]
+        category = request.form["category"]
+        author_uid = request.form["author_uid"]
+        post_uuid = uuid.uuid4().hex()
+
+        try:
+            # Save as draft
+            Posts.save_as_published(
+                category,post_type,post_uuid,article_body,article_title,
+                author_uid,videos=[], images=[], audios=[]
+                )
+            return{"message":"Save complete","status":"success"}
+            
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"Failed to save article","status":"failed"}
 
 
 
