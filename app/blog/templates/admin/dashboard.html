@@ -55,8 +55,8 @@
     
                     <div class="available_categories" id="available_categories">
                         <select class="select_field" id="select_field">
-                            {% for category in categories%}
-                                <option value="{{category}}">{{category}}</option>
+                            {% for category in categories %}
+                                <option value="{{category}}" id="{{category}}">{{category}}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -80,443 +80,60 @@
         <!-- Section For Writing Articles -->
         <div class="article_writer">    
             <div class="articles_list">
-                
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
 
-                        <!-- Actions -->
-                        <div class="article_actions">
+                {% for article in Blogger_Articles %}
+                    <div class="article">
+                        <!-- Display Image -->
+                        {% if article["Published"] == True %}
+                        <div class="article_preview_icon">
+                            <img src="{{ article['Image'] }}" alt="" class="article_img  published">
+                        </div>
+                        {% else %}
+                        <div class="article_preview_icon">
+                            <img src="{{ article['Image'] }}" alt="" class="article_img drafted">
+                        </div>
+                        {% endif %}
+
+                        <div class="hidden remove_display" id="hidden">
+                            <input type="text" name="post_type" id="post_type" value="{{article['Type']}}">
+                            <input type="text" name="article_id" id="article_id" value="{{ article['id'] }}" disabled>
+                            <input type="text" name="article_category" id="article_category" value="{{ article['Category'] }}" disabled>
+                            <textarea name="article_content" id="article_content" class="article_content" disabled>{{ article['Content'] }}</textarea>
+                        </div>
+        
+                        <!-- Preview Text Content -->
+                        <div class="article_content_preview">
+                            <div class="article_preview_header">
+                                {{ article["Title"] }}
+                            </div>
+                            <div class="article_preview_content">
+                                {{ article["Content"][:350] }}...
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="article_actions">
+                                <a href="/blog/preview_article/{{article['id']}}">
+                                    <div class="preview">
+                                        <i class="las la-eye"></i>
+                                    </div>
+                                </a>
+            
+                                
+                                <div class="delete">
+                                    <i class="las la-trash-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
                             
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="article">
-                    <!-- Display Image -->
-                    <div class="article_preview_icon">
-                        <img src="/blog{{ url_for('static', filename='images/plain.jpg') }}" alt="" class="article_img">
-                    </div>
-    
-                    <!-- Preview Text Content -->
-                    <div class="article_content_preview">
-                        <div class="article_preview_header">
-                            Header
-                        </div>
-                        <div class="article_preview_content">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt fuga similique eum 
-                            eos quam reprehenderit. Eum, maxime debitis! Facilis excepturi repellendus dicta 
-                            asperiores autem assumenda dignissimos? Sit aliquid doloribus quis tempora cum, 
-                            praesentium blanditiis unde magnam facilis. Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Aspernatur neque rerum mollitia distinctio ab iste veritatis 
-                            quae assumenda aut. Tempore non corporis quas quo quos laudantium at magni. 
-                            Repudiandae, veniam.
-                        </div>
-
-                        <!-- Actions -->
-                        <div class="article_actions">
-                            
-                            <div class="preview">
-                                <i class="las la-eye"></i>
-                            </div>
-        
-                            <div class="edit">
-                                <i class="las la-paint-brush"></i>
-                            </div>
-        
-                            <div class="delete">
-                                <i class="las la-trash-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
     
             <!-- Create and Preview Articles -->
             <div class="show_artcle">
                 
                 <!-- Create Article -->
-                <div class="article_content">
+                <div class="article_container">
                     
                     <!-- Article Title Section -->
                     <div class="content_title">
@@ -584,12 +201,6 @@ at magni. Repudiandae, veniam.
                         <div class="update remove_display" id="update">
                             <button class="update_button" id="update_button">
                                 UPDATE
-                            </button>
-                        </div>
-    
-                        <div class="preview" id="preview">
-                            <button class="preview_button" id="preview_button">
-                                PREVIEW <i class="las la-angle-double-right"></i>
                             </button>
                         </div>
                     </div>

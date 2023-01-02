@@ -30,12 +30,13 @@ function flash_response(message, status){
 // Upload file function
 function uploadFile(file) {
 
-    const approved_category = ["audio","video","images"]
+    const approved_category = ["audio","video","image"]
 
     // File Info
     const fileName = file.name;
     let fileSize = file.size;
     let fileType = file.type;
+    let folder = fileType.split('/')[0]
 
     // Check for valid files
     let file_category = fileType.split('/')[0]
@@ -61,7 +62,7 @@ function uploadFile(file) {
         fileData.append('fileName', new_file_name);
 
         // Upload File
-        let  xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
         xhr.open('POST', '/blog/file_upload',true);
 
         // Update Progress Bar
@@ -69,10 +70,7 @@ function uploadFile(file) {
 
         // Uploader Upload
         uploader.addEventListener('progress', (e) => {
-            const percentage = Math.round((e.loaded / e.total) * 100);
-
             let progressHTML =   `<p>Uploading...</p>`;
-            
             upload_field.innerHTML = progressHTML;
         });
 
@@ -81,7 +79,6 @@ function uploadFile(file) {
 
         // On Request Complete
         xhr.onload = () => {
-            console.log(xhr.responseText)
             const data = JSON.parse(xhr.responseText)
             const message = data["message"].toLowerCase()
             const status = data["status"].toLowerCase()
@@ -89,10 +86,26 @@ function uploadFile(file) {
             // Remove Progress Bar
             upload_field.innerHTML = `<p>Upload Files</p>`;
 
+            const article = document.getElementById("content")
+            const article_content = article.value
+
+            if (file_category == "image" | file_category == "images"){
+                const updated_value = `${article_content} \n![](/blog/static/${folder}/${new_file_name})`
+                article.value = updated_value
+            }
+
+            else if (file_category == "video"){
+                const updated_value = `${article_content} \n[](/blog/static/${folder}/${new_file_name})`
+                article.value = updated_value
+            }
+
             // Show response
             flash_response(message,status)
         }
         
+    }
+    else{
+        flash_response("Attempt to upload invalid file","warning")
     }
 
 }
@@ -223,14 +236,88 @@ articles.forEach((article) => {
         article.classList.add("viewing")
 
         // set post type
+        const hiddenElements = article.children[1]
+        const postTypeElement = hiddenElements.children[0]
+        const post_type = postTypeElement.value
 
-        // add update button display
-        remove_display(publish_article)
-        fix_display(update_article)
+        if (post_type.toLowerCase() == "plain post"){
+            const typeElement = document.querySelector(".plain_post")
+            typeElement.click()
+        }
+        else if (post_type.toLowerCase() == "image post"){
+                const typeElement = document.querySelector(".image_post")
+                typeElement.click()
+        }
+        else if (post_type.toLowerCase() == "images post"){
+                const typeElement = document.querySelector(".images_post")
+                typeElement.click()
+        }
+        else if (post_type.toLowerCase() == "video post"){
+                const typeElement = document.querySelector(".video_post")
+                typeElement.click()
+            }
+        else if (post_type.toLowerCase() == "audio post"){
+                const typeElement = document.querySelector(".audio_post")
+                typeElement.click()
+            }
+
+        // set category
+        const articleCartegoryElement = hiddenElements.children[2]
+        const articleCartegory = articleCartegoryElement.value
+        const select_field = document.getElementById("select_field")
+        select_field.value = articleCartegory
+
+        // Set Title
+        const article_title = article.children[2].children[0].innerText
+        const article_name = document.querySelector(".content_header")
+        article_name.value = article_title
 
         // Display in article create section
+        const article_content = hiddenElements.children[3].value
+        const article_textarea = document.querySelector(".content")
+        article_textarea.value = article_content
+
+        // add update button display
+        remove_display(draft_article)
+        fix_display(update_article)
     })
 })
+
+
+// article actions
+const delete_buttons = document.querySelectorAll(".delete")
+delete_buttons.forEach((delete_button) => {
+    delete_button.addEventListener("click",() => {
+        
+        const article = delete_button.parentElement.parentElement.parentElement
+        const article_id = article.children[1].children[1].value
+    
+        const articleForm = new FormData();
+        articleForm.append('csrf_token', csrf_token.value)
+        articleForm.append("article_id", article_id)
+
+        let xhr = new XMLHttpRequest()
+        xhr.open('POST', '/blog/delete_article',true);
+
+        // Send Request
+        xhr.send(articleForm);
+
+        // On Request Complete
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.responseText)
+            const message = data["message"].toLowerCase()
+            const status = data["status"].toLowerCase()
+
+            // Show response
+            flash_response(message,status)
+
+            if (status == "success"){
+                article.classList.add("remove_display")
+            }
+        }
+    })
+})
+
 
 // buttons
 const new_article = document.getElementById("new")
@@ -241,13 +328,14 @@ const preview_article = document.getElementById("preview")
 
 
 // Create New Article interface
-new_article.addEventListener('click', () => {
+new_article.addEventListener('click', (e) => {
+    e.preventDefault()
 
     const article_title = document.getElementById("content_header")
     const article_body = document.getElementById("content")
 
     remove_display(update_article)
-    fix_display(publish_article)
+    fix_display(draft_article)
 
     article_title.value = ""
     article_body.value = ""
@@ -257,17 +345,20 @@ new_article.addEventListener('click', () => {
     })
 })
 
+
 // Save to draft
-draft_article.addEventListener('click',() => {
+draft_article.addEventListener('click',(e) => {
+    e.preventDefault()
+
     const article_title = document.getElementById("content_header")
     const article_body = document.getElementById("content")
     const post_type = document.querySelectorAll(".select")
     const blogger_id = document.getElementById("blogger_id")
-    let post_text = post_type.innerText
+    const post_text = post_type[0].innerText.toLowerCase()
     let category = null
 
     // artcle category
-    if ("remove_display" in article_checkbox_marker.classList){
+    if (article_checkbox_marker.classList.contains('remove_display')){
         category = document.getElementById("select_field").value
     }
     else{
@@ -275,14 +366,24 @@ draft_article.addEventListener('click',() => {
     }
 
     if (category == ""){
-        flash_response("Category not set","warning")
+        flash_response("Article category not set","warning")
+        return
+    }
+
+    if (article_title.value == ""){
+        flash_response("Article title can't be empty","warning")
+        return
+    }
+
+    if (article_body.value == ""){
+        flash_response("Article content can't be empty","warning")
         return
     }
 
     const articleData = new FormData();
     articleData.append('csrf_token', csrf_token.value)
-    articleData.append('title', article_title);
-    articleData.append('body',article_body)
+    articleData.append('title', article_title.value);
+    articleData.append('body',article_body.value)
     articleData.append("post_type",post_text)
     articleData.append("category",category)
     articleData.append("author_uid", blogger_id.value)
@@ -295,7 +396,6 @@ draft_article.addEventListener('click',() => {
 
     // On Request Complete
     xhr.onload = () => {
-        console.log(xhr.responseText)
         const data = JSON.parse(xhr.responseText)
         const message = data["message"].toLowerCase()
         const status = data["status"].toLowerCase()
@@ -306,7 +406,139 @@ draft_article.addEventListener('click',() => {
 
     article_title.value = ""
     article_body.value = ""
+    attachment = []
 })
+
+
+// Publish article
+publish_article.addEventListener('click',(e) => {
+    e.preventDefault()
+
+    const article_title = document.getElementById("content_header")
+    const article_body = document.getElementById("content")
+    const post_type = document.querySelectorAll(".select")
+    const blogger_id = document.getElementById("blogger_id")
+    const post_text = post_type[0].innerText.toLowerCase()
+    let category = null
+
+    // artcle category
+    if (article_checkbox_marker.classList.contains('remove_display')){
+        category = document.getElementById("select_field").value
+    }
+    else{
+        category = document.getElementById("category_name").value
+    }
+
+    if (category == ""){
+        flash_response("Article category not set","warning")
+        return
+    }
+
+    if (article_title.value == ""){
+        flash_response("Article title can't be empty","warning")
+        return
+    }
+
+    if (article_body.value == ""){
+        flash_response("Article content can't be empty","warning")
+        return
+    }
+
+    const articleData = new FormData();
+    articleData.append('csrf_token', csrf_token.value)
+    articleData.append('title', article_title.value);
+    articleData.append('body',article_body.value)
+    articleData.append("post_type",post_text)
+    articleData.append("category",category)
+    articleData.append("author_uid", blogger_id.value)
+
+    let xhr = new XMLHttpRequest()
+    xhr.open('POST', '/blog/publish_article',true);
+
+    // Send Request
+    xhr.send(articleData);
+
+    // On Request Complete
+    xhr.onload = () => {
+        const data = JSON.parse(xhr.responseText)
+        const message = data["message"].toLowerCase()
+        const status = data["status"].toLowerCase()
+
+        // Show response
+        flash_response(message,status)
+    }
+
+    article_title.value = ""
+    article_body.value = ""
+    attachment = []
+})
+
+
+// Update article
+update_article.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    const article = document.querySelector(".viewing")
+    const article_id = article.children[1].children[1].value
+    const article_title = document.getElementById("content_header").value
+    const article_content = document.getElementById("content").value
+    const old_content = article.children[1].children[3]
+    old_content.value = article_content
+
+    const articleUpdate = new FormData()
+    articleUpdate.append('csrf_token', csrf_token.value)    
+    articleUpdate.append("article_id", article_id)
+    articleUpdate.append("header", article_title)
+    articleUpdate.append("content", article_content)
+
+    let xhr = new XMLHttpRequest()
+    xhr.open('POST', '/blog/update_article',true);
+
+    // Send Request
+    xhr.send(articleUpdate);
+
+    // On Request Complete
+    xhr.onload = () => {
+        console.log(xhr.responseText)
+        const data = JSON.parse(xhr.responseText)
+        const message = data["message"].toLowerCase()
+        const status = data["status"].toLowerCase()
+
+        // Show response
+        flash_response(message,status)
+    }  
+})
+
+
+// Preview article
+// preview_article.addEventListener("click", (e) => {
+
+//     const header = document.getElementById("content_header").value
+//     const content = document.getElementById("content").value
+
+//     const articleData = new FormData();
+//     articleData.append('csrf_token', csrf_token.value)
+//     articleData.append('header', header);
+//     articleData.append('content', content)
+
+//     let xhr = new XMLHttpRequest()
+//     xhr.open('POST', '/blog/save_draft',true);
+
+//     // Send Request
+//     xhr.send(articleData);
+
+//     // On Request Complete
+//     xhr.onload = () => {
+//         const data = JSON.parse(xhr.responseText)
+//         const message = data["message"].toLowerCase()
+//         const status = data["status"].toLowerCase()
+
+//         // Show response
+//         flash_response(message,status)
+//     }
+
+// })
+
 
 
 // Get Attachment Files
@@ -340,8 +572,30 @@ is_clicked.forEach((clicked) => {
 
         const article = document.getElementById("content")
         const article_content = article.value
+        const approved_images = ["png","jpg","jpeg","gif"]
+        const approved_videos = ["mp4","avi","mov","wmv"]
+        const approved_audios = ["mp3","m4a","wav"]
 
-        const updated_value = `${article_content} \n${src}`
-        article.value = updated_value
+        file_extension = src.split('.')[1]
+        console.log(file_extension)
+
+        if (approved_images.includes(file_extension)){
+            const updated_value = `${article_content} \n![](${src})`
+            article.value = updated_value
+        }
+
+        else if (approved_videos.includes(file_extension)){
+            let raw = `<video controls src="${src}" type="video/${file_extension}"></video>`
+
+            const updated_value = `${article_content} \n${raw}`
+            article.value = updated_value
+        }
+
+        else if (approved_audios.includes(file_extension)){
+            let raw = `<audio controls src="${src}"></audio>`
+
+            const updated_value = `${article_content} \n${raw}`
+            article.value = updated_value
+        }
     })
 })

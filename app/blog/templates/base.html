@@ -26,10 +26,10 @@
         <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
 		<!-- Base Css -->
-		<link rel="stylesheet" href="static/css/base.css">
+		<link rel="stylesheet" href="/blog{{ url_for('static', filename='css/base.css') }}">
 
         <!-- Navigaation CSS -->
-        <link rel="stylesheet" href="static/css/navigation.css">
+        <link rel="stylesheet" href="/blog{{ url_for('static', filename='css/navigation.css') }}">
 
         <style>
             @font-face {
@@ -41,49 +41,49 @@
             
             @font-face {
                 font-family:PlusJakartaDisplayBoldItalic;
-                src: url("/blog/static/fontsPlusJakartaDisplay-BoldItalic.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaDisplay-BoldItalic.otf") format("opentype");
                 font-weight: bold;
                 font-style: italic;
             }
             
             @font-face {
                 font-family:PlusJakartaDisplayItalic;
-                src: url("/blog/static/fontsPlusJakartaDisplay-Italic.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Italic.otf") format("opentype");
                 font-weight: normal;
                 font-style: italic;
             }
             
             @font-face {
                 font-family:PlusJakartaDisplayLight;
-                src: url("/blog/static/fontsPlusJakartaDisplay-Light.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Light.otf") format("opentype");
                 font-weight: lighter;
                 font-style: normal;
             }
             
             @font-face {
                 font-family: PlusJakartaDisplayLightItalic;
-                src: url("/blog/static/fontsPlusJakartaDisplay-LightItalic.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaDisplay-LightItalic.otf") format("opentype");
                 font-weight: lighter;
                 font-style: italic;
             }
             
             @font-face {
                 font-family: PlusJakartaDisplayMedium;
-                src: url("/blog/static/fontsPlusJakartaDisplay-Medium.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Medium.otf") format("opentype");
                 font-weight: medium;
                 font-style: normal;
             }
             
             @font-face {
                 font-family: PlusJakartaDisplaMediumItalic;
-                src: url("/blog/static/fontsPlusJakartaDisplay-MediumItalic.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaDisplay-MediumItalic.otf") format("opentype");
                 font-weight: medium;
                 font-style: italic;
             }
             
             @font-face {
                 font-family: PlusJakartaDisplayRegular;
-                src: url("/blog/static/fontsPlusJakartaDisplay-Regular.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Regular.otf") format("opentype");
                 font-weight: normal;
                 font-style: normal;
             }
@@ -97,35 +97,35 @@
             
             @font-face {
                 font-family: PlusJakartaTextBoldItalic;
-                src: url("/blog/static/fontsPlusJakartaText-BoldItalic.otf") format("opntype");
+                src: url("/blog/static/fonts/PlusJakartaText-BoldItalic.otf") format("opntype");
                 font-weight: Bold;
                 font-style: italic;
             }
             
             @font-face {
                 font-family: PlusJakartaTextItalic;
-                src: url("/blog/static/fontsPlusJakartaText-Italic.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaText-Italic.otf") format("opentype");
                 font-weight: normal;
                 font-style: italic;
             }
             
             @font-face {
                 font-family: PlusJakartaTextLight;
-                src: url("/blog/fonts/PlusJakartaText-Light.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaText-Light.otf") format("opentype");
                 font-weight: lighter;
                 font-style: normal;
             }
             
             @font-face {
                 font-family: PlusJakartaTextLightItalic;
-                src: url("/blog/static/fontsPlusJakartaText-LightItalic.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaText-LightItalic.otf") format("opentype");
                 font-weight: lighter;
                 font-style: italic;
             }
             
             @font-face {
                 font-family: PlusJakartaTextRegular;
-                src: url("/blog/static/fontsPlusJakartaText-Regular.otf") format("opentype");
+                src: url("/blog/static/fonts/PlusJakartaText-Regular.otf") format("opentype");
                 font-weight: normal;
                 font-style: normal;
             }
@@ -135,7 +135,7 @@
                 margin: 0;
                 box-sizing: border-box;
                 text-decoration: none;
-                font-family: "PlusJakartaTextBold",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                font-family: "PlusJakartaDisplayRegular",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             }
 
             /* Notification Styling */

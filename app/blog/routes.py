@@ -1,14 +1,14 @@
-from fileinput import filename
 import os
+import cv2
 import uuid
 import string
 import random
 import logging
 
 from flask import session
+from importlib_metadata import method_cache
 from app.model import Posts
 from app.blog import blog_bp
-from app.model import Archive
 from app.model import Blogger
 from app.model import Comments
 from datetime import timedelta
@@ -173,7 +173,7 @@ def blogger_dashboard():
         # for audio
         for audio in audio_files: 
             file_name = audio.split(".")[0]
-            file_dict = {"filename":file_name,"file_path":f"static/audios/{audio}"}
+            file_dict = {"filename":file_name,"file_path":f"/blog/static/audios/{audio}"}
             audio_collection.append(file_dict)
         all_files["audio"] = audio_collection
 
@@ -191,8 +191,6 @@ def blogger_dashboard():
             video_collection.append(file_dict)
         all_files["video"] = video_collection
 
-        print(Posts.get_all_categories())
-
         return render_template(
             'admin/dashboard.html', 
             UploadForm = form,
@@ -200,6 +198,7 @@ def blogger_dashboard():
             Blogger_Id = current_user.get_blogger_id(),
             Blogger_Name = current_user.get_blogger_name(), 
             Blogger_Position = current_user.get_blogger_position(),
+            Blogger_Articles = current_user.get_blogger_articles(),
             files = all_files,
             content = {"page_title":"Admin dashboard"},
             categories = Posts.get_all_categories()
@@ -209,21 +208,6 @@ def blogger_dashboard():
         logout_user()
         flash("Please login to access page","warning")
         return(redirect(url_for("blog_bp.blogger_login")))
-
-
-@blog_bp.route('/blogger')
-def nblogger():
-    if "blogger_Name" in session:
-        if "blogger_Position" in session:
-            blogger_name = session['blogger_Name']
-            blogger_position = session['blogger_Position']
-            return render_template('blogger.html', Blogger_Name=blogger_name, Blogger_Position=blogger_position)
-        else:
-            info = "Please Sign In to Access Your Account"
-            return(render_template('demo1.html', info=info))
-    else:
-        return render_template('the_covid/blogger.html')
-
 
 
 @blog_bp.route("/file_upload", methods=["POST"])
@@ -238,15 +222,12 @@ def file_upload():
         fileName = request.form["fileName"]
 
         # Verify File 
-        approved_files = ["mp3","m4a","wav","mp4","avi","mov","wmv","png","jpg","jpeg",]
+        approved_files = ["mp3","m4a","wav","mp4","avi","mov","wmv","png","jpg","jpeg","gif",]
         doc_type = doc_type.split("/")
-        file_type = doc_type[1]
-
-        if file_type not in approved_files:
-            return{"message":"Invalid file type","status":"failed"}
-
-        # Save file
         folder = doc_type[0]
+
+        if not fileName.endswith(tuple(approved_files)):
+            return{"message":"Invalid file type","status":"failed"}
 
         # Create parent folder if not exist
         parent_folder = f"app/blog/static/{folder}s"
@@ -272,14 +253,13 @@ def save_draft():
         post_type = request.form["post_type"]
         category = request.form["category"]
         author_uid = request.form["author_uid"]
-        post_uuid = uuid.uuid4().hex()
+        post_uuid = uuid.uuid4().hex
 
         try:
             # Save as draft
             Posts.save_as_draft(
                 category,post_type,post_uuid,article_body,article_title,
-                author_uid,videos=[], images=[], audios=[]
-                )
+                author_uid)
             return{"message":"Save complete","status":"success"}
             
         except Exception as e:
@@ -287,9 +267,9 @@ def save_draft():
             return{"message":"Failed to save article","status":"failed"}
 
 
-@blog_bp.route("/publish", methods=["POST"])
+@blog_bp.route("/publish_article", methods=["POST"])
 @login_required
-def publish():
+def publish_article():
     if request.method == "POST":
         # Get request data
         article_title = request.form["title"]
@@ -297,20 +277,66 @@ def publish():
         post_type = request.form["post_type"]
         category = request.form["category"]
         author_uid = request.form["author_uid"]
-        post_uuid = uuid.uuid4().hex()
+        post_uuid = uuid.uuid4().hex
 
         try:
+
             # Save as draft
             Posts.save_as_published(
                 category,post_type,post_uuid,article_body,article_title,
-                author_uid,videos=[], images=[], audios=[]
-                )
-            return{"message":"Save complete","status":"success"}
+                author_uid)
+            return{"message":"Publish complete","status":"success"}
             
         except Exception as e:
             logger.exception(e)
             return{"message":"Failed to save article","status":"failed"}
 
+
+@blog_bp.route("/delete_article", methods=["POST"])
+@login_required
+def delete_article():
+    if request.method == "POST":
+        # Get request Data
+        article_id = request.form["article_id"]
+
+        try:
+            res = Posts.delete_post_by_id(article_id)
+            return res
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"Failed to delete article","status":"failed"}
+
+
+@blog_bp.route("/update_article", methods=["POST"])
+@login_required
+def update_article():
+    if request.method == "POST":
+        # Get Request Data
+        article_id = request.form["article_id"]
+        article_header = request.form["header"]
+        article_content = request.form["content"]
+
+        try:
+            res = Posts.update_post_by_id(article_id, Title=article_header, Content=article_content)
+            return res
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"Failed to update article","status":"failed"}
+
+
+@blog_bp.route("/preview_article/<string:id>", methods=["GET","POST"])
+@login_required
+def preview_article(id):
+    article_data = Posts.fetch_post_by_uid(id)
+    return render_template(
+        "preview.html", 
+        Page_name = "Article Preview",
+        Title = f"#{article_data['message']['Title']}",
+        data = article_data["message"], 
+        content = {"page_title":"Article Preview"}
+        )
 
 
 @blog_bp.route('/ppcomment/<string:title>', methods=['POST'])
@@ -984,23 +1010,6 @@ def post_edit(id):
         info = "Please Sign In To Access Your Account."
         return(render_template('demo1.html', info=info))
 
-
-@blog_bp.route('/delete/<int:id>', methods=['GET'])
-def delete(id):
-    if "blogger_Name" in session:
-        try:
-            post_delete = blog.query.get(id)
-            db.session.delete(post_delete)
-            db.session.commit()
-            return redirect(url_for('edit_post'))
-
-        except Exception as e:
-            info = "There blog_bps an error while deleting your post"+str(e)
-            return render_template('demo1.html', info=info)
-
-    else:
-        info = "Please Sign In to Access Your Account"
-        return(render_template('demo1.html', info=info))
 
 
 @blog_bp.route('/delete_author/<int:id>', methods=['GET'])

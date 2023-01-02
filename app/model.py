@@ -1,7 +1,8 @@
+from itsdangerous import exc
 from app import db, login_manager
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
-from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text
+from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text, ARRAY 
 from datetime import datetime, timedelta
 import pytz
 import logging
@@ -89,6 +90,12 @@ class Blogger(db.Model, UserMixin):
 
     def get_blogger_position(self):
         return self.Position
+
+
+    def get_blogger_articles(self):
+        blogger_posts = db.session.query(Posts).filter(Posts.Author_uid == self.Blogger_id).order_by(Posts.id).all()
+        posts = [post.dict() for post in blogger_posts[::-1]]
+        return posts
 
 
     @classmethod
@@ -247,16 +254,14 @@ class Posts(db.Model):
     Post_Uuid = Column(String, nullable=False, unique=True)
 
     Content = Column(Text, nullable=False)
-    Title = Column(String, unique=True, nullable=False)
+    Title = Column(String, nullable=False)
     is_draft = Column(Boolean, nullable=False, default=True)
     is_published = Column(Boolean, nullable=False, default=False)
     Author_uid = Column(String, ForeignKey('blogger.Blogger_id'))
     Date_Posted = Column(DATETIME, nullable=False,onupdate=datetime.now(app_tz))
 
     Comments = relationship('Comments', backref="posts")
-    Videos = Column(String, nullable=False, default='No Video Content')
-    Audios = Column(String, nullable=False, default='No Audio Content')
-    Images = Column(String, nullable=False, default='No Image Available')
+    Image = Column(String, default='No Image Available')
 
     def get_post_category(self):
         return self.Category
@@ -264,8 +269,9 @@ class Posts(db.Model):
     @staticmethod
     def get_all_categories():
         categories = db.session.query(Posts.Category).all()
-        categories = tuple(categories)
-        return categories
+        categories = categories
+        category_list = [x[0] for x in categories]
+        return set(category_list)
 
     def get_post_type(self):
         return self.Post_Type
@@ -289,16 +295,8 @@ class Posts(db.Model):
     def get_post_comments(self):
         return self.Comments
 
-    def get_post_attachements(self):
-        return{
-            "videos":[self.Videos],
-            "audios":[self.Audios],
-            "images":[self.Images]
-        }
-
     def __repr__(self):
         return f"Posts <{self.Post_Uuid}>"
-
     
     def dict(self):
         return{
@@ -308,13 +306,10 @@ class Posts(db.Model):
             "Author": self.get_post_author(),
             "Title": self.Title,
             "Content": self.Content,
+            "Image": self.Image,
             "Created": self.Date_Posted,
             "Comments": self.Comments,
-            "Attachements":{
-                "videos":[self.Videos],
-                "images":[self.Images],
-                "audios":[self.Audios],
-            }
+            "Published": True if self.is_published == True else False
         }
 
 
@@ -362,18 +357,29 @@ class Posts(db.Model):
 
             return {"message":"An error occurred while adding post","status":"failed"}
 
+    
+    @staticmethod
+    def set_post_image(post_type):
+        post_images = {
+            "plain post":"/blog/static/builtins/images/blog_plain.png",
+            "audio post":"/blog/static/builtins/images/blog_audio.png",
+            "image post":"/blog/static/builtins/images/blog_image.png",
+            "images post":"/blog/static/builtins/images/blog_image.png",
+            "video post":"/blog/static/builtins/images/blog_video.png"
+        }
+        return post_images[f"{post_type.lower()}"]
+
 
     @staticmethod
     def save_as_draft(
         category: str, post_type: str, post_uuid: str, content: str, title: str,
-        author_uid: str, videos: list = [], images: list = [], audios: list = []
-        ):
+        author_uid: str):
         """ This function saves an article as a draft """
         kwargs = {
             "Category": category, "Post_Type": post_type, "Post_Uuid": post_uuid,
             "Content": content, "Title": title, "is_draft": True, "is_published": False,
-            "Author_uid": author_uid, "Date_Posted": datetime.now(app_tz), "Videos": videos, 
-            "Audios": audios, "Images": images
+            "Author_uid": author_uid, "Date_Posted": datetime.now(app_tz),
+            "Image":Posts.set_post_image(post_type)
         }
         Posts.add_post(**kwargs)
 
@@ -381,14 +387,13 @@ class Posts(db.Model):
     @staticmethod
     def save_as_published(
         category: str, post_type: str, post_uuid: str, content: str, title: str,
-        author_uid: str, videos: list = [], images: list = [], audios: list = []
-        ):
-        """ This function saves an article as a draft """
+        author_uid: str):
+        """ This function saves an publishes an article """
         kwargs = {
             "Category": category, "Post_Type": post_type, "Post_Uuid": post_uuid,
             "Content": content, "Title": title, "is_draft": False, "is_published": True,
-            "Author_uid": author_uid, "Date_Posted": datetime.now(app_tz), "Videos": videos, 
-            "Audios": audios, "Images": images
+            "Author_uid": author_uid, "Date_Posted": datetime.now(app_tz),
+            "Image":Posts.set_post_image(post_type)
         }
         Posts.add_post(**kwargs)
 
@@ -501,7 +506,57 @@ class Posts(db.Model):
             logger.exception(e)
             return {"message":"An error occurred while fetching poats","status":"failed"}
 
+    
+    @staticmethod
+    def delete_post_by_id(article_id):
+        """ 
+        This method deletes an article with the specified id 
+        
+        Params:
+        -------
+        article_id: The id of the article
 
+        Returns:
+        --------
+        message: The operations response message
+        status: The operations response status
+        """
+
+        try:
+            post = db.session.query(Posts).filter(Posts.Post_Uuid == article_id).first()
+            db.session.delete(post)
+            db.session.commit()
+            return {"message":"Article deleted","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"An error occured while deleteing the article","status":"failed"}
+
+
+    @staticmethod
+    def update_post_by_id(article_id,**kwargs):
+        """
+        This method updates an articles whose id has been specified
+
+        Params
+        ------
+        article_id: The id of the article
+        kwargs: data to update the article
+
+        Returns
+        -------
+        message: The operations response message
+        status: The operations response status
+        """
+
+        try:
+            db.session.query(Posts).filter(Posts.Post_Uuid == article_id).update({**kwargs})
+            db.session.commit()
+            return {"message":"Update successful","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"An error occurred while updating article","status":"failed"}
 
 class Comments(db.Model):
     __tablename__ = "comments"
@@ -522,26 +577,9 @@ class Subscribers(db.Model):
     Date_Registered = Column(DATETIME, nullable=False, onupdate=datetime.now(app_tz))
 
 
-class Archive(db.Model):
-    __tablename__ = "archive"
-
-    id = Column(Integer, primary_key=True)
-    Task_Name = Column(String, nullable=False, default="Empty Field")
-    Task_Describe = Column(String, nullable=False, default="Empty Field")
-    Receipient_1 = Column(Integer, nullable=False, default=00)
-    Receipient_2 = Column(Integer, nullable=False, default=00)
-    Receipient_3 = Column(Integer, nullable=False, default=00)
-    Manager_Name = Column(String, nullable=False, default="Empty Field")
-    Manager_No = Column(Integer, nullable=False, default=00)
-    Manager_Email = Column(Integer, nullable=True, default="No Mail")
-    TaskID = Column(String, nullable=False, default="Empty Field")
-    Feedback = Column(String, nullable=True, default="NO")
-    Go_Live_Time = Column(DATETIME, nullable=False, onupdate=datetime.now(app_tz))
-
-
 class EditorsPick(db.Model):
     __tablename__ = "editorspick"
 
     id = Column(Integer, primary_key=True)
-    Postname = Column(String, unique=True, nullable=False)
+    Post_id = Column(String, unique=True, nullable=False)
     Date_Registered = Column(DATETIME, nullable=False, onupdate=datetime.now(app_tz))

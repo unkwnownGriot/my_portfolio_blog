@@ -1334,3 +1334,1171 @@ sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 
 2022-12-29 01:50:21,381:DEBUG::====================================================================================================
 2022-12-29 01:50:21,381:INFO::Database logger :: Logging Active
 2022-12-29 01:50:21,381:DEBUG::
+2022-12-29 04:41:16,433:DEBUG::
+2022-12-29 04:41:16,435:DEBUG::====================================================================================================
+2022-12-29 04:41:16,436:INFO::Database logger :: Logging Active
+2022-12-29 04:41:16,436:DEBUG::
+2022-12-29 04:41:17,736:DEBUG::
+2022-12-29 04:41:17,737:DEBUG::====================================================================================================
+2022-12-29 04:41:17,737:INFO::Database logger :: Logging Active
+2022-12-29 04:41:17,737:DEBUG::
+2022-12-29 04:42:40,193:DEBUG::
+2022-12-29 04:42:40,193:DEBUG::====================================================================================================
+2022-12-29 04:42:40,194:INFO::Database logger :: Logging Active
+2022-12-29 04:42:40,194:DEBUG::
+2022-12-29 04:43:20,983:ERROR::(sqlite3.InterfaceError) Error binding parameter 9 - probably unsupported type.
+[SQL: INSERT INTO posts ("Category", "Post_Type", "Post_Uuid", "Content", "Title", is_draft, is_published, "Author_uid", "Date_Posted", "Videos", "Audios", "Images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('sample category', '[object NodeList]', 'fa9aec0361de4233b5eeee5690351b03', 'Sample content', 'Sample Title', 1, 0, 'a0d7d6dc2e28453cb91490c4b33ca24d', '2022-12-29 04:43:20.981243', [], [], [])]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 9 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 356, in add_post
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 9 - probably unsupported type.
+[SQL: INSERT INTO posts ("Category", "Post_Type", "Post_Uuid", "Content", "Title", is_draft, is_published, "Author_uid", "Date_Posted", "Videos", "Audios", "Images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('sample category', '[object NodeList]', 'fa9aec0361de4233b5eeee5690351b03', 'Sample content', 'Sample Title', 1, 0, 'a0d7d6dc2e28453cb91490c4b33ca24d', '2022-12-29 04:43:20.981243', [], [], [])]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2022-12-29 04:45:35,898:DEBUG::
+2022-12-29 04:45:35,899:DEBUG::====================================================================================================
+2022-12-29 04:45:35,899:INFO::Database logger :: Logging Active
+2022-12-29 04:45:35,900:DEBUG::
+2022-12-29 04:45:37,077:DEBUG::
+2022-12-29 04:45:37,078:DEBUG::====================================================================================================
+2022-12-29 04:45:37,078:INFO::Database logger :: Logging Active
+2022-12-29 04:45:37,078:DEBUG::
+2022-12-29 04:46:15,056:ERROR::(sqlite3.InterfaceError) Error binding parameter 9 - probably unsupported type.
+[SQL: INSERT INTO posts ("Category", "Post_Type", "Post_Uuid", "Content", "Title", is_draft, is_published, "Author_uid", "Date_Posted", "Videos", "Audios", "Images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Sample Category', 'plain post', '2a5a6b2c8b3d4228aeb716192c183ec1', 'Sample content', 'Samle Title', 1, 0, 'a0d7d6dc2e28453cb91490c4b33ca24d', '2022-12-29 04:46:15.049993', [], [], [])]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 9 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 356, in add_post
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 9 - probably unsupported type.
+[SQL: INSERT INTO posts ("Category", "Post_Type", "Post_Uuid", "Content", "Title", is_draft, is_published, "Author_uid", "Date_Posted", "Videos", "Audios", "Images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Sample Category', 'plain post', '2a5a6b2c8b3d4228aeb716192c183ec1', 'Sample content', 'Samle Title', 1, 0, 'a0d7d6dc2e28453cb91490c4b33ca24d', '2022-12-29 04:46:15.049993', [], [], [])]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2022-12-29 05:20:35,410:DEBUG::
+2022-12-29 05:20:35,411:DEBUG::====================================================================================================
+2022-12-29 05:20:35,411:INFO::Database logger :: Logging Active
+2022-12-29 05:20:35,412:DEBUG::
+2022-12-29 05:21:53,729:DEBUG::
+2022-12-29 05:21:53,729:DEBUG::====================================================================================================
+2022-12-29 05:21:53,730:INFO::Database logger :: Logging Active
+2022-12-29 05:21:53,730:DEBUG::
+2022-12-29 05:25:59,150:DEBUG::
+2022-12-29 05:25:59,150:DEBUG::====================================================================================================
+2022-12-29 05:25:59,151:INFO::Database logger :: Logging Active
+2022-12-29 05:25:59,151:DEBUG::
+2022-12-29 05:26:00,413:DEBUG::
+2022-12-29 05:26:00,413:DEBUG::====================================================================================================
+2022-12-29 05:26:00,413:INFO::Database logger :: Logging Active
+2022-12-29 05:26:00,414:DEBUG::
+2022-12-29 05:28:32,524:DEBUG::
+2022-12-29 05:28:32,524:DEBUG::====================================================================================================
+2022-12-29 05:28:32,525:INFO::Database logger :: Logging Active
+2022-12-29 05:28:32,525:DEBUG::
+2022-12-29 05:33:06,566:DEBUG::
+2022-12-29 05:33:06,566:DEBUG::====================================================================================================
+2022-12-29 05:33:06,567:INFO::Database logger :: Logging Active
+2022-12-29 05:33:06,567:DEBUG::
+2022-12-29 05:35:08,992:DEBUG::
+2022-12-29 05:35:08,992:DEBUG::====================================================================================================
+2022-12-29 05:35:08,993:INFO::Database logger :: Logging Active
+2022-12-29 05:35:08,993:DEBUG::
+2022-12-29 05:36:31,197:DEBUG::
+2022-12-29 05:36:31,198:DEBUG::====================================================================================================
+2022-12-29 05:36:31,198:INFO::Database logger :: Logging Active
+2022-12-29 05:36:31,199:DEBUG::
+2022-12-29 05:36:54,312:DEBUG::
+2022-12-29 05:36:54,313:DEBUG::====================================================================================================
+2022-12-29 05:36:54,313:INFO::Database logger :: Logging Active
+2022-12-29 05:36:54,313:DEBUG::
+2022-12-29 06:03:47,950:DEBUG::
+2022-12-29 06:03:47,951:DEBUG::====================================================================================================
+2022-12-29 06:03:47,951:INFO::Database logger :: Logging Active
+2022-12-29 06:03:47,951:DEBUG::
+2022-12-29 06:03:51,406:DEBUG::
+2022-12-29 06:03:51,407:DEBUG::====================================================================================================
+2022-12-29 06:03:51,407:INFO::Database logger :: Logging Active
+2022-12-29 06:03:51,408:DEBUG::
+2022-12-29 06:08:14,076:DEBUG::
+2022-12-29 06:08:14,076:DEBUG::====================================================================================================
+2022-12-29 06:08:14,077:INFO::Database logger :: Logging Active
+2022-12-29 06:08:14,077:DEBUG::
+2022-12-29 06:10:11,114:DEBUG::
+2022-12-29 06:10:11,114:DEBUG::====================================================================================================
+2022-12-29 06:10:11,115:INFO::Database logger :: Logging Active
+2022-12-29 06:10:11,115:DEBUG::
+2022-12-29 06:10:16,696:DEBUG::
+2022-12-29 06:10:16,696:DEBUG::====================================================================================================
+2022-12-29 06:10:16,697:INFO::Database logger :: Logging Active
+2022-12-29 06:10:16,698:DEBUG::
+2022-12-29 06:10:26,024:DEBUG::
+2022-12-29 06:10:26,025:DEBUG::====================================================================================================
+2022-12-29 06:10:26,025:INFO::Database logger :: Logging Active
+2022-12-29 06:10:26,026:DEBUG::
+2022-12-29 06:10:35,046:DEBUG::
+2022-12-29 06:10:35,048:DEBUG::====================================================================================================
+2022-12-29 06:10:35,048:INFO::Database logger :: Logging Active
+2022-12-29 06:10:35,049:DEBUG::
+2022-12-29 06:10:59,613:DEBUG::
+2022-12-29 06:10:59,613:DEBUG::====================================================================================================
+2022-12-29 06:10:59,614:INFO::Database logger :: Logging Active
+2022-12-29 06:10:59,614:DEBUG::
+2022-12-29 06:11:05,919:DEBUG::
+2022-12-29 06:11:05,919:DEBUG::====================================================================================================
+2022-12-29 06:11:05,920:INFO::Database logger :: Logging Active
+2022-12-29 06:11:05,920:DEBUG::
+2022-12-29 13:04:34,780:DEBUG::
+2022-12-29 13:04:34,781:DEBUG::====================================================================================================
+2022-12-29 13:04:34,781:INFO::Database logger :: Logging Active
+2022-12-29 13:04:34,782:DEBUG::
+2022-12-29 13:06:02,627:DEBUG::
+2022-12-29 13:06:02,627:DEBUG::====================================================================================================
+2022-12-29 13:06:02,627:INFO::Database logger :: Logging Active
+2022-12-29 13:06:02,628:DEBUG::
+2022-12-29 13:06:20,433:DEBUG::
+2022-12-29 13:06:20,434:DEBUG::====================================================================================================
+2022-12-29 13:06:20,434:INFO::Database logger :: Logging Active
+2022-12-29 13:06:20,435:DEBUG::
+2022-12-29 13:17:43,104:DEBUG::
+2022-12-29 13:17:43,104:DEBUG::====================================================================================================
+2022-12-29 13:17:43,105:INFO::Database logger :: Logging Active
+2022-12-29 13:17:43,105:DEBUG::
+2022-12-29 13:18:20,652:DEBUG::
+2022-12-29 13:18:20,652:DEBUG::====================================================================================================
+2022-12-29 13:18:20,653:INFO::Database logger :: Logging Active
+2022-12-29 13:18:20,653:DEBUG::
+2022-12-29 13:18:43,540:DEBUG::
+2022-12-29 13:18:43,541:DEBUG::====================================================================================================
+2022-12-29 13:18:43,541:INFO::Database logger :: Logging Active
+2022-12-29 13:18:43,541:DEBUG::
+2022-12-29 13:20:38,308:DEBUG::
+2022-12-29 13:20:38,309:DEBUG::====================================================================================================
+2022-12-29 13:20:38,309:INFO::Database logger :: Logging Active
+2022-12-29 13:20:38,309:DEBUG::
+2022-12-29 13:20:39,578:DEBUG::
+2022-12-29 13:20:39,578:DEBUG::====================================================================================================
+2022-12-29 13:20:39,579:INFO::Database logger :: Logging Active
+2022-12-29 13:20:39,579:DEBUG::
+2022-12-29 13:26:02,644:ERROR::(sqlite3.IntegrityError) UNIQUE constraint failed: posts.Title
+[SQL: INSERT INTO posts ("Category", "Post_Type", "Post_Uuid", "Content", "Title", is_draft, is_published, "Author_uid", "Date_Posted", "Videos", "Audios", "Images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Sample Category', 'images post', 'f9d3b000dc26417c9c0065f1715761cd', 'Sample Content \r\n/blog/static/images/audio1.jpg \r\n/blog/static/images/hero-bg.jpg \r\n/blog/static/images/my_image.jpg', 'Sample Category', 1, 0, '85a9a0c953cf43c19e9b767a57f00588', '2022-12-29 13:26:02.642494', '', '', '')]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: posts.Title
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 357, in add_post
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: posts.Title
+[SQL: INSERT INTO posts ("Category", "Post_Type", "Post_Uuid", "Content", "Title", is_draft, is_published, "Author_uid", "Date_Posted", "Videos", "Audios", "Images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Sample Category', 'images post', 'f9d3b000dc26417c9c0065f1715761cd', 'Sample Content \r\n/blog/static/images/audio1.jpg \r\n/blog/static/images/hero-bg.jpg \r\n/blog/static/images/my_image.jpg', 'Sample Category', 1, 0, '85a9a0c953cf43c19e9b767a57f00588', '2022-12-29 13:26:02.642494', '', '', '')]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-12-29 13:33:24,422:DEBUG::
+2022-12-29 13:33:24,422:DEBUG::====================================================================================================
+2022-12-29 13:33:24,423:INFO::Database logger :: Logging Active
+2022-12-29 13:33:24,423:DEBUG::
+2022-12-29 13:34:06,500:DEBUG::
+2022-12-29 13:34:06,500:DEBUG::====================================================================================================
+2022-12-29 13:34:06,501:INFO::Database logger :: Logging Active
+2022-12-29 13:34:06,501:DEBUG::
+2022-12-29 13:34:42,743:DEBUG::
+2022-12-29 13:34:42,744:DEBUG::====================================================================================================
+2022-12-29 13:34:42,744:INFO::Database logger :: Logging Active
+2022-12-29 13:34:42,744:DEBUG::
+2022-12-29 13:35:01,318:DEBUG::
+2022-12-29 13:35:01,318:DEBUG::====================================================================================================
+2022-12-29 13:35:01,318:INFO::Database logger :: Logging Active
+2022-12-29 13:35:01,319:DEBUG::
+2022-12-29 13:35:16,540:DEBUG::
+2022-12-29 13:35:16,541:DEBUG::====================================================================================================
+2022-12-29 13:35:16,541:INFO::Database logger :: Logging Active
+2022-12-29 13:35:16,541:DEBUG::
+2022-12-29 13:36:21,640:DEBUG::
+2022-12-29 13:36:21,640:DEBUG::====================================================================================================
+2022-12-29 13:36:21,641:INFO::Database logger :: Logging Active
+2022-12-29 13:36:21,641:DEBUG::
+2022-12-29 13:38:21,775:DEBUG::
+2022-12-29 13:38:21,775:DEBUG::====================================================================================================
+2022-12-29 13:38:21,775:INFO::Database logger :: Logging Active
+2022-12-29 13:38:21,776:DEBUG::
+2022-12-29 13:38:29,280:DEBUG::
+2022-12-29 13:38:29,280:DEBUG::====================================================================================================
+2022-12-29 13:38:29,281:INFO::Database logger :: Logging Active
+2022-12-29 13:38:29,281:DEBUG::
+2022-12-29 13:39:10,799:DEBUG::
+2022-12-29 13:39:10,799:DEBUG::====================================================================================================
+2022-12-29 13:39:10,800:INFO::Database logger :: Logging Active
+2022-12-29 13:39:10,800:DEBUG::
+2022-12-29 13:39:12,019:DEBUG::
+2022-12-29 13:39:12,019:DEBUG::====================================================================================================
+2022-12-29 13:39:12,020:INFO::Database logger :: Logging Active
+2022-12-29 13:39:12,020:DEBUG::
+2022-12-29 13:42:28,387:DEBUG::
+2022-12-29 13:42:28,388:DEBUG::====================================================================================================
+2022-12-29 13:42:28,388:INFO::Database logger :: Logging Active
+2022-12-29 13:42:28,388:DEBUG::
+2022-12-29 13:47:53,596:DEBUG::
+2022-12-29 13:47:53,596:DEBUG::====================================================================================================
+2022-12-29 13:47:53,598:INFO::Database logger :: Logging Active
+2022-12-29 13:47:53,598:DEBUG::
+2022-12-29 13:48:19,548:DEBUG::
+2022-12-29 13:48:19,549:DEBUG::====================================================================================================
+2022-12-29 13:48:19,549:INFO::Database logger :: Logging Active
+2022-12-29 13:48:19,550:DEBUG::
+2022-12-29 13:48:24,050:DEBUG::
+2022-12-29 13:48:24,050:DEBUG::====================================================================================================
+2022-12-29 13:48:24,051:INFO::Database logger :: Logging Active
+2022-12-29 13:48:24,051:DEBUG::
+2022-12-29 13:48:25,464:DEBUG::
+2022-12-29 13:48:25,464:DEBUG::====================================================================================================
+2022-12-29 13:48:25,465:INFO::Database logger :: Logging Active
+2022-12-29 13:48:25,465:DEBUG::
+2022-12-29 13:49:03,677:DEBUG::
+2022-12-29 13:49:03,678:DEBUG::====================================================================================================
+2022-12-29 13:49:03,678:INFO::Database logger :: Logging Active
+2022-12-29 13:49:03,678:DEBUG::
+2022-12-29 14:00:45,768:DEBUG::
+2022-12-29 14:00:45,768:DEBUG::====================================================================================================
+2022-12-29 14:00:45,769:INFO::Database logger :: Logging Active
+2022-12-29 14:00:45,769:DEBUG::
+2022-12-29 14:03:49,987:DEBUG::
+2022-12-29 14:03:49,988:DEBUG::====================================================================================================
+2022-12-29 14:03:49,988:INFO::Database logger :: Logging Active
+2022-12-29 14:03:49,988:DEBUG::
+2022-12-29 14:07:42,031:DEBUG::
+2022-12-29 14:07:42,031:DEBUG::====================================================================================================
+2022-12-29 14:07:42,031:INFO::Database logger :: Logging Active
+2022-12-29 14:07:42,032:DEBUG::
+2022-12-29 14:09:26,202:DEBUG::
+2022-12-29 14:09:26,202:DEBUG::====================================================================================================
+2022-12-29 14:09:26,202:INFO::Database logger :: Logging Active
+2022-12-29 14:09:26,203:DEBUG::
+2022-12-30 00:32:32,794:DEBUG::
+2022-12-30 00:32:32,794:DEBUG::====================================================================================================
+2022-12-30 00:32:32,795:INFO::Database logger :: Logging Active
+2022-12-30 00:32:32,795:DEBUG::
+2022-12-30 00:32:50,752:DEBUG::
+2022-12-30 00:32:50,752:DEBUG::====================================================================================================
+2022-12-30 00:32:50,753:INFO::Database logger :: Logging Active
+2022-12-30 00:32:50,753:DEBUG::
+2022-12-30 00:32:55,469:DEBUG::
+2022-12-30 00:32:55,469:DEBUG::====================================================================================================
+2022-12-30 00:32:55,470:INFO::Database logger :: Logging Active
+2022-12-30 00:32:55,470:DEBUG::
+2022-12-30 00:32:56,943:DEBUG::
+2022-12-30 00:32:56,943:DEBUG::====================================================================================================
+2022-12-30 00:32:56,944:INFO::Database logger :: Logging Active
+2022-12-30 00:32:56,944:DEBUG::
+2022-12-30 00:41:04,135:DEBUG::
+2022-12-30 00:41:04,135:DEBUG::====================================================================================================
+2022-12-30 00:41:04,136:INFO::Database logger :: Logging Active
+2022-12-30 00:41:04,136:DEBUG::
+2022-12-30 01:01:56,802:DEBUG::
+2022-12-30 01:01:56,802:DEBUG::====================================================================================================
+2022-12-30 01:01:56,802:INFO::Database logger :: Logging Active
+2022-12-30 01:01:56,803:DEBUG::
+2022-12-30 01:01:58,478:DEBUG::
+2022-12-30 01:01:58,478:DEBUG::====================================================================================================
+2022-12-30 01:01:58,479:INFO::Database logger :: Logging Active
+2022-12-30 01:01:58,479:DEBUG::
+2022-12-30 01:11:34,607:DEBUG::
+2022-12-30 01:11:34,607:DEBUG::====================================================================================================
+2022-12-30 01:11:34,608:INFO::Database logger :: Logging Active
+2022-12-30 01:11:34,608:DEBUG::
+2022-12-30 01:46:38,836:DEBUG::
+2022-12-30 01:46:38,836:DEBUG::====================================================================================================
+2022-12-30 01:46:38,837:INFO::Database logger :: Logging Active
+2022-12-30 01:46:38,837:DEBUG::
+2022-12-30 01:50:13,626:DEBUG::
+2022-12-30 01:50:13,626:DEBUG::====================================================================================================
+2022-12-30 01:50:13,626:INFO::Database logger :: Logging Active
+2022-12-30 01:50:13,627:DEBUG::
+2022-12-30 01:55:38,863:DEBUG::
+2022-12-30 01:55:38,863:DEBUG::====================================================================================================
+2022-12-30 01:55:38,864:INFO::Database logger :: Logging Active
+2022-12-30 01:55:38,864:DEBUG::
+2022-12-30 01:57:23,238:DEBUG::
+2022-12-30 01:57:23,238:DEBUG::====================================================================================================
+2022-12-30 01:57:23,239:INFO::Database logger :: Logging Active
+2022-12-30 01:57:23,239:DEBUG::
+2022-12-30 01:59:16,774:DEBUG::
+2022-12-30 01:59:16,774:DEBUG::====================================================================================================
+2022-12-30 01:59:16,775:INFO::Database logger :: Logging Active
+2022-12-30 01:59:16,775:DEBUG::
+2022-12-30 02:00:19,014:DEBUG::
+2022-12-30 02:00:19,014:DEBUG::====================================================================================================
+2022-12-30 02:00:19,015:INFO::Database logger :: Logging Active
+2022-12-30 02:00:19,015:DEBUG::
+2022-12-30 02:04:56,997:DEBUG::
+2022-12-30 02:04:56,997:DEBUG::====================================================================================================
+2022-12-30 02:04:56,998:INFO::Database logger :: Logging Active
+2022-12-30 02:04:56,999:DEBUG::
+2022-12-30 02:04:58,736:DEBUG::
+2022-12-30 02:04:58,736:DEBUG::====================================================================================================
+2022-12-30 02:04:58,737:INFO::Database logger :: Logging Active
+2022-12-30 02:04:58,737:DEBUG::
+2022-12-30 02:05:40,383:DEBUG::
+2022-12-30 02:05:40,383:DEBUG::====================================================================================================
+2022-12-30 02:05:40,383:INFO::Database logger :: Logging Active
+2022-12-30 02:05:40,384:DEBUG::
+2022-12-30 23:59:32,247:DEBUG::
+2022-12-30 23:59:32,247:DEBUG::====================================================================================================
+2022-12-30 23:59:32,247:INFO::Database logger :: Logging Active
+2022-12-30 23:59:32,248:DEBUG::
+2022-12-31 00:01:14,914:DEBUG::
+2022-12-31 00:01:14,914:DEBUG::====================================================================================================
+2022-12-31 00:01:14,915:INFO::Database logger :: Logging Active
+2022-12-31 00:01:14,915:DEBUG::
+2022-12-31 00:09:11,287:DEBUG::
+2022-12-31 00:09:11,287:DEBUG::====================================================================================================
+2022-12-31 00:09:11,288:INFO::Database logger :: Logging Active
+2022-12-31 00:09:11,288:DEBUG::
+2022-12-31 00:10:22,820:DEBUG::
+2022-12-31 00:10:22,820:DEBUG::====================================================================================================
+2022-12-31 00:10:22,821:INFO::Database logger :: Logging Active
+2022-12-31 00:10:22,821:DEBUG::
+2022-12-31 00:10:42,280:DEBUG::
+2022-12-31 00:10:42,280:DEBUG::====================================================================================================
+2022-12-31 00:10:42,280:INFO::Database logger :: Logging Active
+2022-12-31 00:10:42,281:DEBUG::
+2022-12-31 00:11:07,698:DEBUG::
+2022-12-31 00:11:07,698:DEBUG::====================================================================================================
+2022-12-31 00:11:07,698:INFO::Database logger :: Logging Active
+2022-12-31 00:11:07,699:DEBUG::
+2022-12-31 00:11:19,878:DEBUG::
+2022-12-31 00:11:19,878:DEBUG::====================================================================================================
+2022-12-31 00:11:19,879:INFO::Database logger :: Logging Active
+2022-12-31 00:11:19,879:DEBUG::
+2022-12-31 00:11:32,426:DEBUG::
+2022-12-31 00:11:32,426:DEBUG::====================================================================================================
+2022-12-31 00:11:32,427:INFO::Database logger :: Logging Active
+2022-12-31 00:11:32,427:DEBUG::
+2022-12-31 00:12:18,958:DEBUG::
+2022-12-31 00:12:18,958:DEBUG::====================================================================================================
+2022-12-31 00:12:18,959:INFO::Database logger :: Logging Active
+2022-12-31 00:12:18,959:DEBUG::
+2022-12-31 00:12:24,728:DEBUG::
+2022-12-31 00:12:24,729:DEBUG::====================================================================================================
+2022-12-31 00:12:24,729:INFO::Database logger :: Logging Active
+2022-12-31 00:12:24,730:DEBUG::
+2022-12-31 00:12:56,178:DEBUG::
+2022-12-31 00:12:56,178:DEBUG::====================================================================================================
+2022-12-31 00:12:56,179:INFO::Database logger :: Logging Active
+2022-12-31 00:12:56,179:DEBUG::
+2022-12-31 00:12:57,850:DEBUG::
+2022-12-31 00:12:57,850:DEBUG::====================================================================================================
+2022-12-31 00:12:57,851:INFO::Database logger :: Logging Active
+2022-12-31 00:12:57,851:DEBUG::
+2022-12-31 00:15:28,105:DEBUG::
+2022-12-31 00:15:28,106:DEBUG::====================================================================================================
+2022-12-31 00:15:28,107:INFO::Database logger :: Logging Active
+2022-12-31 00:15:28,108:DEBUG::
+2022-12-31 00:19:13,894:DEBUG::
+2022-12-31 00:19:13,894:DEBUG::====================================================================================================
+2022-12-31 00:19:13,895:INFO::Database logger :: Logging Active
+2022-12-31 00:19:13,895:DEBUG::
+2022-12-31 00:22:02,003:DEBUG::
+2022-12-31 00:22:02,004:DEBUG::====================================================================================================
+2022-12-31 00:22:02,004:INFO::Database logger :: Logging Active
+2022-12-31 00:22:02,005:DEBUG::
+2022-12-31 00:23:09,654:DEBUG::
+2022-12-31 00:23:09,654:DEBUG::====================================================================================================
+2022-12-31 00:23:09,654:INFO::Database logger :: Logging Active
+2022-12-31 00:23:09,655:DEBUG::
+2022-12-31 00:24:25,511:DEBUG::
+2022-12-31 00:24:25,512:DEBUG::====================================================================================================
+2022-12-31 00:24:25,512:INFO::Database logger :: Logging Active
+2022-12-31 00:24:25,512:DEBUG::
+2022-12-31 00:27:48,033:DEBUG::
+2022-12-31 00:27:48,033:DEBUG::====================================================================================================
+2022-12-31 00:27:48,034:INFO::Database logger :: Logging Active
+2022-12-31 00:27:48,034:DEBUG::
+2022-12-31 00:28:38,516:DEBUG::
+2022-12-31 00:28:38,516:DEBUG::====================================================================================================
+2022-12-31 00:28:38,518:INFO::Database logger :: Logging Active
+2022-12-31 00:28:38,518:DEBUG::
+2022-12-31 00:29:36,116:DEBUG::
+2022-12-31 00:29:36,116:DEBUG::====================================================================================================
+2022-12-31 00:29:36,117:INFO::Database logger :: Logging Active
+2022-12-31 00:29:36,117:DEBUG::
+2022-12-31 00:33:36,204:DEBUG::
+2022-12-31 00:33:36,204:DEBUG::====================================================================================================
+2022-12-31 00:33:36,205:INFO::Database logger :: Logging Active
+2022-12-31 00:33:36,205:DEBUG::
+2023-01-01 13:20:01,110:DEBUG::
+2023-01-01 13:20:01,110:DEBUG::====================================================================================================
+2023-01-01 13:20:01,111:INFO::Database logger :: Logging Active
+2023-01-01 13:20:01,111:DEBUG::
+2023-01-01 13:20:02,842:DEBUG::
+2023-01-01 13:20:02,842:DEBUG::====================================================================================================
+2023-01-01 13:20:02,842:INFO::Database logger :: Logging Active
+2023-01-01 13:20:02,843:DEBUG::
+2023-01-01 14:15:16,331:DEBUG::
+2023-01-01 14:15:16,331:DEBUG::====================================================================================================
+2023-01-01 14:15:16,332:INFO::Database logger :: Logging Active
+2023-01-01 14:15:16,332:DEBUG::
+2023-01-01 14:17:01,647:DEBUG::
+2023-01-01 14:17:01,648:DEBUG::====================================================================================================
+2023-01-01 14:17:01,648:INFO::Database logger :: Logging Active
+2023-01-01 14:17:01,648:DEBUG::
+2023-01-01 14:17:03,053:DEBUG::
+2023-01-01 14:17:03,053:DEBUG::====================================================================================================
+2023-01-01 14:17:03,053:INFO::Database logger :: Logging Active
+2023-01-01 14:17:03,054:DEBUG::
+2023-01-01 14:18:28,940:DEBUG::
+2023-01-01 14:18:28,940:DEBUG::====================================================================================================
+2023-01-01 14:18:28,940:INFO::Database logger :: Logging Active
+2023-01-01 14:18:28,941:DEBUG::
+2023-01-01 14:26:16,304:DEBUG::
+2023-01-01 14:26:16,304:DEBUG::====================================================================================================
+2023-01-01 14:26:16,305:INFO::Database logger :: Logging Active
+2023-01-01 14:26:16,305:DEBUG::
+2023-01-01 14:27:12,029:DEBUG::
+2023-01-01 14:27:12,030:DEBUG::====================================================================================================
+2023-01-01 14:27:12,030:INFO::Database logger :: Logging Active
+2023-01-01 14:27:12,030:DEBUG::
+2023-01-01 14:27:31,007:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,084:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,099:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,118:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,153:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,167:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,336:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,418:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,436:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,438:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:31,477:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,386:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,389:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,418:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,418:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,434:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,629:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,729:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,735:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,743:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,752:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:27:42,765:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:30:43,100:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:30:56,466:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 14:34:57,107:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 526, in delete_post_by_id
+    db.session.delete(post)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-01 17:37:32,751:DEBUG::
+2023-01-01 17:37:32,751:DEBUG::====================================================================================================
+2023-01-01 17:37:32,752:INFO::Database logger :: Logging Active
+2023-01-01 17:37:32,752:DEBUG::
+2023-01-01 17:45:37,155:DEBUG::
+2023-01-01 17:45:37,156:DEBUG::====================================================================================================
+2023-01-01 17:45:37,156:INFO::Database logger :: Logging Active
+2023-01-01 17:45:37,156:DEBUG::
+2023-01-01 17:53:39,225:DEBUG::
+2023-01-01 17:53:39,225:DEBUG::====================================================================================================
+2023-01-01 17:53:39,226:INFO::Database logger :: Logging Active
+2023-01-01 17:53:39,226:DEBUG::
+2023-01-01 17:57:45,741:DEBUG::
+2023-01-01 17:57:45,742:DEBUG::====================================================================================================
+2023-01-01 17:57:45,742:INFO::Database logger :: Logging Active
+2023-01-01 17:57:45,743:DEBUG::
+2023-01-01 17:57:55,669:DEBUG::
+2023-01-01 17:57:55,670:DEBUG::====================================================================================================
+2023-01-01 17:57:55,670:INFO::Database logger :: Logging Active
+2023-01-01 17:57:55,671:DEBUG::
+2023-01-01 18:00:14,318:DEBUG::
+2023-01-01 18:00:14,318:DEBUG::====================================================================================================
+2023-01-01 18:00:14,318:INFO::Database logger :: Logging Active
+2023-01-01 18:00:14,319:DEBUG::
+2023-01-01 18:03:40,529:DEBUG::
+2023-01-01 18:03:40,529:DEBUG::====================================================================================================
+2023-01-01 18:03:40,530:INFO::Database logger :: Logging Active
+2023-01-01 18:03:40,530:DEBUG::
+2023-01-01 18:04:18,895:ERROR::update() got an unexpected keyword argument 'Title'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 552, in update_post_by_id
+    post = db.session.query(Posts).filter(Posts.Post_Uuid == article_id).update(**kwargs)
+TypeError: update() got an unexpected keyword argument 'Title'
+2023-01-01 18:07:11,554:DEBUG::
+2023-01-01 18:07:11,554:DEBUG::====================================================================================================
+2023-01-01 18:07:11,554:INFO::Database logger :: Logging Active
+2023-01-01 18:07:11,554:DEBUG::
+2023-01-01 18:07:25,434:ERROR::'Title' is an invalid keyword argument for print()
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 552, in update_post_by_id
+    print(**kwargs)
+TypeError: 'Title' is an invalid keyword argument for print()
+2023-01-01 18:07:50,271:DEBUG::
+2023-01-01 18:07:50,271:DEBUG::====================================================================================================
+2023-01-01 18:07:50,272:INFO::Database logger :: Logging Active
+2023-01-01 18:07:50,272:DEBUG::
+2023-01-01 18:08:06,414:ERROR::update() got an unexpected keyword argument 'Title'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 553, in update_post_by_id
+    post = db.session.query(Posts).filter(Posts.Post_Uuid == article_id).update(**kwargs)
+TypeError: update() got an unexpected keyword argument 'Title'
+2023-01-01 18:08:50,413:DEBUG::
+2023-01-01 18:08:50,413:DEBUG::====================================================================================================
+2023-01-01 18:08:50,414:INFO::Database logger :: Logging Active
+2023-01-01 18:08:50,414:DEBUG::
+2023-01-01 18:09:11,974:ERROR::commit() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 554, in update_post_by_id
+    db.session.commit(post)
+TypeError: commit() takes 1 positional argument but 2 were given
+2023-01-01 18:09:46,496:DEBUG::
+2023-01-01 18:09:46,497:DEBUG::====================================================================================================
+2023-01-01 18:09:46,498:INFO::Database logger :: Logging Active
+2023-01-01 18:09:46,498:DEBUG::
+2023-01-01 18:11:36,687:DEBUG::
+2023-01-01 18:11:36,687:DEBUG::====================================================================================================
+2023-01-01 18:11:36,688:INFO::Database logger :: Logging Active
+2023-01-01 18:11:36,688:DEBUG::
+2023-01-01 18:23:00,914:DEBUG::
+2023-01-01 18:23:00,914:DEBUG::====================================================================================================
+2023-01-01 18:23:00,914:INFO::Database logger :: Logging Active
+2023-01-01 18:23:00,915:DEBUG::
+2023-01-01 21:38:51,302:DEBUG::
+2023-01-01 21:38:51,302:DEBUG::====================================================================================================
+2023-01-01 21:38:51,302:INFO::Database logger :: Logging Active
+2023-01-01 21:38:51,303:DEBUG::
+2023-01-01 21:39:07,712:DEBUG::
+2023-01-01 21:39:07,713:DEBUG::====================================================================================================
+2023-01-01 21:39:07,713:INFO::Database logger :: Logging Active
+2023-01-01 21:39:07,714:DEBUG::
+2023-01-01 21:39:22,306:DEBUG::
+2023-01-01 21:39:22,306:DEBUG::====================================================================================================
+2023-01-01 21:39:22,307:INFO::Database logger :: Logging Active
+2023-01-01 21:39:22,307:DEBUG::
+2023-01-01 21:39:23,878:DEBUG::
+2023-01-01 21:39:23,878:DEBUG::====================================================================================================
+2023-01-01 21:39:23,879:INFO::Database logger :: Logging Active
+2023-01-01 21:39:23,879:DEBUG::
+2023-01-01 21:40:36,427:DEBUG::
+2023-01-01 21:40:36,475:DEBUG::====================================================================================================
+2023-01-01 21:40:36,490:INFO::Database logger :: Logging Active
+2023-01-01 21:40:36,493:DEBUG::
+2023-01-01 21:44:37,032:DEBUG::
+2023-01-01 21:44:37,033:DEBUG::====================================================================================================
+2023-01-01 21:44:37,033:INFO::Database logger :: Logging Active
+2023-01-01 21:44:37,034:DEBUG::
+2023-01-01 21:48:01,669:DEBUG::
+2023-01-01 21:48:01,669:DEBUG::====================================================================================================
+2023-01-01 21:48:01,670:INFO::Database logger :: Logging Active
+2023-01-01 21:48:01,670:DEBUG::
+2023-01-01 21:48:06,593:DEBUG::
+2023-01-01 21:48:06,594:DEBUG::====================================================================================================
+2023-01-01 21:48:06,594:INFO::Database logger :: Logging Active
+2023-01-01 21:48:06,595:DEBUG::
+2023-01-01 21:49:37,230:DEBUG::
+2023-01-01 21:49:37,230:DEBUG::====================================================================================================
+2023-01-01 21:49:37,231:INFO::Database logger :: Logging Active
+2023-01-01 21:49:37,231:DEBUG::
+2023-01-01 22:01:47,308:DEBUG::
+2023-01-01 22:01:47,308:DEBUG::====================================================================================================
+2023-01-01 22:01:47,309:INFO::Database logger :: Logging Active
+2023-01-01 22:01:47,309:DEBUG::
+2023-01-01 22:28:22,091:DEBUG::
+2023-01-01 22:28:22,092:DEBUG::====================================================================================================
+2023-01-01 22:28:22,092:INFO::Database logger :: Logging Active
+2023-01-01 22:28:22,093:DEBUG::
+2023-01-01 23:45:55,333:DEBUG::
+2023-01-01 23:45:55,333:DEBUG::====================================================================================================
+2023-01-01 23:45:55,334:INFO::Database logger :: Logging Active
+2023-01-01 23:45:55,334:DEBUG::
+2023-01-01 23:45:58,222:DEBUG::
+2023-01-01 23:45:58,222:DEBUG::====================================================================================================
+2023-01-01 23:45:58,223:INFO::Database logger :: Logging Active
+2023-01-01 23:45:58,223:DEBUG::
+2023-01-02 00:13:56,145:DEBUG::
+2023-01-02 00:13:56,146:DEBUG::====================================================================================================
+2023-01-02 00:13:56,146:INFO::Database logger :: Logging Active
+2023-01-02 00:13:56,147:DEBUG::
+2023-01-02 05:18:33,663:DEBUG::
+2023-01-02 05:18:33,663:DEBUG::====================================================================================================
+2023-01-02 05:18:33,663:INFO::Database logger :: Logging Active
+2023-01-02 05:18:33,664:DEBUG::
+2023-01-02 05:24:19,206:DEBUG::
+2023-01-02 05:24:19,207:DEBUG::====================================================================================================
+2023-01-02 05:24:19,207:INFO::Database logger :: Logging Active
+2023-01-02 05:24:19,208:DEBUG::
+2023-01-02 05:50:36,995:DEBUG::
+2023-01-02 05:50:36,996:DEBUG::====================================================================================================
+2023-01-02 05:50:36,996:INFO::Database logger :: Logging Active
+2023-01-02 05:50:36,997:DEBUG::
+2023-01-02 06:01:39,801:DEBUG::
+2023-01-02 06:01:39,802:DEBUG::====================================================================================================
+2023-01-02 06:01:39,803:INFO::Database logger :: Logging Active
+2023-01-02 06:01:39,803:DEBUG::
+2023-01-02 06:03:01,600:DEBUG::
+2023-01-02 06:03:01,600:DEBUG::====================================================================================================
+2023-01-02 06:03:01,600:INFO::Database logger :: Logging Active
+2023-01-02 06:03:01,601:DEBUG::
+2023-01-02 06:03:40,641:DEBUG::
+2023-01-02 06:03:40,641:DEBUG::====================================================================================================
+2023-01-02 06:03:40,641:INFO::Database logger :: Logging Active
+2023-01-02 06:03:40,642:DEBUG::
+2023-01-02 06:04:15,388:DEBUG::
+2023-01-02 06:04:15,389:DEBUG::====================================================================================================
+2023-01-02 06:04:15,389:INFO::Database logger :: Logging Active
+2023-01-02 06:04:15,389:DEBUG::
+2023-01-02 06:07:07,980:DEBUG::
+2023-01-02 06:07:07,980:DEBUG::====================================================================================================
+2023-01-02 06:07:07,981:INFO::Database logger :: Logging Active
+2023-01-02 06:07:07,981:DEBUG::
+2023-01-02 06:10:59,058:DEBUG::
+2023-01-02 06:10:59,058:DEBUG::====================================================================================================
+2023-01-02 06:10:59,058:INFO::Database logger :: Logging Active
+2023-01-02 06:10:59,059:DEBUG::
+2023-01-02 06:16:36,409:DEBUG::
+2023-01-02 06:16:36,410:DEBUG::====================================================================================================
+2023-01-02 06:16:36,410:INFO::Database logger :: Logging Active
+2023-01-02 06:16:36,411:DEBUG::
+2023-01-02 06:19:04,616:DEBUG::
+2023-01-02 06:19:04,617:DEBUG::====================================================================================================
+2023-01-02 06:19:04,617:INFO::Database logger :: Logging Active
+2023-01-02 06:19:04,617:DEBUG::
