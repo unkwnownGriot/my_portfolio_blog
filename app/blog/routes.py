@@ -13,7 +13,6 @@ from app.model import Blogger
 from app.model import Comments
 from datetime import timedelta
 from app.model import Subscribers
-from app.model import EditorsPick
 from flask_login import login_user
 from flask_login import logout_user
 from flask_login import current_user

@@ -1,8 +1,12 @@
-from itsdangerous import exc
+from ast import In, Str
+from re import I, T
+from turtle import st
+
+from setuptools import SetuptoolsDeprecationWarning
 from app import db, login_manager
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
-from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text, ARRAY 
+from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text, ARRAY, null 
 from datetime import datetime, timedelta
 import pytz
 import logging
@@ -577,9 +581,87 @@ class Subscribers(db.Model):
     Date_Registered = Column(DATETIME, nullable=False, onupdate=datetime.now(app_tz))
 
 
-class EditorsPick(db.Model):
-    __tablename__ = "editorspick"
+class Resume(db.Model):
+    __tablename__ = "resume"
 
     id = Column(Integer, primary_key=True)
-    Post_id = Column(String, unique=True, nullable=False)
-    Date_Registered = Column(DATETIME, nullable=False, onupdate=datetime.now(app_tz))
+    Hero_content = Column(Text, nullable=False)
+    About_content = Column(Text, nullable=False)
+    Email = Column(String, nullable=False)
+    linkedin = Column(String, nullable=False)
+    Work_content = Column(Text, nullable=False)
+
+
+class Education(db.Model):
+    __tablename__ = "education"
+
+    id = Column(Integer, primary_key=True)
+    Start_year = Column(DATETIME, nullable=False)
+    End_year = Column(DATETIME, nullable=False)
+    Instituition = Column(String, nullable=False)
+    Location = Column(String, nullable=False)
+    Qualification = Column(Text, nullable=False)
+
+
+class Experience(db.Model):
+    __tablename__ = "experience"
+
+    id = Column(Integer, primary_key=True)
+    Company_uuid = Column(String, nullable=False)
+    Company_name = Column(String, nullable=False)
+    Roles = relationship('Roles', backref="experience")
+
+
+class Roles(db.Model):
+    __tablename__ = "roles"
+
+    id = Column(Integer, primary_key=True)
+    Role_uid = Column(String, ForeignKey('experience.Company_uuid'), nullable=False)
+    Start_year = Column(DATETIME, nullable=False)
+    End_year = Column(String, nullable=False)
+    Role_name = Column(String, nullable=False)
+    Role_description = Column(String, nullable=False)
+
+
+class Certifications(db.Model):
+    __tablenme__ = "certifications"
+
+    id = Column(Integer, primary_key=True)
+    certificate_id = Column(String, nullable=False)
+    certificate_name = Column(String, nullable=False)
+    certificate_issuer = Column(String, nullable=False)
+    certificte_image = Column(String, nullable=False)
+
+
+class Skills(db.Model):
+    __tablename__ = "skills"
+
+    id = Column(Integer, primary_key=True)
+    skill_name = Column(String, nullable=False)
+    skill_icon = Column(String, nullable=False)
+
+
+class Languages(db.Model):
+    __tablename__ = "languages"
+
+    id = Column(Integer, primary_key=True)
+    language = Column(String, nullable=False)
+    Proficiency = Column(String, nullable=False)
+
+
+class Projects(db.Model):
+    __tablename__ = "projects"
+
+    id = Column(Integer, primary_key=True)
+    project_link = Column(String, nullable=False)
+    project_image = Column(String, nullable=False)
+    project_description = Column(String, nullable=False)
+
+
+class Contact(db.Model):
+    __tablename__ = "contact"
+
+    id = Column(Integer, primary_key=True)
+    Name = Column(String, nullable=False)
+    Email = Column(String, nullable=False)
+    Message = Column(String, nullable=False)
