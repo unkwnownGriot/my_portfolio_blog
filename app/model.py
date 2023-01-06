@@ -299,6 +299,12 @@ class Posts(db.Model):
     def get_post_comments(self):
         return self.Comments
 
+    @staticmethod
+    def get_viewer_articles():
+        blogger_posts = db.session.query(Posts).filter(Posts.is_published == True).order_by(Posts.id).all()
+        posts = [post.dict() for post in blogger_posts[::-1]]
+        return posts
+
     def __repr__(self):
         return f"Posts <{self.Post_Uuid}>"
     

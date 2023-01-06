@@ -1,3 +1,7 @@
+*{
+    background-color: black;
+}
+
 .resume{
     width: 100%;
     min-height: 100vh;
@@ -44,6 +48,10 @@
     text-decoration: underline;
 }
 
+.navigation a{
+    color: white;
+}
+
 .download_btn{
     display: flex;
     justify-content: right;
@@ -60,8 +68,17 @@
     grid-template-columns: 50% 50%;
 }
 
+.hero_img{
+    width: 100%;
+    padding: 20px;
+}
+
+.hero_img img{
+    width: 100%;
+}
+
 .welcome{
-    padding: 100px;
+    padding: 20px;
 }
 
 .hero_big{
@@ -86,23 +103,25 @@
 }
 
 .about,
-.stack{
+.stack,
+.work{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    
 }
 
 .about_big,
-.stack_big{
+.stack_big,
+.work_big{
     margin: 0 20px;
     font-size: 50px;
     font-weight: 900;
-    width: 200px;
+    min-width: 200px;
 }
 
 .about_content,
-.stack_content{
+.stack_content,
+.work_content{
     width: 100%;
 }
 
@@ -237,6 +256,14 @@
 }
 
 .certification_items{
+    border-top: 1px solid black;
+}
+
+.certificate{
+    margin-top: 10px;
+}
+
+.certification_items{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     gap: 0.5%;
@@ -266,6 +293,11 @@
     align-items: center;
 }
 
+.other,
+.languages{
+    margin: 20px 0;
+}
+
 .stack_item,
 .stack_image,
 .stack_name,
@@ -290,20 +322,19 @@
 }
 
 .stack_image{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin: 10px;
 }
 
 .stack_image img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 .stack_name{
     display: flex;
     align-items: center;
-    /* width: ; */
     padding: 10px 0;
     font-size: 15px;
     font-weight: 900;
@@ -311,4 +342,302 @@
 
 .stack_name p {
     width: 100%;
+}
+
+.stack_no_image,
+table, tr, td{
+    background-color: rgb(38, 38, 38);
+}
+
+table{
+    width: 100%;
+    padding: 10px 15px
+}
+
+td{
+    line-height: 1.6rem;
+    padding: 15px 0;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.language_list,
+.language,
+.language_name,
+.language_fluency{
+    background-color: rgb(38, 38, 38);
+}
+
+.language_list{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 0.5%;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.language{
+    display: flex;
+    flex-direction: row;
+}
+
+.language_name,
+.language_fluency{
+    margin: 0 5px;
+}
+
+.language_fluency{
+    opacity: 0.7;
+}
+
+.work_intro{
+    font-size: 15px;
+    line-height: 1.6rem;
+    text-align: justify;
+    margin: 10px 0;
+    max-width: 100%;
+}
+
+.work_projects{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 0.5%;
+}
+
+.work_project{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+.project_image{
+    display: block;
+    width: 100%;
+}
+
+.project_image img{
+    width: 100%;
+    height: 100%;
+}
+
+.project_info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.project_info:hover{
+    opacity: 1;
+}
+
+.project_info div,
+.project_info a{
+    background: none;
+}
+
+.project_title{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.project_mini_description{
+    font-size: 13px;
+    margin: 15px 0;
+    text-align: justify;
+}
+
+.project_link a{
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 18px;
+    font-weight: 700;
+    transition: font-size 0.25s;
+    color: teal;
+}
+
+.project_link a:hover{
+    font-size: 25px;
+    transition: font-size 0.25s;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin: 30px 0;
+}
+
+.contact_big{
+    margin: 0 20px;
+    font-size: 50px;
+    font-weight: 900;
+    min-width: 200px;
+}
+
+.send_mail,
+.resume_dwnd{
+    font-size: 15px;
+    margin: 20px;
+}
+
+.send_mail .content,
+.resume_dwnd .content{
+    color: teal;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.right_side form{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: end;
+}
+
+.contact_text,
+.contact_email{
+    font-size: 15px;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    line-height: 1.6rem;
+    border: 1px solid rgba(255,255,255, 0.8);
+    margin-bottom: 15px;
+}
+
+.contact_message{
+    font-size: 15px;
+    color: white;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    line-height: 1.6rem;
+    border: 1px solid rgba(255,255,255, 0.8);
+    margin-bottom: 15px;
+}
+
+.contact_btn{
+    border: 1px solid teal;
+    padding: 20px;
+    width: 150px;
+    color: teal;
+}
+
+@media only screen and (max-width:1300px){
+    .navigation{
+        display: none;
+    }
+
+    .contact{
+        grid-template-columns: 100%;
+    }
+    
+    .right_side form{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:1200px){
+    .stack_items{
+        grid-template-columns: 48% 48%;
+        gap: 4%;
+    }
+
+    .project_mini_description{
+        display: none;
+    }    
+}
+
+@media only screen and (max-width:1000px){
+    .experience_company_positions,
+    .certification_items,
+    .language_list,
+    .education_items{
+        grid-template-columns: 48% 48%;
+        gap: 2%;
+    }
+}
+
+@media only screen and (max-width:900px){
+    .hero{
+        grid-template-columns: 49% 49%;
+        gap: 2%;
+    }
+
+    .welcome,
+    .hero_img{
+        padding: 0;
+    }
+
+    .about,
+    .stack,
+    .work{
+        flex-direction: column;
+    } 
+
+    .about_big,
+    .stack_big,
+    .work_big{
+        margin: 0;
+    }
+
+    .hero{
+        grid-template-columns: 100%;
+    }
+
+    .hero_content{
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .resume{
+        padding: 10px;
+    }
+
+    .about_intro{
+        width: 100%;
+    }
+
+    .work_projects{
+        grid-template-columns: 49% 49%;
+        gap: 1%
+    }
+}
+
+@media only screen and (max-width:500px){
+    .experience_company_positions,
+    .certification_items,
+    .language_list,
+    .education_items{
+        grid-template-columns: 100%
+    }
+
+    .stack_no_image tr{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:300px){
+    .work_projects,
+    .stack_items{
+        grid-template-columns: 100%;
+        gap: 0;
+    }
+
+    .stack_item{
+        padding: 0;
+        margin: 5px 0;
+    }
 }
