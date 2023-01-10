@@ -1,0 +1,1 @@
+- Allowed email domain has to be changed

@@ -1,6 +1,15 @@
 from ast import In, Str
+from calendar import c
+from os import remove
+from pickletools import uint1
+from pydoc import classname
 from re import I, T
+from tkinter import N
+from tkinter.messagebox import NO
+from tkinter.tix import Tree
 from turtle import st
+from flask import session
+from itsdangerous import exc
 
 from setuptools import SetuptoolsDeprecationWarning
 from app import db, login_manager
@@ -168,17 +177,36 @@ class Blogger(db.Model, UserMixin):
             logger.exception(e)
             return {"message":"failed to fetch blogger","status":"failed"}
 
-
-    def update_blogger(self, **kwargs):
+    
+    @staticmethod
+    def get_blogger_object(id=None, email=None):
         try:
-            db.session.query(Blogger).filter(Blogger.Blogger_id == self.Blogger_id).update(**kwargs)
-            db.session.commit()
+            obj = None
+            if id != None:
+                obj = db.session.query(Blogger).filter(Blogger.Blogger_id == id).first()
 
+            elif email != None:
+                obj = db.session.query(Blogger).filter(Blogger.Email == email).first()
+
+            if obj != None:
+                return {"message":{"object":obj},"status":"success"}
+            else:
+                return {"message":"Failed to get user object","status":"failed"}
+
+        except Exception as e:
+            return {"message":"An error occurred while fetching user object","status":"failed"}
+
+
+    @classmethod
+    def update_blogger(cls, blogger_id, **kwargs):
+        try:
+            db.session.query(Blogger).filter(Blogger.Blogger_id == blogger_id).update({**kwargs})
+            db.session.commit()
             return {"message":"Update successful","status":"success"}
 
         except Exception as e:
             logger.exception(e)
-            return {"message":"Failed to update bogger info","status":"failed"}
+            return {"message":"Failed to update blogger info","status":"failed"}
 
 
     @staticmethod
@@ -211,6 +239,20 @@ class Blogger(db.Model, UserMixin):
         except Exception as e:
             logger.exception(e)
             return {"message":"Unable to verify blogger email is in use","status":"failed"}
+
+
+    @staticmethod
+    def mail_is_account(blogger_id,blogger_id_db):
+        try:
+            if blogger_id == blogger_id_db:
+                return {"message":"Account verified","status":"success"}
+
+            else:
+                return {"message":"Account verification failed","status":"failed"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"Unable to verify blogger account","status":"failed"}
 
 
     @staticmethod
@@ -594,6 +636,8 @@ class Resume(db.Model):
     Hero_content = Column(Text, nullable=False)
     About_content = Column(Text, nullable=False)
     Email = Column(String, nullable=False)
+    twitter = Column(String, nullable=False)
+    github = Column(String, nullable=False)
     linkedin = Column(String, nullable=False)
     Work_content = Column(Text, nullable=False)
 
@@ -602,72 +646,886 @@ class Education(db.Model):
     __tablename__ = "education"
 
     id = Column(Integer, primary_key=True)
+    record_id = Column(String, nullable=False,unique=True)
     Start_year = Column(DATETIME, nullable=False)
     End_year = Column(DATETIME, nullable=False)
     Instituition = Column(String, nullable=False)
     Location = Column(String, nullable=False)
     Qualification = Column(Text, nullable=False)
 
+    def dict(self):
+        {
+            "id": self.record_id,
+            "start_year":self.Start_year,
+            "end_year": self.End_year,
+            "Instituition":self.Instituition,
+            "Location":self.Location,
+            "Qualification":self.Qualification
+        }
 
-class Experience(db.Model):
-    __tablename__ = "experience"
+    def get_education_id(self):
+        return self.record_id
+
+    def get_start_year(self):
+        return self.Start_year
+    
+    def get_end_year(self):
+        return self.End_year
+
+    def get_instituition(self):
+        return self.Instituition
+
+    def get_location(self):
+        return self.Location
+
+    def get_qualification(self):
+        return self.Qualification
+
+    @classmethod
+    def add_education(cls, **kwargs):
+        """
+        This method adds a new education record to
+        the education table
+
+        Params:
+        -------
+        Start_year: The starting year of the education (Datetime object)
+        End_year: The year the education is stopped (Datetime object)
+        Instituition: The name of the academic instituition where the 
+                        education took place(String)
+        Location: The location of the academic instituition
+        Qualification: The qualification acheived.
+
+        Returns
+        -------
+        message: The response message
+        status: The response status
+        """
+        try:
+            education = Education(**kwargs)
+            education.add(education)
+            education.commit()
+            return {"message":"successfully added new education record","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"An error occurred while adding education record","status":"failed"}
+
+
+    @classmethod
+    def remove_education(cls, record_id):
+        """
+        This method removes an education record form the education table
+        
+        Params
+        ------
+        record_id: The id of the record
+
+        Returns
+        -------
+        message: The response message
+        status: The response status
+        """
+        try:
+            education_record = db.session.query(
+                Education).filter(Education.record_id == record_id).first()
+            db.session.remove(education_record)
+            db.session.commit
+            return {"message":"delete completed","status":"success"}
+
+        except Exception as e:
+            return {"message":"delete failed","status":"failed"}
+
+
+    @classmethod
+    def update_education(cls, record_id, **kwargs):
+        """
+        This method updates the education record
+
+        Params:
+        ------
+        record_id: The id of the record
+        kwargs: The keyword arguments and the values they will be updated to 
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            db.session.query(
+                Education).filter(Education.record_id == record_id).update({**kwargs})
+            db.session.commit()
+            return{"message":"update complete","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"An error occurred while updating the education record","status":"failed"}
+
+
+class Company(db.Model):
+    __tablename__ = "company"
 
     id = Column(Integer, primary_key=True)
-    Company_uuid = Column(String, nullable=False)
     Company_name = Column(String, nullable=False)
-    Roles = relationship('Roles', backref="experience")
+    Company_uuid = Column(String, nullable=False, unique=True)
+    Roles = relationship('Roles', backref="company")
+
+    def dict(self):
+        return{
+            "company_name":self.Company_name,
+            "compabt_uuid":self.Company_uuid
+        }
+
+    def get_company_name(self):
+        return self.Company_name
+
+    def get_company_uuid(self):
+        return self.Company_uuid
+
+    @staticmethod
+    def get_company_by_id(company_id):
+        try:
+            company = db.session.query(
+                Company).filter(Company.Company_uuid == company_id).first()
+            return {
+                "message":{
+                    "dict":company.dict(),
+                    "object":company
+                    },
+                "status":"success"
+                }
+
+        except Exception as e:
+            logger.exception(e)
+            return {
+                "message":"An error occurred while fetching company",
+                "status":"failed"
+                }
+
+    def get_roles(self):
+        Roles = self.Roles
+        role_list = [role.dict() for role in Roles]
+        return role_list
+
+    @classmethod
+    def add_new_company(cls, **kwargs):
+        """ 
+        This method saves a new company 
+        
+        Params:
+        -------
+        company_name: str
+                    The name of the company being added
+
+        company_uuid: str
+                    The uuid of the company being added
+
+        Returns
+        -------
+        message: The response message
+        status: The response status
+        """
+
+        try:
+            company = Company(**kwargs)
+            db.session.add(company)
+            db.session.commit()
+            return{"message":"successfully added new company","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {
+                "message":"An error occurred while adding company",
+                "status":"failed"
+                }
+
+
+    @classmethod
+    def remove_company(cls, company_id):
+        """
+        This method removes a company from database
+
+        Params:
+        -------
+        company_id: The id of the company to be removed
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+
+        try:
+            company = db.session.query(
+                Company).filter(Company.Company_uuid == company_id).first()
+            db.session.delete(company)
+            db.session.commit()
+            return{"message":"delete complete","status":"success"}
+
+        except Exception as e:
+            return{
+                "message":"An error occurred while deleting company",
+                "status":"failed"
+            }
+
+
+    @classmethod
+    def update_company(cls,company_id,**kwargs):
+        """
+        This method updates the company whose id has been specified
+
+        Params:
+        -------
+        comapny_id: The id of the company to be updated
+        **kwargs: dictionary of keyword arguments and the values they
+            will be updated to
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            db.session.query(
+                Company).filter(Company.Company_uuid == company_id).update({**kwargs})
+            db.session.commit()
+            return{"message":"update complete","status":"failed"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"An error occurred while updating company","status":"success"}
 
 
 class Roles(db.Model):
     __tablename__ = "roles"
 
     id = Column(Integer, primary_key=True)
-    Role_uid = Column(String, ForeignKey('experience.Company_uuid'), nullable=False)
+    Role_id = Column(String, nullable=False, unique=True)
     Start_year = Column(DATETIME, nullable=False)
-    End_year = Column(String, nullable=False)
+    End_year = Column(DATETIME, nullable=False)
     Role_name = Column(String, nullable=False)
     Role_description = Column(String, nullable=False)
+    Company_uid = Column(String, ForeignKey('company.Company_uuid'), nullable=False)
+
+    def get_role_id(self):
+        return self.Role_id
+
+    def get_start_year(self):
+        return self.Start_year
+
+    def get_end_year(self):
+        return self.End_year
+
+    def get_role_name(self):
+        return self.Role_name
+
+    def get_role_description(self):
+        return self.Role_description
+
+    def get_company_name(self):
+        response = Company.get_company_by_id(self.Company_uid)
+        company_name = response["message"]["dict"]["company_name"]
+        return company_name
+
+    def dict(self):
+        return{
+            "id": self.Role_id,
+            "start_year": self.Start_year,
+            "end_year": self.End_year,
+            "role_name": self.Role_name,
+            "role_description": self.Role_description,
+            "company_name": self.get_company_name()
+        }
+
+    @classmethod
+    def add_new_role(cls,**kwargs):
+        """
+        This method adds a new role.
+
+        Params:
+        -------
+        Role_id: The unique id of a role
+        Start_year: The year a role was started
+        End_year: The year a role was terminated
+        Role_name: The name of the role
+        Role_description: The description of the role
+        Company_uid: The id of the company this role was 
+            carried out at.
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            role = Roles(**kwargs)
+            db.session.add(role)
+            db.session.commit()
+            return {"message":"New role added","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to add new role","status":"failed"}
+
+    @classmethod
+    def remove_role(cls,role_id):
+        """
+        This method removes a role
+
+        Params:
+        -------
+        role_id: The id of role to be removed
+
+        Returns:
+        --------
+        message: The response message 
+        status: The response status
+        """
+
+        try:
+            role = db.session.query(Roles).filter(Roles.Role_id == role_id).first()
+            db.session.remove(role)
+            db.session.commit()
+            return{"message":"Role deleted","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to delete role","status":"failed"}
+
+
+    @classmethod
+    def update_role(cls,role_id,**kwargs):
+        """
+        This method updates a role
+
+        Params:
+        -------
+        role_id: The id of the role to be updated
+        kwargs: The keyword argument and the values of the role
+            properties to be updated
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            db.session.query(Roles).filter(Roles.Role_id == role_id).update({**kwargs})
+            db.session.commit()
+            return {"message":"Role update complete","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"Role update failed","status":"failed"}
 
 
 class Certifications(db.Model):
     __tablenme__ = "certifications"
 
     id = Column(Integer, primary_key=True)
-    certificate_id = Column(String, nullable=False)
-    certificate_name = Column(String, nullable=False)
-    certificate_issuer = Column(String, nullable=False)
-    certificte_image = Column(String, nullable=False)
+    Certificate_id = Column(String, nullable=False, unique=True)
+    Certificate_name = Column(String, nullable=False)
+    Certificate_issuer = Column(String, nullable=False)
+    Certificate_image = Column(String, nullable=False)
+
+    def dict(self):
+        return{
+            "id":self.Certificate_id,
+            "name":self.Certificate_name,
+            "issuer":self.Certificate_issuer,
+            "image":self.Certificate_image
+        }
+
+    def get_certificate_id(self):
+        return self.Certificate_id
+
+    def get_certificate_name(self):
+        return self.Certificate_name
+
+    def get_certificate_issuer(self):
+        return self.Certificate_issuer
+
+    def get_certificate_image(self):
+        return self.Certificate_image
+
+    @classmethod
+    def add_certificate(cls,**kwargs):
+        """
+        This method adds a new certificate
+
+        Params:
+        -------
+        Certificate_id: The id of the certificate
+        Certificate_name: The name of the certificate
+        Certificate_issuer: The issuer of the certificate
+        Certificate_image: The image of the certificate
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            certificate = Certifications(**kwargs)
+            db.session.add(certificate)
+            db.session.commit()
+            return {"message":"Certificate added successfully","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to add certificate","status":"failed"}
+
+
+    @classmethod
+    def remove_certificate(cls,certificate_id):
+        """
+        This method removes a certificate
+
+        Params:
+        -------
+        certificated_id: The id of the certificate to be removed
+
+        Returns:
+        --------
+        message: The response message
+        status:: The response status
+        """
+        try:
+            certificate = db.session.query(
+                Certifications).filter(
+                    Certifications.Certificate_id == certificate_id).first()
+            db.session.remove(certificate)
+            db.session.commit()
+            return {"message":"Certificate has been removed","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to remove certificate","status":"failed"}
+
+
+    @classmethod
+    def update_certificate(cls,certificate_id,**kwargs):
+        """
+        This method removes a certificate
+
+        Params:
+        -------
+        certificate_id: The id of the certificate to be updated
+        kwargs: The keyword arguement and values of the parameters
+            to be updated
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            db.session.query(
+                Certifications).filter(
+                    Certifications.Certificate_id == certificate_id).update({**kwargs})
+            db.session.commit()
+            return {"message":"Certificate update complete","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"Certificate update failed","status":"failed"}
 
 
 class Skills(db.Model):
     __tablename__ = "skills"
 
     id = Column(Integer, primary_key=True)
-    skill_name = Column(String, nullable=False)
-    skill_icon = Column(String, nullable=False)
+    Skill_uid = Column(String, nullable=False, unique=True)
+    Skill_name = Column(String, nullable=False)
+    Skill_icon = Column(String, nullable=False)
+
+    def dict(self):
+        return{
+            "id":self.Skill_uid,
+            "name":self.Skill_name,
+            "icon":self.Skill_icon
+        }
+
+    def get_skill_id(self):
+        return self.Skill_uid
+
+    def get_skill_name(self):
+        return self.Skill_name
+
+    def get_skill_icon(self):
+        return self.Skill_icon
+
+    @classmethod
+    def add_new_skill(cls,**kwargs):
+        """
+        This method adds a skill
+
+        Params:
+        -------
+        Skill_uid: The id of the skill
+        Skill_name: The name of the skill
+        Skill_icon: The icon of the skill
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            skill = Skills(**kwargs)
+            db.session.add(skill)
+            db.session.commit()
+            return {"message":"Skill added","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to add skill","status":"failed"}
+
+
+    @classmethod
+    def remove_skill(cls,skill_id):
+        """
+        This method removes a skill
+
+        Params:
+        ------
+        skill_id: The id of the skill to be removed
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            skill = db.session.query(
+                Skills).filter(Skills.Skill_uid == skill_id).first()
+            db.session.remove(skill)
+            db.session.commit()
+            return{"message":"skill removed","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to remove skill","status":"failed"}
+
+
+    @classmethod
+    def update_skill(cls, skill_id, **kwargs):
+        """
+        This method updates a skill
+
+        Params:
+        -------
+        skill_id: The id of the skill to be updated
+        kwargs: The keyword arguments and values of the 
+            parameters to be updated
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+
+        try:
+            db.session.query(
+                Skills).filter(Skills.Skill_uid == skill_id).update({**kwargs})
+            db.session.commit()
+            return{"message":"skill update success","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to update skill","status":"failed"}
 
 
 class Languages(db.Model):
     __tablename__ = "languages"
 
     id = Column(Integer, primary_key=True)
-    language = Column(String, nullable=False)
+    Language = Column(String, nullable=False)
+    Language_id = Column(String, nullable=False, unique=True)
     Proficiency = Column(String, nullable=False)
+
+    def get_language_id(self):
+        return self.Language_id
+
+    def get_language_name(self):
+        return self.Language
+
+    def get_language_proficiency(self):
+        return self.Proficiency
+
+    def dict(self):
+        return{
+            "id":self.Language_id,
+            "language":self.Language,
+            "proficiency":self.Proficiency
+        }
+
+    @classmethod
+    def add_new_language(cls,**kwargs):
+        """
+        This method adds a new language
+
+        Params:
+        -------
+        Language: The language to be added
+        Proficiency: The proficiency in the language to be added
+        
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            language = Languages(**kwargs)
+            db.session.add(language)
+            db.session.commit()
+            return {"message":"successfully added language","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to add language","status":"failed"}
+
+
+    @classmethod
+    def remove_language(cls, language_id):
+        """
+        This method removes a language
+
+        Params:
+        -------
+        language_id: The id of the language to be removed
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            language = db.session.query(
+                Languages).filter(Languages.Language_id == language_id).first()
+            db.session.remove(language)
+            db.session.commit()
+            return{"message":"removed language successfully","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to remove language","status":"failed"}
+
+
+    @classmethod
+    def update_language(cls,language_id,**kwargs):
+        """
+        This method updates a language
+
+        Params:
+        -------
+        language_id: The id of the language
+        kwargs: The keywords arguments and values of the 
+            parameters to be updated
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            db.session.query(
+                Languages).filter(Languages.Language_id == language_id).update({**kwargs})
+            db.session.commit()
+            return{"message":"successfully updated language","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to update language","status":"failed"}
 
 
 class Projects(db.Model):
     __tablename__ = "projects"
 
     id = Column(Integer, primary_key=True)
-    project_link = Column(String, nullable=False)
-    project_image = Column(String, nullable=False)
-    project_description = Column(String, nullable=False)
+    Project_id = Column(String, nullable=False, unique=True)
+    Project_link = Column(String, nullable=False)
+    Project_image = Column(String, nullable=False)
+    Project_description = Column(String, nullable=False)
+
+    def dict(self):
+        return{
+            "id":self.Project_id,
+            "project_link":self.Project_link,
+            "project_image":self.Project_image,
+            "project_description":self.Project_description
+        }
+
+    def get_project_id(self):
+        return self.Project_id
+
+    def get_project_link(self):
+        return self.Project_link
+
+    def get_project_image(self):
+        return self.Project_image
+
+    def get_project_description(self):
+        return self.Project_description
+
+    @classmethod
+    def add_new_project(cls, **kwargs):
+        """
+        This method adds a new project
+
+        Params:
+        -------
+        Project_id: The unique id of the project to be added
+        Project_link: The link of the project to be added
+        Project_image: The image of the project
+        Project_description: A short description of the project
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            project = Projects(**kwargs)
+            db.session.add(project)
+            db.session.commit()
+            return {"message":"project added successfully","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to add project","status":"failed"}
 
 
-class Contact(db.Model):
+    @classmethod
+    def remove_project(cls,project_id):
+        """
+        This method removes a project
+
+        Params:
+        -------
+        project_id: The id of the project to be removed
+        
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            project = db.session.query(
+                Projects).filter(Projects.Project_id == project_id).first()
+            db.session.remove(project)
+            return{"message":"project successfully removed","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to remove project","status":"failed"}
+
+
+    @classmethod
+    def update_project(cls, project_id,**kwargs):
+        """
+        This method updates a project
+
+        Params:
+        -------
+        project_id: The id of the project to be updated
+        kwargs: The keyword argument and values of project 
+            parameters to be updated
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            db.session.query(
+                Projects).filter(Projects.Project_id == project_id).update({**kwargs})
+            db.session.commit()
+            return{"message":"successfully updated a project","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to update project","status":"failed"}
+
+
+class ContactMe(db.Model):
     __tablename__ = "contact"
 
     id = Column(Integer, primary_key=True)
+    Contact_id = Column(String, nullable=False, unique=True)
     Name = Column(String, nullable=False)
     Email = Column(String, nullable=False)
     Message = Column(String, nullable=False)
+
+    def dict(self):
+        return{
+            "name":self.Name,
+            "email":self.Email,
+            "message":self.Message
+        }
+
+    def get_contact_id(self):
+        return self.Contact_id
+
+    def get_contact_name(self):
+        return self.Name
+
+    def get_contact_email(self):
+        return self.Email
+
+    def get_contact_message(self):
+        return self.Message
+
+    @classmethod
+    def add_new_contact(cls,**kwargs):
+        """
+        This method add a new contact me response
+
+        Params:
+        -------
+        Contact_id: The id of the contact me response
+        Name: The name of the sender
+        Email: The email of the sender
+        Message: The message the sender has sent
+
+        Returns:
+        --------
+        message: The response message
+        status: Th response status
+        """
+        try:
+            contactme = ContactMe(**kwargs)
+            db.session.add(contactme)
+            db.session.commit()
+            return {"message":"Sent successfully","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"Failed to send","status":"failed"}
+
+
+    @classmethod
+    def remove_contact(cls, contact_id):
+        """
+        This method removes a contact
+
+        Params:
+        -------
+        contact_id: The id of the contact me message to be removed
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            contactme = db.session.query(
+                ContactMe).filter(ContactMe.Contact_id == contact_id).first()
+            db.session.remove(contactme)
+            db.session.commit()
+            return{"message":"contact me message removed","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to delete contact me message","status":"failed"}
