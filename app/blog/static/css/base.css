@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    background: #E4E9F7;
+    height: calc(100vh - 60px);
+    left: 260px;
+    width: calc(100% - 260px);
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}

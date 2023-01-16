@@ -3,6 +3,8 @@
 }
 
 .container{
+    left: 0;
+    width: 100%;
     background-color: black;
     height: 100vh;
     display: grid;

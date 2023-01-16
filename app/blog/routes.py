@@ -6,11 +6,18 @@ import string
 import random
 import logging
 
-from app.model import Posts
+from importlib_metadata import method_cache, re
+from itsdangerous import exc
+from numpy import record
+from app import blog
+
 from app.blog import blog_bp
+from app.model import Company, Posts
+from app.model import Resume
 from app.model import Blogger
 from app.model import Comments
-from datetime import timedelta
+from datetime import datetime, timedelta
+from app.model import Education
 from app.model import Subscribers
 from flask_login import login_user
 from flask_login import logout_user
@@ -19,6 +26,8 @@ from app.blog.forms import LoginForm
 from app.blog.forms import UploadForm
 from flask_login import login_required
 from werkzeug.utils import secure_filename
+from app.blog.forms import ResumeForm
+from app.blog.forms import EducationForm
 from app.blog.forms import BloggerNameForm
 from app.blog.forms import BloggerEmailForm
 from app.blog.forms import BloggerPasswordForm
@@ -517,7 +526,7 @@ def update_password():
 
     except Exception as e:
         logger.exception(e)
-        flash("Password change failed","failed")
+        flash("An error occurred while trying to change password","failed")
 
     return render_template(
         "admin/update_blogger.html", 
@@ -531,3 +540,209 @@ def update_password():
         Blogger_Position = current_user.get_blogger_position(),
         content = {"page_title":"Update blogger"}
     )
+
+
+@blog_bp.route("/create_resume",methods=["GET"])
+@login_required
+def create_resume():
+    resumeform = ResumeForm()
+    educationform = EducationForm()
+    res = Resume.fetch_resume()
+    if res["status"] == "failed":
+        resume = None
+    else:
+        resume = res["message"]
+    
+    return render_template(
+        "admin/create_resume.html",
+        Page_name = "Build Your Resume",
+        Blogger_Name = current_user.get_blogger_name(), 
+        content = {"page_title":"Build Resume"},
+        Resume = resume,
+        ResumeForm = resumeform,
+        EducationForm = educationform
+        )
+
+@blog_bp.route("/update_welcome_text",methods=["POST"])
+@login_required
+def update_welcome_text():
+    if request.method == "POST":
+        try:
+            welcome_text = request.form["welcome_text"]
+            kwargs = {"Hero_content":welcome_text}
+            response = Resume.update_resume(**kwargs)
+            return response
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"An error occurred while updating welcome message",
+                "status":"failed"
+                }
+
+
+@blog_bp.route("/update_about_text", methods=["POST"])
+@login_required
+def update_about_text():
+    if request.method == "POST":
+        try:
+            about_text = request.form["about_text"]
+            kwargs = {"About_content":about_text}
+            response = Resume.update_resume(**kwargs)
+            return response
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"An error occurred while updating about message",
+                "status":"failed"
+                }
+
+
+@blog_bp.route("/update_work_text", methods=["POST"])
+@login_required
+def update_work_text():
+    if request.method == "POST":
+        try:
+            about_text = request.form["work_text"]
+            kwargs = {"Work_content":about_text}
+            response = Resume.update_resume(**kwargs)
+            return response
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"An error occurred while updating work message",
+                "status":"failed"
+                }
+
+
+@blog_bp.route("/add_education", methods=["POST"])
+@login_required
+def add_education():
+    if request.method == "POST":
+        try:
+            name = request.form["name"]
+            location = request.form["location"]
+            start_date = request.form["start_date"]
+            end_date = request.form["end_date"]
+            qualification = request.form["qualification"]
+
+            kwargs = {
+                "record_id":uuid.uuid4().hex,
+                "Instituition":name, 
+                "Location":location,
+                "Start_year":datetime(int(start_date),1,1),
+                "End_year":datetime(int(end_date),1,1),
+                "Qualification":qualification
+                }
+            response = Education.add_education(**kwargs)
+            return response
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"An errror occurred while add education record",
+                "status":"failed"
+            }
+
+
+@blog_bp.route("/update_education", methods=["POST"])
+@login_required
+def update_education():
+    if request.method == "POST":
+        try:
+            record_id = request.form["record_id"]
+            name = request.form["name"]
+            location = request.form["location"]
+            start_date = request.form["start_date"]
+            end_date = request.form["end_date"]
+            qualification = request.form["qualification"]
+
+            kwargs = {
+                "Instituition":name, 
+                "Location":location,
+                "Start_year":datetime(int(start_date),1,1),
+                "End_year":datetime(int(end_date),1,1),
+                "Qualification":qualification
+                }
+            response = Education.update_education(record_id, **kwargs)
+            return response
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"An errror occurred while add education record",
+                "status":"failed"
+            }
+
+
+@blog_bp.route("/fetch_education_records", methods=["GET"])
+@login_required
+def fetch_education_records():
+    try:
+        response = Education.fetch_records()
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return {
+            "message":"An error ourred while fetching eduation records",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/remove_education", methods=["POST"])
+@login_required
+def remove_education():
+    try:
+        record_id = request.form["record_id"]
+        response = Education.remove_education(record_id)
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while deleting record",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/add_company", methods=["POST"])
+@login_required
+def add_company():
+    try:
+        company_name = request.form["company_name"]
+        company_url = request.form["company_url"]
+        company_uuid = uuid.uuid4().hex
+
+        response = Company.add_new_company(
+            Company_name=company_name,
+            Company_url=company_url,
+            Company_uuid=company_uuid)
+        
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while ading company",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/fetch_companies", methods=["GET"])
+@login_required
+def fetch_companies():
+    try:
+        response = Company.fetch_all_companies()
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return {
+            "message":"An error occurred while fetching saved companies",
+            "status":"failed"
+        }
+
+

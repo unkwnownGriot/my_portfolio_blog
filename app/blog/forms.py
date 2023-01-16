@@ -237,6 +237,13 @@ class BloggerPasswordForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
+class ResumeForm(FlaskForm):
+    """
+    This form is used to generate the csrf
+    token used by the create resume page
+    """
+
+
 
 class EducationForm(FlaskForm):
 
@@ -266,7 +273,7 @@ class EducationForm(FlaskForm):
             DataRequired(message="Please select a start date")
         ],
         choices=[
-            (f"{x},{x}") for x in range(1942,int(str(datetime.now(app_tz).year)))
+            (f"{x}") for x in range(1942,int(str(datetime.now(app_tz).year))+1)
             ]
     )
 
@@ -276,7 +283,7 @@ class EducationForm(FlaskForm):
             DataRequired(message="Please select an end date")
         ],
         choices=[
-            (f"{x},{x}") for x in range(1942,int(str(datetime.now(app_tz).year)))
+            (f"{x}") for x in range(1942,int(str(datetime.now(app_tz).year))+1)
             ]
     )
 
@@ -287,5 +294,5 @@ class EducationForm(FlaskForm):
             Regexp('[A-Za-z0-9,\.]',message=(
                 "Qualification contains unwanted charaters"))
             ],
-        render_kw={"placeholder":"Bacherlors of Engineering, Mechatronics Engineering"}
+        render_kw={"placeholder":"Bachelors of Engineering, Mechatronics Engineering"}
     )

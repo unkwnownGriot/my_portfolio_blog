@@ -77,25 +77,16 @@
                     </p>
 
                     <p class="hero_content">
-                        My name is Akinsola Adefolahan.
-                        I am a FullStack Machine Learning Engineer.
-                        With well over 5 years of experience in
-                        Machine Learning and about 8 years of experience
-                        as a web developer , I have developed a
-                        strong set of skills and passion for
-                        Machine Learning and Web Development. Whether I 
-                        am working as an ML Engineer, a Backend Engineer or
-                        a FullStack Engineer, I bring my dediction and drive
-                        to every task. Take a look around to see more of my 
-                        professional experience and accomplishments.
-                        Thank you for visiting!
+                        {{content["resume"]["message"]["dict"][0]["hero_content"]}}
                     </p>
 
-                    <div class="hero_btn">
-                        <button>
-                            Get In Touch
-                        </button>
-                    </div>
+                    <a href="#contact">
+                        <div class="hero_btn">
+                            <button>
+                                Get In Touch
+                            </button>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="hero_img">
@@ -114,9 +105,7 @@
 
                     <div class="about_intro">
                         <p>
-                            In this section, I have carefully selected and highlighted my academic 
-                            achievements and professional experiences that I believe are most relevant 
-                            to my current career goals and aspirations.
+                            {{content["resume"]["message"]["dict"][0]["about_content"]}}
                         </p>
                     </div>
 
@@ -127,49 +116,29 @@
                         </div>
 
                         <div class="education_items">
-                            <div class="education_item">
-                                <div class="education_year">
-                                    <p>
-                                        2011 - 2013
-                                    </p>
+                            {% for education in content["education_history"]: %}
+                                <div class="education_item">
+                                    <div class="education_year">
+                                        <p>
+                                            {{education["start_year"]}} - {{education["end_year"]}}
+                                        </p>
+                                    </div>
+
+                                    <div class="education_instituition">
+                                        <p>
+                                            {{education["Instituition"]}}
+                                        </p>
+
+                                        <small class="education_location">
+                                            {{education["Location"]}}
+                                        </small>
+                                    </div>
+
+                                    <div class="education_award_name">
+                                        {{education["Qualification"]}}
+                                    </div>
                                 </div>
-
-                                <div class="education_instituition">
-                                    <p>
-                                        Cambridge academic
-                                    </p>
-
-                                    <small class="education_location">
-                                        Abeokuta, Nigeria
-                                    </small>
-                                </div>
-
-                                <div class="education_award_name">
-                                    Bachelors degree in Mechatronics Engineering
-                                </div>
-                            </div>
-
-                            <div class="education_item">
-                                <div class="education_year">
-                                    <p>
-                                        2011 - 2013
-                                    </p>
-                                </div>
-
-                                <div class="education_instituition">
-                                    <p>
-                                        Cambridge academic
-                                    </p>
-
-                                    <small class="education_location">
-                                        Abeokuta, Nigeria
-                                    </small>
-                                </div>
-
-                                <div class="education_award_name">
-                                    Bachelors degree in Mechatronics Engineering
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -470,14 +439,7 @@
 
                 <div class="work_content">
                     <div class="work_intro">
-                        Welcome to the work section of my resume website! Here,
-                        you'll find a detailed list of my professional experience 
-                        and accomplishments. I have had the opportunity to work with 
-                        some amazing companies and organizations, and have gained a 
-                        wealth of knowledge and skills through these experiences. As 
-                        you browse through my work history, I hope you get a sense of 
-                        my dedication, drive, and passion in the field of machine 
-                        learning and web development
+                        {{content["resume"]["message"]["dict"][0]["work_content"]}}
                     </div>
 
                     <div class="work_projects">
@@ -565,7 +527,7 @@
 
 
             <!-- Contact Section -->
-            <div class="contact">
+            <div class="contact" id="contact">
 
                 <div class="left_side">
                     <div class="contact_big">
@@ -574,7 +536,7 @@
     
                     <div class="send_mail">
                         <p class="header">Email</p>
-                        <a href="mailto:adefolahanakinsola@gmail.com" class="content">adefolahanakinsola@gmail.com</a>
+                        <a href="mailto:{{content['resume']['message']['dict'][0]['email']}}" class="content">{{content["resume"]["message"]["dict"][0]["email"]}}</a>
                     </div>
     
                     <div class="resume_dwnd">

@@ -1,17 +1,4 @@
-from ast import In, Str
-from calendar import c
-from os import remove
-from pickletools import uint1
-from pydoc import classname
-from re import I, T
-from tkinter import N
-from tkinter.messagebox import NO
-from tkinter.tix import Tree
-from turtle import st
-from flask import session
 from itsdangerous import exc
-
-from setuptools import SetuptoolsDeprecationWarning
 from app import db, login_manager
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
@@ -641,6 +628,174 @@ class Resume(db.Model):
     linkedin = Column(String, nullable=False)
     Work_content = Column(Text, nullable=False)
 
+    def get_hero_content(self):
+        return self.Hero_content
+
+    def get_about_content(self):
+        return self.About_content
+
+    def get_work_content(self):
+        return self.Work_content
+
+    def get_email(self):
+        return self.Email
+
+    def get_twitter(self):
+        return self.twitter
+
+    def get_github(self):
+        return self.github
+
+    def get_linkedin(self):
+        return self.linkedin
+
+    def dict(self):
+        return{
+            "hero_content":self.Hero_content,
+            "about_content":self.About_content,
+            "email":self.Email,
+            "twitter":self.twitter,
+            "github":self.github,
+            'linkedin':self.linkedin,
+            "work_content":self.Work_content
+        }
+
+    @classmethod
+    def add_resume(cls,**kwargs):
+        """
+        This method adds componnts of the
+        resume that do not require to have
+        their own tables
+
+        Params:
+        -------
+        Hero_content: The resumes hero content
+        About_content: The resumes about content
+        Email: The email of the resume owner
+        twitter: The twitter id of the resume owner
+        github: The github link of the resume owner
+        linkedin: The linkedIn link of the resume owner
+        Work_content: The resumes work content
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            resume = Resume(**kwargs)
+            db.session.add(resume)
+            db.session.commit()
+            return{"message":"Resume info added","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"An error occurred while adding resume info","status":"failed"}
+
+
+    @classmethod
+    def remove_resume(cls):
+        """ 
+        This method removes the saved resume info
+        
+        Params:
+        -------
+        none
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            resumes = db.session.query(Resume).all()
+            db.session.delete(resumes)
+            db.session.commit()
+            return {"message":"resume successfully deleted","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to delete resume","status":"failed"}
+
+
+    @classmethod
+    def update_resume(cls,**kwargs):
+        """
+        This method updates the resume
+        
+        Params:
+        -------
+        Hero_content: The resumes hero content
+        About_content: The resumes about content
+        Email: The email of the resume owner
+        twitter: The twitter id of the resume owner
+        github: The github link of the resume owner
+        linkedin: The linkedIn link of the resume owner
+        Work_content: The resumes work content
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            db.session.query(Resume).filter(Resume.id > 0).update({**kwargs})
+            db.session.commit()
+            return {"message":"resume update complete","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return {"mesage":"failed to update resume","status":"failed"}
+
+
+    @staticmethod
+    def fetch_resume():
+        """
+        This method fetches the resume info
+
+        Params:
+        -------
+        none
+
+        Returns:
+        --------
+        message: The response message
+        status: Th response status
+        """
+        try:
+            resumes = db.session.query(Resume).all()
+
+            return{
+                "message":{
+                    "dict":[resume.dict() for resume in resumes],
+                    "object":resumes
+                    }, 
+                "status":"success"
+                }
+
+        except Exception as e:
+            logger.exception(e)
+            return {"message":"failed to fetch resume","status":"failed"}
+
+
+    @classmethod
+    def create_default(cls):
+        """ This method creates a default info of the resume """
+
+        # Check if resume has been created
+        resumes = Resume.fetch_resume()
+
+        if resumes["message"]["dict"] == []:
+            res = Resume.add_resume(
+                Hero_content = "Default hero content",
+                About_content = "Default about content",
+                Email = "sample@mail.com",
+                twitter = "twitter_id",
+                github = "github_id",
+                linkedin = "linkedin_id",
+                Work_content = "Default work content",
+            )
+
 
 class Education(db.Model):
     __tablename__ = "education"
@@ -654,10 +809,10 @@ class Education(db.Model):
     Qualification = Column(Text, nullable=False)
 
     def dict(self):
-        {
+        return {
             "id": self.record_id,
-            "start_year":self.Start_year,
-            "end_year": self.End_year,
+            "start_year":int(self.Start_year.year),
+            "end_year": int(self.End_year.year),
             "Instituition":self.Instituition,
             "Location":self.Location,
             "Qualification":self.Qualification
@@ -689,6 +844,7 @@ class Education(db.Model):
 
         Params:
         -------
+        record_id: The unique uuid of the education record
         Start_year: The starting year of the education (Datetime object)
         End_year: The year the education is stopped (Datetime object)
         Instituition: The name of the academic instituition where the 
@@ -703,13 +859,13 @@ class Education(db.Model):
         """
         try:
             education = Education(**kwargs)
-            education.add(education)
-            education.commit()
-            return {"message":"successfully added new education record","status":"success"}
+            db.session.add(education)
+            db.session.commit()
+            return {"message":"Added new education record","status":"success"}
 
         except Exception as e:
             logger.exception(e)
-            return {"message":"An error occurred while adding education record","status":"failed"}
+            return {"message":"Failed to add education","status":"failed"}
 
 
     @classmethod
@@ -729,12 +885,40 @@ class Education(db.Model):
         try:
             education_record = db.session.query(
                 Education).filter(Education.record_id == record_id).first()
-            db.session.remove(education_record)
-            db.session.commit
+            db.session.delete(education_record)
+            db.session.commit()
             return {"message":"delete completed","status":"success"}
 
         except Exception as e:
+            logger.exception(e)
             return {"message":"delete failed","status":"failed"}
+
+
+    @staticmethod
+    def fetch_records():
+        """This method returns a list of all the education records"""
+
+        try:
+            records = db.session.query(Education).order_by(Education.id).all()
+            if records == None:
+                return{
+                    "message":"No records found",
+                    "status":"warning"
+                }
+
+            records = [record.dict() for record in records]
+            return {
+                "message":{"dict":records},
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return {
+                "message":"failed to fetch education records",
+                "status":"failed"
+            }
+
 
 
     @classmethod
@@ -760,7 +944,7 @@ class Education(db.Model):
 
         except Exception as e:
             logger.exception(e)
-            return {"message":"An error occurred while updating the education record","status":"failed"}
+            return {"message":"Failed to update education","status":"failed"}
 
 
 class Company(db.Model):
@@ -768,13 +952,15 @@ class Company(db.Model):
 
     id = Column(Integer, primary_key=True)
     Company_name = Column(String, nullable=False)
+    Company_url = Column(String)
     Company_uuid = Column(String, nullable=False, unique=True)
     Roles = relationship('Roles', backref="company")
 
     def dict(self):
         return{
             "company_name":self.Company_name,
-            "compabt_uuid":self.Company_uuid
+            "company_url":self.Company_url,
+            "company_uuid":self.Company_uuid
         }
 
     def get_company_name(self):
@@ -799,7 +985,7 @@ class Company(db.Model):
         except Exception as e:
             logger.exception(e)
             return {
-                "message":"An error occurred while fetching company",
+                "message":"Failed to fetch companies",
                 "status":"failed"
                 }
 
@@ -815,10 +1001,13 @@ class Company(db.Model):
         
         Params:
         -------
-        company_name: str
+        Company_name: str
                     The name of the company being added
 
-        company_uuid: str
+        Company_url: str
+                    The web address of the company
+
+        Company_uuid: str
                     The uuid of the company being added
 
         Returns
@@ -836,7 +1025,7 @@ class Company(db.Model):
         except Exception as e:
             logger.exception(e)
             return {
-                "message":"An error occurred while adding company",
+                "message":"Failed to add company",
                 "status":"failed"
                 }
 
@@ -864,8 +1053,9 @@ class Company(db.Model):
             return{"message":"delete complete","status":"success"}
 
         except Exception as e:
+            logger.exception(e)
             return{
-                "message":"An error occurred while deleting company",
+                "message":"failed to delete company",
                 "status":"failed"
             }
 
@@ -890,12 +1080,43 @@ class Company(db.Model):
             db.session.query(
                 Company).filter(Company.Company_uuid == company_id).update({**kwargs})
             db.session.commit()
-            return{"message":"update complete","status":"failed"}
+            return{"message":"update complete","status":"success"}
 
         except Exception as e:
             logger.exception(e)
-            return{"message":"An error occurred while updating company","status":"success"}
+            return{"message":"Failed to make update","status":"failed"}
 
+
+    @staticmethod
+    def fetch_all_companies():
+        """
+        This method returns a list of all the companies
+        that have been saved
+
+        Params:
+        -------
+        None
+
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            companies = db.session.query(Company).all()
+            companies = [company.dict() for company in companies]
+            return{
+                "message":{"dict":companies},
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"Failed to fetch companies",
+                "status":"failed"
+            }
 
 class Roles(db.Model):
     __tablename__ = "roles"
@@ -985,7 +1206,7 @@ class Roles(db.Model):
 
         try:
             role = db.session.query(Roles).filter(Roles.Role_id == role_id).first()
-            db.session.remove(role)
+            db.session.delete(role)
             db.session.commit()
             return{"message":"Role deleted","status":"success"}
 
@@ -1095,7 +1316,7 @@ class Certifications(db.Model):
             certificate = db.session.query(
                 Certifications).filter(
                     Certifications.Certificate_id == certificate_id).first()
-            db.session.remove(certificate)
+            db.session.delete(certificate)
             db.session.commit()
             return {"message":"Certificate has been removed","status":"success"}
 
@@ -1200,7 +1421,7 @@ class Skills(db.Model):
         try:
             skill = db.session.query(
                 Skills).filter(Skills.Skill_uid == skill_id).first()
-            db.session.remove(skill)
+            db.session.delete(skill)
             db.session.commit()
             return{"message":"skill removed","status":"success"}
 
@@ -1304,7 +1525,7 @@ class Languages(db.Model):
         try:
             language = db.session.query(
                 Languages).filter(Languages.Language_id == language_id).first()
-            db.session.remove(language)
+            db.session.delete(language)
             db.session.commit()
             return{"message":"removed language successfully","status":"success"}
 
@@ -1414,7 +1635,7 @@ class Projects(db.Model):
         try:
             project = db.session.query(
                 Projects).filter(Projects.Project_id == project_id).first()
-            db.session.remove(project)
+            db.session.delete(project)
             return{"message":"project successfully removed","status":"success"}
 
         except Exception as e:
@@ -1522,7 +1743,7 @@ class ContactMe(db.Model):
         try:
             contactme = db.session.query(
                 ContactMe).filter(ContactMe.Contact_id == contact_id).first()
-            db.session.remove(contactme)
+            db.session.delete(contactme)
             db.session.commit()
             return{"message":"contact me message removed","status":"success"}
 

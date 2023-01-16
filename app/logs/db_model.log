@@ -3090,3 +3090,891 @@ AttributeError: 'Blogger' object has no attribute 'update'
 2023-01-10 02:54:22,744:DEBUG::====================================================================================================
 2023-01-10 02:54:22,744:INFO::Database logger :: Logging Active
 2023-01-10 02:54:22,745:DEBUG::
+2023-01-10 02:56:36,178:DEBUG::
+2023-01-10 02:56:36,178:DEBUG::====================================================================================================
+2023-01-10 02:56:36,179:INFO::Database logger :: Logging Active
+2023-01-10 02:56:36,179:DEBUG::
+2023-01-10 02:56:38,015:DEBUG::
+2023-01-10 02:56:38,016:DEBUG::====================================================================================================
+2023-01-10 02:56:38,016:INFO::Database logger :: Logging Active
+2023-01-10 02:56:38,017:DEBUG::
+2023-01-10 03:06:12,403:DEBUG::
+2023-01-10 03:06:12,403:DEBUG::====================================================================================================
+2023-01-10 03:06:12,404:INFO::Database logger :: Logging Active
+2023-01-10 03:06:12,404:DEBUG::
+2023-01-10 03:33:34,102:DEBUG::
+2023-01-10 03:33:34,102:DEBUG::====================================================================================================
+2023-01-10 03:33:34,103:INFO::Database logger :: Logging Active
+2023-01-10 03:33:34,103:DEBUG::
+2023-01-10 03:45:14,132:DEBUG::
+2023-01-10 03:45:14,132:DEBUG::====================================================================================================
+2023-01-10 03:45:14,133:INFO::Database logger :: Logging Active
+2023-01-10 03:45:14,133:DEBUG::
+2023-01-10 03:45:16,145:DEBUG::
+2023-01-10 03:45:16,146:DEBUG::====================================================================================================
+2023-01-10 03:45:16,147:INFO::Database logger :: Logging Active
+2023-01-10 03:45:16,148:DEBUG::
+2023-01-10 03:45:55,184:DEBUG::
+2023-01-10 03:45:55,184:DEBUG::====================================================================================================
+2023-01-10 03:45:55,185:INFO::Database logger :: Logging Active
+2023-01-10 03:45:55,185:DEBUG::
+2023-01-11 22:45:59,062:DEBUG::
+2023-01-11 22:45:59,062:DEBUG::====================================================================================================
+2023-01-11 22:45:59,063:INFO::Database logger :: Logging Active
+2023-01-11 22:45:59,063:DEBUG::
+2023-01-11 22:56:26,918:DEBUG::
+2023-01-11 22:56:26,918:DEBUG::====================================================================================================
+2023-01-11 22:56:26,919:INFO::Database logger :: Logging Active
+2023-01-11 22:56:26,919:DEBUG::
+2023-01-11 23:02:14,941:DEBUG::
+2023-01-11 23:02:14,941:DEBUG::====================================================================================================
+2023-01-11 23:02:14,942:INFO::Database logger :: Logging Active
+2023-01-11 23:02:14,942:DEBUG::
+2023-01-11 23:02:19,035:DEBUG::
+2023-01-11 23:02:19,035:DEBUG::====================================================================================================
+2023-01-11 23:02:19,036:INFO::Database logger :: Logging Active
+2023-01-11 23:02:19,036:DEBUG::
+2023-01-11 23:22:47,827:DEBUG::
+2023-01-11 23:22:47,827:DEBUG::====================================================================================================
+2023-01-11 23:22:47,828:INFO::Database logger :: Logging Active
+2023-01-11 23:22:47,828:DEBUG::
+2023-01-11 23:22:49,296:DEBUG::
+2023-01-11 23:22:49,297:DEBUG::====================================================================================================
+2023-01-11 23:22:49,297:INFO::Database logger :: Logging Active
+2023-01-11 23:22:49,297:DEBUG::
+2023-01-11 23:23:02,535:ERROR::'NoneType' object has no attribute 'dict'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 766, in fetch_resume
+    return{"message":{"dict":resume.dict(),"object":resume}, "status":"success"}
+AttributeError: 'NoneType' object has no attribute 'dict'
+2023-01-11 23:25:49,047:DEBUG::
+2023-01-11 23:25:49,047:DEBUG::====================================================================================================
+2023-01-11 23:25:49,048:INFO::Database logger :: Logging Active
+2023-01-11 23:25:49,048:DEBUG::
+2023-01-11 23:26:19,391:ERROR::'NoneType' object has no attribute 'dict'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 766, in fetch_resume
+    return{"message":{"dict":resume.dict(),"object":resume}, "status":"success"}
+AttributeError: 'NoneType' object has no attribute 'dict'
+2023-01-11 23:36:11,445:DEBUG::
+2023-01-11 23:36:11,445:DEBUG::====================================================================================================
+2023-01-11 23:36:11,446:INFO::Database logger :: Logging Active
+2023-01-11 23:36:11,446:DEBUG::
+2023-01-11 23:39:14,927:DEBUG::
+2023-01-11 23:39:14,928:DEBUG::====================================================================================================
+2023-01-11 23:39:14,928:INFO::Database logger :: Logging Active
+2023-01-11 23:39:14,928:DEBUG::
+2023-01-11 23:41:00,583:DEBUG::
+2023-01-11 23:41:00,583:DEBUG::====================================================================================================
+2023-01-11 23:41:00,584:INFO::Database logger :: Logging Active
+2023-01-11 23:41:00,584:DEBUG::
+2023-01-11 23:45:10,482:DEBUG::
+2023-01-11 23:45:10,482:DEBUG::====================================================================================================
+2023-01-11 23:45:10,483:INFO::Database logger :: Logging Active
+2023-01-11 23:45:10,483:DEBUG::
+2023-01-11 23:45:56,911:DEBUG::
+2023-01-11 23:45:56,912:DEBUG::====================================================================================================
+2023-01-11 23:45:56,912:INFO::Database logger :: Logging Active
+2023-01-11 23:45:56,912:DEBUG::
+2023-01-12 02:07:55,674:DEBUG::
+2023-01-12 02:07:55,674:DEBUG::====================================================================================================
+2023-01-12 02:07:55,675:INFO::Database logger :: Logging Active
+2023-01-12 02:07:55,675:DEBUG::
+2023-01-12 02:08:26,135:DEBUG::
+2023-01-12 02:08:26,136:DEBUG::====================================================================================================
+2023-01-12 02:08:26,136:INFO::Database logger :: Logging Active
+2023-01-12 02:08:26,137:DEBUG::
+2023-01-12 02:09:32,448:DEBUG::
+2023-01-12 02:09:32,449:DEBUG::====================================================================================================
+2023-01-12 02:09:32,449:INFO::Database logger :: Logging Active
+2023-01-12 02:09:32,450:DEBUG::
+2023-01-12 02:32:48,054:DEBUG::
+2023-01-12 02:32:48,055:DEBUG::====================================================================================================
+2023-01-12 02:32:48,055:INFO::Database logger :: Logging Active
+2023-01-12 02:32:48,056:DEBUG::
+2023-01-12 02:48:16,080:DEBUG::
+2023-01-12 02:48:16,081:DEBUG::====================================================================================================
+2023-01-12 02:48:16,081:INFO::Database logger :: Logging Active
+2023-01-12 02:48:16,082:DEBUG::
+2023-01-12 02:48:17,775:DEBUG::
+2023-01-12 02:48:17,775:DEBUG::====================================================================================================
+2023-01-12 02:48:17,776:INFO::Database logger :: Logging Active
+2023-01-12 02:48:17,776:DEBUG::
+2023-01-12 02:49:56,005:DEBUG::
+2023-01-12 02:49:56,006:DEBUG::====================================================================================================
+2023-01-12 02:49:56,006:INFO::Database logger :: Logging Active
+2023-01-12 02:49:56,007:DEBUG::
+2023-01-12 02:50:36,882:DEBUG::
+2023-01-12 02:50:36,882:DEBUG::====================================================================================================
+2023-01-12 02:50:36,885:INFO::Database logger :: Logging Active
+2023-01-12 02:50:36,891:DEBUG::
+2023-01-12 02:52:38,450:DEBUG::
+2023-01-12 02:52:38,451:DEBUG::====================================================================================================
+2023-01-12 02:52:38,451:INFO::Database logger :: Logging Active
+2023-01-12 02:52:38,451:DEBUG::
+2023-01-12 02:53:17,373:DEBUG::
+2023-01-12 02:53:17,373:DEBUG::====================================================================================================
+2023-01-12 02:53:17,373:INFO::Database logger :: Logging Active
+2023-01-12 02:53:17,374:DEBUG::
+2023-01-12 02:53:19,690:ERROR::Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 767, in fetch_resume
+    resumes = db.session.query(Resume).all()
+  File "<string>", line 2, in query
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\scoping.py", line 24, in _proxied
+    return self.registry()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\_collections.py", line 1006, in __call__
+    key = self.scopefunc()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\flask_sqlalchemy\session.py", line 81, in _app_ctx_id
+    return id(app_ctx._get_current_object())  # type: ignore[attr-defined]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\local.py", line 513, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2023-01-12 02:53:19,806:ERROR::Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 687, in add_resume
+    resume = Resume(**kwargs)
+  File "<string>", line 2, in add
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\scoping.py", line 24, in _proxied
+    return self.registry()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\_collections.py", line 1006, in __call__
+    key = self.scopefunc()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\flask_sqlalchemy\session.py", line 81, in _app_ctx_id
+    return id(app_ctx._get_current_object())  # type: ignore[attr-defined]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\local.py", line 513, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2023-01-12 02:53:45,761:DEBUG::
+2023-01-12 02:53:45,762:DEBUG::====================================================================================================
+2023-01-12 02:53:45,762:INFO::Database logger :: Logging Active
+2023-01-12 02:53:45,763:DEBUG::
+2023-01-12 02:53:46,441:ERROR::Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 767, in fetch_resume
+    resumes = db.session.query(Resume).all()
+  File "<string>", line 2, in query
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\scoping.py", line 24, in _proxied
+    return self.registry()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\_collections.py", line 1006, in __call__
+    key = self.scopefunc()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\flask_sqlalchemy\session.py", line 81, in _app_ctx_id
+    return id(app_ctx._get_current_object())  # type: ignore[attr-defined]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\local.py", line 513, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2023-01-12 02:53:47,563:DEBUG::
+2023-01-12 02:53:47,563:DEBUG::====================================================================================================
+2023-01-12 02:53:47,564:INFO::Database logger :: Logging Active
+2023-01-12 02:53:47,564:DEBUG::
+2023-01-12 02:53:47,855:ERROR::Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 767, in fetch_resume
+    resumes = db.session.query(Resume).all()
+  File "<string>", line 2, in query
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\scoping.py", line 24, in _proxied
+    return self.registry()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\_collections.py", line 1006, in __call__
+    key = self.scopefunc()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\flask_sqlalchemy\session.py", line 81, in _app_ctx_id
+    return id(app_ctx._get_current_object())  # type: ignore[attr-defined]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\local.py", line 513, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2023-01-12 02:56:05,938:DEBUG::
+2023-01-12 02:56:05,938:DEBUG::====================================================================================================
+2023-01-12 02:56:05,939:INFO::Database logger :: Logging Active
+2023-01-12 02:56:05,939:DEBUG::
+2023-01-12 02:56:07,380:DEBUG::
+2023-01-12 02:56:07,381:DEBUG::====================================================================================================
+2023-01-12 02:56:07,381:INFO::Database logger :: Logging Active
+2023-01-12 02:56:07,382:DEBUG::
+2023-01-12 02:56:52,735:DEBUG::
+2023-01-12 02:56:52,736:DEBUG::====================================================================================================
+2023-01-12 02:56:52,736:INFO::Database logger :: Logging Active
+2023-01-12 02:56:52,737:DEBUG::
+2023-01-12 02:56:54,437:DEBUG::
+2023-01-12 02:56:54,437:DEBUG::====================================================================================================
+2023-01-12 02:56:54,438:INFO::Database logger :: Logging Active
+2023-01-12 02:56:54,439:DEBUG::
+2023-01-12 02:59:59,351:DEBUG::
+2023-01-12 02:59:59,352:DEBUG::====================================================================================================
+2023-01-12 02:59:59,352:INFO::Database logger :: Logging Active
+2023-01-12 02:59:59,353:DEBUG::
+2023-01-12 03:00:00,758:DEBUG::
+2023-01-12 03:00:00,758:DEBUG::====================================================================================================
+2023-01-12 03:00:00,759:INFO::Database logger :: Logging Active
+2023-01-12 03:00:00,759:DEBUG::
+2023-01-12 03:01:31,305:DEBUG::
+2023-01-12 03:01:31,305:DEBUG::====================================================================================================
+2023-01-12 03:01:31,306:INFO::Database logger :: Logging Active
+2023-01-12 03:01:31,306:DEBUG::
+2023-01-12 03:01:37,734:DEBUG::
+2023-01-12 03:01:37,734:DEBUG::====================================================================================================
+2023-01-12 03:01:37,735:INFO::Database logger :: Logging Active
+2023-01-12 03:01:37,735:DEBUG::
+2023-01-12 03:01:39,172:DEBUG::
+2023-01-12 03:01:39,172:DEBUG::====================================================================================================
+2023-01-12 03:01:39,173:INFO::Database logger :: Logging Active
+2023-01-12 03:01:39,173:DEBUG::
+2023-01-12 03:02:22,167:DEBUG::
+2023-01-12 03:02:22,167:DEBUG::====================================================================================================
+2023-01-12 03:02:22,167:INFO::Database logger :: Logging Active
+2023-01-12 03:02:22,168:DEBUG::
+2023-01-12 03:02:27,769:DEBUG::
+2023-01-12 03:02:27,770:DEBUG::====================================================================================================
+2023-01-12 03:02:27,770:INFO::Database logger :: Logging Active
+2023-01-12 03:02:27,771:DEBUG::
+2023-01-12 03:02:29,445:DEBUG::
+2023-01-12 03:02:29,445:DEBUG::====================================================================================================
+2023-01-12 03:02:29,446:INFO::Database logger :: Logging Active
+2023-01-12 03:02:29,446:DEBUG::
+2023-01-12 03:03:02,695:DEBUG::
+2023-01-12 03:03:02,695:DEBUG::====================================================================================================
+2023-01-12 03:03:02,696:INFO::Database logger :: Logging Active
+2023-01-12 03:03:02,696:DEBUG::
+2023-01-12 03:03:42,376:DEBUG::
+2023-01-12 03:03:42,377:DEBUG::====================================================================================================
+2023-01-12 03:03:42,377:INFO::Database logger :: Logging Active
+2023-01-12 03:03:42,377:DEBUG::
+2023-01-12 03:04:01,445:DEBUG::
+2023-01-12 03:04:01,446:DEBUG::====================================================================================================
+2023-01-12 03:04:01,447:INFO::Database logger :: Logging Active
+2023-01-12 03:04:01,447:DEBUG::
+2023-01-12 03:04:53,681:DEBUG::
+2023-01-12 03:04:53,681:DEBUG::====================================================================================================
+2023-01-12 03:04:53,682:INFO::Database logger :: Logging Active
+2023-01-12 03:04:53,682:DEBUG::
+2023-01-12 03:05:34,594:DEBUG::
+2023-01-12 03:05:34,594:DEBUG::====================================================================================================
+2023-01-12 03:05:34,595:INFO::Database logger :: Logging Active
+2023-01-12 03:05:34,595:DEBUG::
+2023-01-12 03:05:44,691:DEBUG::
+2023-01-12 03:05:44,691:DEBUG::====================================================================================================
+2023-01-12 03:05:44,691:INFO::Database logger :: Logging Active
+2023-01-12 03:05:44,691:DEBUG::
+2023-01-12 03:06:29,487:DEBUG::
+2023-01-12 03:06:29,488:DEBUG::====================================================================================================
+2023-01-12 03:06:29,489:INFO::Database logger :: Logging Active
+2023-01-12 03:06:29,489:DEBUG::
+2023-01-12 03:07:24,567:DEBUG::
+2023-01-12 03:07:24,567:DEBUG::====================================================================================================
+2023-01-12 03:07:24,568:INFO::Database logger :: Logging Active
+2023-01-12 03:07:24,569:DEBUG::
+2023-01-12 03:09:08,061:DEBUG::
+2023-01-12 03:09:08,062:DEBUG::====================================================================================================
+2023-01-12 03:09:08,062:INFO::Database logger :: Logging Active
+2023-01-12 03:09:08,063:DEBUG::
+2023-01-12 03:11:15,914:DEBUG::
+2023-01-12 03:11:15,914:DEBUG::====================================================================================================
+2023-01-12 03:11:15,915:INFO::Database logger :: Logging Active
+2023-01-12 03:11:15,915:DEBUG::
+2023-01-12 03:11:17,738:DEBUG::
+2023-01-12 03:11:17,738:DEBUG::====================================================================================================
+2023-01-12 03:11:17,739:INFO::Database logger :: Logging Active
+2023-01-12 03:11:17,739:DEBUG::
+2023-01-12 03:37:38,096:DEBUG::
+2023-01-12 03:37:38,096:DEBUG::====================================================================================================
+2023-01-12 03:37:38,097:INFO::Database logger :: Logging Active
+2023-01-12 03:37:38,097:DEBUG::
+2023-01-12 03:37:39,889:DEBUG::
+2023-01-12 03:37:39,889:DEBUG::====================================================================================================
+2023-01-12 03:37:39,890:INFO::Database logger :: Logging Active
+2023-01-12 03:37:39,890:DEBUG::
+2023-01-12 03:38:15,462:ERROR::'list' object has no attribute 'update'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 742, in update_resume
+    db.session.query(Resume).all().update({**kwargs})
+AttributeError: 'list' object has no attribute 'update'
+2023-01-12 03:40:06,948:DEBUG::
+2023-01-12 03:40:06,948:DEBUG::====================================================================================================
+2023-01-12 03:40:06,949:INFO::Database logger :: Logging Active
+2023-01-12 03:40:06,950:DEBUG::
+2023-01-12 03:43:18,087:ERROR::'Resume' object has no attribute 'update'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 744, in update_resume
+    resume.update({**kwargs})
+AttributeError: 'Resume' object has no attribute 'update'
+2023-01-12 03:45:57,395:DEBUG::
+2023-01-12 03:45:57,395:DEBUG::====================================================================================================
+2023-01-12 03:45:57,395:INFO::Database logger :: Logging Active
+2023-01-12 03:45:57,396:DEBUG::
+2023-01-12 03:49:43,404:DEBUG::
+2023-01-12 03:49:43,404:DEBUG::====================================================================================================
+2023-01-12 03:49:43,404:INFO::Database logger :: Logging Active
+2023-01-12 03:49:43,405:DEBUG::
+2023-01-13 00:57:18,394:DEBUG::
+2023-01-13 00:57:18,394:DEBUG::====================================================================================================
+2023-01-13 00:57:18,395:INFO::Database logger :: Logging Active
+2023-01-13 00:57:18,395:DEBUG::
+2023-01-13 00:59:27,343:DEBUG::
+2023-01-13 00:59:27,344:DEBUG::====================================================================================================
+2023-01-13 00:59:27,344:INFO::Database logger :: Logging Active
+2023-01-13 00:59:27,345:DEBUG::
+2023-01-13 00:59:39,385:DEBUG::
+2023-01-13 00:59:39,386:DEBUG::====================================================================================================
+2023-01-13 00:59:39,386:INFO::Database logger :: Logging Active
+2023-01-13 00:59:39,387:DEBUG::
+2023-01-13 01:43:05,559:DEBUG::
+2023-01-13 01:43:05,559:DEBUG::====================================================================================================
+2023-01-13 01:43:05,560:INFO::Database logger :: Logging Active
+2023-01-13 01:43:05,560:DEBUG::
+2023-01-13 03:06:49,780:DEBUG::
+2023-01-13 03:06:49,780:DEBUG::====================================================================================================
+2023-01-13 03:06:49,781:INFO::Database logger :: Logging Active
+2023-01-13 03:06:49,781:DEBUG::
+2023-01-13 03:07:08,681:DEBUG::
+2023-01-13 03:07:08,681:DEBUG::====================================================================================================
+2023-01-13 03:07:08,682:INFO::Database logger :: Logging Active
+2023-01-13 03:07:08,682:DEBUG::
+2023-01-13 03:32:09,510:DEBUG::
+2023-01-13 03:32:09,510:DEBUG::====================================================================================================
+2023-01-13 03:32:09,510:INFO::Database logger :: Logging Active
+2023-01-13 03:32:09,511:DEBUG::
+2023-01-13 04:14:03,817:DEBUG::
+2023-01-13 04:14:03,817:DEBUG::====================================================================================================
+2023-01-13 04:14:03,817:INFO::Database logger :: Logging Active
+2023-01-13 04:14:03,818:DEBUG::
+2023-01-13 04:14:57,870:DEBUG::
+2023-01-13 04:14:57,870:DEBUG::====================================================================================================
+2023-01-13 04:14:57,870:INFO::Database logger :: Logging Active
+2023-01-13 04:14:57,871:DEBUG::
+2023-01-13 04:15:30,665:DEBUG::
+2023-01-13 04:15:30,665:DEBUG::====================================================================================================
+2023-01-13 04:15:30,666:INFO::Database logger :: Logging Active
+2023-01-13 04:15:30,666:DEBUG::
+2023-01-13 04:55:01,182:DEBUG::
+2023-01-13 04:55:01,182:DEBUG::====================================================================================================
+2023-01-13 04:55:01,182:INFO::Database logger :: Logging Active
+2023-01-13 04:55:01,182:DEBUG::
+2023-01-13 05:00:16,371:DEBUG::
+2023-01-13 05:00:16,371:DEBUG::====================================================================================================
+2023-01-13 05:00:16,372:INFO::Database logger :: Logging Active
+2023-01-13 05:00:16,372:DEBUG::
+2023-01-13 05:15:36,469:DEBUG::
+2023-01-13 05:15:36,469:DEBUG::====================================================================================================
+2023-01-13 05:15:36,470:INFO::Database logger :: Logging Active
+2023-01-13 05:15:36,470:DEBUG::
+2023-01-13 05:17:27,800:DEBUG::
+2023-01-13 05:17:27,800:DEBUG::====================================================================================================
+2023-01-13 05:17:27,801:INFO::Database logger :: Logging Active
+2023-01-13 05:17:27,801:DEBUG::
+2023-01-13 05:19:21,155:DEBUG::
+2023-01-13 05:19:21,156:DEBUG::====================================================================================================
+2023-01-13 05:19:21,156:INFO::Database logger :: Logging Active
+2023-01-13 05:19:21,157:DEBUG::
+2023-01-13 05:29:44,918:DEBUG::
+2023-01-13 05:29:44,918:DEBUG::====================================================================================================
+2023-01-13 05:29:44,919:INFO::Database logger :: Logging Active
+2023-01-13 05:29:44,919:DEBUG::
+2023-01-13 05:30:55,254:DEBUG::
+2023-01-13 05:30:55,255:DEBUG::====================================================================================================
+2023-01-13 05:30:55,255:INFO::Database logger :: Logging Active
+2023-01-13 05:30:55,256:DEBUG::
+2023-01-13 05:31:24,772:DEBUG::
+2023-01-13 05:31:24,773:DEBUG::====================================================================================================
+2023-01-13 05:31:24,774:INFO::Database logger :: Logging Active
+2023-01-13 05:31:24,775:DEBUG::
+2023-01-13 05:32:45,332:DEBUG::
+2023-01-13 05:32:45,332:DEBUG::====================================================================================================
+2023-01-13 05:32:45,332:INFO::Database logger :: Logging Active
+2023-01-13 05:32:45,333:DEBUG::
+2023-01-13 05:33:43,485:DEBUG::
+2023-01-13 05:33:43,485:DEBUG::====================================================================================================
+2023-01-13 05:33:43,486:INFO::Database logger :: Logging Active
+2023-01-13 05:33:43,486:DEBUG::
+2023-01-13 05:34:44,541:DEBUG::
+2023-01-13 05:34:44,542:DEBUG::====================================================================================================
+2023-01-13 05:34:44,542:INFO::Database logger :: Logging Active
+2023-01-13 05:34:44,543:DEBUG::
+2023-01-13 05:35:00,722:DEBUG::
+2023-01-13 05:35:00,722:DEBUG::====================================================================================================
+2023-01-13 05:35:00,723:INFO::Database logger :: Logging Active
+2023-01-13 05:35:00,723:DEBUG::
+2023-01-13 05:38:30,701:DEBUG::
+2023-01-13 05:38:30,701:DEBUG::====================================================================================================
+2023-01-13 05:38:30,702:INFO::Database logger :: Logging Active
+2023-01-13 05:38:30,702:DEBUG::
+2023-01-13 05:42:16,773:DEBUG::
+2023-01-13 05:42:16,773:DEBUG::====================================================================================================
+2023-01-13 05:42:16,774:INFO::Database logger :: Logging Active
+2023-01-13 05:42:16,774:DEBUG::
+2023-01-13 05:42:55,508:DEBUG::
+2023-01-13 05:42:55,508:DEBUG::====================================================================================================
+2023-01-13 05:42:55,509:INFO::Database logger :: Logging Active
+2023-01-13 05:42:55,509:DEBUG::
+2023-01-13 05:44:41,903:ERROR::(sqlite3.IntegrityError) NOT NULL constraint failed: education.record_id
+[SQL: INSERT INTO education (record_id, "Start_year", "End_year", "Instituition", "Location", "Qualification") VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: (None, '2014-01-01 00:00:00.000000', '2021-01-01 00:00:00.000000', 'Federal University Of Agriculture Abeokuta', 'Abeokuta, Oguns State', 'Bachelors of Enginering, Mechatronics Engineering')]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: NOT NULL constraint failed: education.record_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 862, in add_education
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: education.record_id
+[SQL: INSERT INTO education (record_id, "Start_year", "End_year", "Instituition", "Location", "Qualification") VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: (None, '2014-01-01 00:00:00.000000', '2021-01-01 00:00:00.000000', 'Federal University Of Agriculture Abeokuta', 'Abeokuta, Oguns State', 'Bachelors of Enginering, Mechatronics Engineering')]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2023-01-13 05:45:52,239:DEBUG::
+2023-01-13 05:45:52,240:DEBUG::====================================================================================================
+2023-01-13 05:45:52,240:INFO::Database logger :: Logging Active
+2023-01-13 05:45:52,241:DEBUG::
+2023-01-13 05:46:43,361:DEBUG::
+2023-01-13 05:46:43,362:DEBUG::====================================================================================================
+2023-01-13 05:46:43,362:INFO::Database logger :: Logging Active
+2023-01-13 05:46:43,363:DEBUG::
+2023-01-13 09:03:00,765:DEBUG::
+2023-01-13 09:03:00,765:DEBUG::====================================================================================================
+2023-01-13 09:03:00,765:INFO::Database logger :: Logging Active
+2023-01-13 09:03:00,766:DEBUG::
+2023-01-13 09:10:25,177:DEBUG::
+2023-01-13 09:10:25,178:DEBUG::====================================================================================================
+2023-01-13 09:10:25,178:INFO::Database logger :: Logging Active
+2023-01-13 09:10:25,178:DEBUG::
+2023-01-13 09:11:25,545:DEBUG::
+2023-01-13 09:11:25,545:DEBUG::====================================================================================================
+2023-01-13 09:11:25,546:INFO::Database logger :: Logging Active
+2023-01-13 09:11:25,546:DEBUG::
+2023-01-13 09:21:18,437:DEBUG::
+2023-01-13 09:21:18,438:DEBUG::====================================================================================================
+2023-01-13 09:21:18,439:INFO::Database logger :: Logging Active
+2023-01-13 09:21:18,440:DEBUG::
+2023-01-13 13:25:50,838:DEBUG::
+2023-01-13 13:25:50,838:DEBUG::====================================================================================================
+2023-01-13 13:25:50,839:INFO::Database logger :: Logging Active
+2023-01-13 13:25:50,839:DEBUG::
+2023-01-14 13:35:43,523:DEBUG::
+2023-01-14 13:35:43,524:DEBUG::====================================================================================================
+2023-01-14 13:35:43,524:INFO::Database logger :: Logging Active
+2023-01-14 13:35:43,525:DEBUG::
+2023-01-14 13:36:03,683:DEBUG::
+2023-01-14 13:36:03,684:DEBUG::====================================================================================================
+2023-01-14 13:36:03,684:INFO::Database logger :: Logging Active
+2023-01-14 13:36:03,684:DEBUG::
+2023-01-14 13:37:38,885:ERROR::Could not locate column in row for column 'dict'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 909, in fetch_records
+    records = [record.dict() for record in records]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 909, in <listcomp>
+    records = [record.dict() for record in records]
+AttributeError: Could not locate column in row for column 'dict'
+2023-01-14 13:41:08,954:DEBUG::
+2023-01-14 13:41:08,955:DEBUG::====================================================================================================
+2023-01-14 13:41:08,955:INFO::Database logger :: Logging Active
+2023-01-14 13:41:08,956:DEBUG::
+2023-01-14 13:42:25,985:DEBUG::
+2023-01-14 13:42:25,986:DEBUG::====================================================================================================
+2023-01-14 13:42:25,987:INFO::Database logger :: Logging Active
+2023-01-14 13:42:25,987:DEBUG::
+2023-01-14 13:45:10,177:DEBUG::
+2023-01-14 13:45:10,178:DEBUG::====================================================================================================
+2023-01-14 13:45:10,178:INFO::Database logger :: Logging Active
+2023-01-14 13:45:10,179:DEBUG::
+2023-01-14 13:45:46,737:DEBUG::
+2023-01-14 13:45:46,737:DEBUG::====================================================================================================
+2023-01-14 13:45:46,738:INFO::Database logger :: Logging Active
+2023-01-14 13:45:46,738:DEBUG::
+2023-01-14 13:46:44,530:DEBUG::
+2023-01-14 13:46:44,530:DEBUG::====================================================================================================
+2023-01-14 13:46:44,531:INFO::Database logger :: Logging Active
+2023-01-14 13:46:44,531:DEBUG::
+2023-01-14 13:47:28,118:DEBUG::
+2023-01-14 13:47:28,119:DEBUG::====================================================================================================
+2023-01-14 13:47:28,120:INFO::Database logger :: Logging Active
+2023-01-14 13:47:28,120:DEBUG::
+2023-01-14 14:00:57,020:DEBUG::
+2023-01-14 14:00:57,021:DEBUG::====================================================================================================
+2023-01-14 14:00:57,022:INFO::Database logger :: Logging Active
+2023-01-14 14:00:57,023:DEBUG::
+2023-01-14 14:01:44,212:ERROR::'int' object is not callable
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 909, in fetch_records
+    records = [record.dict() for record in records]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 909, in <listcomp>
+    records = [record.dict() for record in records]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 814, in dict
+    "start_year":int(self.Start_year.year()),
+TypeError: 'int' object is not callable
+2023-01-14 14:02:31,540:DEBUG::
+2023-01-14 14:02:31,542:DEBUG::====================================================================================================
+2023-01-14 14:02:31,542:INFO::Database logger :: Logging Active
+2023-01-14 14:02:31,542:DEBUG::
+2023-01-14 14:19:30,500:DEBUG::
+2023-01-14 14:19:30,500:DEBUG::====================================================================================================
+2023-01-14 14:19:30,501:INFO::Database logger :: Logging Active
+2023-01-14 14:19:30,501:DEBUG::
+2023-01-14 22:55:49,727:DEBUG::
+2023-01-14 22:55:49,728:DEBUG::====================================================================================================
+2023-01-14 22:55:49,728:INFO::Database logger :: Logging Active
+2023-01-14 22:55:49,728:DEBUG::
+2023-01-14 22:55:52,458:DEBUG::
+2023-01-14 22:55:52,459:DEBUG::====================================================================================================
+2023-01-14 22:55:52,459:INFO::Database logger :: Logging Active
+2023-01-14 22:55:52,459:DEBUG::
+2023-01-14 23:17:05,028:DEBUG::
+2023-01-14 23:17:05,028:DEBUG::====================================================================================================
+2023-01-14 23:17:05,029:INFO::Database logger :: Logging Active
+2023-01-14 23:17:05,029:DEBUG::
+2023-01-14 23:17:18,885:DEBUG::
+2023-01-14 23:17:18,886:DEBUG::====================================================================================================
+2023-01-14 23:17:18,886:INFO::Database logger :: Logging Active
+2023-01-14 23:17:18,887:DEBUG::
+2023-01-14 23:18:17,563:DEBUG::
+2023-01-14 23:18:17,563:DEBUG::====================================================================================================
+2023-01-14 23:18:17,564:INFO::Database logger :: Logging Active
+2023-01-14 23:18:17,564:DEBUG::
+2023-01-15 00:19:51,674:DEBUG::
+2023-01-15 00:19:51,674:DEBUG::====================================================================================================
+2023-01-15 00:19:51,675:INFO::Database logger :: Logging Active
+2023-01-15 00:19:51,676:DEBUG::
+2023-01-15 00:21:37,643:DEBUG::
+2023-01-15 00:21:37,644:DEBUG::====================================================================================================
+2023-01-15 00:21:37,644:INFO::Database logger :: Logging Active
+2023-01-15 00:21:37,645:DEBUG::
+2023-01-15 00:22:35,146:ERROR::remove() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 888, in remove_education
+    db.session.remove(education_record)
+TypeError: remove() takes 1 positional argument but 2 were given
+2023-01-15 00:23:26,774:DEBUG::
+2023-01-15 00:23:26,774:DEBUG::====================================================================================================
+2023-01-15 00:23:26,775:INFO::Database logger :: Logging Active
+2023-01-15 00:23:26,775:DEBUG::
+2023-01-15 00:24:33,548:ERROR::remove() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 888, in remove_education
+    db.session.remove(education_record)
+TypeError: remove() takes 1 positional argument but 2 were given
+2023-01-15 00:26:41,281:DEBUG::
+2023-01-15 00:26:41,281:DEBUG::====================================================================================================
+2023-01-15 00:26:41,282:INFO::Database logger :: Logging Active
+2023-01-15 00:26:41,282:DEBUG::
+2023-01-15 00:27:11,687:ERROR::Class 'builtins.NoneType' is not mapped
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2700, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 888, in remove_education
+    db.session.delete(education_record)
+  File "<string>", line 2, in delete
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 2702, in delete
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2023-01-15 00:30:19,210:DEBUG::
+2023-01-15 00:30:19,210:DEBUG::====================================================================================================
+2023-01-15 00:30:19,211:INFO::Database logger :: Logging Active
+2023-01-15 00:30:19,211:DEBUG::
+2023-01-15 00:30:20,979:DEBUG::
+2023-01-15 00:30:20,980:DEBUG::====================================================================================================
+2023-01-15 00:30:20,980:INFO::Database logger :: Logging Active
+2023-01-15 00:30:20,981:DEBUG::
+2023-01-15 00:30:38,256:ERROR::'NoneType' object has no attribute 'dict'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 888, in remove_education
+    print(education_record.dict())
+AttributeError: 'NoneType' object has no attribute 'dict'
+2023-01-15 00:31:04,774:DEBUG::
+2023-01-15 00:31:04,774:DEBUG::====================================================================================================
+2023-01-15 00:31:04,775:INFO::Database logger :: Logging Active
+2023-01-15 00:31:04,775:DEBUG::
+2023-01-15 00:31:20,160:ERROR::'NoneType' object has no attribute 'dict'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 888, in remove_education
+    print(education_record.dict())
+AttributeError: 'NoneType' object has no attribute 'dict'
+2023-01-15 01:24:49,268:ERROR::'NoneType' object has no attribute 'dict'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 888, in remove_education
+    print(education_record.dict())
+AttributeError: 'NoneType' object has no attribute 'dict'
+2023-01-15 01:31:05,088:DEBUG::
+2023-01-15 01:31:05,089:DEBUG::====================================================================================================
+2023-01-15 01:31:05,089:INFO::Database logger :: Logging Active
+2023-01-15 01:31:05,089:DEBUG::
+2023-01-15 01:31:14,211:DEBUG::
+2023-01-15 01:31:14,211:DEBUG::====================================================================================================
+2023-01-15 01:31:14,212:INFO::Database logger :: Logging Active
+2023-01-15 01:31:14,212:DEBUG::
+2023-01-15 01:32:14,071:DEBUG::
+2023-01-15 01:32:14,071:DEBUG::====================================================================================================
+2023-01-15 01:32:14,072:INFO::Database logger :: Logging Active
+2023-01-15 01:32:14,074:DEBUG::
+2023-01-15 01:33:13,984:DEBUG::
+2023-01-15 01:33:13,985:DEBUG::====================================================================================================
+2023-01-15 01:33:13,986:INFO::Database logger :: Logging Active
+2023-01-15 01:33:13,986:DEBUG::
+2023-01-15 01:39:38,078:DEBUG::
+2023-01-15 01:39:38,079:DEBUG::====================================================================================================
+2023-01-15 01:39:38,079:INFO::Database logger :: Logging Active
+2023-01-15 01:39:38,080:DEBUG::
+2023-01-15 01:39:39,904:DEBUG::
+2023-01-15 01:39:39,905:DEBUG::====================================================================================================
+2023-01-15 01:39:39,905:INFO::Database logger :: Logging Active
+2023-01-15 01:39:39,906:DEBUG::
+2023-01-15 01:46:40,449:DEBUG::
+2023-01-15 01:46:40,449:DEBUG::====================================================================================================
+2023-01-15 01:46:40,450:INFO::Database logger :: Logging Active
+2023-01-15 01:46:40,450:DEBUG::
+2023-01-15 04:58:18,397:DEBUG::
+2023-01-15 04:58:18,397:DEBUG::====================================================================================================
+2023-01-15 04:58:18,398:INFO::Database logger :: Logging Active
+2023-01-15 04:58:18,398:DEBUG::
+2023-01-15 11:27:22,266:DEBUG::
+2023-01-15 11:27:22,267:DEBUG::====================================================================================================
+2023-01-15 11:27:22,267:INFO::Database logger :: Logging Active
+2023-01-15 11:27:22,267:DEBUG::
+2023-01-16 11:24:23,267:DEBUG::
+2023-01-16 11:24:23,268:DEBUG::====================================================================================================
+2023-01-16 11:24:23,268:INFO::Database logger :: Logging Active
+2023-01-16 11:24:23,269:DEBUG::
+2023-01-16 11:24:26,074:DEBUG::
+2023-01-16 11:24:26,075:DEBUG::====================================================================================================
+2023-01-16 11:24:26,075:INFO::Database logger :: Logging Active
+2023-01-16 11:24:26,075:DEBUG::
+2023-01-16 11:33:25,686:DEBUG::
+2023-01-16 11:33:25,687:DEBUG::====================================================================================================
+2023-01-16 11:33:25,687:INFO::Database logger :: Logging Active
+2023-01-16 11:33:25,688:DEBUG::
+2023-01-16 11:47:44,978:DEBUG::
+2023-01-16 11:47:44,978:DEBUG::====================================================================================================
+2023-01-16 11:47:44,979:INFO::Database logger :: Logging Active
+2023-01-16 11:47:44,979:DEBUG::
+2023-01-16 11:48:24,607:DEBUG::
+2023-01-16 11:48:24,608:DEBUG::====================================================================================================
+2023-01-16 11:48:24,608:INFO::Database logger :: Logging Active
+2023-01-16 11:48:24,609:DEBUG::
+2023-01-16 11:51:38,810:ERROR::'company_name' is an invalid keyword argument for Company
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1019, in add_new_company
+    company = Company(**kwargs)
+  File "<string>", line 4, in __init__
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 482, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 479, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1197, in _declarative_constructor
+    raise TypeError(
+TypeError: 'company_name' is an invalid keyword argument for Company
+2023-01-16 11:52:28,148:DEBUG::
+2023-01-16 11:52:28,149:DEBUG::====================================================================================================
+2023-01-16 11:52:28,150:INFO::Database logger :: Logging Active
+2023-01-16 11:52:28,151:DEBUG::
+2023-01-16 11:52:56,871:ERROR::'company_name' is an invalid keyword argument for Company
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1019, in add_new_company
+    company = Company(**kwargs)
+  File "<string>", line 4, in __init__
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 482, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 479, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1197, in _declarative_constructor
+    raise TypeError(
+TypeError: 'company_name' is an invalid keyword argument for Company
+2023-01-16 11:53:27,249:DEBUG::
+2023-01-16 11:53:27,249:DEBUG::====================================================================================================
+2023-01-16 11:53:27,250:INFO::Database logger :: Logging Active
+2023-01-16 11:53:27,250:DEBUG::
+2023-01-16 11:53:52,287:ERROR::(sqlite3.OperationalError) table company has no column named Company_url
+[SQL: INSERT INTO company ("Company_name", "Company_url", "Company_uuid") VALUES (?, ?, ?)]
+[parameters: ('Neuralfarms', 'https://www.neuralfarms.io', '49d89dacadd441b398481ca260d0a71f')]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: table company has no column named Company_url
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1021, in add_new_company
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table company has no column named Company_url
+[SQL: INSERT INTO company ("Company_name", "Company_url", "Company_uuid") VALUES (?, ?, ?)]
+[parameters: ('Neuralfarms', 'https://www.neuralfarms.io', '49d89dacadd441b398481ca260d0a71f')]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-01-16 11:54:21,661:DEBUG::
+2023-01-16 11:54:21,661:DEBUG::====================================================================================================
+2023-01-16 11:54:21,662:INFO::Database logger :: Logging Active
+2023-01-16 11:54:21,663:DEBUG::
+2023-01-16 11:54:33,321:DEBUG::
+2023-01-16 11:54:33,322:DEBUG::====================================================================================================
+2023-01-16 11:54:33,322:INFO::Database logger :: Logging Active
+2023-01-16 11:54:33,323:DEBUG::
+2023-01-16 11:54:45,500:DEBUG::
+2023-01-16 11:54:45,500:DEBUG::====================================================================================================
+2023-01-16 11:54:45,501:INFO::Database logger :: Logging Active
+2023-01-16 11:54:45,502:DEBUG::
+2023-01-16 11:54:49,110:DEBUG::
+2023-01-16 11:54:49,111:DEBUG::====================================================================================================
+2023-01-16 11:54:49,111:INFO::Database logger :: Logging Active
+2023-01-16 11:54:49,112:DEBUG::
+2023-01-16 11:54:50,869:DEBUG::
+2023-01-16 11:54:50,869:DEBUG::====================================================================================================
+2023-01-16 11:54:50,870:INFO::Database logger :: Logging Active
+2023-01-16 11:54:50,870:DEBUG::
+2023-01-16 11:58:07,631:DEBUG::
+2023-01-16 11:58:07,631:DEBUG::====================================================================================================
+2023-01-16 11:58:07,632:INFO::Database logger :: Logging Active
+2023-01-16 11:58:07,632:DEBUG::
+2023-01-16 12:05:28,311:DEBUG::
+2023-01-16 12:05:28,312:DEBUG::====================================================================================================
+2023-01-16 12:05:28,312:INFO::Database logger :: Logging Active
+2023-01-16 12:05:28,313:DEBUG::
+2023-01-16 12:05:30,152:DEBUG::
+2023-01-16 12:05:30,152:DEBUG::====================================================================================================
+2023-01-16 12:05:30,153:INFO::Database logger :: Logging Active
+2023-01-16 12:05:30,153:DEBUG::
+2023-01-16 12:09:14,473:DEBUG::
+2023-01-16 12:09:14,473:DEBUG::====================================================================================================
+2023-01-16 12:09:14,474:INFO::Database logger :: Logging Active
+2023-01-16 12:09:14,474:DEBUG::
+2023-01-16 12:13:14,073:DEBUG::
+2023-01-16 12:13:14,074:DEBUG::====================================================================================================
+2023-01-16 12:13:14,074:INFO::Database logger :: Logging Active
+2023-01-16 12:13:14,075:DEBUG::
+2023-01-16 12:32:11,335:DEBUG::
+2023-01-16 12:32:11,336:DEBUG::====================================================================================================
+2023-01-16 12:32:11,336:INFO::Database logger :: Logging Active
+2023-01-16 12:32:11,337:DEBUG::
+2023-01-16 12:32:23,388:DEBUG::
+2023-01-16 12:32:23,388:DEBUG::====================================================================================================
+2023-01-16 12:32:23,389:INFO::Database logger :: Logging Active
+2023-01-16 12:32:23,389:DEBUG::
