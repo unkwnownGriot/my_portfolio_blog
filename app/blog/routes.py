@@ -1,10 +1,13 @@
+from cgitb import reset
 import os
 from tkinter import N
+from urllib import response
 import cv2
 import uuid
 import string
 import random
 import logging
+from cv2 import log
 
 from importlib_metadata import method_cache, re
 from itsdangerous import exc
@@ -12,17 +15,17 @@ from numpy import record
 from app import blog
 
 from app.blog import blog_bp
-from app.model import Company, Posts
+from app.model import Company, Posts, Roles
 from app.model import Resume
 from app.model import Blogger
 from app.model import Comments
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from app.model import Education
 from app.model import Subscribers
 from flask_login import login_user
 from flask_login import logout_user
 from flask_login import current_user
-from app.blog.forms import LoginForm
+from app.blog.forms import ExperienceForm, LoginForm
 from app.blog.forms import UploadForm
 from flask_login import login_required
 from werkzeug.utils import secure_filename
@@ -103,6 +106,7 @@ def base():
 
 @blog_bp.route('/blogger_create', methods=['POST',"GET"])
 def blogger_create():
+    print(request.method)
     bloggerform = RegisterBloggerForm()
     if request.method == 'POST':
         is_validated = bloggerform.validate_on_submit()
@@ -128,6 +132,16 @@ def blogger_create():
     
         else:
             flash("Form validation failed","warning")
+
+    else:
+        response = Blogger.check_admin_is_available()
+        print(response)
+        if response["status"] == "failed":
+            flash(response["message"],response["status"])
+
+        else:
+            if response["message"] == True:
+                return redirect(url_for("blog_bp.blogger_login"))
 
     return render_template(
         "admin/register.html", 
@@ -547,6 +561,7 @@ def update_password():
 def create_resume():
     resumeform = ResumeForm()
     educationform = EducationForm()
+    experienceform = ExperienceForm()
     res = Resume.fetch_resume()
     if res["status"] == "failed":
         resume = None
@@ -560,7 +575,8 @@ def create_resume():
         content = {"page_title":"Build Resume"},
         Resume = resume,
         ResumeForm = resumeform,
-        EducationForm = educationform
+        EducationForm = educationform,
+        ExperienceForm = experienceform
         )
 
 @blog_bp.route("/update_welcome_text",methods=["POST"])
@@ -717,7 +733,7 @@ def add_company():
         company_uuid = uuid.uuid4().hex
 
         response = Company.add_new_company(
-            Company_name=company_name,
+            Company_name=company_name.lower(),
             Company_url=company_url,
             Company_uuid=company_uuid)
         
@@ -746,3 +762,116 @@ def fetch_companies():
         }
 
 
+@blog_bp.route("/remove_company",methods=["POST"])
+@login_required
+def remove_company():
+    try:
+        company_id = request.form["company_id"]
+        response = Company.remove_company(company_id)
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return {
+            "message":"An error occurred while deleting the company",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/add_experience", methods=["POST"])
+@login_required
+def add_experience():
+    try:
+        company_name = request.form["company_name"].lower()
+        role = request.form["role"].lower()
+        role_description = request.form["role_description"].lower()
+        start_month = request.form["start_month"]
+        start_year = request.form["start_year"]
+        end_month = request.form["end_month"]
+        end_year = request.form["end_year"]
+
+        start_date = datetime(int(start_year),int(start_month),1)
+        end_date = datetime(int(end_year),int(end_month),1)
+        role_id = uuid.uuid4().hex
+
+        response = Roles.add_new_role(
+            Role_id = role_id, Start_year = start_date, End_year = end_date,
+            Role_name = role, Role_description = role_description, 
+            Company_uid = Company.get_company_by_name(company_name)["message"]["dict"]["company_uuid"]
+            )
+        
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while adding new experience",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/fetch_experience", methods=["GET"])
+@login_required
+def fetch_exprience():
+    try:
+        response = Roles.fetch_roles()
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while fetching saved experience",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/update_experience", methods=["POST"])
+@login_required
+def update_experience():
+    try:
+        company_name = request.form["company_name"].lower()
+        role = request.form["role"].lower()
+        role_description = request.form["role_description"].lower()
+        start_month = request.form["start_month"]
+        start_year = request.form["start_year"]
+        end_month = request.form["end_month"]
+        end_year = request.form["end_year"]
+        experience_id = request.form["experience_id"]
+
+        start_date = datetime(int(start_year),int(start_month),1)
+        end_date = datetime(int(end_year),int(end_month),1)
+
+        kwargs = {
+            "Start_year":start_date,
+            "End_year":end_date,
+            "Role_name":role, 
+            "Role_description":role_description, 
+            "Company_uid":Company.get_company_by_name(company_name)["message"]["dict"]["company_uuid"]
+        }
+
+        response = Roles.update_role(experience_id, **kwargs)
+        
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while adding new experience",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/delete_experience", methods=["POST"])
+@login_required
+def delete_experience():
+    try:
+        experience_id = request.form["experience_id"]
+        response = Roles.remove_role(experience_id)
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return {
+            "message":"An error occurred while deleting experience",
+            "status":"failed"
+        }

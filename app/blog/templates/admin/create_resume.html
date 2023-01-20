@@ -28,6 +28,7 @@
                     <option value="work_content">Work Content</option>
                     <option value="education_content">Education</option>
                     <option value="companies">Companies</option>
+                    <option value="experience">EXPERIENCE</option>
                     <option value="Certifications">Certifications</option>
                     <option value="Stack">Stack</option>
                     <option value="Languages">Languages</option>
@@ -195,7 +196,128 @@
                 <!-- List Added Companies -->
                 <div class="companies remove_display" id="companies">
                     <div class="available_companies">
+                        <div class="company red company_icon">
+                            <a href="">
+                                Crane Composite
+                            </a>
+                            <div class="remove_icon" id="">
+                                x
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+
+                <!-- Experience Section -->
+                <form action="" class="experience_form experience ">
+
+                    <!-- Company Name -->
+                    <fieldset>
+                        {{ ExperienceForm.CompanyName.label }}
+                        {{ ExperienceForm.CompanyName }}
+                        {% if ExperienceForm.CompanyName.errors %}
+                            <ul class="errors">
+                                {% for error in ExperienceForm.CompanyName.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Company Name -->
+                    <fieldset>
+                        {{ ExperienceForm.Role.label }}
+                        {{ ExperienceForm.Role }}
+                        {% if ExperienceForm.Role.errors %}
+                            <ul class="errors">
+                                {% for error in ExperienceForm.Role.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Company Name -->
+                    <fieldset>
+                        {{ ExperienceForm.Role_description.label }}
+                        {{ ExperienceForm.Role_description }}
+                        {% if ExperienceForm.Role_description.errors %}
+                            <ul class="errors">
+                                {% for error in ExperienceForm.Role_description.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Start Date -->
+                    <div class="date">
+                        <fieldset>
+                            {{ ExperienceForm.Start_Month.label }}
+                            {{ ExperienceForm.Start_Month }}
+                            {% if ExperienceForm.Start_Month.errors %}
+                                {% for error in EducationForm.Start_Month.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+
+
+                        <fieldset>
+                            {{ ExperienceForm.Start_Year.label }}
+                            {{ ExperienceForm.Start_Year }}
+                            {% if ExperienceForm.Start_Year.errors %}
+                                {% for error in EducationForm.Start_Year.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+                    </div>
+
+                    <!-- End Date -->
+                    <div class="date">
+                        <fieldset>
+                            {{ ExperienceForm.End_Month.label }}
+                            {{ ExperienceForm.End_Month }}
+                            {% if ExperienceForm.End_Month.errors %}
+                                {% for error in EducationForm.End_Month.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+
+                        <fieldset>
+                            {{ ExperienceForm.End_Year.label }}
+                            {{ ExperienceForm.End_Year }}
+                            {% if ExperienceForm.End_Year.errors %}
+                                {% for error in ExperienceForm.End_Year.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+                    </div>
+
+                    <!-- Save Button -->
+                    <button id="save_experience_btn" class="save_experience_btn" name="save_experience_btn">
+                        ADD TO RESUME
+                    </button>
+
+                    <div class="edit_options remove_display">
+                        <!-- Edit Button -->
+                        <button id="edit_experience_btn" class="edit_experience_btn" name="edit_experience_btn">
+                            EDIT EXPERIENCE
+                        </button>
+
+                        <!-- Delete Button -->
+                        <button id="clear_experience_btn" class="clear_experience_btn" name="clear_experience_btn">
+                            CLEAR
+                        </button>
+                    </div>
+
+                </form>
+
+                <!-- Experience Records -->
+                <div class="experience_records experience remove_display">
                 </div>
 
             </div>
@@ -259,6 +381,17 @@
 
                 <div class="education_items">
                 </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="about_experience experience remove_display">
+                <div class="section_title" id="section_title">
+                    Experience
+                </div>
+
+                <div class="experience_items">
+                </div>
+
             </div>
 
         </div>

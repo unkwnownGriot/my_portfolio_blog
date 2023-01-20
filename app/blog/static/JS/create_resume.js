@@ -42,6 +42,10 @@ function form_display(){
     // Companies Records
     const available_companies = document.getElementById("companies")
     available_companies.classList.add("remove_display")
+
+    // Experiene Records
+    const experience_records = document.querySelector(".experience_records")
+    experience_records.classList.add("remove_display")
 }
 
 form_display()
@@ -444,32 +448,59 @@ function refresh_available_companies(){
     xhr.open("GET","/blog/fetch_companies",true)
     xhr.send()
     xhr.onload = () =>{
-        console.log(xhr.responseText)
         const data = JSON.parse(xhr.responseText)
     
         for (const company of data["message"]["dict"]){
             const a = document.createElement("a")
-            const div = document.createElement("div")
+            const content_div = document.createElement("div")
+            const remove_div = document.createElement("div")
             const random_color = color_types[Math.floor(Math.random() * color_types.length)];
-    
-            div.classList.add("company",`${random_color}`)
-            div.innerText = company["company_name"]
-    
-            a.appendChild(div)
+
+            remove_div.innerText = 'x'
+            remove_div.classList.add("remove_icon")
+            remove_div.id = `${company["company_uuid"]}`
+
+            remove_div.addEventListener("click",() => {
+
+                const form = new FormData()
+                form.append("csrf_token",csrf_token.value)
+                form.append("company_id",`${company["company_uuid"]}`)
+
+                const remove_xhr = new XMLHttpRequest()
+                remove_xhr.open("POST","/blog/remove_company",true)
+                remove_xhr.send(form)
+
+                remove_xhr.onload = () => {
+                    const data = JSON.parse(remove_xhr.responseText)
+                    const message = data["message"].toLowerCase()
+                    const status = data["status"].toLowerCase()
+            
+                    // Show response
+                    flash_response(message,status)
+                }
+                refresh_available_companies()
+            })
+
+            a.innerText = company["company_name"]
             a.setAttribute("href",`${company["company_url"]}`)
+
+            content_div.appendChild(a)
+            content_div.appendChild(remove_div)
     
-            available_companies.appendChild(a)
+            content_div.classList.add("company",`${random_color}`)
+            available_companies.appendChild(content_div)
         }
     }
 }
 refresh_available_companies()
 
 // Add Company Section
-const company_name = document.getElementById("company_name")
-const company_url = document.getElementById("company_url")
 const add_company_btn = document.getElementById("add_company_btn")
 add_company_btn.addEventListener("click", (e) => {
     e.preventDefault()
+
+    const company_name = document.getElementById("company_name")
+    const company_url = document.getElementById("company_url")
 
     new Promise((resolve) => {
         const form = new FormData
@@ -496,3 +527,306 @@ add_company_btn.addEventListener("click", (e) => {
     })
 })
 
+
+// Clear Experience Form
+function clear_experience_form(){
+    const company_name = document.getElementById("CompanyName")
+    const company_role = document.getElementById("Role")
+    const company_role_description = document.getElementById("Role_description")
+    const start_month = document.getElementById("Start_Month")
+    const start_year = document.getElementById("Start_Year")
+    const end_month = document.getElementById("End_Month")
+    const end_year = document.getElementById("End_Year")
+    const save_btn = document.getElementById("save_experience_btn")
+    const edit_options = document.querySelector(".edit_options")
+
+    edit_options.classList.add("remove_display")
+    save_btn.classList.remove("remove_display")
+
+    company_name.selectedIndex = 0
+    company_role.value = ""
+    company_role_description.value = ""
+    start_month.selectedIndex = 0
+    start_year.selectedIndex = 0
+    end_month.selectedIndex = 0
+    end_year.selectedIndex = 0
+}
+
+// Update Experience Display Section
+function update_experience_display(){
+    const experience_records = document.querySelector(".experience_records")
+    experience_records.innerHTML = ""
+
+    // Fetch List Of Experience 
+    const exp_xhr = new XMLHttpRequest()
+    exp_xhr.open("GET","/blog/fetch_experience",true)
+    exp_xhr.send()
+
+    exp_xhr.onload = () => {
+        const data = JSON.parse(exp_xhr.responseText)
+        const status = data["status"].toLowerCase()
+        const message = data["message"]
+
+        if (status != "success"){
+            flash_response(message, status)
+            return
+        }
+        else{
+    
+            for (const company in message){
+                for (const experience of message[company]){
+                    const experience_record = document.createElement("div")
+                    const experience_company_name = document.createElement("div")
+                    const experience_role = document.createElement("div")
+                    const experience_delete = document.createElement("div")
+                    const experience_edit = document.createElement("div")
+
+                    // delete Experience
+                    experience_delete.innerText = "DELETE"
+                    experience_delete.addEventListener("click",() => {
+                        const form = new FormData()
+                        form.append("csrf_token",csrf_token.value)
+                        form.append("experience_id", experience["id"])
+                        
+                        const xhr = new XMLHttpRequest()
+                        xhr.open("POST","/blog/delete_experience",true)
+                        xhr.send(form)
+                        xhr.onload = () => {
+                            const data = JSON.parse(xhr.responseText)
+                            const message = data["message"]
+                            const status = data["status"]
+
+                            flash_response(message,status)
+                            load_experience_preview()
+                        }
+                    })
+
+                    // Edit Experience
+                    experience_edit.innerText = "EDIT"
+                    experience_edit.addEventListener("click", () => {
+                        const company_name = document.getElementById("CompanyName")
+                        const company_role = document.getElementById("Role")
+                        const company_role_description = document.getElementById("Role_description")
+                        const start_month = document.getElementById("Start_Month")
+                        const start_year = document.getElementById("Start_Year")
+                        const end_month = document.getElementById("End_Month")
+                        const end_year = document.getElementById("End_Year")
+                        const save_btn = document.getElementById("save_experience_btn")
+                        const edit_options = document.querySelector(".edit_options")
+                        const edit_btn = document.querySelector(".edit_experience_btn")
+
+                        save_btn.classList.add("remove_display")
+                        edit_options.classList.remove("remove_display")
+                        edit_btn.id = experience["id"]
+
+                        company_name.value = experience["company_name"].toUpperCase()
+                        company_role.value = experience["role_name"]
+                        company_role_description.value = experience["role_description"]
+                        
+                        const edit_start_year = new Date(experience["start_year"])
+                        start_month.value = `${edit_start_year.getMonth() + 1}`
+                        start_year.value = edit_start_year.getFullYear()
+                        
+                        const edit_end_year = new Date(experience["end_year"])
+                        end_month.value = `${edit_end_year.getMonth() + 1}`
+                        end_year.value = edit_end_year.getFullYear()
+                    })
+
+                    experience_role.innerText = experience["role_name"]
+                    experience_company_name.innerText = experience["company_name"]
+
+                    experience_record.appendChild(experience_company_name)
+                    experience_record.appendChild(experience_role)
+                    experience_record.appendChild(experience_delete)
+                    experience_record.appendChild(experience_edit)
+
+                    experience_record.classList.add("experience_record")
+                    experience_company_name.classList.add("experience_company_name")
+                    experience_role.classList.add("experience_role")
+                    experience_delete.classList.add("experience_delete")
+                    experience_edit.classList.add("experience_edit")
+
+                    experience_records.appendChild(experience_record)
+                }
+            }
+        }
+    }
+}
+
+// Display Experience Preview
+function load_experience_preview(){
+    const about_experience = document.querySelector(".about_experience")
+    const experience_items = document.querySelector(".experience_items")
+    experience_items.innerHTML = ""
+
+    new Promise((resolve, reject) => {
+
+        const exp_xhr = new XMLHttpRequest()
+        exp_xhr.open("GET","/blog/fetch_experience",true)
+        exp_xhr.send()
+
+        exp_xhr.onload = () => {
+            let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+            const data = JSON.parse(exp_xhr.responseText)
+            const message = data["message"]
+            const status = data["status"].toLowerCase()
+
+            if(status == "success"){
+                // Update Preview Display
+                for(const company in message){
+                    // Create Company Experience Header
+                    const experience_item = document.createElement("div")
+                    const experience_company = document.createElement("div")
+                    const experience_item_p = document.createElement("p")
+                    const experience_company_positions = document.createElement("div")
+
+                    experience_item.classList.add("experience_item")
+                    experience_company.classList.add("experience_company")
+                    experience_item_p.classList.add("_company")
+
+                    experience_item_p.innerText = company
+                    experience_company.appendChild(experience_item_p)
+                    experience_item.appendChild(experience_company)
+
+                    // Add Individual Company Experience
+                    for (const experience of message[company]){
+                        const company_position = document.createElement("div")
+                        const position_year = document.createElement("div")
+                        const position_name = document.createElement("div")
+                        const position_description = document.createElement("div")
+
+                        experience_company_positions.classList.add("experience_company_positions")
+                        company_position.classList.add("company_position")
+                        position_year.classList.add("position_year")
+                        position_name.classList.add("position_name")
+                        position_description.classList.add("position_description")
+
+                        position_description.innerText = experience["role_description"]
+                        position_name.innerText = experience["role_name"]
+
+                        const experience_start_date = new Date(experience["start_year"])
+                        const experience_end_date = new Date(experience["end_year"])
+
+                        const exp_start_month = months[experience_start_date.getMonth()]
+                        const exp_start_year = experience_start_date.getFullYear()
+                        const exp_end_month = months[experience_end_date.getMonth()]
+                        const exp_end_year = experience_end_date.getFullYear()
+                        position_year.innerText =  `${exp_start_month}, ${exp_start_year} - ${exp_end_month}, ${exp_end_year}`
+
+                        company_position.appendChild(position_year)
+                        company_position.appendChild(position_name)
+                        company_position.appendChild(position_description)
+
+                        experience_company_positions.appendChild(company_position)
+                        experience_item.appendChild(experience_company_positions)
+                    }
+
+                    experience_items.appendChild(experience_item)
+                }
+
+                update_experience_display()
+            }
+        }
+    })
+    about_experience.appendChild(experience_items)
+}
+load_experience_preview()
+
+
+// Experience Section
+const save_experience_btn = document.getElementById("save_experience_btn")
+save_experience_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    new Promise((resolve) => {
+        const company_name = document.getElementById("CompanyName")
+        const role = document.getElementById("Role")
+        const role_desc = document.getElementById("Role_description")
+        const start_month = document.getElementById("Start_Month")
+        const start_year = document.getElementById("Start_Year")
+        const end_month = document.getElementById("End_Month")
+        const end_year = document.getElementById("End_Year")
+    
+        const form = new FormData()
+        form.append("csrf_token", csrf_token.value)
+        form.append("company_name",company_name.value)
+        form.append("role",role.value)
+        form.append("role_description",role_desc.value)
+        form.append("start_month",start_month.value)
+        form.append("start_year",start_year.value)
+        form.append("end_month", end_month.value)
+        form.append("end_year", end_year.value)
+    
+        const xhr = new XMLHttpRequest()
+        xhr.open("POST","/blog/add_experience",true)
+        xhr.send(form)
+        xhr.onload = () =>{
+            const data = JSON.parse(xhr.responseText)
+            const message = data["message"]
+            const status = data["status"]
+    
+            flash_response(message, status)
+        }
+        resolve("success")
+    })
+    .then((status) => {
+        if (status == "success"){
+            load_experience_preview()
+            clear_experience_form()
+        }
+    })
+})
+
+
+// Clear Experience Form
+const experience_clear_btn = document.querySelector(".clear_experience_btn")
+experience_clear_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    clear_experience_form()
+}) 
+
+
+// Edit Experience Form
+const experience_edit_btn = document.querySelector(".edit_experience_btn")
+experience_edit_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    new Promise((resolve) => {
+        const company_name = document.getElementById("CompanyName")
+        const role = document.getElementById("Role")
+        const role_desc = document.getElementById("Role_description")
+        const start_month = document.getElementById("Start_Month")
+        const start_year = document.getElementById("Start_Year")
+        const end_month = document.getElementById("End_Month")
+        const end_year = document.getElementById("End_Year")
+    
+        const form = new FormData()
+        form.append("csrf_token", csrf_token.value)
+        form.append("company_name",company_name.value)
+        form.append("role",role.value)
+        form.append("role_description",role_desc.value)
+        form.append("start_month",start_month.value)
+        form.append("start_year",start_year.value)
+        form.append("end_month", end_month.value)
+        form.append("end_year", end_year.value)
+        form.append("experience_id", experience_edit_btn.id)
+    
+        const xhr = new XMLHttpRequest()
+        xhr.open("POST","/blog/update_experience",true)
+        xhr.send(form)
+        xhr.onload = () =>{
+            const data = JSON.parse(xhr.responseText)
+            const message = data["message"]
+            const status = data["status"]
+    
+            flash_response(message, status)
+        }
+        resolve("success")
+    })
+    .then((status) => {
+        if (status == "success"){
+            load_experience_preview()
+            clear_experience_form()
+        }
+    })
+})

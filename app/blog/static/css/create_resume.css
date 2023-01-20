@@ -6,7 +6,7 @@
 }
 
 .remove_display{
-    display: none;
+    display: none !important;
 }
 
 .section_one{
@@ -87,6 +87,7 @@ form{
     padding: 10px;
 }
 
+.save_experience_btn,
 .add_company_btn,
 .work_save_btn,
 .about_save_btn,
@@ -108,8 +109,10 @@ form{
     background-color: black;
     color: white;
     width: 100%;
-    height: 100%;
+    max-height: 100%;
     padding: 30px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .content_display{
@@ -187,8 +190,9 @@ form{
     text-align: justify;
 }
 
+.experience_form,
 .education_form{
-    background-color: #fff;
+    background-color: #fff !important;
     border: 1px solid seagreen;
     border-radius: 5px;
     padding: 10px;
@@ -237,6 +241,7 @@ fieldset select{
     border-radius: 5px;
 }
 
+.experience_form textarea:focus-visible,
 .company_url:focus-visible,
 .company_name:focus-visible,
 fieldset input:focus-visible,
@@ -431,6 +436,15 @@ div .companies{
     font-weight: 900;
     padding: 0 5px;
     margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.company a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .red{
@@ -449,4 +463,154 @@ div .companies{
     background-color: rgba(37, 7, 145, 0.2);
     color: rgb(37, 7, 145);
     border-radius: 5px;
+}
+
+.remove_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 10px;
+    border: 3px solid white;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.experience_form textarea{
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-weight: 900;
+    border: 1.5px solid seagreen;
+    border-radius: 5px;
+}
+
+.experience_records{
+    background-color: white !important;
+    padding: 5px;
+    border: 2px solid #E4E9F7;
+    border-radius: 10px 10px 0 0;
+}
+
+.experience_record{
+    display: grid;
+    grid-template-columns: 20% 50% 15% 15%;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 900;
+    border: 1px solid #E4E9F7;
+}
+
+.experience_company_name,
+.experience_role{
+    padding: 0 10px;
+    background-color: rgba(46, 139, 87, 0.2);
+}
+
+.experience_company_name:hover,
+.experience_role:hover{
+    background-color: rgb(46, 139, 87);
+    color: #fff;
+}
+
+.experience_delete,
+.experience_edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience_delete{
+    color: rgb(145, 7, 7);
+    background-color: rgba(145, 7, 7,0.2);
+}
+
+.experience_delete:hover{
+    background-color: rgb(145, 7, 7);
+    color: white;
+}
+
+.experience_edit{
+    color: rgb(37, 7, 145);
+    background-color: rgba(37, 7, 145,0.2);
+}
+
+.experience_edit:hover{
+    background-color: rgb(37, 7, 145);
+    color: #fff;
+}
+
+.experience_items{
+    margin: 5px 0;
+    border-top: 1px solid black;
+}
+
+.experience_item{
+    margin: 15px 0;
+}
+
+._company{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.experience_company_positions{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 0.5%;
+}
+
+.position_year{
+    font-size: 10px;
+    opacity: 0.7;
+    margin: 5px 0 15px 0;
+}
+
+.position_name{
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.position_description{
+    font-size: 10px;
+    opacity: 0.7;
+    margin: 5px 0 15px 0;
+}
+
+.experience_form .date{
+    display: grid;
+    grid-template-columns: 49.5% 49.5%;
+    column-gap: 1%;
+}
+
+.edit_options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit_experience_btn,
+.clear_experience_btn{
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    align-content: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    min-width: 200px;
+}
+
+.clear_experience_btn{
+    background-color:rgb(145, 7, 7);
+    border: 1px solid rgb(145, 7, 7);
+}
+
+.edit_experience_btn{
+    background-color: seagreen;
+    border: 1px solid green;
+;
 }

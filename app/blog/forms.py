@@ -1,7 +1,8 @@
 # Imports
 import logging
+from tokenize import String
 
-from app.model import app_tz
+from app.model import Company, app_tz
 from datetime import datetime
 from app.model import Blogger
 from flask_wtf import FlaskForm, RecaptchaField
@@ -295,4 +296,99 @@ class EducationForm(FlaskForm):
                 "Qualification contains unwanted charaters"))
             ],
         render_kw={"placeholder":"Bachelors of Engineering, Mechatronics Engineering"}
+    )
+
+
+
+class ExperienceForm(FlaskForm):
+
+    CompanyName = SelectField(
+        "Company Name",
+        validators=[
+            DataRequired(message="Please select a company")
+        ],
+        choices=[
+            (f"{x['company_name']}".upper()) for x in Company.fetch_all_companies()["message"]["dict"]
+        ]
+    )
+
+    Role = StringField(
+        "Role Name",
+        validators=[
+            DataRequired(message="Role cannot be empty"),
+            Regexp('[A-Za-z0-9,\.]',message=(
+                "Role name contains unwanted charaters"))
+        ],
+        render_kw={"placeholder":"Backend Engineer"}
+    )
+
+    Role_description = TextAreaField(
+        "Role Description",
+        validators=[
+            DataRequired(message=" cannot be empty"),
+            Regexp('[A-Za-z0-9,\.]',message=(
+                "Description contains unwanted charaters"))
+        ]
+    )
+
+    Start_Month = SelectField(
+        "Start Month",
+        validators=[
+            DataRequired(message="Please select a start date")
+        ],
+        choices=[
+            ("1","January"),
+            ("2","February"),
+            ("3","March"),
+            ("4","April"),
+            ("5","May"),
+            ("6","June"),
+            ("7","July"),
+            ("8","August"),
+            ("9","September"),
+            ("10","October"),
+            ("11","November"),
+            ("12","December")
+            ]
+    )
+
+    Start_Year = SelectField(
+        "Start Year",
+        validators=[
+            DataRequired(message="Please select a start date")
+        ],
+        choices=[
+            (f"{x}") for x in range(1942,int(str(datetime.now(app_tz).year))+1)
+            ]
+    )
+
+    End_Month = SelectField(
+        "End Month",
+        validators=[
+            DataRequired(message="Please select a start date")
+        ],
+        choices=[
+            ("1","January"),
+            ("2","February"),
+            ("3","March"),
+            ("4","April"),
+            ("5","May"),
+            ("6","June"),
+            ("7","July"),
+            ("8","August"),
+            ("9","September"),
+            ("10","October"),
+            ("11","November"),
+            ("12","December")
+            ]
+    )
+
+    End_Year = SelectField(
+        "End Year",
+        validators=[
+            DataRequired(message="Please select an end date")
+        ],
+        choices=[
+            (f"{x}") for x in range(1942,int(str(datetime.now(app_tz).year))+1)
+            ]
     )

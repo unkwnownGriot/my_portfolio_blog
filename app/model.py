@@ -97,6 +97,33 @@ class Blogger(db.Model, UserMixin):
         posts = [post.dict() for post in blogger_posts[::-1]]
         return posts
 
+    @staticmethod
+    def check_admin_is_available():
+        """
+        This method is usedby the blogger_create
+        route, it checks it an admin account exist.
+        """
+        try:
+            blogger = db.session.query(Blogger).filter(Blogger.Position == "Admin").first()
+            if blogger != None:
+                return{
+                    "message":True,
+                    "status":"success"
+                }
+
+            else:
+                return{
+                    "message":False,
+                    "status":"success"
+                }
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"An error occurred, checks failed",
+                "status":"failed"
+            }
+
 
     @classmethod
     def add_blogger(cls,**kwargs):
@@ -985,9 +1012,29 @@ class Company(db.Model):
         except Exception as e:
             logger.exception(e)
             return {
-                "message":"Failed to fetch companies",
+                "message":"Failed to fetch company",
                 "status":"failed"
                 }
+
+    @staticmethod
+    def get_company_by_name(company_name):
+        try:
+            company = db.session.query(
+                Company).filter(Company.Company_name == company_name.lower()).first()
+            return{
+                "message":{
+                    "dict":company.dict(),
+                    "object":company
+                },
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"failed to fetch company",
+                "status":"failed"
+            }
 
     def get_roles(self):
         Roles = self.Roles
@@ -1239,6 +1286,42 @@ class Roles(db.Model):
         except Exception as e:
             logger.exception(e)
             return {"message":"Role update failed","status":"failed"}
+
+
+    @staticmethod
+    def fetch_roles():
+        """
+        This method fetches the roles that have
+        been saved
+
+        Params:
+        -------
+        None
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            roles = db.session.query(Roles).order_by(Roles.id).all()
+            roles_list = [role.dict() for role in roles]
+            roles_dict = {}
+            for role in roles_list:
+                if role["company_name"] in roles_dict.keys():
+                    roles_dict[role["company_name"]].append(role)
+
+                else:
+                    roles_dict[role["company_name"]] = [role]
+
+            return {
+                "message":roles_dict,
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to fetch saved roles","status":"failed"}
 
 
 class Certifications(db.Model):
