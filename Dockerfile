@@ -1,14 +1,16 @@
-# Get Base OS
-FROM alpine:latest
+# Inherit from python official Image
+FROM python:3.8-slim-buster
 
-# Install python3 and pip
-RUN apk add --no-cache python3-dev && Install --upgrade pip
+# Copy project to app folder
+COPY . /app
 
-# Set Working Directory
+# Create Working Directory
 WORKDIR /app
 
-# Copy Files Into Working Directory
-COPY . /app
+# Install requirements file
+RUN pip3 install -r requirements.txt
+RUN apt-get update && apt-get install -y python3-opencv
+RUN pip install opencv-python
 
 # Expose Flask Port
 EXPOSE 5000

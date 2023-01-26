@@ -1,18 +1,9 @@
-from cgitb import reset
 import os
-from tkinter import N
-from urllib import response
 import cv2
 import uuid
 import string
 import random
 import logging
-from cv2 import log
-
-from importlib_metadata import method_cache, re
-from itsdangerous import exc
-from numpy import record
-from app import blog
 
 from app.blog import blog_bp
 from app.model import Company, Posts, Roles
