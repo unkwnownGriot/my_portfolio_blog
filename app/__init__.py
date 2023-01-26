@@ -1,5 +1,6 @@
 import secrets
 
+from asgiref.wsgi import WsgiToAsgi
 from flask import Flask
 from flask_cors import CORS
 from datetime import timedelta
@@ -37,7 +38,6 @@ def configure_database(app):
 
 def create_app():
     app = Flask(__name__)
-
     app.secret_key = secrets.token_hex(16)
     app.permanent_session_lifetime = timedelta(minutes=120)
     app.config.from_object('app.config.BaseConfig')
@@ -62,4 +62,5 @@ def create_app():
         login_manager.login_message_category = "warning"
 
         configure_database(app)
-    return app
+        asgi_app = WsgiToAsgi(app)
+    return asgi_app

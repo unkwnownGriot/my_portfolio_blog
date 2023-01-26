@@ -23,6 +23,7 @@ python-dotenv==0.21.1
 pytz==2022.7.1
 six==1.16.0
 SQLAlchemy==1.4.46
+unvicorn==0.20.0
 Werkzeug==2.2.2
 WTForms==3.0.1
 zipp==3.11.0
