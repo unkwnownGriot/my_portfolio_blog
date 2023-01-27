@@ -1,6 +1,5 @@
 import secrets
 
-from asgiref.wsgi import WsgiToAsgi
 from flask import Flask
 from flask_cors import CORS
 from datetime import timedelta
@@ -62,5 +61,4 @@ def create_app():
         login_manager.login_message_category = "warning"
 
         configure_database(app)
-        asgi_app = WsgiToAsgi(app)
-    return asgi_app
+    return app
