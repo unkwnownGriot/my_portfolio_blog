@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container_content">
+        <input type="text" value="{{Blogger_Id}}" id="blogger_id" disabled hidden>
+
+        <!-- Article Type Seclector -->
+        <div class="article_utils">
+            <div class="article_type">
+                <div class="plain_post post_type select">
+                    PLAIN POST
+                </div>
+                
+                <div class="image_post post_type">
+                    IMAGE POST
+                </div>
+        
+                <div class="images_post post_type">
+                    IMAGES POST
+                </div>
+        
+                <div class="video_post post_type">
+                    VIDEO POST
+                </div>
+        
+                <div class="audio_post post_type">
+                    AUDIO POST
+                </div>
+            </div>
+
+            <div class="article_options">
+                <div class="article_categories">
+
+                    <p class="category">
+                        NEW CATEGORY
+                    </p>
+
+                    <div class="outer_selector" id="outer_selector">
+                        <div class="inner_selector remove_display" id="inner_selector">
+
+                        </div>
+                    </div>
+
+                    <div class="new_category remove_display" id="new_category">
+                        <input type="text" class="category_name" name="category_name" id="category_name">
+                    </div>
+    
+                    <div class="available_categories" id="available_categories">
+                        <select class="select_field" id="select_field">
+                            {% for category in categories %}
+                                <option value="{{category}}" id="{{category}}">{{category}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="article_search">
+    
+                    <div class="serach_field">
+                        <input type="text" class="search" name="search" id="search" placeholder="Search an article">
+                    </div>
+            
+                    <div class="search_icon">
+                        <i class="las la-search"></i>
+                    </div>
+            
+                </div>
+            </div>
+
+        </div>
+    
+        <!-- Section For Writing Articles -->
+        <div class="article_writer">    
+            <div class="articles_list">
+
+                {% for article in Blogger_Articles %}
+                    <div class="article">
+                        <!-- Display Image -->
+                        {% if article["Published"] == True %}
+                        <div class="article_preview_icon">
+                            <img src="{{ article['Image'] }}" alt="" class="article_img  published">
+                        </div>
+                        {% else %}
+                        <div class="article_preview_icon">
+                            <img src="{{ article['Image'] }}" alt="" class="article_img drafted">
+                        </div>
+                        {% endif %}
+
+                        <div class="hidden remove_display" id="hidden">
+                            <input type="text" name="post_type" id="post_type" value="{{article['Type']}}">
+                            <input type="text" name="article_id" id="article_id" value="{{ article['id'] }}" disabled>
+                            <input type="text" name="article_category" id="article_category" value="{{ article['Category'] }}" disabled>
+                            <textarea name="article_content" id="article_content" class="article_content" disabled>{{ article['Content'] }}</textarea>
+                        </div>
+        
+                        <!-- Preview Text Content -->
+                        <div class="article_content_preview">
+                            <div class="article_preview_header">
+                                {{ article["Title"] }}
+                            </div>
+                            <div class="article_preview_content">
+                                {{ article["Content"][:350] }}...
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="article_actions">
+                                <a href="/blog/preview_article/{{article['id']}}">
+                                    <div class="preview">
+                                        <i class="las la-eye"></i>
+                                    </div>
+                                </a>
+            
+                                
+                                <div class="delete">
+                                    <i class="las la-trash-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                            
+            </div>
+    
+            <!-- Create and Preview Articles -->
+            <div class="show_artcle">
+                
+                <!-- Create Article -->
+                <div class="article_container">
+                    
+                    <!-- Article Title Section -->
+                    <div class="content_title">
+                        <div class="title">
+                            Article Name
+                        </div>
+    
+                        <small class="hint">
+                            Uses markdown text decoration
+                        </small>
+                    </div>
+
+                    <input type="text" class="content_header" id="content_header" placeholder="LOREM TITLE">
+
+
+                    <!-- Article Title Section -->
+                    <div class="content_title">
+                        <div class="title">
+                            Article Content
+                        </div>
+    
+                        <small class="hint">
+                            Uses markdown text decoration
+                        </small>
+                    </div>
+
+                    <textarea class="content" name="content" id="content" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Eum, maxime debitis! Facilis excepturi repellendus dicta 
+asperiores autem assumenda dignissimos? Sit aliquid doloribus 
+quis tempora cum, praesentium blanditiis unde magnam facilis. 
+Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Aspernatur neque rerum mollitia distinctio ab iste veritatis 
+quae assumenda aut. Tempore non corporis quas quo quos laudantium 
+at magni. Repudiandae, veniam.
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Eum, maxime debitis! Facilis excepturi repellendus dicta 
+asperiores autem assumenda dignissimos? Sit aliquid doloribus 
+quis tempora cum, praesentium blanditiis unde magnam facilis. 
+Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Aspernatur neque rerum mollitia distinctio ab iste veritatis 
+quae assumenda aut. Tempore non corporis quas quo quos laudantium 
+at magni. Repudiandae, veniam.
+                    "></textarea>
+ 
+                    <div class="article_content_actions">
+                        <div class="new" id="new">
+                            <button class="new_button" id="new_button">
+                                NEW ARTICLE
+                            </button>
+                        </div>
+
+                        <div class="draft" id="draft">
+                            <button class="draft_button" id="draft_button">
+                                SAVE TO DRAFT
+                            </button>
+                        </div>
+                
+                        <div class="publish" id="publish">
+                            <button class="publish_button" id="pubish_button">
+                                PUBLISH
+                            </button>
+                        </div>
+
+                        <div class="update remove_display" id="update">
+                            <button class="update_button" id="update_button">
+                                UPDATE
+                            </button>
+                        </div>
+                    </div>
+                
+                </div>
+    
+                <!-- Preview Article -->
+                <div class="preview_article">
+                </div>
+    
+            </div>
+    
+            <!-- Media Files -->
+            <div class="media_files" aria-disabled="true">
+                
+                <!-- Files used for the current article -->
+                <div class="file_upload remove_display">
+                    {{UploadForm.hidden_tag()}}
+                    <input type="file" class="upload" id="upload" disabled>
+                </div>
+    
+                <div class="upload_files" id="upload_files">
+                    <p>Upload Files</p>
+
+                    <div class="progress remove_display">
+
+                    </div>
+                </div>
+    
+                <div class="available_files">
+                    <div class="audios remove_display">
+                        {% for audio in files["audio"]: %}
+                            <div>
+                                <audio controls class="audio " src="{{audio['file_path']}}"></audio>
+                                <small class="is_clicked">{{audio["filename"]}}</small>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="images remove_display">
+                        {% for image in files["image"]: %}
+                            <div>
+                                <img class="image" src="{{image['file_path']}}" alt="{{image['filename']}}">
+                                <small class="is_clicked">{{image["filename"]}}</small>
+                            </div>
+                        {% endfor %}    
+                    </div>
+
+                    <div class="videos remove_display">
+                        {% for video in files["video"]: %}
+                            <div>
+                                <video controls class="video" src="{{video['file_path']}}"></video>
+                                <small class="is_clicked">{{video['filename']}}</small>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/blog{{ url_for('static', filename='js/dashboard.js') }}">
+    const csrf_token = document.getElementById("{{UploadForm.csrf_token.id}}")
+</script>
+{% endblock %}

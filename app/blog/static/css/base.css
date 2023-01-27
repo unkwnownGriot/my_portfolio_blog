@@ -1,0 +1,7 @@
+.container{
+    display: flex;
+    background: #E4E9F7;
+    height: calc(100vh - 61px);
+    left: 260px;
+    width: calc(100% - 260px);
+}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/blog.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="blog_home">
+        <div class="resume">
+            <a href="/">
+                <button class="resume_btn">
+                    Go to resume
+                </button>
+            </a>
+        </div>
+
+        <div class="banner">
+            <img src="/blog{{url_for('static', filename='images/blog_home.png')}}" alt="">
+        </div>
+
+        <div class="articles">
+
+            {% for article in articles %}
+                <div class="article">
+                    <div class="article_image">
+                        <img src="{{article['Image']}}" alt="">
+                    </div>
+
+                    <div class="article_author">
+                        by {{article['Author']}}
+                    </div>
+
+                    <div class="article_title">
+                        {{article['Title']}}
+                    </div>
+
+                    <div class="article_content_preview">
+                        {{article['Content'][:350]}}
+                    </div>
+
+                    <div class="article_cta">
+                        <a href="/view_article/{{article['id']}}">
+                            <button class="read_more">
+                                READ ARTICLE
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

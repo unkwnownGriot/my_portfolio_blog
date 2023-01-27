@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="static/images/favicon.png">
+
+		<!-- Author Meta -->
+		<meta name="Akinsola Adefolahan" content="My Blog">
+
+		<!-- Meta Description -->
+		<meta name="description" content="{{content.page_title}}">
+
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="Akinsola Adefolahan, NeuralFarms, Artificial Intelligence">
+
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+
+		<!-- Site Title -->
+		<title>{{content.page_title}}</title>
+
+        <!-- Line Awesome -->
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        
+		<!-- Base Css -->
+		<link rel="stylesheet" href="/blog{{ url_for('static', filename='css/base.css') }}">
+
+        <!-- Navigaation CSS -->
+        <link rel="stylesheet" href="/blog{{ url_for('static', filename='css/navigation.css') }}">
+
+        <style>
+            @font-face {
+                font-family:PlusJakartaDisplayBold;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Bold.otf") format("opentype");
+                font-weight: bold;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family:PlusJakartaDisplayBoldItalic;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-BoldItalic.otf") format("opentype");
+                font-weight: bold;
+                font-style: italic;
+            }
+            
+            @font-face {
+                font-family:PlusJakartaDisplayItalic;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Italic.otf") format("opentype");
+                font-weight: normal;
+                font-style: italic;
+            }
+            
+            @font-face {
+                font-family:PlusJakartaDisplayLight;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Light.otf") format("opentype");
+                font-weight: lighter;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaDisplayLightItalic;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-LightItalic.otf") format("opentype");
+                font-weight: lighter;
+                font-style: italic;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaDisplayMedium;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Medium.otf") format("opentype");
+                font-weight: medium;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaDisplayMediumItalic;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-MediumItalic.otf") format("opentype");
+                font-weight: medium;
+                font-style: italic;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaDisplayRegular;
+                src: url("/blog/static/fonts/PlusJakartaDisplay-Regular.otf") format("opentype");
+                font-weight: normal;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaTextBold;
+                src: url("/blog/static/fonts/PlusJakartaText-Bold.otf") format("opentype");
+                font-weight: bold;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaTextBoldItalic;
+                src: url("/blog/static/fonts/PlusJakartaText-BoldItalic.otf") format("opntype");
+                font-weight: Bold;
+                font-style: italic;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaTextItalic;
+                src: url("/blog/static/fonts/PlusJakartaText-Italic.otf") format("opentype");
+                font-weight: normal;
+                font-style: italic;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaTextLight;
+                src: url("/blog/static/fonts/PlusJakartaText-Light.otf") format("opentype");
+                font-weight: lighter;
+                font-style: normal;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaTextLightItalic;
+                src: url("/blog/static/fonts/PlusJakartaText-LightItalic.otf") format("opentype");
+                font-weight: lighter;
+                font-style: italic;
+            }
+            
+            @font-face {
+                font-family: PlusJakartaTextRegular;
+                src: url("/blog/static/fonts/PlusJakartaText-Regular.otf") format("opentype");
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                text-decoration: none;
+                font-family: "PlusJakartaDisplayLight",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            }
+
+            /* Notification Styling */
+            .flashes {
+                position:fixed;
+                left: 0;
+                display: inline-block;
+                z-index: 150;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin: 10px 20px;
+            }
+
+            .flashes li {
+                margin-bottom: 10px;
+            }
+
+            .alert {
+                width: fit-content;
+                position:relative;
+                padding-top: 10px;
+                height: 100%;
+                font-size: 15px;
+                border-radius: 5px;
+                text-transform: capitalize;
+                font-size: large;
+                font-weight: 700;
+                padding: 5px;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .alert-warning {
+                border: 1px solid #f3b33c;
+                background-color: #c48717;
+                color: #fff;
+            }
+
+            .alert-danger,
+            .alert-failed {
+                border: 1px solid #ee4d12;
+                background-color: #af3c12;
+                color: #fff;
+            }
+
+            .alert-success {
+                border: 1px solid #7af186;
+                background-color: #62c76c;
+                color: #fff;
+            }
+
+            .alert-cancel {
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                margin: 0;
+                border: 3px solid #fff;
+                border-radius: 3px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                background-color: transparent;
+                font-size:larger;
+                color: #fff;
+            }
+        </style>
+
+        <!-- Bootstrap CSS -->
+        {% block css %}
+        {% endblock %}
+    </head>
+
+    <!-- Page Body -->
+    <body>
+        <!-- Add Navigation -->
+        {% if Blogger_Name is defined %}
+            {% include 'admin/navigation.html' %}
+        {% endif %}
+        
+        <!-- Notification Section -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            <ul class="flashes" id="flashes">
+            {% if messages %}
+                {% for category, message in messages %}
+                <li>
+                <div class="alert alert-{{category}}">
+                    {{message}}
+                    <input type="button" class="alert-cancel" id="alert-cancel" value="X">
+                </div>
+                </li>
+                {% endfor %}
+            {% endif %}
+            </ul>
+        {% endwith %}
+        
+
+        {% block content %}
+        {% endblock %}
+        
+        <!-- Notifications -->
+        <script>
+            const buttons = document.getElementsByClassName("alert-cancel")
+
+            for (let i=0; i < buttons.length; i++){
+                let button = buttons[i]
+
+                button.addEventListener("click",() => {
+                    button.parentElement.style.display = "none"
+                })
+            }
+
+
+          </script>
+          
+    </body>
+
+</html>

@@ -1,0 +1,405 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/create_resume.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container_content">
+
+        <!-- Section Where Edits are made -->
+        <div class="section_one">
+
+            <!-- Select Section To Edit -->
+            <div class="selector">
+                <div class="selector_header">
+                    <div class="info">
+                        Select the section to edit
+                    </div>
+                </div>
+
+                <select name="section_name" id="section_name" class="section_name">
+                    <option value="welcome_content">Welcome Content</option>
+                    <option value="about_content">About Content</option>
+                    <option value="work_content">Work Content</option>
+                    <option value="education_content">Education</option>
+                    <option value="companies">Companies</option>
+                    <option value="experience">EXPERIENCE</option>
+                    <option value="Certifications">Certifications</option>
+                    <option value="Stack">Stack</option>
+                    <option value="Languages">Languages</option>
+                    <option value="work_samples">Work Samples</option>
+                    <option value="social_media">Social Media</option>
+                    <option value="change_my_Image">Change My Image</option>
+                </select>
+            </div>
+            
+            <!-- Welcome Text Area -->
+            <div class="content">
+                <!-- Welcome Content Form -->
+                <form action="" class="welcome_content remove_display" id="welcome_content">
+                    {{ResumeForm.hidden_tag()}}
+
+                    <div name="welcome_text" id="welcome_text" class="welcome_text">
+                        <textarea name="welcome_textarea" id="welcome_textarea" class="welcome_textarea" placeholder="Enter your welcome message">{% if Resume["dict"] != []%}{{Resume["dict"][0]["hero_content"]}}{% endif %}</textarea>
+                    </div>
+
+                    <button class="welcome_save_btn" name="welcome_save_btn" id="welcome_save_btn">
+                        Save Resume Intro
+                    </button>
+                </form>
+
+                <!-- About Content Form -->
+                <form action="" class="about_content remove_display" id="about_content">
+                    <div name="about_text" id="about_text" class="about_text">
+                        <textarea name="about_textarea" id="about_textarea" class="about_textarea" placeholder="Enter your about intro">{% if Resume["dict"] != []%}{{Resume["dict"][0]["about_content"]}}{% endif %}</textarea>
+                    </div>
+
+                    <button class="about_save_btn" name="about_save_btn" id="about_save_btn">
+                        Save Resume About Intro
+                    </button>
+                </form>
+
+                <!-- Work Content Form -->
+                <form action="" class="work_content remove_display" id="work_content">
+                    <div name="work_text" id="work_text" class="work_text">
+                        <textarea name="work_textarea" id="work_textarea" class="work_textarea" placeholder="Enter your work intro">{% if Resume["dict"] != []%}{{Resume["dict"][0]["work_content"]}}{% endif %}</textarea>
+                    </div>
+
+                    <button class="work_save_btn" name="work_save_btn" id="work_save_btn">
+                        Save Resume Work Intro
+                    </button>
+                </form>
+                    
+                <!-- Education Form -->
+                <form action="" class="education_form education_content remove_display" id="education_form">
+
+                    <div class="education_buttons">
+                        <div class="trash">
+                            <button id="clear_btn" name="clear_btn" class="clear_btn">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Instituition Name -->
+                    <fieldset>
+                        {{ EducationForm.Name.label }}
+                        {{ EducationForm.Name }}
+                        {% if EducationForm.Name.errors %}
+                            <ul class="errors">
+                                {% for error in EducationForm.Name.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Instituition Location -->
+                    <fieldset>
+                        {{ EducationForm.Location.label }}
+                        {{ EducationForm.Location }}
+                        {% if EducationForm.Location.errors %}
+                            <ul class="errors">
+                                {% for error in EducationForm.Location.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Qualification Received -->
+                    <fieldset>
+                        {{ EducationForm.Qualification.label }}
+                        {{ EducationForm.Qualification }}
+                        {% if EducationForm.Qualification.errors %}
+                            <ul class="errors">
+                                {% for error in EducationForm.Qualification.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Attendance Dates -->
+                    <div class="dates">
+
+                        <!-- Start Date -->
+                        <fieldset>
+                            {{ EducationForm.Start_Date.label }}
+                            {{ EducationForm.Start_Date }}
+                            {% if EducationForm.Start_Date.errors %}
+                                {% for error in EducationForm.Start_Date.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+
+                        <!-- End Date -->
+                        <fieldset>
+                            {{ EducationForm.End_Date.label }}
+                            {{ EducationForm.End_Date }}
+                            {% if EducationForm.End_Date.errors %}
+                                {% for error in EducationForm.End_Date.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+                    </div>
+
+                    <!-- Save Button -->
+                    <button id="education_btn" class="education_btn" name="education_btn">
+                        ADD TO RESUME
+                    </button>
+
+                    <!-- Save Button -->
+                    <button id="education_btn" class="edit_btn remove_display" name="education_btn">
+                        SAVE EDITS
+                    </button>
+                </form>
+
+                <!-- Added Education List -->
+                <div class="education_record education_content remove_display">
+                    <div class="records_header">
+                        Education Records
+                    </div>
+                    
+                    <div class="records_list">
+                    </div>
+                </div>
+
+                <!-- Add Company Form -->
+                <form action="" class="companies remove_display">
+                    <small>
+                        Company Name
+                    </small>
+                    <input type="text" 
+                        name="company_name" class="company_name" 
+                        id="company_name" placeholder="Enter Company Name">
+
+                    <small>
+                        Company Url
+                    </small>
+                    <input type="text" 
+                        name="company_url" class="company_url" 
+                        id="company_url" placeholder="Enter Web address(optional)">
+
+                    <button class="add_company_btn" id="add_company_btn">
+                        Add New Company
+                    </button>
+                </form>
+
+                <!-- List Added Companies -->
+                <div class="companies remove_display" id="companies">
+                    <div class="available_companies">
+                        <div class="company red company_icon">
+                            <a href="">
+                                Crane Composite
+                            </a>
+                            <div class="remove_icon" id="">
+                                x
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Experience Section -->
+                <form action="" class="experience_form experience ">
+
+                    <!-- Company Name -->
+                    <fieldset>
+                        {{ ExperienceForm.CompanyName.label }}
+                        {{ ExperienceForm.CompanyName }}
+                        {% if ExperienceForm.CompanyName.errors %}
+                            <ul class="errors">
+                                {% for error in ExperienceForm.CompanyName.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Company Name -->
+                    <fieldset>
+                        {{ ExperienceForm.Role.label }}
+                        {{ ExperienceForm.Role }}
+                        {% if ExperienceForm.Role.errors %}
+                            <ul class="errors">
+                                {% for error in ExperienceForm.Role.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Company Name -->
+                    <fieldset>
+                        {{ ExperienceForm.Role_description.label }}
+                        {{ ExperienceForm.Role_description }}
+                        {% if ExperienceForm.Role_description.errors %}
+                            <ul class="errors">
+                                {% for error in ExperienceForm.Role_description.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+
+                    <!-- Start Date -->
+                    <div class="date">
+                        <fieldset>
+                            {{ ExperienceForm.Start_Month.label }}
+                            {{ ExperienceForm.Start_Month }}
+                            {% if ExperienceForm.Start_Month.errors %}
+                                {% for error in EducationForm.Start_Month.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+
+
+                        <fieldset>
+                            {{ ExperienceForm.Start_Year.label }}
+                            {{ ExperienceForm.Start_Year }}
+                            {% if ExperienceForm.Start_Year.errors %}
+                                {% for error in EducationForm.Start_Year.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+                    </div>
+
+                    <!-- End Date -->
+                    <div class="date">
+                        <fieldset>
+                            {{ ExperienceForm.End_Month.label }}
+                            {{ ExperienceForm.End_Month }}
+                            {% if ExperienceForm.End_Month.errors %}
+                                {% for error in EducationForm.End_Month.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+
+                        <fieldset>
+                            {{ ExperienceForm.End_Year.label }}
+                            {{ ExperienceForm.End_Year }}
+                            {% if ExperienceForm.End_Year.errors %}
+                                {% for error in ExperienceForm.End_Year.errors %}
+                                <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </fieldset>
+                    </div>
+
+                    <!-- Save Button -->
+                    <button id="save_experience_btn" class="save_experience_btn" name="save_experience_btn">
+                        ADD TO RESUME
+                    </button>
+
+                    <div class="edit_options remove_display">
+                        <!-- Edit Button -->
+                        <button id="edit_experience_btn" class="edit_experience_btn" name="edit_experience_btn">
+                            EDIT EXPERIENCE
+                        </button>
+
+                        <!-- Delete Button -->
+                        <button id="clear_experience_btn" class="clear_experience_btn" name="clear_experience_btn">
+                            CLEAR
+                        </button>
+                    </div>
+
+                </form>
+
+                <!-- Experience Records -->
+                <div class="experience_records experience remove_display">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Preview Displayed -->
+        <div class="section_two">
+
+            <!-- Welcome Text Preview Display -->
+            <div class="welcome_content content_display remove_display">
+                <div class="welcome_display">
+                    <p class="hero_big">
+                        Welcome!
+                    </p>
+
+                    <p class="hero_content"></p>
+
+                    <a href="#">
+                        <div class="hero_btn">
+                            <button>
+                                Get In Touch
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- About Section Preview Display -->
+            <div class="about_content content_display remove_display">
+                <div class="about_display">
+                    <div class="about_big">
+                        About
+                    </div>
+    
+                    <div class="about_text_preview">
+                        <div class="about_intro"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Section Preview Display -->
+            <div class="work_content content_display remove_display">
+                <div class="work_display">
+                    <div class="work_big">
+                        Work
+                    </div>
+    
+                    <div class="work_text_preview">
+                        <div class="work_intro"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Education -->
+            <div class="about_education education_content remove_display">
+                <div class="education" id="education">
+                    Education
+                </div>
+
+                <div class="education_items">
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="about_experience experience remove_display">
+                <div class="section_title" id="section_title">
+                    Experience
+                </div>
+
+                <div class="experience_items">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script src="/blog{{url_for('static', filename='js/create_resume.js')}}">
+</script>
+{% endblock %}

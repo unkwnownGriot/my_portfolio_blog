@@ -1,0 +1,559 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <!-- Resume CSS -->
+    <link rel="stylesheet" href="/blog{{ url_for('static', filename='css/resume.css') }}">
+{% endblock %}
+        
+{% block content %}
+        <!-- Resume -->
+        <div class="resume">
+            <div class="header_container">
+                <div class="header">
+                    <div>
+                        <img class="image" src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="my image">
+                    </div>
+        
+                    <div class="navigation">
+                        <p class="nav_about">
+                            <a href="#about">
+                                About
+                            </a>
+                        </p>
+        
+                        <p class="nav_education">
+                            <a href="#education">
+                                Education
+                            </a>
+                        </p>
+        
+                        <p class="nav_experience">
+                            <a href="#experience">
+                                Experience
+                            </a>
+                        </p>
+        
+                        <p class="nav_certifications">
+                            <a href="#certifications">
+                                Certifications
+                            </a>
+                        </p>
+        
+                        <p class="nav_stack">
+                            <a href="#stack">
+                                Stack
+                            </a>
+                        </p>
+        
+                        <p class="nav_work">
+                            <a href="#work">
+                                Work
+                            </a>
+                        </p>
+        
+                        <p class="nav_blog">
+                            <a href="/view_blog">
+                                Blog
+                            </a>
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="resume_cta">
+                    <div class="download_btn">
+                        <button>
+                            Download my resume
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="welcome">
+                    <p class="hero_big">
+                        Welcome!
+                    </p>
+
+                    <p class="hero_content">
+                        {{content["resume"]["message"]["dict"][0]["hero_content"]}}
+                    </p>
+
+                    <a href="#contact">
+                        <div class="hero_btn">
+                            <button>
+                                Get In Touch
+                            </button>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hero_img">
+                    <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                </div>
+            </div>
+
+
+            <!-- About Section -->
+            <div class="about" id="about">
+                <div class="about_big">
+                    About
+                </div>
+
+                <div class="about_content">
+
+                    <div class="about_intro">
+                        <p>
+                            {{content["resume"]["message"]["dict"][0]["about_content"]}}
+                        </p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="about_education">
+                        <div class="education" id="education">
+                            Education
+                        </div>
+
+                        <div class="education_items">
+                            {% for education in content["education_history"]: %}
+                                <div class="education_item">
+                                    <div class="education_year">
+                                        <p>
+                                            {{education["start_year"]}} - {{education["end_year"]}}
+                                        </p>
+                                    </div>
+
+                                    <div class="education_instituition">
+                                        <p>
+                                            {{education["Instituition"]}}
+                                        </p>
+
+                                        <small class="education_location">
+                                            {{education["Location"]}}
+                                        </small>
+                                    </div>
+
+                                    <div class="education_award_name">
+                                        {{education["Qualification"]}}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="about_experience">
+                        <div class="experience" id="experience">
+                            Experience
+                        </div>
+
+                        <div class="experience_items">
+                            <div class="experience_item">
+                                <div class="experience_company_name">
+                                    <p class="company_name">
+                                        NeuralFarms Limited
+                                    </p>
+                                </div>
+
+                                <div class="experience_company_positions">
+                                    <div class="company_position">
+
+                                        <div class="position_year">
+                                            2019 - present
+                                        </div>
+
+                                        <div class="position_name">
+                                            Machine Learning Engineer
+                                        </div>
+
+                                        <div class="position_description">
+                                            Developments and deployment of neural network
+                                            models
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="experience_item">
+                                <div class="experience_company_name">
+                                    <p class="company_name">
+                                        NeuralFarms Limited
+                                    </p>
+                                </div>
+
+                                <div class="experience_company_positions">
+                                    <div class="company_position">
+
+                                        <div class="position_year">
+                                            2019 - present
+                                        </div>
+
+                                        <div class="position_name">
+                                            Machine Learning Engineer
+                                        </div>
+
+                                        <div class="position_description">
+                                            Developments and deployment of neural network
+                                            models
+                                        </div>
+
+                                    </div>
+
+                                    <div class="company_position">
+
+                                        <div class="position_year">
+                                            2019 - present
+                                        </div>
+
+                                        <div class="position_name">
+                                            Machine Learning Engineer
+                                        </div>
+
+                                        <div class="position_description">
+                                            Developments and deployment of neural network
+                                            models
+                                        </div>
+
+                                    </div>
+
+                                    <div class="company_position">
+
+                                        <div class="position_year">
+                                            2019 - present
+                                        </div>
+
+                                        <div class="position_name">
+                                            Machine Learning Engineer
+                                        </div>
+
+                                        <div class="position_description">
+                                            Developments and deployment of neural network
+                                            models
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="about_certifications">
+                        <div class="certifications" id="certifications">
+                            Certifications
+                        </div>
+
+                        <div class="certification_items">
+                            <div class="certificate">
+                                <a href="#" class="certificate_name">
+                                    Basics of Docker
+                                </a>
+
+                                <div class="certificate_details">
+                                    <div class="certificate_issuer">
+                                        Udemy, 
+                                    </div>
+                                    <div class="certificate_id">
+                                        Certificate ID: ASDFGHJKL
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="certificate">
+                                <a href="#" class="certificate_name">
+                                    Basics of Docker
+                                </a>
+
+                                <div class="certificate_details">
+                                    <div class="certificate_issuer">
+                                        Udemy
+                                    </div>
+                                    <div class="certificate_id">
+                                        Certificate ID: ASDFGHJKL
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="certificate">
+                                <a href="#" class="certificate_name">
+                                    Basics of Docker
+                                </a>
+
+                                <div class="certificate_details">
+                                    <div class="certificate_issuer">
+                                        Udemy
+                                    </div>
+                                    <div class="certificate_id">
+                                        Certificate ID: ASDFGHJKL
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="certificate">
+                                <a href="#" class="certificate_name">
+                                    Basics of Docker
+                                </a>
+
+                                <div class="certificate_details">
+                                    <div class="certificate_issuer">
+                                        Udemy
+                                    </div>
+                                    <div class="certificate_id">
+                                        Certificate ID: ASDFGHJKL
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            <!-- End of About Section -->
+            </div>
+
+
+            <!-- Stack Section -->
+            <div class="stack" id="stack">
+                <div class="stack_big">
+                    Stack
+                </div>
+
+                <div class="stack_content">
+
+                    <div class="tech_stack">
+                            Tech Stack
+                    </div>
+
+                    <div class="stack_items">
+                        <div class="stack_item">
+                            <div class="stack_image">
+                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                            </div>
+
+                            <div class="stack_name">
+                                <p>
+                                    python
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="stack_item">
+                            <div class="stack_image">
+                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                            </div>
+
+                            <div class="stack_name">
+                                <p>
+                                    python
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="stack_item">
+                            <div class="stack_image">
+                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                            </div>
+
+                            <div class="stack_name">
+                                <p>
+                                    python
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="stack_item">
+                            <div class="stack_image">
+                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                            </div>
+
+                            <div class="stack_name">
+                                <p>
+                                    python
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="other">
+                        Other
+                    </div>
+
+                    <div class="stack_no_image">
+                        <table>
+                            <tr>
+                                <td>Git(github, gitlab)</td>
+                                <td>VS Code</td>
+                            </tr>
+                            <tr>
+                                <td>Agile development Process</td>
+                                <td>Developing desktop apps using Flet and PySimpleGUI</td>
+                            </tr>
+                            <tr>
+                                <td>JIRA</td>
+                                <td>Adobe PhotoShop</td>
+                            </tr>
+                            <tr>
+                                <td>Android Studio</td>
+                                <td>Microsoft Windows, Linux and MacOS Environments</td>
+                            </tr>
+                        </table>
+                    </div>
+    
+    
+                    <div class="languages">
+                        Languages
+                    </div>
+
+                    <div class="language_list">
+                        <div class="language">
+                            <div class="language_name">
+                                English
+                            </div>
+                             - 
+                            <div class="language_fluency">
+                                native
+                            </div>
+                        </div>
+
+                        <div class="language">
+                            <div class="language_name">
+                                Yoruba
+                            </div>
+                             - 
+                            <div class="language_fluency">
+                                native
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Of Stack Section -->
+            </div>
+
+            <!-- Work Section -->
+            <div class="work" id="work">
+                <div class="work_big">
+                    Work
+                </div>
+
+                <div class="work_content">
+                    <div class="work_intro">
+                        {{content["resume"]["message"]["dict"][0]["work_content"]}}
+                    </div>
+
+                    <div class="work_projects">
+                        <div class="work_project">
+                            <div class="project_image">
+                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                            </div>
+                            
+                            <div class="project_info">
+                                <div class="project_title">
+                                    Project Title
+                                </div>
+        
+                                <div class="project_mini_description">
+                                    A mini description Lorem ipsum dolor sit amet consectetur 
+                                    adipisicing elit. Similique at maiores modi. In nobis qui 
+                                    tenetur? Iusto, non eligendi rerum accusamus magnam eveniet 
+                                    fugiat voluptatum tempore dignissimos consequatur culpa nihil
+                                    omnis unde officia obcaecati quaerat quidem vitae asperiores 
+                                    rem maxime aliquid libero modi quos. Eaque dolorum accusamus 
+                                    rerum quam vitae.
+                                </div>
+        
+                                <div class="project_link">
+                                    <a href="#">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="work_project">
+                            <div class="project_image">
+                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                            </div>
+                            
+                            <div class="project_info">
+                                <div class="project_title">
+                                    Project Title
+                                </div>
+        
+                                <div class="project_mini_description">
+                                    A mini description Lorem ipsum dolor sit amet consectetur 
+                                    adipisicing elit. Similique at maiores modi. In nobis qui 
+                                    tenetur? Iusto, non eligendi rerum accusamus magnam eveniet 
+                                    fugiat voluptatum tempore dignissimos consequatur culpa nihil
+                                    omnis unde officia obcaecati quaerat quidem vitae asperiores 
+                                    rem maxime aliquid libero modi quos. Eaque dolorum accusamus 
+                                    rerum quam vitae.
+                                </div>
+        
+                                <div class="project_link">
+                                    <a href="#">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="work_project">
+                            <div class="project_image">
+                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                            </div>
+    
+                            <div class="project_info">
+                                <div class="project_title">
+                                    Project Title
+                                </div>
+        
+                                <div class="project_mini_description">
+                                    A mini description
+                                </div>
+        
+                                <div class="project_link">
+                                    <a href="#">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Contact Section -->
+            <div class="contact" id="contact">
+
+                <div class="left_side">
+                    <div class="contact_big">
+                        Get In Touch
+                    </div>
+    
+                    <div class="send_mail">
+                        <p class="header">Email</p>
+                        <a href="mailto:{{content['resume']['message']['dict'][0]['email']}}" class="content">{{content["resume"]["message"]["dict"][0]["email"]}}</a>
+                    </div>
+    
+                    <div class="resume_dwnd">
+                        <div class="header">Resume</div>
+                        <a href="" class="content">Download my Resume</a>
+                    </div>
+                </div>
+
+                <div class="right_side">
+                    <form action="" class="contact_form">
+                        <input type="text" name="name" id="name" class="contact_text" placeholder="Fullname">
+                        <input type="text" name="email" id="email" class="contact_email" placeholder="Email Address">
+                        <textarea name="message" id="message" class="contact_message" placeholder="Your message"></textarea>
+                        <button class="contact_btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        <!-- End of resume -->
+        </div>
+{% endblock %}

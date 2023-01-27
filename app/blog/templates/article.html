@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/markdown.css') }}" rel="stylesheet">
+  <link href="/blog{{ url_for('static', filename='css/article.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div>
+        <div class="container_content">
+            <div class="markdown-body">
+                {{ Title | markdown }}
+            </div>
+    
+            <div class="markdown-body">
+                {{ data["Content"] | markdown }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
