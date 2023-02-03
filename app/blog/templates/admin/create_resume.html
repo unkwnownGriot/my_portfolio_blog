@@ -29,7 +29,7 @@
                     <option value="education_content">Education</option>
                     <option value="companies">Companies</option>
                     <option value="experience">EXPERIENCE</option>
-                    <option value="Certifications">Certifications</option>
+                    <option value="certifications">Certifications</option>
                     <option value="Stack">Stack</option>
                     <option value="Languages">Languages</option>
                     <option value="work_samples">Work Samples</option>
@@ -41,7 +41,7 @@
             <!-- Welcome Text Area -->
             <div class="content">
                 <!-- Welcome Content Form -->
-                <form action="" class="welcome_content remove_display" id="welcome_content">
+                <form class="welcome_content remove_display" id="welcome_content">
                     {{ResumeForm.hidden_tag()}}
 
                     <div name="welcome_text" id="welcome_text" class="welcome_text">
@@ -76,7 +76,7 @@
                 </form>
                     
                 <!-- Education Form -->
-                <form action="" class="education_form education_content remove_display" id="education_form">
+                <form class="education_form education_content remove_display" id="education_form">
 
                     <div class="education_buttons">
                         <div class="trash">
@@ -209,7 +209,7 @@
 
 
                 <!-- Experience Section -->
-                <form action="" class="experience_form experience ">
+                <form class="experience_form experience remove_display">
 
                     <!-- Company Name -->
                     <fieldset>
@@ -320,6 +320,145 @@
                 <div class="experience_records experience remove_display">
                 </div>
 
+
+                <!-- Certificates Form -->
+                <form class="certification_form certifications remove_display">
+                    
+                    <fieldset>
+                        {{ CertificateForm.Certificate_id.label }}
+                        {{ CertificateForm.Certificate_id }}
+                        {% if CertificateForm.Certificate_id.erors %}
+                            {% for error in CertificateForm.Certificate_id.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ CertificateForm.Certificate_issuer.label }}
+                        {{ CertificateForm.Certificate_issuer }}
+                        {% if CertificateForm.Certificate_issuer.erors %}
+                            {% for error in CertificateForm.Certificate_issuer.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ CertificateForm.Certificate_name.label }}
+                        {{ CertificateForm.Certificate_name }}
+                        {% if CertificateForm.Certificate_name.erors %}
+                            {% for error in CertificateForm.Certificate_name.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ CertificateForm.Certificate_image.label }}
+                        {{ CertificateForm.Certificate_image }}
+                        {% if CertificateForm.Certificate_image.erors %}
+                            {% for error in CertificateForm.Certificate_image.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset class="remove_display" id="file_container" class="file_container">
+                        <input type="text" id="uploaded_file">
+                    </fieldset>
+
+                    <fieldset class="cert_save_btn">
+                        <button name="certificate_btn" id="certificate_btn" class="certificate_btn">
+                            Save Certificate
+                        </button>
+                    </fieldset>
+
+                    <fieldset class="remove_display cert_update_btn">
+                        <button name="update_certificate_btn" id="update_certificate_btn" class="update_certificate_btn">
+                            Update
+                        </button>
+
+                        <button name="cert_clear_btn" id="cert_clear_btn" class="cert_clear_btn">
+                            Clear
+                        </button>
+                    </fieldset>
+                </form>
+
+                <!-- Certifecates Records -->
+                <div class="certificate_records certifications remove_display">
+                    <h3 class="record_header">
+                        Certificate Records
+                    </h3>
+                    <div class="record_list">
+                    </div>
+                </div>
+
+
+                <!-- Stack Form -->
+                <form method="" class="certification_form certifications remove_display">
+                    
+                    <fieldset>
+                        {{ CertificateForm.Certificate_id.label }}
+                        {{ CertificateForm.Certificate_id }}
+                        {% if CertificateForm.Certificate_id.erors %}
+                            {% for error in CertificateForm.Certificate_id.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ CertificateForm.Certificate_issuer.label }}
+                        {{ CertificateForm.Certificate_issuer }}
+                        {% if CertificateForm.Certificate_issuer.erors %}
+                            {% for error in CertificateForm.Certificate_issuer.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ CertificateForm.Certificate_name.label }}
+                        {{ CertificateForm.Certificate_name }}
+                        {% if CertificateForm.Certificate_name.erors %}
+                            {% for error in CertificateForm.Certificate_name.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ CertificateForm.Certificate_image.label }}
+                        {{ CertificateForm.Certificate_image }}
+                        {% if CertificateForm.Certificate_image.erors %}
+                            {% for error in CertificateForm.Certificate_image.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset class="remove_display" id="file_container" class="file_container">
+                        <input type="text" id="uploaded_file">
+                    </fieldset>
+
+                    <fieldset class="cert_save_btn">
+                        <button name="certificate_btn" id="certificate_btn" class="certificate_btn">
+                            Save Certificate
+                        </button>
+                    </fieldset>
+
+                    <fieldset class="remove_display cert_update_btn">
+                        <button name="update_certificate_btn" id="update_certificate_btn" class="update_certificate_btn">
+                            Update
+                        </button>
+
+                        <button name="cert_clear_btn" id="cert_clear_btn" class="cert_clear_btn">
+                            Clear
+                        </button>
+                    </fieldset>
+                </form>
+
             </div>
 
         </div>
@@ -391,7 +530,17 @@
 
                 <div class="experience_items">
                 </div>
+            </div>
 
+
+            <!-- Certificate -->
+            <div class="about_certifications certifications remove_display">
+                <div class="section_title" id="section_title">
+                    Certifications
+                </div>
+
+                <div class="certification_items">
+                </div>
             </div>
 
         </div>

@@ -1,13 +1,12 @@
-from itsdangerous import exc
-from app import db, login_manager
-from flask_login import UserMixin
-from sqlalchemy.orm import relationship
-from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text, ARRAY, null 
-from datetime import datetime, timedelta
 import pytz
 import logging
 
+from datetime import datetime
+from app import db, login_manager
+from flask_login import UserMixin
+from sqlalchemy.orm import relationship
 from werkzeug.security import check_password_hash
+from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text
 
 #########################
 # Database Error Logger #
@@ -1325,9 +1324,10 @@ class Roles(db.Model):
 
 
 class Certifications(db.Model):
-    __tablenme__ = "certifications"
+    __tablename__ = "certifications"
 
     id = Column(Integer, primary_key=True)
+    Certificate_uid = Column(String, nullable=False, unique=True)
     Certificate_id = Column(String, nullable=False, unique=True)
     Certificate_name = Column(String, nullable=False)
     Certificate_issuer = Column(String, nullable=False)
@@ -1335,10 +1335,11 @@ class Certifications(db.Model):
 
     def dict(self):
         return{
+            "uid":self.Certificate_uid,
             "id":self.Certificate_id,
             "name":self.Certificate_name,
             "issuer":self.Certificate_issuer,
-            "image":self.Certificate_image
+            "image":self.Certificate_image.split("/")[-1]
         }
 
     def get_certificate_id(self):
@@ -1382,13 +1383,13 @@ class Certifications(db.Model):
 
 
     @classmethod
-    def remove_certificate(cls,certificate_id):
+    def remove_certificate(cls,certificate_uid):
         """
         This method removes a certificate
 
         Params:
         -------
-        certificated_id: The id of the certificate to be removed
+        certificated_uid: The uid of the certificate to be removed
 
         Returns:
         --------
@@ -1398,7 +1399,7 @@ class Certifications(db.Model):
         try:
             certificate = db.session.query(
                 Certifications).filter(
-                    Certifications.Certificate_id == certificate_id).first()
+                    Certifications.Certificate_uid == certificate_uid).first()
             db.session.delete(certificate)
             db.session.commit()
             return {"message":"Certificate has been removed","status":"success"}
@@ -1409,7 +1410,7 @@ class Certifications(db.Model):
 
 
     @classmethod
-    def update_certificate(cls,certificate_id,**kwargs):
+    def update_certificate(cls,certificate_uid,**kwargs):
         """
         This method removes a certificate
 
@@ -1427,13 +1428,41 @@ class Certifications(db.Model):
         try:
             db.session.query(
                 Certifications).filter(
-                    Certifications.Certificate_id == certificate_id).update({**kwargs})
+                    Certifications.Certificate_uid == certificate_uid).update({**kwargs})
             db.session.commit()
             return {"message":"Certificate update complete","status":"success"}
 
         except Exception as e:
             logger.exception(e)
             return {"message":"Certificate update failed","status":"failed"}
+
+
+    @staticmethod
+    def fetch_certificates():
+        """
+        This method fetches all the certificates
+
+        Params:
+        -------
+        None
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            certificates = db.session.query(Certifications).all()
+            if certificates != []:
+                certificates = [certificate.dict() for certificate in certificates]
+                return{"message":certificates,"status":"success"}
+
+            else:
+                return{"message":"No certificates","status":"warning"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"Failed to fetch certificates","status":"failed"}
 
 
 class Skills(db.Model):
@@ -1539,6 +1568,31 @@ class Skills(db.Model):
         except Exception as e:
             logger.exception(e)
             return{"message":"failed to update skill","status":"failed"}
+
+
+    @staticmethod
+    def fetch_skills():
+        """
+        This method fetches all the registered skills and sorts them
+        into skils with icons and skills witout icons.
+        """
+        try:
+            icon_skills = db.session.query(Skills).filter(Skills.Skill_icon != None).all()
+            non_icon_skills = db.session.query(Skills).filter(Skills.Skill_icon == None).all()
+
+            all_skills = {
+                "icon_skills":icon_skills,
+                "non_icon_skills":non_icon_skills
+            }
+
+            response = {
+                "message":all_skills,
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"Failed to fetch skills","status":"failed"}
 
 
 class Languages(db.Model):

@@ -1,22 +1,28 @@
+from email import message
 import os
-import cv2
 import uuid
 import string
 import random
 import logging
+from importlib_metadata import method_cache
+
+from itsdangerous import exc
+
 
 from app.blog import blog_bp
-from app.model import Company, Posts, Roles
+from app.model import Posts, Skills
+from app.model import Roles
 from app.model import Resume
 from app.model import Blogger
-from app.model import Comments
+from app.model import Company
+from app.model import Certifications
 from datetime import date, datetime, timedelta
 from app.model import Education
 from app.model import Subscribers
 from flask_login import login_user
 from flask_login import logout_user
 from flask_login import current_user
-from app.blog.forms import ExperienceForm, LoginForm
+from app.blog.forms import CertificateForm, ExperienceForm, LoginForm, StackForm
 from app.blog.forms import UploadForm
 from flask_login import login_required
 from werkzeug.utils import secure_filename
@@ -553,6 +559,8 @@ def create_resume():
     resumeform = ResumeForm()
     educationform = EducationForm()
     experienceform = ExperienceForm()
+    certificateform = CertificateForm()
+    stackform = StackForm()
     res = Resume.fetch_resume()
     if res["status"] == "failed":
         resume = None
@@ -567,7 +575,9 @@ def create_resume():
         Resume = resume,
         ResumeForm = resumeform,
         EducationForm = educationform,
-        ExperienceForm = experienceform
+        ExperienceForm = experienceform,
+        CertificateForm = certificateform,
+        StackForm = stackform
         )
 
 @blog_bp.route("/update_welcome_text",methods=["POST"])
@@ -864,5 +874,198 @@ def delete_experience():
         logger.exception(e)
         return {
             "message":"An error occurred while deleting experience",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/fetch_certificates", methods=["GET"])
+@login_required
+def fetch_certificate():
+    try:
+        certificates = Certifications.fetch_certificates()
+        return certificates
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while fetching certifiates",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/add_certificate", methods=["POST"])
+@login_required
+def add_certificate():
+    try:
+        certificate_id = request.form["certificate_id"]
+        certificate_issuer = request.form["certificate_issuer"]
+        certificate_name = request.form["certificate_name"]
+        certificate_image = request.files["certificate_image"]
+
+        if all([certificate_id,certificate_issuer,certificate_name,certificate_image.filename]):
+        
+            # Create parent folder if not exist
+            parent_folder = f"app/blog/static/images/certificates"
+            os.makedirs(parent_folder, exist_ok=True)
+
+            # Save Image
+            SavePath = f"{parent_folder}/{secure_filename(certificate_image.filename)}"
+            certificate_image.save(SavePath)
+
+            kwargs = {
+                "Certificate_uid":uuid.uuid4().hex,
+                "Certificate_id":certificate_id,
+                "Certificate_name":certificate_name,
+                "Certificate_issuer":certificate_issuer,
+                "Certificate_image":SavePath
+            }
+
+            response = Certifications.add_certificate(**kwargs)
+            return response
+        
+        else:
+            return{
+                "message":"Invalid input, try again",
+                "status":"faied"
+            }
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An erroe occurred while adding certificates",
+            "status":"failed"
+        }
+
+
+
+@blog_bp.route("/edit_certificate", methods=["PUT"])
+@login_required
+def edit_certificate():
+    try:
+        print(request.form, request.files)
+        certificate_uid = request.form["certificate_uid"]
+        certificate_id = request.form["certificate_id"]
+        certificate_issuer = request.form["certificate_issuer"]
+        certificate_name = request.form["certificate_name"]
+        try:
+            certificate_image = request.files["certificate_image"]
+        except:
+            certificate_image = False
+            certificate_image_path = request.form["certificate_image_path"]
+
+        if all([certificate_uid,certificate_id,certificate_issuer,certificate_name]):
+
+            # Create parent folder if not exist
+            parent_folder = f"app/blog/static/images/certificates"
+            os.makedirs(parent_folder, exist_ok=True)
+
+            if certificate_image:
+
+                # Save Image
+                SavePath = f"{parent_folder}/{secure_filename(certificate_image.filename)}"
+                certificate_image.save(SavePath)
+
+            else:
+                SavePath = f"{parent_folder}/{secure_filename(certificate_image_path)}"
+                
+
+            # Update Certificate
+            kwargs = {
+                "Certificate_id":certificate_id,
+                "Certificate_name":certificate_name,
+                "Certificate_issuer":certificate_issuer,
+                "Certificate_image":SavePath
+            }
+
+            response = Certifications.update_certificate(certificate_uid, **kwargs)
+            return response
+        
+        else:
+            return{
+                "message":"Invalid input, try again",
+                "status":"faied"
+            }
+        
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while saving edits",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/delete_certificate", methods=["DELETE"])
+@login_required
+def delete_certificate():
+    try:
+        uid = request.form["uid"]
+        response = Certifications.remove_certificate(uid)
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while deleting certificates",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/add_stack", methods=["POST"])
+@login_required
+def add_stack():
+    try:
+        pass
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while adding stack",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/delete_stack", methods=["DELETE"])
+@login_required
+def delete_stack():
+    try:
+        pass
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while deleting stack",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/update_stack", methods=["PUT"])
+@login_required
+def update_stack():
+    try:
+        pass
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while updating stack",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/fetch_stack", methods=["GET"])
+@login_required
+def fetch_stack():
+    try:
+        response = Skills.fetch_skills()
+        return{
+            "message":response,
+            "status":"success"
+        }
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while fetching stack",
             "status":"failed"
         }

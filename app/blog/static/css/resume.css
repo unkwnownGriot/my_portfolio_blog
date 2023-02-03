@@ -84,6 +84,11 @@
     justify-content: center;
 }
 
+.welcome_content{
+    align-items: left;
+    max-width: 400px
+}
+
 .hero_big{
     font-size: 50px;
     font-weight: 700;
@@ -94,7 +99,13 @@
     line-height: 1.6rem;
     text-align: justify;
     margin: 10px 0;
-    max-width: 400px;
+}
+
+.button_cta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hero_btn button{
@@ -598,7 +609,7 @@ td{
         grid-template-columns: 100%;
     }
 
-    .hero_content{
+    .welcome_content{
         max-width: 100%;
     }
 }

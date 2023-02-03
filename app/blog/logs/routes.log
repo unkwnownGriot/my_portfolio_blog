@@ -3150,3 +3150,543 @@ TypeError: update_role() missing 1 required positional argument: 'role_id'
 2023-01-28 13:57:39,594:DEBUG::====================================================================================================
 2023-01-28 13:57:39,594:INFO::Blog Routes Section :: Logging Active
 2023-01-28 13:57:39,595:DEBUG::
+2023-01-28 18:08:57,230:DEBUG::
+2023-01-28 18:08:57,230:DEBUG::====================================================================================================
+2023-01-28 18:08:57,231:INFO::Blog Routes Section :: Logging Active
+2023-01-28 18:08:57,231:DEBUG::
+2023-01-28 18:08:58,810:DEBUG::
+2023-01-28 18:08:58,810:DEBUG::====================================================================================================
+2023-01-28 18:08:58,811:INFO::Blog Routes Section :: Logging Active
+2023-01-28 18:08:58,811:DEBUG::
+2023-01-28 18:41:26,530:DEBUG::
+2023-01-28 18:41:26,530:DEBUG::====================================================================================================
+2023-01-28 18:41:26,531:INFO::Blog Routes Section :: Logging Active
+2023-01-28 18:41:26,531:DEBUG::
+2023-01-28 18:41:35,425:DEBUG::
+2023-01-28 18:41:35,426:DEBUG::====================================================================================================
+2023-01-28 18:41:35,426:INFO::Blog Routes Section :: Logging Active
+2023-01-28 18:41:35,426:DEBUG::
+2023-01-28 18:46:44,005:DEBUG::
+2023-01-28 18:46:44,005:DEBUG::====================================================================================================
+2023-01-28 18:46:44,006:INFO::Blog Routes Section :: Logging Active
+2023-01-28 18:46:44,006:DEBUG::
+2023-01-28 18:46:45,633:DEBUG::
+2023-01-28 18:46:45,633:DEBUG::====================================================================================================
+2023-01-28 18:46:45,633:INFO::Blog Routes Section :: Logging Active
+2023-01-28 18:46:45,633:DEBUG::
+2023-01-28 18:48:25,034:DEBUG::
+2023-01-28 18:48:25,034:DEBUG::====================================================================================================
+2023-01-28 18:48:25,035:INFO::Blog Routes Section :: Logging Active
+2023-01-28 18:48:25,035:DEBUG::
+2023-01-28 19:09:59,980:DEBUG::
+2023-01-28 19:09:59,980:DEBUG::====================================================================================================
+2023-01-28 19:09:59,980:INFO::Blog Routes Section :: Logging Active
+2023-01-28 19:09:59,981:DEBUG::
+2023-01-28 19:10:34,261:DEBUG::
+2023-01-28 19:10:34,262:DEBUG::====================================================================================================
+2023-01-28 19:10:34,262:INFO::Blog Routes Section :: Logging Active
+2023-01-28 19:10:34,263:DEBUG::
+2023-01-28 19:10:35,864:DEBUG::
+2023-01-28 19:10:35,865:DEBUG::====================================================================================================
+2023-01-28 19:10:35,865:INFO::Blog Routes Section :: Logging Active
+2023-01-28 19:10:35,865:DEBUG::
+2023-01-28 19:12:28,619:DEBUG::
+2023-01-28 19:12:28,619:DEBUG::====================================================================================================
+2023-01-28 19:12:28,620:INFO::Blog Routes Section :: Logging Active
+2023-01-28 19:12:28,620:DEBUG::
+2023-01-30 11:42:22,703:DEBUG::
+2023-01-30 11:42:22,704:DEBUG::====================================================================================================
+2023-01-30 11:42:22,704:INFO::Blog Routes Section :: Logging Active
+2023-01-30 11:42:22,704:DEBUG::
+2023-01-30 11:43:53,645:DEBUG::
+2023-01-30 11:43:53,645:DEBUG::====================================================================================================
+2023-01-30 11:43:53,646:INFO::Blog Routes Section :: Logging Active
+2023-01-30 11:43:53,646:DEBUG::
+2023-01-30 11:44:50,245:DEBUG::
+2023-01-30 11:44:50,245:DEBUG::====================================================================================================
+2023-01-30 11:44:50,246:INFO::Blog Routes Section :: Logging Active
+2023-01-30 11:44:50,246:DEBUG::
+2023-01-30 16:26:17,119:DEBUG::
+2023-01-30 16:26:17,120:DEBUG::====================================================================================================
+2023-01-30 16:26:17,120:INFO::Blog Routes Section :: Logging Active
+2023-01-30 16:26:17,121:DEBUG::
+2023-01-30 16:28:43,324:DEBUG::
+2023-01-30 16:28:43,324:DEBUG::====================================================================================================
+2023-01-30 16:28:43,325:INFO::Blog Routes Section :: Logging Active
+2023-01-30 16:28:43,325:DEBUG::
+2023-01-30 23:15:19,244:DEBUG::
+2023-01-30 23:15:19,245:DEBUG::====================================================================================================
+2023-01-30 23:15:19,245:INFO::Blog Routes Section :: Logging Active
+2023-01-30 23:15:19,245:DEBUG::
+2023-01-30 23:51:40,185:DEBUG::
+2023-01-30 23:51:40,186:DEBUG::====================================================================================================
+2023-01-30 23:51:40,187:INFO::Blog Routes Section :: Logging Active
+2023-01-30 23:51:40,187:DEBUG::
+2023-01-30 23:51:41,451:DEBUG::
+2023-01-30 23:51:41,452:DEBUG::====================================================================================================
+2023-01-30 23:51:41,452:INFO::Blog Routes Section :: Logging Active
+2023-01-30 23:51:41,452:DEBUG::
+2023-01-30 23:52:59,883:DEBUG::
+2023-01-30 23:52:59,884:DEBUG::====================================================================================================
+2023-01-30 23:52:59,884:INFO::Blog Routes Section :: Logging Active
+2023-01-30 23:52:59,884:DEBUG::
+2023-01-30 23:54:12,066:DEBUG::
+2023-01-30 23:54:12,067:DEBUG::====================================================================================================
+2023-01-30 23:54:12,067:INFO::Blog Routes Section :: Logging Active
+2023-01-30 23:54:12,068:DEBUG::
+2023-01-30 23:55:05,783:DEBUG::
+2023-01-30 23:55:05,783:DEBUG::====================================================================================================
+2023-01-30 23:55:05,784:INFO::Blog Routes Section :: Logging Active
+2023-01-30 23:55:05,784:DEBUG::
+2023-01-30 23:56:40,314:DEBUG::
+2023-01-30 23:56:40,314:DEBUG::====================================================================================================
+2023-01-30 23:56:40,315:INFO::Blog Routes Section :: Logging Active
+2023-01-30 23:56:40,315:DEBUG::
+2023-01-31 00:38:58,367:DEBUG::
+2023-01-31 00:38:58,367:DEBUG::====================================================================================================
+2023-01-31 00:38:58,367:INFO::Blog Routes Section :: Logging Active
+2023-01-31 00:38:58,367:DEBUG::
+2023-01-31 00:44:47,089:DEBUG::
+2023-01-31 00:44:47,089:DEBUG::====================================================================================================
+2023-01-31 00:44:47,090:INFO::Blog Routes Section :: Logging Active
+2023-01-31 00:44:47,090:DEBUG::
+2023-01-31 00:45:33,188:DEBUG::
+2023-01-31 00:45:33,189:DEBUG::====================================================================================================
+2023-01-31 00:45:33,189:INFO::Blog Routes Section :: Logging Active
+2023-01-31 00:45:33,190:DEBUG::
+2023-01-31 00:47:53,667:DEBUG::
+2023-01-31 00:47:53,667:DEBUG::====================================================================================================
+2023-01-31 00:47:53,668:INFO::Blog Routes Section :: Logging Active
+2023-01-31 00:47:53,668:DEBUG::
+2023-01-31 00:51:26,547:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:43,381:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:44,504:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:46,286:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:46,476:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:46,537:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:49,061:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:51,198:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:51,445:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:51,678:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:52,209:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:52,411:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:52,474:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:52,613:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:52,800:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:52,986:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:58,429:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:51:59,605:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:58:36,000:ERROR::normalize() argument 2 must be str, not list
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 905, in add_certificate
+    SavePath = f"{parent_folder}/{secure_filename(fileName)}"
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\utils.py", line 221, in secure_filename
+    filename = unicodedata.normalize("NFKD", filename)
+TypeError: normalize() argument 2 must be str, not list
+2023-01-31 00:59:47,131:DEBUG::
+2023-01-31 00:59:47,132:DEBUG::====================================================================================================
+2023-01-31 00:59:47,132:INFO::Blog Routes Section :: Logging Active
+2023-01-31 00:59:47,132:DEBUG::
+2023-01-31 01:00:06,822:DEBUG::
+2023-01-31 01:00:06,822:DEBUG::====================================================================================================
+2023-01-31 01:00:06,822:INFO::Blog Routes Section :: Logging Active
+2023-01-31 01:00:06,823:DEBUG::
+2023-01-31 01:02:47,600:DEBUG::
+2023-01-31 01:02:47,600:DEBUG::====================================================================================================
+2023-01-31 01:02:47,601:INFO::Blog Routes Section :: Logging Active
+2023-01-31 01:02:47,601:DEBUG::
+2023-01-31 11:48:13,719:DEBUG::
+2023-01-31 11:48:13,720:DEBUG::====================================================================================================
+2023-01-31 11:48:13,720:INFO::Blog Routes Section :: Logging Active
+2023-01-31 11:48:13,721:DEBUG::
+2023-01-31 11:48:24,312:DEBUG::
+2023-01-31 11:48:24,313:DEBUG::====================================================================================================
+2023-01-31 11:48:24,313:INFO::Blog Routes Section :: Logging Active
+2023-01-31 11:48:24,314:DEBUG::
+2023-01-31 11:49:08,282:ERROR::all() takes exactly one argument (4 given)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 899, in add_certificate
+    if all(certificate_id,certificate_issuer,certificate_name,certificate_image.filename):
+TypeError: all() takes exactly one argument (4 given)
+2023-01-31 11:49:35,830:DEBUG::
+2023-01-31 11:49:35,830:DEBUG::====================================================================================================
+2023-01-31 11:49:35,831:INFO::Blog Routes Section :: Logging Active
+2023-01-31 11:49:35,831:DEBUG::
+2023-02-01 00:44:40,820:DEBUG::
+2023-02-01 00:44:40,820:DEBUG::====================================================================================================
+2023-02-01 00:44:40,821:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:44:40,821:DEBUG::
+2023-02-01 00:46:25,317:DEBUG::
+2023-02-01 00:46:25,317:DEBUG::====================================================================================================
+2023-02-01 00:46:25,317:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:46:25,318:DEBUG::
+2023-02-01 00:47:38,286:DEBUG::
+2023-02-01 00:47:38,286:DEBUG::====================================================================================================
+2023-02-01 00:47:38,286:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:47:38,287:DEBUG::
+2023-02-01 00:47:55,214:DEBUG::
+2023-02-01 00:47:55,214:DEBUG::====================================================================================================
+2023-02-01 00:47:55,214:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:47:55,215:DEBUG::
+2023-02-01 00:48:43,625:DEBUG::
+2023-02-01 00:48:43,625:DEBUG::====================================================================================================
+2023-02-01 00:48:43,626:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:48:43,626:DEBUG::
+2023-02-01 00:48:57,653:DEBUG::
+2023-02-01 00:48:57,654:DEBUG::====================================================================================================
+2023-02-01 00:48:57,654:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:48:57,655:DEBUG::
+2023-02-01 00:50:10,291:DEBUG::
+2023-02-01 00:50:10,292:DEBUG::====================================================================================================
+2023-02-01 00:50:10,292:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:50:10,293:DEBUG::
+2023-02-01 00:50:11,607:DEBUG::
+2023-02-01 00:50:11,608:DEBUG::====================================================================================================
+2023-02-01 00:50:11,608:INFO::Blog Routes Section :: Logging Active
+2023-02-01 00:50:11,609:DEBUG::
+2023-02-01 11:55:11,594:DEBUG::
+2023-02-01 11:55:11,594:DEBUG::====================================================================================================
+2023-02-01 11:55:11,595:INFO::Blog Routes Section :: Logging Active
+2023-02-01 11:55:11,595:DEBUG::
+2023-02-01 12:24:39,438:DEBUG::
+2023-02-01 12:24:39,439:DEBUG::====================================================================================================
+2023-02-01 12:24:39,439:INFO::Blog Routes Section :: Logging Active
+2023-02-01 12:24:39,440:DEBUG::
+2023-02-01 12:53:57,148:DEBUG::
+2023-02-01 12:53:57,149:DEBUG::====================================================================================================
+2023-02-01 12:53:57,149:INFO::Blog Routes Section :: Logging Active
+2023-02-01 12:53:57,149:DEBUG::
+2023-02-01 12:54:28,024:DEBUG::
+2023-02-01 12:54:28,025:DEBUG::====================================================================================================
+2023-02-01 12:54:28,025:INFO::Blog Routes Section :: Logging Active
+2023-02-01 12:54:28,025:DEBUG::
+2023-02-01 12:54:55,929:DEBUG::
+2023-02-01 12:54:55,929:DEBUG::====================================================================================================
+2023-02-01 12:54:55,930:INFO::Blog Routes Section :: Logging Active
+2023-02-01 12:54:55,930:DEBUG::
+2023-02-01 12:55:19,686:DEBUG::
+2023-02-01 12:55:19,687:DEBUG::====================================================================================================
+2023-02-01 12:55:19,688:INFO::Blog Routes Section :: Logging Active
+2023-02-01 12:55:19,688:DEBUG::
+2023-02-02 14:01:42,888:DEBUG::
+2023-02-02 14:01:42,889:DEBUG::====================================================================================================
+2023-02-02 14:01:42,889:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:01:42,889:DEBUG::
+2023-02-02 14:01:53,403:DEBUG::
+2023-02-02 14:01:53,403:DEBUG::====================================================================================================
+2023-02-02 14:01:53,404:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:01:53,404:DEBUG::
+2023-02-02 14:19:23,525:DEBUG::
+2023-02-02 14:19:23,526:DEBUG::====================================================================================================
+2023-02-02 14:19:23,526:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:19:23,527:DEBUG::
+2023-02-02 14:24:21,422:DEBUG::
+2023-02-02 14:24:21,422:DEBUG::====================================================================================================
+2023-02-02 14:24:21,423:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:24:21,423:DEBUG::
+2023-02-02 14:24:58,503:DEBUG::
+2023-02-02 14:24:58,504:DEBUG::====================================================================================================
+2023-02-02 14:24:58,504:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:24:58,504:DEBUG::
+2023-02-02 14:25:08,978:DEBUG::
+2023-02-02 14:25:08,978:DEBUG::====================================================================================================
+2023-02-02 14:25:08,978:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:25:08,979:DEBUG::
+2023-02-02 14:25:52,017:DEBUG::
+2023-02-02 14:25:52,017:DEBUG::====================================================================================================
+2023-02-02 14:25:52,018:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:25:52,018:DEBUG::
+2023-02-02 14:26:23,912:DEBUG::
+2023-02-02 14:26:23,913:DEBUG::====================================================================================================
+2023-02-02 14:26:23,913:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:26:23,914:DEBUG::
+2023-02-02 14:27:08,954:DEBUG::
+2023-02-02 14:27:08,954:DEBUG::====================================================================================================
+2023-02-02 14:27:08,955:INFO::Blog Routes Section :: Logging Active
+2023-02-02 14:27:08,955:DEBUG::
+2023-02-02 15:07:32,713:DEBUG::
+2023-02-02 15:07:32,713:DEBUG::====================================================================================================
+2023-02-02 15:07:32,714:INFO::Blog Routes Section :: Logging Active
+2023-02-02 15:07:32,714:DEBUG::
+2023-02-02 15:07:46,260:DEBUG::
+2023-02-02 15:07:46,260:DEBUG::====================================================================================================
+2023-02-02 15:07:46,261:INFO::Blog Routes Section :: Logging Active
+2023-02-02 15:07:46,261:DEBUG::
+2023-02-03 11:27:44,287:DEBUG::
+2023-02-03 11:27:44,288:DEBUG::====================================================================================================
+2023-02-03 11:27:44,288:INFO::Blog Routes Section :: Logging Active
+2023-02-03 11:27:44,289:DEBUG::
+2023-02-03 11:28:24,006:ERROR::unhashable type: 'list'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 939, in edit_certificate
+    certificate_uid = request.form[["certificate_uid"]]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 371, in __getitem__
+    if key in self:
+TypeError: unhashable type: 'list'
+2023-02-03 11:28:52,342:DEBUG::
+2023-02-03 11:28:52,343:DEBUG::====================================================================================================
+2023-02-03 11:28:52,343:INFO::Blog Routes Section :: Logging Active
+2023-02-03 11:28:52,344:DEBUG::
+2023-02-03 11:29:22,058:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 939, in edit_certificate
+    certificate_uid = request.form["certificate_uid"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:34:42,473:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 944, in edit_certificate
+    certificate_image = request.files["certificate_image"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 946, in edit_certificate
+    certificate_image_path = request.form["certificate_image_path"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:44:41,899:DEBUG::
+2023-02-03 11:44:41,900:DEBUG::====================================================================================================
+2023-02-03 11:44:41,900:INFO::Blog Routes Section :: Logging Active
+2023-02-03 11:44:41,900:DEBUG::
+2023-02-03 11:45:07,398:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 945, in edit_certificate
+    certificate_image = request.files["certificate_image"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 947, in edit_certificate
+    certificate_image_path = request.form["certificate_image_path"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:46:14,575:DEBUG::
+2023-02-03 11:46:14,576:DEBUG::====================================================================================================
+2023-02-03 11:46:14,576:INFO::Blog Routes Section :: Logging Active
+2023-02-03 11:46:14,576:DEBUG::
+2023-02-03 11:47:42,367:DEBUG::
+2023-02-03 11:47:42,367:DEBUG::====================================================================================================
+2023-02-03 11:47:42,368:INFO::Blog Routes Section :: Logging Active
+2023-02-03 11:47:42,368:DEBUG::
+2023-02-03 11:48:08,466:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 945, in edit_certificate
+    certificate_image = request.files["certificate_image"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 947, in edit_certificate
+    certificate_image_path = request.form["certificate_image_path"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:48:27,779:DEBUG::
+2023-02-03 11:48:27,779:DEBUG::====================================================================================================
+2023-02-03 11:48:27,780:INFO::Blog Routes Section :: Logging Active
+2023-02-03 11:48:27,780:DEBUG::
+2023-02-03 11:48:37,415:DEBUG::
+2023-02-03 11:48:37,416:DEBUG::====================================================================================================
+2023-02-03 11:48:37,416:INFO::Blog Routes Section :: Logging Active
+2023-02-03 11:48:37,417:DEBUG::
+2023-02-03 11:49:02,008:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 897, in add_certificate
+    certificate_image = request.files["certificate_image"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:49:24,569:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 945, in edit_certificate
+    certificate_image = request.files["certificate_image"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 947, in edit_certificate
+    certificate_image_path = request.form["certificate_image_path"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:51:33,076:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 945, in edit_certificate
+    certificate_image = request.files["certificate_image"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 947, in edit_certificate
+    certificate_image_path = request.form["certificate_image_path"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:56:57,567:ERROR::400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 945, in edit_certificate
+    certificate_image = request.files["certificate_image"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 947, in edit_certificate
+    certificate_image_path = request.form["certificate_image_path"]
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\werkzeug\datastructures.py", line 375, in __getitem__
+    raise exceptions.BadRequestKeyError(key)
+werkzeug.exceptions.BadRequestKeyError: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-02-03 11:58:36,316:ERROR::local variable 'certificate_image' referenced before assignment
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\blog\routes.py", line 955, in edit_certificate
+    if certificate_image:
+UnboundLocalError: local variable 'certificate_image' referenced before assignment
+2023-02-03 12:00:29,685:DEBUG::
+2023-02-03 12:00:29,685:DEBUG::====================================================================================================
+2023-02-03 12:00:29,686:INFO::Blog Routes Section :: Logging Active
+2023-02-03 12:00:29,686:DEBUG::
+2023-02-03 13:08:50,658:DEBUG::
+2023-02-03 13:08:50,658:DEBUG::====================================================================================================
+2023-02-03 13:08:50,659:INFO::Blog Routes Section :: Logging Active
+2023-02-03 13:08:50,659:DEBUG::
+2023-02-03 13:10:08,620:DEBUG::
+2023-02-03 13:10:08,621:DEBUG::====================================================================================================
+2023-02-03 13:10:08,621:INFO::Blog Routes Section :: Logging Active
+2023-02-03 13:10:08,622:DEBUG::
+2023-02-03 13:13:02,566:DEBUG::
+2023-02-03 13:13:02,567:DEBUG::====================================================================================================
+2023-02-03 13:13:02,567:INFO::Blog Routes Section :: Logging Active
+2023-02-03 13:13:02,567:DEBUG::
+2023-02-03 13:19:02,334:DEBUG::
+2023-02-03 13:19:02,334:DEBUG::====================================================================================================
+2023-02-03 13:19:02,334:INFO::Blog Routes Section :: Logging Active
+2023-02-03 13:19:02,335:DEBUG::

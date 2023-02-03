@@ -50,12 +50,6 @@
                                 Work
                             </a>
                         </p>
-        
-                        <p class="nav_blog">
-                            <a href="/view_blog">
-                                Blog
-                            </a>
-                        </p>
                     </div>
                 </div>
         
@@ -72,21 +66,33 @@
             <!-- Hero Section -->
             <div class="hero">
                 <div class="welcome">
-                    <p class="hero_big">
-                        Welcome!
-                    </p>
-
-                    <p class="hero_content">
-                        {{content["resume"]["message"]["dict"][0]["hero_content"]}}
-                    </p>
-
-                    <a href="#contact">
-                        <div class="hero_btn">
-                            <button>
-                                Get In Touch
-                            </button>
+                    <div class="welcome_content">
+                        <p class="hero_big">
+                            Welcome!
+                        </p>
+    
+                        <p class="hero_content">
+                            {{content["resume"]["message"]["dict"][0]["hero_content"]}}
+                        </p>
+    
+                        <div class="button_cta">
+                            <a href="#contact">
+                                <div class="hero_btn">
+                                    <button>
+                                        Get In Touch
+                                    </button>
+                                </div>
+                            </a>
+        
+                            <a href="/view_blog">
+                                <div class="hero_btn">
+                                    <button>
+                                        View Blog
+                                    </button>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <div class="hero_img">
@@ -149,93 +155,35 @@
                         </div>
 
                         <div class="experience_items">
-                            <div class="experience_item">
-                                <div class="experience_company_name">
-                                    <p class="company_name">
-                                        NeuralFarms Limited
-                                    </p>
-                                </div>
-
-                                <div class="experience_company_positions">
-                                    <div class="company_position">
-
-                                        <div class="position_year">
-                                            2019 - present
-                                        </div>
-
-                                        <div class="position_name">
-                                            Machine Learning Engineer
-                                        </div>
-
-                                        <div class="position_description">
-                                            Developments and deployment of neural network
-                                            models
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="experience_item">
-                                <div class="experience_company_name">
-                                    <p class="company_name">
-                                        NeuralFarms Limited
-                                    </p>
-                                </div>
-
-                                <div class="experience_company_positions">
-                                    <div class="company_position">
-
-                                        <div class="position_year">
-                                            2019 - present
-                                        </div>
-
-                                        <div class="position_name">
-                                            Machine Learning Engineer
-                                        </div>
-
-                                        <div class="position_description">
-                                            Developments and deployment of neural network
-                                            models
-                                        </div>
-
+                            {% for role in content["roles"] %}
+                                <div class="experience_item">
+                                    <div class="experience_company_name">
+                                        <p class="company_name">
+                                            {{role}}
+                                        </p>
                                     </div>
 
-                                    <div class="company_position">
+                                    <div class="experience_company_positions">
+                                        {% for job in content["roles"][role] %}
+                                            <div class="company_position">
 
-                                        <div class="position_year">
-                                            2019 - present
-                                        </div>
+                                                <div class="position_year">
+                                                    {{job["start_year"].month}}, {{job["start_year"].year}} - {{job["end_year"].month}}, {{job["end_year"].year}}
+                                                </div>
 
-                                        <div class="position_name">
-                                            Machine Learning Engineer
-                                        </div>
+                                                <div class="position_name">
+                                                    {{job["role_name"]}}
+                                                </div>
 
-                                        <div class="position_description">
-                                            Developments and deployment of neural network
-                                            models
-                                        </div>
+                                                <div class="position_description">
+                                                    {{job["role_description"]}}
+                                                </div>
 
-                                    </div>
-
-                                    <div class="company_position">
-
-                                        <div class="position_year">
-                                            2019 - present
-                                        </div>
-
-                                        <div class="position_name">
-                                            Machine Learning Engineer
-                                        </div>
-
-                                        <div class="position_description">
-                                            Developments and deployment of neural network
-                                            models
-                                        </div>
-
+                                            </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
-                            </div>
+                            {% endfor %}
 
                         </div>
                     </div>

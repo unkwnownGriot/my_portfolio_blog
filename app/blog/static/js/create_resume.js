@@ -23,7 +23,7 @@ function flash_response(message, status){
 }
 
 
-// Select Select Section On Display
+// Clear Display Screen Function
 function form_display(){
     let forms = document.getElementsByTagName("form")
     for (const form of forms){
@@ -43,17 +43,20 @@ function form_display(){
     const available_companies = document.getElementById("companies")
     available_companies.classList.add("remove_display")
 
-    // Experiene Records
+    // ExperienCe Records
     const experience_records = document.querySelector(".experience_records")
     experience_records.classList.add("remove_display")
+
+    // Certification Records
+    const certification_records = document.querySelector(".certificate_records")
+    certification_records.classList.add("remove_display")
 }
 
+// Run clear Display Screen
 form_display()
-const welcome = document.querySelectorAll(".welcome_content")
-welcome.forEach((welcome_element) => {
-    welcome_element.classList.remove("remove_display")
-})
 
+
+// Add Event Listener to Section Selector 
 const section_name = document.getElementById("section_name")
 section_name.addEventListener("change", () =>{
     form_display()
@@ -64,23 +67,35 @@ section_name.addEventListener("change", () =>{
 })
 
 
+
+// Display Welcome Content 
+const welcome = document.querySelectorAll(".welcome_content")
+welcome.forEach((welcome_element) => {
+    welcome_element.classList.remove("remove_display")
+})
+
+
 // Resume Introduction Preview
 const welcome_textarea = document.getElementById("welcome_textarea")
 const preview_content_text = document.querySelector(".hero_content")
 const welcome_save_btn = document.querySelector(".welcome_save_btn")
+
 
 // Display Content In Preview Section
 function preview_content(preview_content,welcome_textarea){
     preview_content.innerText = welcome_textarea.value
 }
 
+
 // Preview Event Listener
 welcome_textarea.addEventListener("input",() => {
-    preview_content(preview_content_text,welcome_textarea)
+    preview_content_text.innerText = welcome_textarea.value
 })
+
 
 // Show current welcome text
 preview_content(preview_content_text,welcome_textarea)
+
 
 // Save Welcome Text
 welcome_save_btn.addEventListener("click", (e) => {
@@ -110,15 +125,18 @@ const about_textarea = document.getElementById("about_textarea")
 const about_intro = document.querySelector(".about_intro")
 const about_save_btn = document.querySelector(".about_save_btn")
 
+
 // Preview Event Listener
 about_textarea.addEventListener("input",() => {
     preview_content(about_intro,about_textarea)
 })
 
+
 // Show current welcome text
 preview_content(about_intro,about_textarea)
 
-// Save Welcome Text
+
+// Save Welcome Text Button
 about_save_btn.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -146,15 +164,18 @@ const work_textarea = document.getElementById("work_textarea")
 const work_intro = document.querySelector(".work_intro")
 const work_save_btn = document.querySelector(".work_save_btn")
 
+
 // Preview Event Listener
 work_textarea.addEventListener("input",() => {
     preview_content(work_intro,work_textarea)
 })
 
+
 // Show current welcome text
 preview_content(work_intro,work_textarea)
 
-// Save Welcome Text
+
+// Save Work Text Button
 work_save_btn.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -354,8 +375,10 @@ function fetch_education_records(){
     })
 }
 
+
 // Show Education Records
 fetch_education_records()
+
 
 // Clear Education Form Field
 clear_form_btn.addEventListener("click", (e) => {
@@ -364,6 +387,7 @@ clear_form_btn.addEventListener("click", (e) => {
 })
 
 
+// Save Education Button
 Save_btn.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -399,6 +423,8 @@ Save_btn.addEventListener("click", (e) => {
     })
 })
 
+
+// Edit Education Button
 Edit_btn.addEventListener("click",(e) => {
     e.preventDefault()
 
@@ -438,7 +464,7 @@ Edit_btn.addEventListener("click",(e) => {
 })
 
 
-// Refresh Available companies
+// Refresh Available companies Function
 function refresh_available_companies(){
     const available_companies = document.querySelector(".available_companies")
     available_companies.innerHTML = ""
@@ -494,7 +520,8 @@ function refresh_available_companies(){
 }
 refresh_available_companies()
 
-// Add Company Section
+
+// Add Company Button
 const add_company_btn = document.getElementById("add_company_btn")
 add_company_btn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -528,7 +555,7 @@ add_company_btn.addEventListener("click", (e) => {
 })
 
 
-// Clear Experience Form
+// Clear Experience Form Function
 function clear_experience_form(){
     const company_name = document.getElementById("CompanyName")
     const company_role = document.getElementById("Role")
@@ -552,7 +579,8 @@ function clear_experience_form(){
     end_year.selectedIndex = 0
 }
 
-// Update Experience Display Section
+
+// Update Experience Display Section Function
 function update_experience_display(){
     const experience_records = document.querySelector(".experience_records")
     experience_records.innerHTML = ""
@@ -653,7 +681,8 @@ function update_experience_display(){
     }
 }
 
-// Display Experience Preview
+
+// Display Experience Preview Function
 function load_experience_preview(){
     const about_experience = document.querySelector(".about_experience")
     const experience_items = document.querySelector(".experience_items")
@@ -733,7 +762,7 @@ function load_experience_preview(){
 load_experience_preview()
 
 
-// Experience Section
+// Save Experience Button
 const save_experience_btn = document.getElementById("save_experience_btn")
 save_experience_btn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -778,7 +807,7 @@ save_experience_btn.addEventListener("click", (e) => {
 })
 
 
-// Clear Experience Form
+// Clear Experience Form Button
 const experience_clear_btn = document.querySelector(".clear_experience_btn")
 experience_clear_btn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -786,7 +815,7 @@ experience_clear_btn.addEventListener("click", (e) => {
 }) 
 
 
-// Edit Experience Form
+// Edit Experience Form Button
 const experience_edit_btn = document.querySelector(".edit_experience_btn")
 experience_edit_btn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -830,3 +859,290 @@ experience_edit_btn.addEventListener("click", (e) => {
         }
     })
 })
+
+
+// Fetch Certifications Function
+function fetch_all_certificates(){
+    return new Promise((resolve) => {
+        const certifcates_xhr = new XMLHttpRequest()
+        certifcates_xhr.open("GET","/blog/fetch_certificates",true)
+        certifcates_xhr.send()
+
+        certifcates_xhr.onload = () => {
+            const data = JSON.parse(certifcates_xhr.responseText)
+            const message = data["message"]
+            const status = data["status"].toLowerCase()
+
+            if(status == "success"){
+                resolve(message)
+            }
+            else{
+                flash_response(message,status)
+                resolve(null)
+            }
+        }
+    })
+}
+
+
+// Populate Certificate Records Function
+function populate_certificate_records(){
+
+    const record_list = document.querySelector(".record_list")
+    record_list.innerHTML = ""
+
+    const certificate_items = document.querySelector(".certification_items")
+    certificate_items.innerHTML = ""
+
+    const records_promise = new Promise(async (resolve) => {
+        const records = await fetch_all_certificates()
+        if (records != null) {
+            for (const record_id in records) {
+                const record = records[record_id]
+                const record_item = document.createElement("div")
+                const certificate = document.createElement("div")
+                const cert_delete = document.createElement("div")
+                const cert_edit = document.createElement("div")
+
+                record_item.classList.add("record_item")
+                certificate.classList.add("certificate")
+                cert_delete.classList.add("cert_delete")
+                cert_edit.classList.add("cert_edit")
+
+                certificate.innerText = `${record["name"]}(${record["id"]})`
+                cert_delete.innerText = "DELETE"
+                cert_edit.innerText = "EDIT"
+
+                // Add Event Listener To delete
+                cert_delete.addEventListener("click", () => {
+                    const delete_form = new FormData()
+                    delete_form.append('csrf_token', csrf_token.value)
+                    delete_form.append("uid", record["uid"])
+
+                    const delete_xhr = new XMLHttpRequest()
+                    delete_xhr.open("DELETE", "/blog/delete_certificate", true)
+                    delete_xhr.send(delete_form)
+                    delete_xhr.onload = () => {
+                        const data = JSON.parse(delete_xhr.responseText)
+                        const message = data["message"]
+                        const status = data["status"]
+
+                        flash_response(message, status)
+                        populate_certificate_records()
+                    }
+                })
+
+
+                // Add Event Listener to Edit
+                cert_edit.addEventListener("click", () => {
+                    const cert_id = document.getElementById("Certificate_id")
+                    const cert_issuer = document.getElementById("Certificate_issuer")
+                    const cert_name = document.getElementById("Certificate_name")
+                    const cert_image = document.getElementById("Certificate_image")
+                    const file_container = document.getElementById("file_container")
+                    const uploaded_file = document.getElementById("uploaded_file")
+                    const save_btn = document.querySelector(".cert_save_btn")
+                    const update_btn = document.querySelector(".update_certificate_btn")
+                    const update_btn_container = document.querySelector(".cert_update_btn")
+
+                    cert_image.classList.add("remove_display")
+                    file_container.classList.remove("remove_display")
+                    cert_image.value = ""
+                    uploaded_file.value = record["image"]
+                    cert_name.value = record["name"]
+                    cert_issuer.value = record["issuer"]
+                    cert_id.value = record["id"]
+
+                    save_btn.classList.add("remove_display")
+                    update_btn.setAttribute("id", record["uid"])
+                    update_btn_container.classList.remove("remove_display")
+                })
+
+                
+                // Display In Records
+                record_item.appendChild(certificate)
+                record_item.appendChild(cert_delete)
+                record_item.appendChild(cert_edit)
+                record_list.appendChild(record_item)
+
+
+                // Display In Preview
+                const certificate_item = document.createElement("div")
+                const certificate_link = document.createElement("a")
+                const certificate_name = document.createElement("div")
+                const certificate_details = document.createElement("div")
+                const certificate_issuer = document.createElement("div")
+                const certificate_id = document.createElement("div")
+
+                certificate_id.classList.add("certificate_id")
+                certificate_issuer.classList.add("certificate_issuer")
+                certificate_details.classList.add("certificate_details")
+                certificate_name.classList.add("certificate_name")
+                certificate_item.classList.add("certificate_item")
+                certificate_link.setAttribute("href", `/blog/static/images/certificates/${record["image"]}`)
+                
+                certificate_id.innerText = `Certificate ID: ${record["id"]}`
+                certificate_issuer.innerText = `${record["issuer"]},`
+                certificate_name.innerText = record["name"]
+
+                certificate_details.appendChild(certificate_issuer)
+                certificate_details.appendChild(certificate_id)
+                certificate_link.appendChild(certificate_name)
+                certificate_link.appendChild(certificate_details)
+                certificate_item.appendChild(certificate_link)
+                certificate_items.appendChild(certificate_item)
+
+            }
+        }
+        resolve()
+    })
+}
+
+
+// Clear Certificate Form Function
+function clear_certificate_form(){
+    const certificate_id = document.getElementById("Certificate_id")
+    const certificate_issuer = document.getElementById("Certificate_issuer")
+    const certificate_name = document.getElementById("Certificate_name")
+    const certificate_image = document.getElementById("Certificate_image")
+    const file_container = document.getElementById("file_container")
+    const uploaded_file = document.getElementById("uploaded_file")
+    const save_btn = document.querySelector(".cert_save_btn")
+    const update_btn = document.querySelector(".cert_update_btn")
+    
+    certificate_id.value = ""
+    certificate_issuer.value = ""
+    certificate_name.value = ""
+    certificate_image.value = ""
+    uploaded_file.value = ""
+
+    file_container.classList.add("remove_display")
+    certificate_image.classList.remove("remove_display")
+    save_btn.classList.remove("remove_display")
+    update_btn.classList.add("remove_display")
+}
+
+
+// Clear Certificate Form Button
+const cert_clear_btn = document.getElementById("cert_clear_btn")
+cert_clear_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    clear_certificate_form()
+})
+
+
+// Update Certificate Function
+function update_certificate(){
+    const certificate_uid = document.querySelector(".update_certificate_btn")
+    const certificate_id = document.getElementById("Certificate_id")
+    const certificate_issuer = document.getElementById("Certificate_issuer")
+    const certificate_name = document.getElementById("Certificate_name")
+    const certificate_image = document.getElementById("Certificate_image")
+    const certificate_image_path = document.getElementById("uploaded_file")
+
+    const certificate_form = new FormData()
+    certificate_form.append("csrf_token", csrf_token.value)
+    certificate_form.append("certificate_uid", certificate_uid.id)
+    certificate_form.append("certificate_id", certificate_id.value)
+    certificate_form.append("certificate_issuer", certificate_issuer.value)
+    certificate_form.append("certificate_name", certificate_name.value)
+    certificate_form.append("certificate_image", certificate_image.files[0])
+    certificate_form.append("certificate_image_path", certificate_image_path.value)
+
+    const cert_Promise = new Promise((resolve,reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("PUT","/blog/edit_certificate",true)
+        xhr.send(certificate_form)
+        xhr.onload = () =>{
+            const data = JSON.parse(xhr.responseText)
+            const message = data["message"]
+            const status = data["status"].toLowerCase()
+            
+            flash_response(message,status)
+            if(status != "success"){
+                reject()
+            }
+            else{
+
+                // Run clear certificate form
+                clear_certificate_form()
+
+                // Reload Displayed certificates
+                populate_certificate_records()
+            }
+        }
+    })
+}
+
+
+// Update Certificate Button
+const update_certificate_btn = document.querySelector(".update_certificate_btn")
+update_certificate_btn.addEventListener("click",(e) => {
+    update_certificate()
+})
+
+
+// Save Certificate Function
+function save_certificate(){
+    const certificate_id = document.getElementById("Certificate_id")
+    const certificate_issuer = document.getElementById("Certificate_issuer")
+    const certificate_name = document.getElementById("Certificate_name")
+    const certificate_image = document.getElementById("Certificate_image")
+
+    const certificate_form = new FormData()
+    certificate_form.append("csrf_token", csrf_token.value)
+    certificate_form.append("certificate_id", certificate_id.value)
+    certificate_form.append("certificate_issuer", certificate_issuer.value)
+    certificate_form.append("certificate_name", certificate_name.value)
+    certificate_form.append("certificate_image",certificate_image.files[0])
+
+
+    const cert_Promise = new Promise((resolve,reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("POST","/blog/add_certificate",true)
+        xhr.send(certificate_form)
+        xhr.onload = () =>{
+            const data = JSON.parse(xhr.responseText)
+            const message = data["message"]
+            const status = data["status"].toLowerCase()
+            
+            flash_response(message,status)
+            if(status != "success"){
+                reject()
+            }
+            else{
+
+                // Run clear certificate form
+                clear_certificate_form()
+
+                // Reload Displayed certificates
+                populate_certificate_records()
+            }
+        }
+    })
+}
+
+
+// Save Certificate Button
+const certificate_btn = document.getElementById("certificate_btn")
+certificate_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    save_certificate()
+})
+
+
+// Add Event Listener For Upload Change
+const container = document.getElementById("file_container")
+container.addEventListener("click", () => {
+    const certificate_image = document.getElementById("Certificate_image")
+    certificate_image.click()
+
+    certificate_image.onchange = (e) => {
+        certificate_image.classList.remove("remove_display")
+        container.classList.add("remove_display")
+    }
+})
+
+
+// Run Populate Certificate Records
+populate_certificate_records()

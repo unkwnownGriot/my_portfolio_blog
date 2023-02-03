@@ -1,4 +1,5 @@
 # Imports
+from email import message
 import logging
 from tokenize import String
 
@@ -6,7 +7,7 @@ from app.model import Company, app_tz
 from datetime import datetime
 from app.model import Blogger
 from flask_wtf import FlaskForm, RecaptchaField
-from wtforms import StringField,TextAreaField,SubmitField,PasswordField,SelectField,BooleanField
+from wtforms import StringField,TextAreaField,SubmitField,PasswordField,SelectField,BooleanField,FileField
 from wtforms.validators import DataRequired,Email,EqualTo,Length,Regexp,ValidationError
 
 ########################
@@ -391,4 +392,49 @@ class ExperienceForm(FlaskForm):
         choices=[
             (f"{x}") for x in range(1942,int(str(datetime.now(app_tz).year))+1)
             ]
+    )
+
+
+class CertificateForm(FlaskForm):
+    
+    Certificate_id = StringField(
+        "Certificate ID",
+        validators=[
+            DataRequired(message="Certificate id required"),
+        ]
+    )
+
+    Certificate_issuer = StringField(
+        "Certificate Issuer",
+        validators=[
+            DataRequired(message="Certificate issuer required")
+        ]
+    )
+
+    Certificate_name = StringField(
+        "Certificate Name",
+        validators=[
+            DataRequired(message="Certificate name required")
+        ]
+    )
+
+    Certificate_image = FileField(
+        "Certificate Image",
+        validators=[
+            DataRequired(message="certificate image required")
+        ]
+    )
+
+
+class StackForm(FlaskForm):
+
+    Stack_icon = FileField(
+        "Stack Icon",
+    )
+
+    Stack_name = StringField(
+        "Stack Name",
+        validators=[
+            DataRequired(message="Stack name is required")
+        ]
     )

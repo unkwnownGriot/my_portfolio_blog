@@ -1,7 +1,10 @@
-from app.model import *
+from app.model import Roles
+from app.model import Posts
+from app.model import Resume
+from app.model import Education
 
-from flask import render_template
 from flask import current_app
+from flask import render_template
 
 app = current_app
 
@@ -15,6 +18,7 @@ def index():
             "page_title":"My Resume Blog",
             "resume":Resume.fetch_resume(),
             "education_history":Education.fetch_records()["message"]["dict"],
+            "roles":Roles.fetch_roles()["message"]
             }
         )
 
