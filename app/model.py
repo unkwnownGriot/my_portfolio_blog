@@ -1477,7 +1477,7 @@ class Skills(db.Model):
         return{
             "id":self.Skill_uid,
             "name":self.Skill_name,
-            "icon":self.Skill_icon
+            "icon":self.Skill_icon.split("/")[-1] if self.Skill_icon != "Not Available" else None
         }
 
     def get_skill_id(self):
@@ -1577,18 +1577,19 @@ class Skills(db.Model):
         into skils with icons and skills witout icons.
         """
         try:
-            icon_skills = db.session.query(Skills).filter(Skills.Skill_icon != None).all()
-            non_icon_skills = db.session.query(Skills).filter(Skills.Skill_icon == None).all()
+            icon_skills = db.session.query(Skills).filter(Skills.Skill_icon != "Not Available").all()
+            no_icon_skills = db.session.query(Skills).filter(Skills.Skill_icon == "Not Available").all()
 
             all_skills = {
-                "icon_skills":icon_skills,
-                "non_icon_skills":non_icon_skills
+                "icon_skills":[icon_skill.dict() for icon_skill in icon_skills],
+                "no_icon_skills":[skill.dict() for skill in no_icon_skills]
             }
 
             response = {
                 "message":all_skills,
                 "status":"success"
             }
+            return response
 
         except Exception as e:
             logger.exception(e)

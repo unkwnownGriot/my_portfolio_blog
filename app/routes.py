@@ -1,7 +1,10 @@
+from app.blog.routes import fetch_certificate
 from app.model import Roles
 from app.model import Posts
+from app.model import Skills
 from app.model import Resume
 from app.model import Education
+from app.model import Certifications
 
 from flask import current_app
 from flask import render_template
@@ -12,13 +15,16 @@ app = current_app
 @app.route("/home")
 @app.route("/index")
 def index():
+    print(Skills.fetch_skills())
     return render_template(
         "resume.html",
         content = {
             "page_title":"My Resume Blog",
             "resume":Resume.fetch_resume(),
             "education_history":Education.fetch_records()["message"]["dict"],
-            "roles":Roles.fetch_roles()["message"]
+            "roles":Roles.fetch_roles()["message"],
+            "certificates":Certifications.fetch_certificates()["message"],
+            "stack":Skills.fetch_skills()["message"]
             }
         )
 

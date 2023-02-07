@@ -50,6 +50,10 @@ function form_display(){
     // Certification Records
     const certification_records = document.querySelector(".certificate_records")
     certification_records.classList.add("remove_display")
+
+    // Stack Records
+    const stack_records = document.querySelector(".stack_records")
+    stack_records.classList.add("remove_display")
 }
 
 // Run clear Display Screen
@@ -1146,3 +1150,208 @@ container.addEventListener("click", () => {
 
 // Run Populate Certificate Records
 populate_certificate_records()
+
+
+// Fetch Stack Function
+function fetch_stack(){
+    return new Promise((resolve) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET","/blog/fetch_stack",true)
+        xhr.send()
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.responseText)
+            const message = data["message"]
+            const status = data["status"].toLowerCase()
+
+            if (status == "success"){
+                resolve(message)
+            }
+            else{
+                flash_response(message, message_status)
+            }
+        }
+    })
+}
+
+
+// Save Stack Function
+function save_stack(){
+    const stack_icon = document.getElementById("Stack_icon")
+    const stack_name = document.getElementById("Stack_name")
+
+    const form = new FormData()
+    form.append("csrf_token", csrf_token.value)
+    form.append("stack_name", stack_name.value)
+
+    const file_length = stack_icon.files.length
+    if (file_length > 0){
+        form.append("stack_icon", stack_icon.files[0])
+    }
+
+    const xhr = new XMLHttpRequest()
+    xhr.open("POST","/blog/add_stack",true)
+    xhr.send(form)
+    xhr.onload = () => {
+        const data = JSON.parse(xhr.responseText)
+        const message = data["message"]
+        const status = data["status"]
+
+        flash_response(message,status)
+    }
+}
+
+// Save Stack Button
+const save_stack_btn = document.querySelector(".stack_save_btn")
+save_stack_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    save_stack()
+})
+
+
+// Add To Stack Record Function
+function add_to_stack_records(icon_stack, stack_elements){
+
+    // Add To Stack Records
+    const stack_element = document.createElement("div")
+    const stack_name = document.createElement("div")
+    const stack_delete = document.createElement("div")
+    const stack_edit = document.createElement('div')
+
+    stack_name.innerText = icon_stack["name"]
+    stack_delete.innerText = "DELETE"
+    stack_edit.innerText = "EDIT"
+
+    stack_edit.classList.add("stack_edit")
+    stack_delete.classList.add("stack_delete")
+    stack_name.classList.add("stack_name")
+    stack_element.classList.add("stack_element")
+
+    // Add delete event listener
+    stack_delete.addEventListener("click", () => {
+        const delete_form = new FormData()
+        delete_form.append('csrf_token', csrf_token.value)
+        delete_form.append("id", icon_stack["id"])
+
+        const delete_xhr = new XMLHttpRequest()
+        delete_xhr.open("DELETE", "/blog/delete_stack", true)
+        delete_xhr.send(delete_form)
+        delete_xhr.onload = () => {
+            const data = JSON.parse(delete_xhr.responseText)
+            const message = data["message"]
+            const status = data["status"]
+
+            flash_response(message, status)
+            display_stack()
+        }
+    })
+
+    // Add edit event listener
+    stack_edit.addEventListener("click", () => {
+        const stack_icon = document.getElementById("Stack_icon")
+        const stack_icon_container = document.getElementById("icon_container")
+        const uploaded_icon = document.getElementById("uploaded_icon")
+        const stack_name = document.getElementById("Stack_name")
+        const save_btn_area = document.querySelector(".stack_save_btn_area")
+        const edit_btn_area = document.querySelector(".stack_edit_btn_area")
+        const stack_edit_btn = document.querySelector(".stack_edit_btn")
+
+        stack_icon.classList.add("remove_display")
+        stack_icon_container.classList.remove("remove_display")
+        uploaded_icon.innerText = icon_stack["icon"]
+        stack_name.innerText = icon_stack["name"]
+        save_btn_area.classList.add("remove_display")
+        edit_btn_area.classList.remove("remove_display")
+        stack_edit_btn.id = icon_stack["id"]
+    })
+    
+    stack_element.appendChild(stack_name)
+    stack_element.appendChild(stack_delete)
+    stack_element.appendChild(stack_edit)
+
+    stack_elements.appendChild(stack_element)
+
+}
+
+
+// Display Stack In Preview Function
+function display_stack(){
+    const stack_items = document.querySelector(".stack_items")
+    stack_items.innerHTML = ""
+
+    const stack_no_image_table = document.querySelector(".stack_no_image_table")
+    stack_no_image_table.innerHTML = ""
+
+    const stack_elements = document.querySelector(".stack_elements")
+    stack_elements.innerHTML = ""
+
+    const display_Promise = new Promise(async (resolve) => {
+        const stack_data = await fetch_stack()
+        
+        if (stack_data != undefined && stack_data != null){
+            const icon_data = stack_data["message"]["icon_skills"]
+            const no_icon_data = stack_data["message"]["no_icon_skills"]
+    
+            if (icon_data != []){
+    
+                for (const icon_stack_index in icon_data){
+                    const icon_stack = icon_data[icon_stack_index]
+
+                    // Add To Icon Image Display
+                    const stack_item = document.createElement("div")
+                    const stack_image = document.createElement("div")
+                    const img_element = document.createElement("img")
+    
+                    const stack_title = document.createElement("div")
+                    const title_content = document.createElement("p")
+    
+                    title_content.innerText = icon_stack["name"]
+                    stack_title.classList.add("stack_title")
+                    img_element.setAttribute("src", `/blog/static/images/stack_icons/${icon_stack["icon"]}`)
+                    stack_image.classList.add("stack_image")
+                    stack_item.classList.add("stack_item")
+
+                    stack_title.appendChild(title_content)
+                    stack_image.appendChild(img_element)
+                    stack_item.appendChild(stack_image)
+                    stack_item.appendChild(stack_title)
+    
+                    stack_items.appendChild(stack_item)
+                    add_to_stack_records(icon_stack, stack_elements)
+                }
+
+                const no_icon_count = no_icon_data.length
+                for (let i=0; i<no_icon_count; i+=2){
+                    const first_elem = no_icon_data[i]
+                    const second_elem = no_icon_data[i+1]
+
+                    console.log(first_elem, second_elem)
+
+                    // Add No Icon Table
+                    const tr = document.createElement("tr")
+                    const td_1 = document.createElement("td")
+                    const td_2 = document.createElement("td")
+
+                    td_1.innerText = first_elem["name"]
+                    tr.appendChild(td_1)
+                    add_to_stack_records(first_elem, stack_elements)
+
+                    try {
+                        td_2.innerText = second_elem["name"]                    
+                        tr.appendChild(td_2)
+                        add_to_stack_records(second_elem, stack_elements)
+
+                    } 
+                    catch (error) {
+                        console.log(error)
+                    }
+
+                    stack_no_image_table.appendChild(tr)
+                }
+            }
+        }
+
+        resolve()
+    })
+}
+
+display_stack()

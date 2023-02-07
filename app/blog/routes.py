@@ -942,7 +942,6 @@ def add_certificate():
 @login_required
 def edit_certificate():
     try:
-        print(request.form, request.files)
         certificate_uid = request.form["certificate_uid"]
         certificate_id = request.form["certificate_id"]
         certificate_issuer = request.form["certificate_issuer"]
@@ -1015,7 +1014,35 @@ def delete_certificate():
 @login_required
 def add_stack():
     try:
-        pass
+        # Get Stack Request
+        stack_name = request.form["stack_name"]
+
+        try:
+            stack_icon = request.files["stack_icon"]
+            icon_exist = True
+
+        except:
+            SavePath = "Not Available"
+            icon_exist = False
+
+        if icon_exist:
+            # Save Stack Image
+            parent_folder = f"app/blog/static/images/stack_icons"
+            os.makedirs(parent_folder, exist_ok=True)
+
+            # Save Image
+            SavePath = f"{parent_folder}/{secure_filename(stack_icon.filename)}"
+            stack_icon.save(SavePath)
+
+        # Save to database
+        kwargs = {
+            "Skill_uid":uuid.uuid4().hex,
+            "Skill_name":stack_name,
+            "Skill_icon":SavePath
+        }
+
+        response = Skills.add_new_skill(**kwargs)
+        return response
 
     except Exception as e:
         logger.exception(e)
@@ -1029,7 +1056,9 @@ def add_stack():
 @login_required
 def delete_stack():
     try:
-        pass
+        stack_id = request.form["id"]
+        response = Skills.remove_skill(stack_id)
+        return response
 
     except Exception as e:
         logger.exception(e)

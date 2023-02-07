@@ -4894,3 +4894,286 @@ AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object a
 2023-02-03 13:19:02,146:DEBUG::====================================================================================================
 2023-02-03 13:19:02,147:INFO::Database logger :: Logging Active
 2023-02-03 13:19:02,147:DEBUG::
+2023-02-03 23:11:58,535:DEBUG::
+2023-02-03 23:11:58,535:DEBUG::====================================================================================================
+2023-02-03 23:11:58,536:INFO::Database logger :: Logging Active
+2023-02-03 23:11:58,536:DEBUG::
+2023-02-03 23:11:59,947:DEBUG::
+2023-02-03 23:11:59,948:DEBUG::====================================================================================================
+2023-02-03 23:11:59,948:INFO::Database logger :: Logging Active
+2023-02-03 23:11:59,948:DEBUG::
+2023-02-04 23:27:37,252:DEBUG::
+2023-02-04 23:27:37,253:DEBUG::====================================================================================================
+2023-02-04 23:27:37,253:INFO::Database logger :: Logging Active
+2023-02-04 23:27:37,253:DEBUG::
+2023-02-04 23:28:44,425:DEBUG::
+2023-02-04 23:28:44,426:DEBUG::====================================================================================================
+2023-02-04 23:28:44,426:INFO::Database logger :: Logging Active
+2023-02-04 23:28:44,427:DEBUG::
+2023-02-04 23:29:32,078:DEBUG::
+2023-02-04 23:29:32,079:DEBUG::====================================================================================================
+2023-02-04 23:29:32,079:INFO::Database logger :: Logging Active
+2023-02-04 23:29:32,079:DEBUG::
+2023-02-04 23:50:10,434:DEBUG::
+2023-02-04 23:50:10,435:DEBUG::====================================================================================================
+2023-02-04 23:50:10,435:INFO::Database logger :: Logging Active
+2023-02-04 23:50:10,435:DEBUG::
+2023-02-04 23:50:58,589:DEBUG::
+2023-02-04 23:50:58,589:DEBUG::====================================================================================================
+2023-02-04 23:50:58,590:INFO::Database logger :: Logging Active
+2023-02-04 23:50:58,590:DEBUG::
+2023-02-05 14:58:14,643:DEBUG::
+2023-02-05 14:58:14,643:DEBUG::====================================================================================================
+2023-02-05 14:58:14,644:INFO::Database logger :: Logging Active
+2023-02-05 14:58:14,644:DEBUG::
+2023-02-05 14:58:22,224:DEBUG::
+2023-02-05 14:58:22,224:DEBUG::====================================================================================================
+2023-02-05 14:58:22,225:INFO::Database logger :: Logging Active
+2023-02-05 14:58:22,225:DEBUG::
+2023-02-05 15:03:20,951:DEBUG::
+2023-02-05 15:03:20,952:DEBUG::====================================================================================================
+2023-02-05 15:03:20,952:INFO::Database logger :: Logging Active
+2023-02-05 15:03:20,953:DEBUG::
+2023-02-05 15:03:27,557:DEBUG::
+2023-02-05 15:03:27,557:DEBUG::====================================================================================================
+2023-02-05 15:03:27,558:INFO::Database logger :: Logging Active
+2023-02-05 15:03:27,558:DEBUG::
+2023-02-05 15:03:33,074:DEBUG::
+2023-02-05 15:03:33,074:DEBUG::====================================================================================================
+2023-02-05 15:03:33,075:INFO::Database logger :: Logging Active
+2023-02-05 15:03:33,075:DEBUG::
+2023-02-05 15:04:44,140:DEBUG::
+2023-02-05 15:04:44,141:DEBUG::====================================================================================================
+2023-02-05 15:04:44,141:INFO::Database logger :: Logging Active
+2023-02-05 15:04:44,142:DEBUG::
+2023-02-05 15:05:13,423:ERROR::'name' is an invalid keyword argument for Skills
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1509, in add_new_skill
+    skill = Skills(**kwargs)
+  File "<string>", line 4, in __init__
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 482, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 479, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1197, in _declarative_constructor
+    raise TypeError(
+TypeError: 'name' is an invalid keyword argument for Skills
+2023-02-05 15:06:11,524:DEBUG::
+2023-02-05 15:06:11,524:DEBUG::====================================================================================================
+2023-02-05 15:06:11,525:INFO::Database logger :: Logging Active
+2023-02-05 15:06:11,525:DEBUG::
+2023-02-05 15:07:06,349:DEBUG::
+2023-02-05 15:07:06,350:DEBUG::====================================================================================================
+2023-02-05 15:07:06,350:INFO::Database logger :: Logging Active
+2023-02-05 15:07:06,350:DEBUG::
+2023-02-05 15:07:38,082:ERROR::(sqlite3.InterfaceError) Error binding parameter 2 - probably unsupported type.
+[SQL: INSERT INTO skills ("Skill_uid", "Skill_name", "Skill_icon") VALUES (?, ?, ?)]
+[parameters: ('c0f169d6bb964a7ebcd16b1147202daa', 'JavaScript', <FileStorage: 'javascript.png' ('image/png')>)]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 2 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1511, in add_new_skill
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 2 - probably unsupported type.
+[SQL: INSERT INTO skills ("Skill_uid", "Skill_name", "Skill_icon") VALUES (?, ?, ?)]
+[parameters: ('c0f169d6bb964a7ebcd16b1147202daa', 'JavaScript', <FileStorage: 'javascript.png' ('image/png')>)]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2023-02-05 15:08:10,200:DEBUG::
+2023-02-05 15:08:10,200:DEBUG::====================================================================================================
+2023-02-05 15:08:10,201:INFO::Database logger :: Logging Active
+2023-02-05 15:08:10,201:DEBUG::
+2023-02-05 15:46:52,759:DEBUG::
+2023-02-05 15:46:52,759:DEBUG::====================================================================================================
+2023-02-05 15:46:52,760:INFO::Database logger :: Logging Active
+2023-02-05 15:46:52,760:DEBUG::
+2023-02-05 15:47:12,374:ERROR::'builtin_function_or_method' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1584, in fetch_skills
+    "icon_skills":[icon_skill.dict() for icon_skill in icon_skills],
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1584, in <listcomp>
+    "icon_skills":[icon_skill.dict() for icon_skill in icon_skills],
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1480, in dict
+    "icon":self.Skill_icon.split["/"][-1] if self.Skill_icon != None else None
+TypeError: 'builtin_function_or_method' object is not subscriptable
+2023-02-05 15:50:30,489:DEBUG::
+2023-02-05 15:50:30,490:DEBUG::====================================================================================================
+2023-02-05 15:50:30,490:INFO::Database logger :: Logging Active
+2023-02-05 15:50:30,491:DEBUG::
+2023-02-05 15:52:09,302:DEBUG::
+2023-02-05 15:52:09,302:DEBUG::====================================================================================================
+2023-02-05 15:52:09,303:INFO::Database logger :: Logging Active
+2023-02-05 15:52:09,303:DEBUG::
+2023-02-05 16:07:08,602:DEBUG::
+2023-02-05 16:07:08,602:DEBUG::====================================================================================================
+2023-02-05 16:07:08,603:INFO::Database logger :: Logging Active
+2023-02-05 16:07:08,603:DEBUG::
+2023-02-05 16:07:39,883:ERROR::(sqlite3.IntegrityError) NOT NULL constraint failed: skills.Skill_icon
+[SQL: INSERT INTO skills ("Skill_uid", "Skill_name", "Skill_icon") VALUES (?, ?, ?)]
+[parameters: ('7a658a74ec314b2baea01be0515b31ec', 'Python', None)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: NOT NULL constraint failed: skills.Skill_icon
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1511, in add_new_skill
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: skills.Skill_icon
+[SQL: INSERT INTO skills ("Skill_uid", "Skill_name", "Skill_icon") VALUES (?, ?, ?)]
+[parameters: ('7a658a74ec314b2baea01be0515b31ec', 'Python', None)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2023-02-05 16:09:10,679:DEBUG::
+2023-02-05 16:09:10,679:DEBUG::====================================================================================================
+2023-02-05 16:09:10,680:INFO::Database logger :: Logging Active
+2023-02-05 16:09:10,680:DEBUG::
+2023-02-05 16:09:24,432:DEBUG::
+2023-02-05 16:09:24,432:DEBUG::====================================================================================================
+2023-02-05 16:09:24,432:INFO::Database logger :: Logging Active
+2023-02-05 16:09:24,433:DEBUG::
+2023-02-05 16:10:43,689:DEBUG::
+2023-02-05 16:10:43,689:DEBUG::====================================================================================================
+2023-02-05 16:10:43,689:INFO::Database logger :: Logging Active
+2023-02-05 16:10:43,690:DEBUG::
+2023-02-05 16:39:23,606:DEBUG::
+2023-02-05 16:39:23,606:DEBUG::====================================================================================================
+2023-02-05 16:39:23,607:INFO::Database logger :: Logging Active
+2023-02-05 16:39:23,607:DEBUG::
+2023-02-05 16:39:31,194:DEBUG::
+2023-02-05 16:39:31,194:DEBUG::====================================================================================================
+2023-02-05 16:39:31,195:INFO::Database logger :: Logging Active
+2023-02-05 16:39:31,195:DEBUG::
+2023-02-07 02:15:33,666:DEBUG::
+2023-02-07 02:15:33,667:DEBUG::====================================================================================================
+2023-02-07 02:15:33,667:INFO::Database logger :: Logging Active
+2023-02-07 02:15:33,667:DEBUG::
+2023-02-07 02:15:49,367:DEBUG::
+2023-02-07 02:15:49,367:DEBUG::====================================================================================================
+2023-02-07 02:15:49,368:INFO::Database logger :: Logging Active
+2023-02-07 02:15:49,368:DEBUG::
+2023-02-07 02:22:51,722:DEBUG::
+2023-02-07 02:22:51,722:DEBUG::====================================================================================================
+2023-02-07 02:22:51,722:INFO::Database logger :: Logging Active
+2023-02-07 02:22:51,723:DEBUG::
+2023-02-07 02:22:57,145:DEBUG::
+2023-02-07 02:22:57,146:DEBUG::====================================================================================================
+2023-02-07 02:22:57,146:INFO::Database logger :: Logging Active
+2023-02-07 02:22:57,146:DEBUG::
+2023-02-07 02:23:12,823:DEBUG::
+2023-02-07 02:23:12,823:DEBUG::====================================================================================================
+2023-02-07 02:23:12,824:INFO::Database logger :: Logging Active
+2023-02-07 02:23:12,824:DEBUG::
+2023-02-07 02:24:11,118:DEBUG::
+2023-02-07 02:24:11,118:DEBUG::====================================================================================================
+2023-02-07 02:24:11,119:INFO::Database logger :: Logging Active
+2023-02-07 02:24:11,119:DEBUG::
+2023-02-07 02:24:46,103:DEBUG::
+2023-02-07 02:24:46,104:DEBUG::====================================================================================================
+2023-02-07 02:24:46,105:INFO::Database logger :: Logging Active
+2023-02-07 02:24:46,105:DEBUG::
+2023-02-07 02:36:00,995:DEBUG::
+2023-02-07 02:36:00,995:DEBUG::====================================================================================================
+2023-02-07 02:36:00,995:INFO::Database logger :: Logging Active
+2023-02-07 02:36:00,996:DEBUG::
+2023-02-07 02:36:39,938:DEBUG::
+2023-02-07 02:36:39,938:DEBUG::====================================================================================================
+2023-02-07 02:36:39,938:INFO::Database logger :: Logging Active
+2023-02-07 02:36:39,939:DEBUG::

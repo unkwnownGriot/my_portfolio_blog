@@ -90,6 +90,7 @@ form{
     padding: 10px;
 }
 
+.stack_save_btn,
 .certificate_btn,
 .save_experience_btn,
 .add_company_btn,
@@ -169,8 +170,6 @@ form{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    /* justify-content: space-around;
-    align-items: center; */
 }
 
 .about_big,
@@ -182,6 +181,7 @@ form{
     font-weight: 900;
     min-width: 200px;
 }
+
 
 .about_text_preview,
 .stack_content_preview,
@@ -244,6 +244,7 @@ fieldset select{
     font-weight: 900;
     border: 1.5px solid seagreen;
     border-radius: 5px;
+    width: 100%;
 }
 
 .experience_form textarea:focus-visible,
@@ -271,7 +272,6 @@ fieldset select:focus-visible{
 .education,
 .experience,
 .certifications{
-    /* background-color:  rgb(38, 38, 38); */
     margin-bottom: 5px;
     font-size: 15px;
 }
@@ -601,6 +601,8 @@ div .companies{
     justify-content: space-between;
 }
 
+.stack_edit_btn,
+.stack_clear_btn,
 .edit_experience_btn,
 .clear_experience_btn,
 .update_certificate_btn,
@@ -614,12 +616,14 @@ div .companies{
     min-width: 200px;
 }
 
+.stack_clear_btn,
 .clear_experience_btn,
 .cert_clear_btn{
     background-color:rgb(145, 7, 7);
     border: 1px solid rgb(145, 7, 7);
 }
 
+.stack_edit_btn,
 .edit_experience_btn,
 .update_certificate_btn{
     background-color: seagreen;
@@ -715,4 +719,148 @@ div .companies{
 .certificate_details{
     display: flex;
     flex-direction: row;
+}
+
+.stack_records,
+.stack_form{
+    background-color: white;
+    padding: 10px;
+    border: 2px solid seagreen;
+    border-radius: 5px;
+}
+
+.stack_elements{
+    margin-top: 2px;
+    display: grid;
+    grid-template-columns: 49.5% 49.5%;
+    gap: 1%;
+}
+
+.stack_element{
+    font-size: 10px;
+    font-weight: 900;
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+}
+
+.stack_name{
+    text-transform: uppercase;
+    background-color: rgba(46, 139, 87, 0.2);
+    padding: 0 10px;
+}
+
+.stack_name:hover{
+    color: white;
+    background-color: seagreen;
+}
+
+.stack_delete{
+    background-color: rgba(145, 7, 7, 0.2);
+    color: rgb(145, 7, 7);
+    text-align: center;
+    cursor: pointer;
+}
+
+.stack_delete:hover{
+    background-color: rgb(145, 7, 7);
+    color: white
+}
+
+.stack_edit{
+    background-color: rgba(37, 7, 145, 0.2);
+    color: rgb(37, 7, 145);
+    text-align: center;
+    cursor: pointer;
+}
+
+.stack_edit:hover{
+    background-color: rgb(37, 7, 145);
+    color: white
+}
+
+.other,
+.tech_stack{
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.stack_items{
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(100px, 24.25%) minmax(100px, 24.25%)  
+                            minmax(100px, 24.25%) minmax(100px, 24.25%);
+    gap: 1%;
+}
+
+.stack_item{
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 900;
+    background-color: rgb(38, 38, 38);
+}
+
+.stack_image{
+    width: 40px;
+    height: 40px;
+}
+
+.stack_image img{
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.stack_title{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stack_no_image{
+    font-size: 13px;
+}
+
+.stack_no_image_table{
+    width: 100%;
+}
+
+.stack_no_image_table tr{
+    width: 100%;
+    background-color: rgb(38, 38, 38);
+}
+
+tr td {
+    width: 50%;
+    padding: 10px;
+}
+
+
+@media (max-width: 1440px){
+    .about_display,
+    .stack_display,
+    .work_display{
+        flex-direction: column;
+    }
+
+    .stack_content_preview,
+    .about_intro,
+    .work_intro {
+        width: 100%;
+        padding: 20px;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 1100px){
+    .section_two{
+        display: none;
+    }
+
+    .container_content{
+        grid-template-columns: 100%;
+    }
 }

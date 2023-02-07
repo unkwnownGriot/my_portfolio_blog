@@ -195,65 +195,24 @@
                         </div>
 
                         <div class="certification_items">
-                            <div class="certificate">
-                                <a href="#" class="certificate_name">
-                                    Basics of Docker
-                                </a>
 
-                                <div class="certificate_details">
-                                    <div class="certificate_issuer">
-                                        Udemy, 
-                                    </div>
-                                    <div class="certificate_id">
-                                        Certificate ID: ASDFGHJKL
-                                    </div>
+                            {% for certificate in content["certificates"] %}
+                                <div class="certificate">
+                                    <a href="/blog/static/images/certificates/{{certificate['image']}}" class="certificate_name">
+                                        {{certificate["name"]}}
+                                    
+                                        <div class="certificate_details">
+                                            <div class="certificate_issuer">
+                                                {{certificate["issuer"]}},
+                                            </div>
+                                            <div class="certificate_id">
+                                                Certificate ID: {{certificate["id"]}}
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
+                            {% endfor %}
 
-                            <div class="certificate">
-                                <a href="#" class="certificate_name">
-                                    Basics of Docker
-                                </a>
-
-                                <div class="certificate_details">
-                                    <div class="certificate_issuer">
-                                        Udemy
-                                    </div>
-                                    <div class="certificate_id">
-                                        Certificate ID: ASDFGHJKL
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="certificate">
-                                <a href="#" class="certificate_name">
-                                    Basics of Docker
-                                </a>
-
-                                <div class="certificate_details">
-                                    <div class="certificate_issuer">
-                                        Udemy
-                                    </div>
-                                    <div class="certificate_id">
-                                        Certificate ID: ASDFGHJKL
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="certificate">
-                                <a href="#" class="certificate_name">
-                                    Basics of Docker
-                                </a>
-
-                                <div class="certificate_details">
-                                    <div class="certificate_issuer">
-                                        Udemy
-                                    </div>
-                                    <div class="certificate_id">
-                                        Certificate ID: ASDFGHJKL
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>                    
                 </div>
@@ -274,53 +233,21 @@
                     </div>
 
                     <div class="stack_items">
+
+                        {% for icon_stack in content["stack"]["icon_skills"] %}
                         <div class="stack_item">
                             <div class="stack_image">
-                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
+                                <img src="/blog/static/images/stack_icons/{{icon_stack['icon']}}" alt="">
                             </div>
 
                             <div class="stack_name">
                                 <p>
-                                    python
+                                    {{icon_stack["name"]}}
                                 </p>
                             </div>
                         </div>
+                        {% endfor %}
 
-                        <div class="stack_item">
-                            <div class="stack_image">
-                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
-                            </div>
-
-                            <div class="stack_name">
-                                <p>
-                                    python
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="stack_item">
-                            <div class="stack_image">
-                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
-                            </div>
-
-                            <div class="stack_name">
-                                <p>
-                                    python
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="stack_item">
-                            <div class="stack_image">
-                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
-                            </div>
-
-                            <div class="stack_name">
-                                <p>
-                                    python
-                                </p>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="other">
@@ -329,22 +256,14 @@
 
                     <div class="stack_no_image">
                         <table>
-                            <tr>
-                                <td>Git(github, gitlab)</td>
-                                <td>VS Code</td>
-                            </tr>
-                            <tr>
-                                <td>Agile development Process</td>
-                                <td>Developing desktop apps using Flet and PySimpleGUI</td>
-                            </tr>
-                            <tr>
-                                <td>JIRA</td>
-                                <td>Adobe PhotoShop</td>
-                            </tr>
-                            <tr>
-                                <td>Android Studio</td>
-                                <td>Microsoft Windows, Linux and MacOS Environments</td>
-                            </tr>
+                            {% for i in range(0,content["stack"]["no_icon_skills"]|length,2): %}
+                                {% set items = content["stack"]["no_icon_skills"][i:i+2]%}
+                                <tr>
+                                    {% for item in items: %}
+                                        <td>{{item["name"]}}</td>
+                                    {% endfor %}
+                                </tr>                          
+                            {% endfor %}
                         </table>
                     </div>
     
