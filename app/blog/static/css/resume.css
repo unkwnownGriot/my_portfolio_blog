@@ -565,6 +565,7 @@ td{
     .stack_items{
         grid-template-columns: 48% 48%;
         gap: 4%;
+        overflow-y: scroll;
     }
 
     .project_mini_description{
