@@ -1205,6 +1205,7 @@ const save_stack_btn = document.querySelector(".stack_save_btn")
 save_stack_btn.addEventListener("click", (e) => {
     e.preventDefault()
     save_stack()
+    display_stack()
 })
 
 

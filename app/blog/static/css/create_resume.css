@@ -734,6 +734,7 @@ div .companies{
     display: grid;
     grid-template-columns: 49.5% 49.5%;
     gap: 1%;
+    overflow: scroll;
 }
 
 .stack_element{
