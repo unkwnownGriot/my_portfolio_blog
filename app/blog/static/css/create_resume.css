@@ -90,6 +90,7 @@ form{
     padding: 10px;
 }
 
+.project_save_btn,
 .stack_save_btn,
 .certificate_btn,
 .save_experience_btn,
@@ -247,6 +248,7 @@ fieldset select{
     width: 100%;
 }
 
+.project_form textarea:focus-visible,
 .experience_form textarea:focus-visible,
 .company_url:focus-visible,
 .company_name:focus-visible,
@@ -594,6 +596,8 @@ div .companies{
     column-gap: 1%;
 }
 
+.project_edit_btn_area,
+.stack_edit_btn_area,
 .edit_options,
 .cert_update_btn{
     display: flex;
@@ -601,6 +605,8 @@ div .companies{
     justify-content: space-between;
 }
 
+.project_clear_btn,
+.project_edit_btn,
 .stack_edit_btn,
 .stack_clear_btn,
 .edit_experience_btn,
@@ -616,6 +622,7 @@ div .companies{
     min-width: 200px;
 }
 
+.project_clear_btn,
 .stack_clear_btn,
 .clear_experience_btn,
 .cert_clear_btn{
@@ -623,6 +630,7 @@ div .companies{
     border: 1px solid rgb(145, 7, 7);
 }
 
+.project_edit_btn,
 .stack_edit_btn,
 .edit_experience_btn,
 .update_certificate_btn{
@@ -734,7 +742,7 @@ div .companies{
     display: grid;
     grid-template-columns: 49.5% 49.5%;
     gap: 1%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .stack_element{
@@ -839,6 +847,147 @@ tr td {
     padding: 10px;
 }
 
+.work_projects{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 0.5%;
+}
+
+.work_project{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+.project_form,
+.work_records{
+    border: 2px solid seagreen;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.project_form textarea{
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    line-height: 1rem;
+    font-size: 12px;
+    font-weight: 900;
+    border: 1.5px solid seagreen;
+    border-radius: 5px;
+}
+
+.work_items{
+    margin-top: 2px;
+    display: grid;
+    grid-template-columns: 49.5% 49.5%;
+    gap: 1%;
+    overflow-y: scroll;
+}
+
+.work_item{
+    font-size: 10px;
+    font-weight: 900;
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+}
+
+.work_name{
+    text-transform: uppercase;
+    background-color: rgba(46, 139, 87, 0.2);
+    padding: 0 10px;
+}
+
+.work_name:hover{
+    color: white;
+    background-color: seagreen;
+}
+
+.work_delete{
+    background-color: rgba(145, 7, 7, 0.2);
+    color: rgb(145, 7, 7);
+    text-align: center;
+    cursor: pointer;
+}
+
+.work_delete:hover{
+    background-color: rgb(145, 7, 7);
+    color: white
+}
+
+.work_edit{
+    background-color: rgba(37, 7, 145, 0.2);
+    color: rgb(37, 7, 145);
+    text-align: center;
+    cursor: pointer;
+}
+
+.work_edit:hover{
+    background-color: rgb(37, 7, 145);
+    color: white
+}
+
+.project_image{
+    display: block;
+    width: 100%;
+}
+
+.project_image img{
+    width: 100%;
+    height: 100%;
+}
+
+.project_info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.project_info:hover{
+    opacity: 1;
+}
+
+.project_info div,
+.project_info a{
+    background: none;
+}
+
+.project_title{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.project_mini_description{
+    font-size: 13px;
+    margin: 15px 0;
+    text-align: justify;
+}
+
+.project_link a{
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 18px;
+    font-weight: 700;
+    transition: font-size 0.25s;
+    color: teal;
+}
+
+.project_link a:hover{
+    font-size: 25px;
+    transition: font-size 0.25s;
+}
 
 @media (max-width: 1440px){
     .about_display,

@@ -1,13 +1,11 @@
-from email import message
 import os
+from urllib import response
 import uuid
 import string
 import random
 import logging
-from importlib_metadata import method_cache
 
 from itsdangerous import exc
-
 
 from app.blog import blog_bp
 from app.model import Posts, Skills
@@ -16,13 +14,18 @@ from app.model import Resume
 from app.model import Blogger
 from app.model import Company
 from app.model import Certifications
+from app.model import Projects
 from datetime import date, datetime, timedelta
 from app.model import Education
 from app.model import Subscribers
 from flask_login import login_user
 from flask_login import logout_user
 from flask_login import current_user
-from app.blog.forms import CertificateForm, ExperienceForm, LoginForm, StackForm
+from app.blog.forms import CertificateForm
+from app.blog.forms import ExperienceForm
+from app.blog.forms import LoginForm
+from app.blog.forms import StackForm
+from app.blog.forms import ProjectForm
 from app.blog.forms import UploadForm
 from flask_login import login_required
 from werkzeug.utils import secure_filename
@@ -561,6 +564,7 @@ def create_resume():
     experienceform = ExperienceForm()
     certificateform = CertificateForm()
     stackform = StackForm()
+    projectform = ProjectForm()
     res = Resume.fetch_resume()
     if res["status"] == "failed":
         resume = None
@@ -577,7 +581,8 @@ def create_resume():
         EducationForm = educationform,
         ExperienceForm = experienceform,
         CertificateForm = certificateform,
-        StackForm = stackform
+        StackForm = stackform,
+        ProjectForm = projectform,
         )
 
 @blog_bp.route("/update_welcome_text",methods=["POST"])
@@ -1096,5 +1101,97 @@ def fetch_stack():
         logger.exception(e)
         return{
             "message":"An error occurred while fetching stack",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/add_project", methods=["POST"])
+@login_required
+def add_project():
+    try:
+        project_name = request.form["project_name"]
+        project_link = request.form["project_link"]
+        project_summary = request.form["project_summary"]
+        project_image = request.files["project_image"]
+
+        if all([project_name,project_summary,project_image]):
+
+            # Parent Folder
+            parent_folder = "app/blog/static/images/project_images"
+            os.makedirs(parent_folder, exist_ok=True)
+            
+            # Save Image
+            SavePath = f"{parent_folder}/{secure_filename(project_image.filename)}"
+            project_image.save(SavePath)
+
+            kwargs = {
+                "Project_id":uuid.uuid4().hex,
+                "Project_title":project_name,
+                "Project_description":project_summary,
+                "Project_image":SavePath,
+                "Project_link":project_link
+            }
+
+            response = Projects.add_new_project(**kwargs)
+            return response
+
+        else:
+            return{
+                "message":"Invalid upload",
+                "status":"warning"
+            }
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while add project",
+            "status":"failed"
+        }
+
+
+
+@blog_bp.route("/delete_project", methods=["DELETE"])
+@login_required
+def delete_project():
+    try:
+        project_id = request.form["project_id"]
+        response = Projects.remove_project(project_id)
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred while deleting projct",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/update_project", methods=["PUT"])
+@login_required
+def update_project():
+    try:
+        project_id = request.form["id"]
+        response = Projects.update_project(project_id)
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An error occurred ehile updating project",
+            "status":"failed"
+        }
+
+
+@blog_bp.route("/fetch_projects", methods=["GET"])
+@login_required
+def fetch_projects():
+    try:
+        response = Projects.fecth_project()
+        return response
+
+    except Exception as e:
+        logger.exception(e)
+        return{
+            "message":"An erroroccurred while fetching project",
             "status":"failed"
         }

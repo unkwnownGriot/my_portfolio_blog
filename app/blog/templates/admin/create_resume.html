@@ -449,6 +449,76 @@
                     </div>
                 </div>
 
+
+                <!-- Work Samples -->
+                <form class="work_samples project_form remove_display">
+                    <fieldset>
+                        {{ ProjectForm.Project_name.label }}
+                        {{ ProjectForm.Project_name }}
+                        {% if ProjectForm.Project_name.errors %}
+                            {% for error in ProjectForm.Project_name.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ ProjectForm.Project_summary.label }}
+                        {{ ProjectForm.Project_summary }}
+                        {% if ProjectForm.Project_summary.errors %}
+                            {% for error in ProjectForm.Project_summary.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ ProjectForm.Project_background_image.label }}
+                        {{ ProjectForm.Project_background_image }}
+                        {% if ProjectForm.Project_background_image.errors %}
+                            {% for error in ProjectForm.Project_background_image.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset>
+                        {{ ProjectForm.Project_link.label }}
+                        {{ ProjectForm.Project_link }}
+                        {% if ProjectForm.Project_link.errors %}
+                            {% for error in ProjectForm.Project_link.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </fieldset>
+
+                    <fieldset class="project_save_btn_area">
+                        <button name="project_save_btn" id="project_save_btn" class="project_save_btn">
+                            Save Project
+                        </button>
+                    </fieldset>
+
+                    <fieldset class="remove_display project_edit_btn_area">
+                        <button name="project_edit_btn" id="project_edit_btn" class="project_edit_btn">
+                            Update Project
+                        </button>
+
+                        <button name="project_clear_btn" id="project_clear_btn" class="project_clear_btn">
+                            Clear
+                        </button>
+                    </fieldset>                    
+                </form>
+
+                <!-- Work Records -->
+                <div class="work_records work_samples remove_display">
+                    <h3 class="record_header">
+                        Work Records
+                    </h3>
+
+                    <div class="work_items">
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -537,10 +607,6 @@
             <!-- Stack -->
             <div class="stack content_display remove_display">
                 <div class="stack_display">
-                    <div class="stack_big">
-                        Stack
-                    </div>
-    
                     <div class="stack_content_preview">
     
                         <div class="tech_stack">
@@ -563,9 +629,12 @@
                 </div>
             </div>
 
+            
+            <!-- Work Samples -->
+            <div class="work_projects work_samples">
+                
+            </div>
         </div>
-
-
     </div>
 </div>
 

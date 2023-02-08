@@ -54,6 +54,10 @@ function form_display(){
     // Stack Records
     const stack_records = document.querySelector(".stack_records")
     stack_records.classList.add("remove_display")
+
+    // Project Records
+    const project_records = document.querySelector(".work_records")
+    project_records.classList.add("remove_display")
 }
 
 // Run clear Display Screen
@@ -1256,13 +1260,24 @@ function add_to_stack_records(icon_stack, stack_elements){
         const edit_btn_area = document.querySelector(".stack_edit_btn_area")
         const stack_edit_btn = document.querySelector(".stack_edit_btn")
 
+        stack_icon.value = ""
         stack_icon.classList.add("remove_display")
         stack_icon_container.classList.remove("remove_display")
-        uploaded_icon.innerText = icon_stack["icon"]
-        stack_name.innerText = icon_stack["name"]
+        uploaded_icon.value = icon_stack["icon"]
+        stack_name.value = icon_stack["name"]
         save_btn_area.classList.add("remove_display")
         edit_btn_area.classList.remove("remove_display")
         stack_edit_btn.id = icon_stack["id"]
+
+        uploaded_icon.addEventListener("click", () => {
+            stack_icon.click()
+        })
+
+        stack_icon.onchange = () => {
+            stack_icon.classList.remove("remove_display")
+            uploaded_icon.classList.add("remove_display")
+            uploaded_icon.value = ""
+        }
     })
     
     stack_element.appendChild(stack_name)
@@ -1325,8 +1340,6 @@ function display_stack(){
                     const first_elem = no_icon_data[i]
                     const second_elem = no_icon_data[i+1]
 
-                    console.log(first_elem, second_elem)
-
                     // Add No Icon Table
                     const tr = document.createElement("tr")
                     const td_1 = document.createElement("td")
@@ -1355,4 +1368,211 @@ function display_stack(){
     })
 }
 
+// Run Display Stack
 display_stack()
+
+
+// Update Stack Function
+function update_stack(){
+    const btn = document.querySelector("stack_save_btn")
+    const stack_icon = document.getElementById("Stack_icon")
+    const stack_name = document.getElementById("Stack_name")
+
+    const form = new FormData()
+    form.append("csrf_token", csrf_token.value)
+    form.append("stack_id", btn.id)
+    form.append("stack_name", stack_name.value)
+
+    const file_length = stack_icon.files.length
+    if (file_length > 0){
+        form.append("stack_icon", stack_icon.files[0])
+    }
+
+    const xhr = new XMLHttpRequest()
+    xhr.open("PUT","/blog/update_stack",true)
+    xhr.send(form)
+    xhr.onload = () => {
+        const data = JSON.parse(xhr.responseText)
+        const message = data["message"]
+        const status = data["status"]
+
+        flash_response(message,status)
+    }
+}
+
+
+// Update Stack Button
+document.querySelector(".stack_edit_btn").addEventListener("click",(e) => {
+    e.preventDefault()
+    update_stack()
+})
+
+
+// Clear Stack Form
+function clear_stack_form(){
+    const stack_icon = document.getElementById("Stack_icon")
+    const icon_container = document.getElementById("icon_container")
+    const uploaded_icon = document.getElementById("uploaded_icon")
+    const stack_name = document.getElementById("Stack_name")
+    const stack_save_btn_area = document.querySelector(".stack_save_btn_area")
+    const stack_edit_btn_area = document.querySelector(".stack_edit_btn_area")
+
+    stack_icon.value = ""
+    uploaded_icon.value = ""
+    stack_name.value = ""
+    icon_container.classList.add("remove_display")
+    stack_icon.classList.remove("remove_display")
+    stack_edit_btn_area.classList.add("remove_display")
+    stack_save_btn_area.classList.remove("remove_display")
+}
+
+
+// Clear Stack Form Button
+document.querySelector(".stack_clear_btn").addEventListener("click",(e) => {
+    e.preventDefault()
+    clear_stack_form()
+})
+
+
+// Save Work Sample Function
+function save_work_sample(){
+    const project_name = document.getElementById("Project_name")
+    const project_link = document.getElementById("Project_link")
+    const project_summary = document.getElementById("Project_summary")
+    const project_image = document.getElementById("Project_background_image")
+
+    const form = new FormData()
+    form.append("csrf_token", csrf_token.value)
+    form.append("project_name", project_name.value)
+    form.append("project_link", project_link.value)
+    form.append("project_summary", project_summary.value)
+    form.append("project_image", project_image.files[0])
+
+    new Promise((resolve) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("POST", "/blog/add_project",true)
+        xhr.send(form)
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.responseText)
+            const message = data["message"]
+            const status = data["status"]
+
+            flash_response(message,status)
+        }
+        resolve()
+    })
+}
+
+
+// Save Work Sample Button
+const project_save_btn = document.querySelector(".project_save_btn")
+project_save_btn.addEventListener("click",(e) => {
+    e.preventDefault()
+    save_work_sample()
+})
+
+
+// Fetch Work Sample Function
+function fetch_projects() {
+    return new Promise((resolve) => {
+        const xhr = new XMLHttpRequest
+        xhr.open("GET", "/blog/fetch_projects",true)
+        xhr.send()
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.responseText)
+            const status = data["status"].toLowerCase()
+
+            if (status == "success"){
+                resolve(data["message"])
+            }
+            else{
+                const message = data["message"].toLowerCase()
+                flash_response(message,status)
+            }
+        }
+    })
+}
+
+
+// Display Work Samples Function
+function display_work_samples(){
+    const project_promise = new Promise(async (resolve,reject) => {
+        const all_projects = await fetch_projects()
+        console.log(all_projects)
+
+        const work_projects = document.querySelector(".work_projects")
+        work_projects.innerHTML = ""
+
+        for(const project_index in all_projects){
+            const project = all_projects[project_index]
+
+            // Display Preview
+            const work_project = document.createElement("div")
+            const project_image = document.createElement("div")
+            const img = document.createElement("img")
+            const project_info = document.createElement("div")
+            const project_title = document.createElement("div")
+            const project_mini_description = document.createElement("div")
+            const project_link = document.createElement("div")
+            const link = document.createElement("a")
+
+            link.setAttribute("href",project["project_link"])
+            img.setAttribute("src",`/blog/static/images/project_images/${project["project_image"]}`)
+
+            link.classList.add("link")
+            project_link.classList.add("project_link")
+            link.innerText = "View Project"
+            project_link.appendChild(link)
+
+            project_mini_description.classList.add("project_mini_description")
+            project_mini_description.innerText = project["project_description"]
+
+            project_title.classList.add("project_title")
+            project_title.innerText = project["project_title"]
+
+            project_info.classList.add("project_info")
+            project_info.appendChild(project_title)
+            project_info.appendChild(project_mini_description)
+            project_info.appendChild(project_link)
+
+            project_image.classList.add("project_image")
+            project_image.appendChild(img)
+
+            work_project.classList.add("work_project")
+            work_project.appendChild(project_image)
+            work_project.appendChild(project_info)
+            work_projects.appendChild(work_project)
+
+            // Add To Work Records
+            const work_items = document.querySelector(".work_items")
+            const work_item = document.createElement("div")
+            const work_name = document.createElement("div")
+            const work_delete = document.createElement("div")
+            const work_edit = document.createElement("div")
+
+            work_edit.classList.add("work_edit")
+            work_edit.innerText = "EDIT"
+
+            // Add Edit Event Listener
+            work_edit.addEventListener("click",() => {
+
+            })
+
+            work_delete.classList.add("work_delete")
+            work_delete.innerText = "DELETE"
+
+            work_name.classList.add("work_name")
+            work_name.innerText = project["project_title"]
+
+            work_item.classList.add("work_item")
+            work_item.appendChild(work_name)
+            work_item.appendChild(work_delete)
+            work_item.appendChild(work_edit)
+            work_items.appendChild(work_item)
+        }
+    })
+}
+
+
+// Display Projects
+display_work_samples()

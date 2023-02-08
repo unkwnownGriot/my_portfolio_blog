@@ -5185,3 +5185,241 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint fail
 2023-02-07 16:36:41,660:DEBUG::====================================================================================================
 2023-02-07 16:36:41,661:INFO::Database logger :: Logging Active
 2023-02-07 16:36:41,661:DEBUG::
+2023-02-07 18:09:20,348:DEBUG::
+2023-02-07 18:09:20,348:DEBUG::====================================================================================================
+2023-02-07 18:09:20,348:INFO::Database logger :: Logging Active
+2023-02-07 18:09:20,349:DEBUG::
+2023-02-07 18:09:21,701:DEBUG::
+2023-02-07 18:09:21,701:DEBUG::====================================================================================================
+2023-02-07 18:09:21,702:INFO::Database logger :: Logging Active
+2023-02-07 18:09:21,702:DEBUG::
+2023-02-07 18:21:03,704:DEBUG::
+2023-02-07 18:21:03,704:DEBUG::====================================================================================================
+2023-02-07 18:21:03,704:INFO::Database logger :: Logging Active
+2023-02-07 18:21:03,705:DEBUG::
+2023-02-07 18:21:16,422:DEBUG::
+2023-02-07 18:21:16,423:DEBUG::====================================================================================================
+2023-02-07 18:21:16,423:INFO::Database logger :: Logging Active
+2023-02-07 18:21:16,424:DEBUG::
+2023-02-07 18:21:27,270:DEBUG::
+2023-02-07 18:21:27,271:DEBUG::====================================================================================================
+2023-02-07 18:21:27,271:INFO::Database logger :: Logging Active
+2023-02-07 18:21:27,271:DEBUG::
+2023-02-07 18:23:41,578:DEBUG::
+2023-02-07 18:23:41,578:DEBUG::====================================================================================================
+2023-02-07 18:23:41,579:INFO::Database logger :: Logging Active
+2023-02-07 18:23:41,579:DEBUG::
+2023-02-07 18:23:46,211:DEBUG::
+2023-02-07 18:23:46,211:DEBUG::====================================================================================================
+2023-02-07 18:23:46,212:INFO::Database logger :: Logging Active
+2023-02-07 18:23:46,212:DEBUG::
+2023-02-07 18:24:36,896:DEBUG::
+2023-02-07 18:24:36,896:DEBUG::====================================================================================================
+2023-02-07 18:24:36,897:INFO::Database logger :: Logging Active
+2023-02-07 18:24:36,897:DEBUG::
+2023-02-07 18:29:37,472:DEBUG::
+2023-02-07 18:29:37,473:DEBUG::====================================================================================================
+2023-02-07 18:29:37,473:INFO::Database logger :: Logging Active
+2023-02-07 18:29:37,474:DEBUG::
+2023-02-07 18:33:36,303:DEBUG::
+2023-02-07 18:33:36,304:DEBUG::====================================================================================================
+2023-02-07 18:33:36,304:INFO::Database logger :: Logging Active
+2023-02-07 18:33:36,305:DEBUG::
+2023-02-07 19:16:14,560:DEBUG::
+2023-02-07 19:16:14,560:DEBUG::====================================================================================================
+2023-02-07 19:16:14,561:INFO::Database logger :: Logging Active
+2023-02-07 19:16:14,561:DEBUG::
+2023-02-07 19:20:35,024:DEBUG::
+2023-02-07 19:20:35,024:DEBUG::====================================================================================================
+2023-02-07 19:20:35,025:INFO::Database logger :: Logging Active
+2023-02-07 19:20:35,025:DEBUG::
+2023-02-07 19:25:10,735:DEBUG::
+2023-02-07 19:25:10,735:DEBUG::====================================================================================================
+2023-02-07 19:25:10,736:INFO::Database logger :: Logging Active
+2023-02-07 19:25:10,736:DEBUG::
+2023-02-07 19:27:54,650:DEBUG::
+2023-02-07 19:27:54,650:DEBUG::====================================================================================================
+2023-02-07 19:27:54,650:INFO::Database logger :: Logging Active
+2023-02-07 19:27:54,651:DEBUG::
+2023-02-07 19:30:42,506:DEBUG::
+2023-02-07 19:30:42,507:DEBUG::====================================================================================================
+2023-02-07 19:30:42,507:INFO::Database logger :: Logging Active
+2023-02-07 19:30:42,507:DEBUG::
+2023-02-07 19:50:52,093:DEBUG::
+2023-02-07 19:50:52,093:DEBUG::====================================================================================================
+2023-02-07 19:50:52,094:INFO::Database logger :: Logging Active
+2023-02-07 19:50:52,094:DEBUG::
+2023-02-07 19:52:21,626:DEBUG::
+2023-02-07 19:52:21,626:DEBUG::====================================================================================================
+2023-02-07 19:52:21,627:INFO::Database logger :: Logging Active
+2023-02-07 19:52:21,627:DEBUG::
+2023-02-07 19:53:02,318:DEBUG::
+2023-02-07 19:53:02,319:DEBUG::====================================================================================================
+2023-02-07 19:53:02,319:INFO::Database logger :: Logging Active
+2023-02-07 19:53:02,319:DEBUG::
+2023-02-07 19:53:12,775:DEBUG::
+2023-02-07 19:53:12,775:DEBUG::====================================================================================================
+2023-02-07 19:53:12,776:INFO::Database logger :: Logging Active
+2023-02-07 19:53:12,776:DEBUG::
+2023-02-07 19:54:15,143:DEBUG::
+2023-02-07 19:54:15,143:DEBUG::====================================================================================================
+2023-02-07 19:54:15,144:INFO::Database logger :: Logging Active
+2023-02-07 19:54:15,144:DEBUG::
+2023-02-07 19:54:24,821:DEBUG::
+2023-02-07 19:54:24,822:DEBUG::====================================================================================================
+2023-02-07 19:54:24,822:INFO::Database logger :: Logging Active
+2023-02-07 19:54:24,822:DEBUG::
+2023-02-07 19:54:50,411:DEBUG::
+2023-02-07 19:54:50,411:DEBUG::====================================================================================================
+2023-02-07 19:54:50,412:INFO::Database logger :: Logging Active
+2023-02-07 19:54:50,412:DEBUG::
+2023-02-07 19:54:51,643:DEBUG::
+2023-02-07 19:54:51,643:DEBUG::====================================================================================================
+2023-02-07 19:54:51,644:INFO::Database logger :: Logging Active
+2023-02-07 19:54:51,644:DEBUG::
+2023-02-07 19:56:06,064:DEBUG::
+2023-02-07 19:56:06,064:DEBUG::====================================================================================================
+2023-02-07 19:56:06,065:INFO::Database logger :: Logging Active
+2023-02-07 19:56:06,065:DEBUG::
+2023-02-07 20:00:23,659:DEBUG::
+2023-02-07 20:00:23,659:DEBUG::====================================================================================================
+2023-02-07 20:00:23,660:INFO::Database logger :: Logging Active
+2023-02-07 20:00:23,660:DEBUG::
+2023-02-07 20:08:23,658:DEBUG::
+2023-02-07 20:08:23,658:DEBUG::====================================================================================================
+2023-02-07 20:08:23,659:INFO::Database logger :: Logging Active
+2023-02-07 20:08:23,659:DEBUG::
+2023-02-07 20:09:20,958:DEBUG::
+2023-02-07 20:09:20,958:DEBUG::====================================================================================================
+2023-02-07 20:09:20,959:INFO::Database logger :: Logging Active
+2023-02-07 20:09:20,959:DEBUG::
+2023-02-07 20:10:54,769:DEBUG::
+2023-02-07 20:10:54,769:DEBUG::====================================================================================================
+2023-02-07 20:10:54,769:INFO::Database logger :: Logging Active
+2023-02-07 20:10:54,770:DEBUG::
+2023-02-07 20:11:39,062:DEBUG::
+2023-02-07 20:11:39,062:DEBUG::====================================================================================================
+2023-02-07 20:11:39,062:INFO::Database logger :: Logging Active
+2023-02-07 20:11:39,063:DEBUG::
+2023-02-07 20:12:22,131:DEBUG::
+2023-02-07 20:12:22,131:DEBUG::====================================================================================================
+2023-02-07 20:12:22,132:INFO::Database logger :: Logging Active
+2023-02-07 20:12:22,132:DEBUG::
+2023-02-07 20:12:32,709:DEBUG::
+2023-02-07 20:12:32,710:DEBUG::====================================================================================================
+2023-02-07 20:12:32,710:INFO::Database logger :: Logging Active
+2023-02-07 20:12:32,711:DEBUG::
+2023-02-07 20:14:20,031:DEBUG::
+2023-02-07 20:14:20,031:DEBUG::====================================================================================================
+2023-02-07 20:14:20,031:INFO::Database logger :: Logging Active
+2023-02-07 20:14:20,032:DEBUG::
+2023-02-07 20:15:19,182:DEBUG::
+2023-02-07 20:15:19,182:DEBUG::====================================================================================================
+2023-02-07 20:15:19,182:INFO::Database logger :: Logging Active
+2023-02-07 20:15:19,183:DEBUG::
+2023-02-07 20:15:20,514:DEBUG::
+2023-02-07 20:15:20,514:DEBUG::====================================================================================================
+2023-02-07 20:15:20,515:INFO::Database logger :: Logging Active
+2023-02-07 20:15:20,515:DEBUG::
+2023-02-08 00:22:20,553:ERROR::'Project_descriptio' is an invalid keyword argument for Projects
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1755, in add_new_project
+    project = Projects(**kwargs)
+  File "<string>", line 4, in __init__
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 482, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\state.py", line 479, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1197, in _declarative_constructor
+    raise TypeError(
+TypeError: 'Project_descriptio' is an invalid keyword argument for Projects
+2023-02-08 00:22:44,747:DEBUG::
+2023-02-08 00:22:44,747:DEBUG::====================================================================================================
+2023-02-08 00:22:44,748:INFO::Database logger :: Logging Active
+2023-02-08 00:22:44,748:DEBUG::
+2023-02-08 00:23:49,169:ERROR::(sqlite3.IntegrityError) NOT NULL constraint failed: projects.Project_image
+[SQL: INSERT INTO projects ("Project_id", "Project_title", "Project_link", "Project_image", "Project_description") VALUES (?, ?, ?, ?, ?)]
+[parameters: ('a7943a90765a4415856e61db5753120d', 'My Portfolio Blog', 'https://www.github,com/mrnninster/my_portfolio_blog', None, 'This project was created from my desire to create my own blog and a resume, since I have been job hunting for close to a year now, for those who like black and white like me, it will be bliss, well at least it is for me.')]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: NOT NULL constraint failed: projects.Project_image
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1757, in add_new_project
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: projects.Project_image
+[SQL: INSERT INTO projects ("Project_id", "Project_title", "Project_link", "Project_image", "Project_description") VALUES (?, ?, ?, ?, ?)]
+[parameters: ('a7943a90765a4415856e61db5753120d', 'My Portfolio Blog', 'https://www.github,com/mrnninster/my_portfolio_blog', None, 'This project was created from my desire to create my own blog and a resume, since I have been job hunting for close to a year now, for those who like black and white like me, it will be bliss, well at least it is for me.')]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2023-02-08 00:24:45,333:DEBUG::
+2023-02-08 00:24:45,333:DEBUG::====================================================================================================
+2023-02-08 00:24:45,334:INFO::Database logger :: Logging Active
+2023-02-08 00:24:45,334:DEBUG::
+2023-02-08 01:39:54,052:DEBUG::
+2023-02-08 01:39:54,052:DEBUG::====================================================================================================
+2023-02-08 01:39:54,053:INFO::Database logger :: Logging Active
+2023-02-08 01:39:54,053:DEBUG::
+2023-02-08 01:40:08,768:ERROR::'builtin_function_or_method' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1833, in fecth_project
+    projects = [project.dict() for project in projects]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1833, in <listcomp>
+    projects = [project.dict() for project in projects]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1717, in dict
+    "project_image":self.Project_image.split["/"][-1],
+TypeError: 'builtin_function_or_method' object is not subscriptable
+2023-02-08 01:41:03,765:DEBUG::
+2023-02-08 01:41:03,765:DEBUG::====================================================================================================
+2023-02-08 01:41:03,766:INFO::Database logger :: Logging Active
+2023-02-08 01:41:03,766:DEBUG::

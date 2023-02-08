@@ -6,7 +6,7 @@ from app import db, login_manager
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
 from werkzeug.security import check_password_hash
-from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text
+from sqlalchemy import DATETIME, Column, Integer, String, ForeignKey, Boolean, Text, null
 
 #########################
 # Database Error Logger #
@@ -1704,20 +1704,25 @@ class Projects(db.Model):
 
     id = Column(Integer, primary_key=True)
     Project_id = Column(String, nullable=False, unique=True)
+    Project_title = Column(String, nullable=False)
     Project_link = Column(String, nullable=False)
     Project_image = Column(String, nullable=False)
-    Project_description = Column(String, nullable=False)
+    Project_description = Column(Text, nullable=False)
 
     def dict(self):
         return{
             "id":self.Project_id,
+            "project_title":self.Project_title,
             "project_link":self.Project_link,
-            "project_image":self.Project_image,
+            "project_image":self.Project_image.split("/")[-1],
             "project_description":self.Project_description
         }
 
     def get_project_id(self):
         return self.Project_id
+
+    def get_project_title(self):
+        return self.Project_title
 
     def get_project_link(self):
         return self.Project_link
@@ -1736,6 +1741,7 @@ class Projects(db.Model):
         Params:
         -------
         Project_id: The unique id of the project to be added
+        Project_title: The title of the project being added
         Project_link: The link of the project to be added
         Project_image: The image of the project
         Project_description: A short description of the project
@@ -1808,6 +1814,33 @@ class Projects(db.Model):
             return{"message":"failed to update project","status":"failed"}
 
 
+    @staticmethod
+    def fecth_project():
+        """
+        This method returns an array of all the projects savd
+
+        Params:
+        -------
+        None
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+        try:
+            projects = db.session.query(Projects).all()
+            projects = [project.dict() for project in projects]
+            return {
+                "message":projects,
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return{"message":"failed to fetch projects","status":"failed"}
+
+
 class ContactMe(db.Model):
     __tablename__ = "contact"
 
@@ -1815,7 +1848,7 @@ class ContactMe(db.Model):
     Contact_id = Column(String, nullable=False, unique=True)
     Name = Column(String, nullable=False)
     Email = Column(String, nullable=False)
-    Message = Column(String, nullable=False)
+    Message = Column(Text, nullable=False)
 
     def dict(self):
         return{
@@ -1888,3 +1921,34 @@ class ContactMe(db.Model):
         except Exception as e:
             logger.exception(e)
             return{"message":"failed to delete contact me message","status":"failed"}
+
+
+    @staticmethod
+    def fetch_contact():
+        """
+        This method fetches all the contact request
+
+        Params:
+        -------
+        None
+
+        Returns:
+        --------
+        message: The response message
+        status: The response status
+        """
+
+        try:
+            contacts = db.session.query(ContactMe).all()
+            contacts = [contact.dict() for contact in contacts]
+            return{
+                "message":contacts,
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return {
+                "message":"failed to fetch contact rquests",
+                "status":"failed"
+            }

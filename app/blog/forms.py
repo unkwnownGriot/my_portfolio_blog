@@ -1,7 +1,10 @@
 # Imports
 from email import message
 import logging
+from msilib.schema import File
 from tokenize import String
+
+from h11 import Data
 
 from app.model import Company, app_tz
 from datetime import datetime
@@ -437,4 +440,35 @@ class StackForm(FlaskForm):
         validators=[
             DataRequired(message="Stack name is required")
         ]
+    )
+
+
+class ProjectForm(FlaskForm):
+    
+    Project_name = StringField(
+        "Project Name",
+        validators=[
+            DataRequired(message="Project name is required")
+        ],
+        render_kw = {"placeholder":"My Portfolio Blog"}
+    )
+
+    Project_summary = TextAreaField(
+        "Project Summary",
+        validators=[
+            DataRequired(message="Project summary required")
+        ],
+        render_kw={"placeholder":"The project dscription."}
+    )
+
+    Project_link = StringField(
+        "Project Link",
+        validators=[
+            DataRequired(message="Project link required")
+        ],
+        render_kw = {"placeholder":"https://www.github.com/mrnninster/my_portfolio_blog"}
+    )
+
+    Project_background_image = FileField(
+        "Project Image"
     )

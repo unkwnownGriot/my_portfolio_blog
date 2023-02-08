@@ -1,4 +1,3 @@
-from app.blog.routes import fetch_certificate
 from app.model import Roles
 from app.model import Posts
 from app.model import Skills
