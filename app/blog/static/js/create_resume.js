@@ -1148,6 +1148,7 @@ container.addEventListener("click", () => {
     certificate_image.onchange = (e) => {
         certificate_image.classList.remove("remove_display")
         container.classList.add("remove_display")
+        container.children[0].value = ""
     }
 })
 
@@ -1269,15 +1270,6 @@ function add_to_stack_records(icon_stack, stack_elements){
         edit_btn_area.classList.remove("remove_display")
         stack_edit_btn.id = icon_stack["id"]
 
-        uploaded_icon.addEventListener("click", () => {
-            stack_icon.click()
-        })
-
-        stack_icon.onchange = () => {
-            stack_icon.classList.remove("remove_display")
-            uploaded_icon.classList.add("remove_display")
-            uploaded_icon.value = ""
-        }
     })
     
     stack_element.appendChild(stack_name)
@@ -1287,6 +1279,20 @@ function add_to_stack_records(icon_stack, stack_elements){
     stack_elements.appendChild(stack_element)
 
 }
+
+
+// Add Event Listener For Upload Change
+const stack_container = document.getElementById("icon_container")
+stack_container.addEventListener("click", () => {
+    const stack_icon = document.getElementById("Stack_icon")
+    stack_icon.click()
+
+    stack_icon.onchange = () => {
+        stack_icon.classList.remove("remove_display")
+        stack_container.classList.add("remove_display")
+        stack_container.children[0].value = ""
+    }
+})
 
 
 // Display Stack In Preview Function
@@ -1374,7 +1380,8 @@ display_stack()
 
 // Update Stack Function
 function update_stack(){
-    const btn = document.querySelector("stack_save_btn")
+    const btn = document.querySelector(".stack_edit_btn")
+    const uploaded_icon = document.getElementById("uploaded_icon")
     const stack_icon = document.getElementById("Stack_icon")
     const stack_name = document.getElementById("Stack_name")
 
@@ -1387,6 +1394,12 @@ function update_stack(){
     if (file_length > 0){
         form.append("stack_icon", stack_icon.files[0])
     }
+    else if (uploaded_icon.value !== "") {
+        form.append("uploaded_icon", true)
+    }
+    else{
+        form.append("uploaded_icon", false)
+    }
 
     const xhr = new XMLHttpRequest()
     xhr.open("PUT","/blog/update_stack",true)
@@ -1397,6 +1410,7 @@ function update_stack(){
         const status = data["status"]
 
         flash_response(message,status)
+        display_stack()
     }
 }
 
@@ -1560,6 +1574,28 @@ function display_work_samples(){
 
             work_delete.classList.add("work_delete")
             work_delete.innerText = "DELETE"
+
+            // Add Delete Event Listener
+            work_delete.addEventListener("click",(e) => {
+                e.preventDefault()
+
+                const form = new FormData()
+                form.append("csrf_token", csrf_token)
+                form.append("project_id", project["id"])
+
+                const xhr = new XMLHttpRequest()
+                xhr.open("DELETE","/blog/delete_project",true)
+                xhr.send(form)
+
+                xhr.onload = () => {
+                    const data = JSON.parse(xhr.responseText)
+                    const message = data["message"]
+                    const status = data["status"]
+
+                    flash_response(message,status)
+                    display_work_samples()
+                }
+            })
 
             work_name.classList.add("work_name")
             work_name.innerText = project["project_title"]

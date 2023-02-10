@@ -249,6 +249,13 @@ class ResumeForm(FlaskForm):
     """
 
 
+class ContactForm(FlaskForm):
+    """
+    This form is used to generate the csrf
+    token used by the create resume page
+    """
+
+
 
 class EducationForm(FlaskForm):
 

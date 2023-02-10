@@ -1077,7 +1077,53 @@ def delete_stack():
 @login_required
 def update_stack():
     try:
-        pass
+        # Get Stack Request
+        stack_id = request.form["stack_id"]
+        stack_name = request.form["stack_name"]
+
+        # Check New Icon Uploaded
+        try:
+            stack_icon = request.files["stack_icon"]
+            icon_exist = True
+
+        except:
+            icon_exist = False
+
+        if icon_exist:
+            # Save Stack Image
+            parent_folder = f"app/blog/static/images/stack_icons"
+            os.makedirs(parent_folder, exist_ok=True)
+
+            # Save Image
+            SavePath = f"{parent_folder}/{secure_filename(stack_icon.filename)}"
+            stack_icon.save(SavePath)
+
+        # Check Existing Icon
+        if (icon_exist == False):
+            uploaded_icon = request.form["uploaded_icon"]
+
+            if uploaded_icon == False:
+                SavePath = "Not Available"
+
+            else:
+                SavePath = False
+
+        # Check if a save path is set
+        if SavePath:
+
+             # Save to database
+            kwargs = {
+                "Skill_name":stack_name,
+                "Skill_icon":SavePath
+            }
+
+        else:
+            kwargs = {
+                "Skill_name":stack_name
+            }
+
+        response = Skills.update_skill(stack_id,**kwargs)
+        return response
 
     except Exception as e:
         logger.exception(e)

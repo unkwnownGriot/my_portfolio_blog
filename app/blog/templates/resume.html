@@ -405,6 +405,21 @@
                         <p class="header">Email</p>
                         <a href="mailto:{{content['resume']['message']['dict'][0]['email']}}" class="content">{{content["resume"]["message"]["dict"][0]["email"]}}</a>
                     </div>
+
+                    <div class="twitter">
+                        <p class="header">Twitter</p>
+                        <a href="{{content['resume']['message']['dict'][0]['twitter']}}" class="content">Connect On Twitter</a>
+                    </div>
+
+                    <div class="linkedin">
+                        <p class="header">Linkedin</p>
+                        <a href="{{content['resume']['message']['dict'][0]['linkedin']}}" class="content">Connect On LinkedIn</a>
+                    </div>
+
+                    <div class="github">
+                        <p class="header">GitHub</p>
+                        <a href="{{content['resume']['message']['dict'][0]['github']}}" class="content">View GitHub Projects</a>
+                    </div>
     
                     <div class="resume_dwnd">
                         <div class="header">Resume</div>
@@ -413,7 +428,8 @@
                 </div>
 
                 <div class="right_side">
-                    <form action="" class="contact_form">
+                    <form class="contact_form">
+                        {{ ContactForm.hidden_tag() }}
                         <input type="text" name="name" id="name" class="contact_text" placeholder="Fullname">
                         <input type="text" name="email" id="email" class="contact_email" placeholder="Email Address">
                         <textarea name="message" id="message" class="contact_message" placeholder="Your message"></textarea>
@@ -423,4 +439,8 @@
             </div>
         <!-- End of resume -->
         </div>
+
+
+        <script src="/blog{{url_for('static', filename='js/resume.js')}}">
+        </script>
 {% endblock %}

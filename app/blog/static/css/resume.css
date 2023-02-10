@@ -498,12 +498,18 @@ td{
     min-width: 200px;
 }
 
+.github,
+.linkedin,
+.twitter,
 .send_mail,
 .resume_dwnd{
     font-size: 15px;
     margin: 20px;
 }
 
+.github .content,
+.linkedin .content,
+.twitter .content,
 .send_mail .content,
 .resume_dwnd .content{
     color: teal;
@@ -545,6 +551,11 @@ td{
     padding: 20px;
     width: 150px;
     color: teal;
+}
+
+.contact_btn:hover{
+    background-color: teal;
+    color: white;
 }
 
 @media only screen and (max-width:1300px){
