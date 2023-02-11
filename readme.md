@@ -4,5 +4,14 @@ This project was created as a simple easy to use resume website with a blog with
 
 :star: Star us on GitHub — it motivates us a lot!
 
-![Portolio_Blog](app/blog/images/my_portfolio_blog.png)
+![Portolio_Blog](app/blog/static/images/my_portfolio_blog.png)
+
+## Table Of Contents
+- [Installation](#installation)
+    - [Composer](#composer)
+    - [DDev or Colima](#ddev)
+    - [TER](#ter-extension)
+- [Setup](#Setup)
+    - [Database setup](#database-setup)
+    - [Security](#security)
 
