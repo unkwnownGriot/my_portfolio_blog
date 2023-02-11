@@ -26,6 +26,10 @@ Visit domain/blog/blogger_create
 Visit domain/blog/blogger_login
 
 
+## Blog
+Visit domain//view_blog
+![blog image](app/blog/static/images/readme/blog_view.png)
+
 ## Blogger Actions
 - Dashboard: Create, Edit, Post and Delete Blog Posts
 - Accounts: Create, Delete and Edit Accounts
