@@ -6,12 +6,25 @@ This project was created as a simple easy to use resume website with a blog with
 
 ![Portolio_Blog](app/blog/static/images/my_portfolio_blog.png)
 
-## Table Of Contents
-- [Installation](#installation)
-    - [Composer](#composer)
-    - [DDev or Colima](#ddev)
-    - [TER](#ter-extension)
-- [Setup](#Setup)
-    - [Database setup](#database-setup)
-    - [Security](#security)
+## SetUp
+With python, pip and git installed
 
+```bash
+cd my_portfolio_blog
+
+pip install -r requiements.txt
+
+python3 run_app.py
+```
+
+## Create Blogger Account
+Visit domain/blog/blogger_create
+
+## Blogger Login
+Visit domain/blog/blogger_login
+
+
+## Blogger Actions
+- Dashboard: Create, Edit, Post and Delete Blog Posts
+- Accounts: Create, Delete and Edit Accounts
+- Resume: Create, Delete and Edit Resume Contents

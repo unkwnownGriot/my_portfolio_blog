@@ -1217,7 +1217,12 @@ def delete_project():
 def update_project():
     try:
         project_id = request.form["id"]
-        response = Projects.update_project(project_id)
+
+        kwargs = {
+
+        }
+
+        response = Projects.update_project(project_id,**kwargs)
         return response
 
     except Exception as e:
