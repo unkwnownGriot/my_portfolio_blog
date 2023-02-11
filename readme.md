@@ -6,7 +6,7 @@ This project was created as a simple easy to use resume website with a blog with
 
 :star: Star us on GitHub — it motivates us a lot!
 
-![Portolio_Blog](app/blog/static/images/my_portfolio_blog.png)
+![Portolio_Blog](app/blog/static/images/readme/resume.png)
 
 ## SetUp
 With python, pip and git installed
@@ -30,3 +30,10 @@ Visit domain/blog/blogger_login
 - Dashboard: Create, Edit, Post and Delete Blog Posts
 - Accounts: Create, Delete and Edit Accounts
 - Resume: Create, Delete and Edit Resume Contents
+
+![Dashboard](app/blog/static/images/readme/dashboard.png)
+
+The design of the resume was inspired by this [free design](https://www.behance.net/gallery/124889695/Dev-portfolio-website?tracking_source=search_projects%7Cresume+website)
+
+Enjoy!
+
