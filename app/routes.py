@@ -1,4 +1,4 @@
-from app.model import Roles
+from app.model import Projects, Roles
 from app.model import Posts
 from app.model import Skills
 from app.model import Resume
@@ -31,7 +31,8 @@ def index():
             "education_history":Education.fetch_records()["message"]["dict"],
             "roles":Roles.fetch_roles()["message"],
             "certificates":Certifications.fetch_certificates()["message"],
-            "stack":Skills.fetch_skills()["message"]
+            "stack":Skills.fetch_skills()["message"],
+            "projects":Projects.fetch_project()["message"]
             }
         )
 

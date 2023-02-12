@@ -310,84 +310,31 @@
                     </div>
 
                     <div class="work_projects">
-                        <div class="work_project">
-                            <div class="project_image">
-                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
-                            </div>
-                            
-                            <div class="project_info">
-                                <div class="project_title">
-                                    Project Title
-                                </div>
-        
-                                <div class="project_mini_description">
-                                    A mini description Lorem ipsum dolor sit amet consectetur 
-                                    adipisicing elit. Similique at maiores modi. In nobis qui 
-                                    tenetur? Iusto, non eligendi rerum accusamus magnam eveniet 
-                                    fugiat voluptatum tempore dignissimos consequatur culpa nihil
-                                    omnis unde officia obcaecati quaerat quidem vitae asperiores 
-                                    rem maxime aliquid libero modi quos. Eaque dolorum accusamus 
-                                    rerum quam vitae.
-                                </div>
-        
-                                <div class="project_link">
-                                    <a href="#">
-                                        View Project
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        {% for project in content["projects"] %}
 
-                        <div class="work_project">
-                            <div class="project_image">
-                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
-                            </div>
-                            
-                            <div class="project_info">
-                                <div class="project_title">
-                                    Project Title
+                            <div class="work_project">
+                                <div class="project_image">
+                                    <img src="/blog/static/images/project_images/{{project['project_image']}}" alt="">
                                 </div>
-        
-                                <div class="project_mini_description">
-                                    A mini description Lorem ipsum dolor sit amet consectetur 
-                                    adipisicing elit. Similique at maiores modi. In nobis qui 
-                                    tenetur? Iusto, non eligendi rerum accusamus magnam eveniet 
-                                    fugiat voluptatum tempore dignissimos consequatur culpa nihil
-                                    omnis unde officia obcaecati quaerat quidem vitae asperiores 
-                                    rem maxime aliquid libero modi quos. Eaque dolorum accusamus 
-                                    rerum quam vitae.
-                                </div>
-        
-                                <div class="project_link">
-                                    <a href="#">
-                                        View Project
-                                    </a>
+                                
+                                <div class="project_info">
+                                    <div class="project_title">
+                                        {{project["project_title"]}}
+                                    </div>
+            
+                                    <div class="project_mini_description">
+                                        {{project["project_description"]}}
+                                    </div>
+            
+                                    <div class="project_link">
+                                        <a href="{{project['project_link']}}">
+                                            View Project
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="work_project">
-                            <div class="project_image">
-                                <img src="/blog{{url_for('static', filename='images/my_image.jpg')}}" alt="">
-                            </div>
-    
-                            <div class="project_info">
-                                <div class="project_title">
-                                    Project Title
-                                </div>
-        
-                                <div class="project_mini_description">
-                                    A mini description
-                                </div>
-        
-                                <div class="project_link">
-                                    <a href="#">
-                                        View Project
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        {% endfor %}
                     </div>
                 </div>
             </div>

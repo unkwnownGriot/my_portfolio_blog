@@ -1,11 +1,9 @@
 import os
-from urllib import response
 import uuid
 import string
 import random
 import logging
 
-from itsdangerous import exc
 
 from app.blog import blog_bp
 from app.model import Posts, Skills
@@ -1216,10 +1214,30 @@ def delete_project():
 @login_required
 def update_project():
     try:
-        project_id = request.form["id"]
+        project_id = request.form["project_id"]
+        project_link = request.form["project_link"]
+        project_title = request.form["project_title"]
+        project_description = request.form["project_description"]
+
+        # Save File
+        parent_folder = "app/blog/static/images/project_images"
+        os.makedirs(parent_folder, exist_ok=True) 
+
+        try:
+            project_background_image = request.files["project_background_image"]
+            
+            SavePath = f"{parent_folder}/{secure_filename(project_background_image.filename)}"
+            project_background_image.save(SavePath)
+
+        except:
+            project_image = request.form["project_image"]
+            SavePath = f"{parent_folder}/{secure_filename(project_image)}"
 
         kwargs = {
-
+            "Project_link":project_link,
+            "Project_title":project_title,
+            "Project_image":SavePath,
+            "Project_description":project_description,
         }
 
         response = Projects.update_project(project_id,**kwargs)
@@ -1237,7 +1255,7 @@ def update_project():
 @login_required
 def fetch_projects():
     try:
-        response = Projects.fecth_project()
+        response = Projects.fetch_project()
         return response
 
     except Exception as e:

@@ -1794,9 +1794,10 @@ class Projects(db.Model):
 
         Params:
         -------
-        project_id: The id of the project to be updated
+        Project_id: The id of the project to be updated
         kwargs: The keyword argument and values of project 
-            parameters to be updated
+            parameters to be updated. These values are
+
 
         Returns:
         --------
@@ -1815,7 +1816,7 @@ class Projects(db.Model):
 
 
     @staticmethod
-    def fecth_project():
+    def fetch_project():
         """
         This method returns an array of all the projects savd
 

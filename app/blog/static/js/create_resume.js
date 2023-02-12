@@ -1253,6 +1253,8 @@ function add_to_stack_records(icon_stack, stack_elements){
 
     // Add edit event listener
     stack_edit.addEventListener("click", () => {
+        console.log(icon_stack)
+
         const stack_icon = document.getElementById("Stack_icon")
         const stack_icon_container = document.getElementById("icon_container")
         const uploaded_icon = document.getElementById("uploaded_icon")
@@ -1512,10 +1514,12 @@ function fetch_projects() {
 function display_work_samples(){
     const project_promise = new Promise(async (resolve,reject) => {
         const all_projects = await fetch_projects()
-        console.log(all_projects)
 
         const work_projects = document.querySelector(".work_projects")
         work_projects.innerHTML = ""
+
+        const work_items = document.querySelector(".work_items")
+        work_items.innerHTML = ""
 
         for(const project_index in all_projects){
             const project = all_projects[project_index]
@@ -1564,14 +1568,37 @@ function display_work_samples(){
             const work_delete = document.createElement("div")
             const work_edit = document.createElement("div")
 
+            // Create Edit Button
             work_edit.classList.add("work_edit")
             work_edit.innerText = "EDIT"
 
             // Add Edit Event Listener
-            work_edit.addEventListener("click",() => {
+            work_edit.addEventListener("click",(e) => {
+                e.preventDefault()
 
+                const project_name = document.getElementById("Project_name")
+                const project_summary = document.getElementById("Project_summary")
+                const project_background_image = document.getElementById("Project_background_image")
+                const project_link = document.getElementById("Project_link")
+                const image_container = document.getElementById("image_container")
+                const project_image = document.getElementById("project_image")
+                const save_btn_area = document.querySelector(".project_save_btn_area")
+                const edit_btn_area = document.querySelector(".project_edit_btn_area")
+                const project_edit_btn = document.querySelector(".project_edit_btn")
+
+                project_background_image.classList.add("remove_display")
+                image_container.classList.remove("remove_display")
+                save_btn_area.classList.add("remove_display")
+                edit_btn_area.classList.remove("remove_display")
+
+                project_name.value = project["project_title"]
+                project_summary.value = project["project_description"]
+                project_link.value = project["project_link"]
+                project_image.value = project["project_image"]
+                project_edit_btn.id = project["id"]
             })
 
+            // Create Delete Button
             work_delete.classList.add("work_delete")
             work_delete.innerText = "DELETE"
 
@@ -1612,3 +1639,87 @@ function display_work_samples(){
 
 // Display Projects
 display_work_samples()
+
+
+// Add Change Image Event
+const image_container = document.getElementById("image_container")
+image_container.addEventListener("click", () => {
+
+    const project_background_image = document.getElementById("Project_background_image")
+    project_background_image.click()
+    
+    project_background_image.onchange = () => {
+        const project_image = document.getElementById("project_image")
+        project_image.value = ""
+        project_image.classList.add("remove_display")
+
+        project_background_image.classList.remove("remove_display")
+    }
+})
+
+
+// Clear Work Samples Form
+const project_clear_btn = document.querySelector(".project_clear_btn")
+project_clear_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    const project_name = document.getElementById("Project_name")
+    const project_summary = document.getElementById("Project_summary")
+    const project_background_image = document.getElementById("Project_background_image")
+    const project_link = document.getElementById("Project_link")
+    const image_container = document.getElementById("image_container")
+    const project_image = document.getElementById("project_image")
+    const save_btn_area = document.querySelector(".project_save_btn_area")
+    const edit_btn_area = document.querySelector(".project_edit_btn_area")
+
+    project_background_image.classList.remove("remove_display")
+    image_container.classList.add("remove_display")
+    save_btn_area.classList.remove("remove_display")
+    edit_btn_area.classList.add("remove_display")
+
+    project_name.value = ""
+    project_summary.value = ""
+    project_link.value = ""
+    project_image.value = ""
+    project_background_image.value = ""
+})
+
+
+// Update Work Samples
+const project_edit_btn = document.querySelector(".project_edit_btn")
+project_edit_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    const project_name = document.getElementById("Project_name")
+    const project_summary = document.getElementById("Project_summary")
+    const project_background_image = document.getElementById("Project_background_image")
+    const project_link = document.getElementById("Project_link")
+    const project_image = document.getElementById("project_image")
+
+    const form = new FormData()
+    form.append("csrf_token", csrf_token.value)
+    form.append("project_id", project_edit_btn.id)
+    form.append("project_title", project_name.value)
+    form.append("project_description", project_summary.value)
+    form.append("project_link", project_link.value)
+    
+    if (project_background_image.classList.contains("remove_display")){
+        form.append("project_image", project_image.value)
+    }
+    else{
+        form.append("project_background_image", project_background_image.files[0])
+    }
+
+    const xhr = new XMLHttpRequest()
+    xhr.open("PUT","/blog/update_project",true)
+    xhr.send(form)
+    xhr.onload = () =>{
+        const data = JSON.parse(xhr.responseText)
+        const message = data["message"]
+        const status = data["status"]
+
+        flash_response(message,status)
+        display_work_samples()
+    }
+
+})
