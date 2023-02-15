@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/update_blogger.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="settings">
+        <div class="header">
+            Settings
+        </div>
+
+        <div class="content">
+            Settings Content
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+  <link href="/blog{{ url_for('static', filename='css/view_message.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Show Received Messages List -->
+    {% set messages = content["messages"] %}
+
+    <!-- Display Messages On Mobile -->
+    <div class="mobile">
+        {% for message in messages %}
+        <div class="mobile_content">
+            <div class="message_menu {{message['is_read']}}">
+                <div class="header">
+                    <div class="name">
+                        {{message["name"]}}
+                    </div>
+
+                    <div class="time">
+                        {{message["received"]}}
+                    </div>
+                </div>
+
+                <div class="email">
+                    {{message["email"]}}
+                </div>
+
+                <div class="message">
+                    {{message["message"][:40]}}...
+                </div>
+            </div>
+
+            <div class="content_display small_screen remove_display">
+                <div class="message_name">
+                    From:</br>
+                    {{message["name"]}}
+                </div>
+
+                <div class="message_email">
+                    Email:</br>
+                    {{message["email"]}}
+                </div>
+
+                <div class="message_message">
+                    Message:</br>
+                    {{message["message"]}}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <!-- Display Message On Desktop -->
+    <div class="desktop">
+        <div class="menu">
+            {% for message in messages %}
+                <div class="message_menu {{message['is_read']}}">
+                    <div class="header">
+                        <div class="name">
+                            {{message["name"]}}
+                        </div>
+
+                        <div class="time">
+                            {{message["received"]}}
+                        </div>
+                    </div>
+
+                    <div class="email">
+                        {{message["email"]}}
+                    </div>
+
+                    <div class="message">
+                        {{message["message"][:40]}}...
+                    </div>
+
+                    <div class="message_hidden remove_display">
+                        {{message["message"]}}
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="content_display big_screen">
+            <div class="message_name">
+                name
+            </div>
+            <small id="message_email" class="message_email">email</small>
+
+            <div class="message_message">
+                message
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="{{url_for('blog_bp.static', filename='js/view_messages.js')}}"></script>
+{% endblock %}

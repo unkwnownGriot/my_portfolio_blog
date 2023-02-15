@@ -1,7 +1,13 @@
+from dataclasses import dataclass
+import os
 import pytz
 import logging
+import requests
 
-from datetime import datetime
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
+
+import sqlalchemy
 from app import db, login_manager
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
@@ -42,10 +48,19 @@ logger.debug("")
 # Create Timezone
 app_tz = pytz.timezone('Africa/Lagos')
 
+# Load Env Variables
+load_dotenv('app/.env')
+
 @login_manager.user_loader
 def load_user(blogger_id: str):
     response = Blogger.query.filter_by(Blogger_id=blogger_id).first()
     return response
+
+
+# Current Time For DB
+def current_time():
+    return datetime.now(tz=app_tz)
+
 
 class Blogger(db.Model, UserMixin):
     __tablename__ = "blogger"
@@ -1850,13 +1865,24 @@ class ContactMe(db.Model):
     Name = Column(String, nullable=False)
     Email = Column(String, nullable=False)
     Message = Column(Text, nullable=False)
+    Read = Column(Boolean, nullable=False, default=False)
+    Received = Column(DATETIME, nullable=False, default=current_time)
 
     def dict(self):
+        days_count = (datetime.now() - self.Received) / timedelta(days=1)
         return{
             "name":self.Name,
             "email":self.Email,
-            "message":self.Message
+            "message":self.Message,
+            "is_read": "read" if self.Read else "not_read",
+            "received": "Today" if days_count < 1 else f"{int(days_count)} days ago"
         }
+
+    def is_read(self):
+        return self.Read
+
+    def received_at(self):
+        return self.Received
 
     def get_contact_id(self):
         return self.Contact_id
@@ -1869,6 +1895,7 @@ class ContactMe(db.Model):
 
     def get_contact_message(self):
         return self.Message
+
 
     @classmethod
     def add_new_contact(cls,**kwargs):
@@ -1891,6 +1918,7 @@ class ContactMe(db.Model):
             contactme = ContactMe(**kwargs)
             db.session.add(contactme)
             db.session.commit()
+            Settings.send_notification(kwargs["Name"], kwargs["Email"], kwargs["Message"])
             return {"message":"Sent successfully","status":"success"}
 
         except Exception as e:
@@ -1951,5 +1979,122 @@ class ContactMe(db.Model):
             logger.exception(e)
             return {
                 "message":"failed to fetch contact rquests",
+                "status":"failed"
+            }
+
+
+
+class Settings(db.Model):
+    __tablename__ = "settings"
+
+    id = Column(Integer, primary_key=True)
+    setting_uuid = Column(String, nullable=False, unique=True)
+    Recipient_name = Column(String, nullable=True, unique=True)
+    Recipient_mail = Column(String, nullable=True, unique=True)
+    Sendinblue_Api_Key = Column(String, nullable=True, unique=True)
+
+    def get_id(self):
+        return self.setting_uuid
+
+    def get_recipient_name(self):
+        return self.Recipient_name
+
+    def get_recipient_mail(self):
+        return self.Recipient_mail
+
+    def get_sendinblue_api_key(self):
+        return self.Sendinblue_Api_Key
+
+    def dict(self):
+        return{
+            "id":self.setting_uuid,
+            "recipient_name":self.Recipient_name,
+            "recipient_mail":self.Recipient_mail,
+            "sendinblue_api_key":self.Sendinblue_Api_Key
+        }
+
+    @classmethod
+    def add_recipient(cls, **kwargs):
+        try:
+            settings = db.session.query(Settings).all()
+            if settings == []:
+                setting = Settings(**kwargs)
+                db.session.add(setting)
+                db.session.commit()
+                return {"message":"Notification recipient added","status":"success"}
+
+            else:
+                setting = settings[0]
+                db.session.query(Settings).filter(Settings.id == setting.dict()["id"]).update({**kwargs})
+                return {"message":"Notification recipient updated","status":"success"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"failed to add recipient",
+                "status":"failed"
+            }
+
+
+    @classmethod
+    def add_sendinblue_api_key(cls, **kwargs):
+        try:
+            settings = db.session.query(Settings).all()
+            if settings == []:
+                setting = Settings(**kwargs)
+                db.session.commit(setting)
+                db.session.add()
+                return {"message":"Api key added","status":"success"}
+
+            else:
+                setting = settings[0]
+                db.session.query(Settings).filter(Settings.id == setting.dict()["id"]).update({**kwargs})
+                return {"message":"Api key updated", "status":"succes"}
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"failed to add sendinblue api key",
+                "status":"failed"
+            }
+
+    
+    @staticmethod
+    def send_notification(sender_name, sender_mail, sender_message):
+        try:
+            settings = db.session.query(Settings).all()
+            setting = settings[0]
+
+            headers = {
+                'accept': 'application/json',
+                'api-key': os.environ.get("SENDINBLUE_API_KEY"),
+                'content-type': 'application/json',
+            }
+
+            json_data = {
+                'sender': {
+                    'name': sender_name,
+                    'email': sender_mail,
+                },
+                'to': [
+                    {
+                        'email': setting.dict()["recipient_name"],
+                        'name': setting.dict()["recipient_email"],
+                    },
+                ],
+                'subject': 'ResumeBlog ContactMe',
+                'htmlContent': sender_message,
+            }
+
+            response = requests.post('https://api.sendinblue.com/v3/smtp/email', headers=headers, json=json_data)
+            return {
+                "message":response,
+                "status":"success"
+            }
+
+        except Exception as e:
+            logger.exception(e)
+            return{
+                "message":"notification sending failed",
                 "status":"failed"
             }

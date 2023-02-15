@@ -4,15 +4,20 @@ import string
 import random
 import logging
 
+from cv2 import log
+
 
 from app.blog import blog_bp
-from app.model import Posts, Skills
+from app.model import Settings
+from app.model import Posts
+from app.model import Skills
 from app.model import Roles
 from app.model import Resume
 from app.model import Blogger
 from app.model import Company
 from app.model import Certifications
 from app.model import Projects
+from app.model import ContactMe
 from datetime import date, datetime, timedelta
 from app.model import Education
 from app.model import Subscribers
@@ -1261,6 +1266,31 @@ def fetch_projects():
     except Exception as e:
         logger.exception(e)
         return{
-            "message":"An erroroccurred while fetching project",
+            "message":"An error occurred while fetching project",
             "status":"failed"
         }
+
+
+@blog_bp.route("/view_messages", methods=["GET"])
+@login_required
+def view_message():
+    return render_template(
+        "admin/view_messages.html",
+        Page_name = "Messages",
+        Blogger_Name = current_user.get_blogger_name(),
+        content = {
+            "page_title":"Messages",
+            "messages":ContactMe.fetch_contact()["message"]
+            }
+        )
+
+
+@blog_bp.route("/update_settings", methods=["GET"])
+@login_required
+def update_settings():
+    return render_template(
+        "admin/update_settings.html",
+        Page_name = "Settings",
+        Blogger_Name = current_user.get_blogger_name(),
+        content = {"page_title":"Settings"}
+        )

@@ -5587,3 +5587,360 @@ TypeError: 'builtin_function_or_method' object is not subscriptable
 2023-02-13 00:04:09,276:DEBUG::====================================================================================================
 2023-02-13 00:04:09,277:INFO::Database logger :: Logging Active
 2023-02-13 00:04:09,277:DEBUG::
+2023-02-13 03:53:51,999:DEBUG::
+2023-02-13 03:53:52,000:DEBUG::====================================================================================================
+2023-02-13 03:53:52,000:INFO::Database logger :: Logging Active
+2023-02-13 03:53:52,001:DEBUG::
+2023-02-13 03:53:53,480:DEBUG::
+2023-02-13 03:53:53,481:DEBUG::====================================================================================================
+2023-02-13 03:53:53,481:INFO::Database logger :: Logging Active
+2023-02-13 03:53:53,481:DEBUG::
+2023-02-13 03:56:01,986:DEBUG::
+2023-02-13 03:56:01,987:DEBUG::====================================================================================================
+2023-02-13 03:56:01,987:INFO::Database logger :: Logging Active
+2023-02-13 03:56:01,988:DEBUG::
+2023-02-13 04:03:12,960:DEBUG::
+2023-02-13 04:03:12,961:DEBUG::====================================================================================================
+2023-02-13 04:03:12,961:INFO::Database logger :: Logging Active
+2023-02-13 04:03:12,962:DEBUG::
+2023-02-13 05:11:45,797:DEBUG::
+2023-02-13 05:11:45,798:DEBUG::====================================================================================================
+2023-02-13 05:11:45,798:INFO::Database logger :: Logging Active
+2023-02-13 05:11:45,799:DEBUG::
+2023-02-13 05:11:47,287:DEBUG::
+2023-02-13 05:11:47,287:DEBUG::====================================================================================================
+2023-02-13 05:11:47,287:INFO::Database logger :: Logging Active
+2023-02-13 05:11:47,288:DEBUG::
+2023-02-13 05:12:10,751:ERROR::list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 2043, in send_notification
+    setting = settings[0]
+IndexError: list index out of range
+2023-02-13 05:12:30,591:DEBUG::
+2023-02-13 05:12:30,592:DEBUG::====================================================================================================
+2023-02-13 05:12:30,592:INFO::Database logger :: Logging Active
+2023-02-13 05:12:30,593:DEBUG::
+2023-02-13 05:15:11,864:DEBUG::
+2023-02-13 05:15:11,864:DEBUG::====================================================================================================
+2023-02-13 05:15:11,865:INFO::Database logger :: Logging Active
+2023-02-13 05:15:11,865:DEBUG::
+2023-02-13 05:20:47,336:DEBUG::
+2023-02-13 05:20:47,337:DEBUG::====================================================================================================
+2023-02-13 05:20:47,337:INFO::Database logger :: Logging Active
+2023-02-13 05:20:47,338:DEBUG::
+2023-02-13 05:21:22,602:DEBUG::
+2023-02-13 05:21:22,603:DEBUG::====================================================================================================
+2023-02-13 05:21:22,603:INFO::Database logger :: Logging Active
+2023-02-13 05:21:22,604:DEBUG::
+2023-02-13 05:21:39,225:DEBUG::
+2023-02-13 05:21:39,226:DEBUG::====================================================================================================
+2023-02-13 05:21:39,226:INFO::Database logger :: Logging Active
+2023-02-13 05:21:39,227:DEBUG::
+2023-02-13 05:24:36,407:DEBUG::
+2023-02-13 05:24:36,408:DEBUG::====================================================================================================
+2023-02-13 05:24:36,408:INFO::Database logger :: Logging Active
+2023-02-13 05:24:36,408:DEBUG::
+2023-02-13 05:24:47,817:DEBUG::
+2023-02-13 05:24:47,817:DEBUG::====================================================================================================
+2023-02-13 05:24:47,818:INFO::Database logger :: Logging Active
+2023-02-13 05:24:47,818:DEBUG::
+2023-02-13 05:25:04,342:DEBUG::
+2023-02-13 05:25:04,342:DEBUG::====================================================================================================
+2023-02-13 05:25:04,343:INFO::Database logger :: Logging Active
+2023-02-13 05:25:04,343:DEBUG::
+2023-02-13 05:25:19,335:DEBUG::
+2023-02-13 05:25:19,335:DEBUG::====================================================================================================
+2023-02-13 05:25:19,336:INFO::Database logger :: Logging Active
+2023-02-13 05:25:19,336:DEBUG::
+2023-02-13 05:25:20,672:DEBUG::
+2023-02-13 05:25:20,673:DEBUG::====================================================================================================
+2023-02-13 05:25:20,673:INFO::Database logger :: Logging Active
+2023-02-13 05:25:20,674:DEBUG::
+2023-02-13 05:25:38,651:ERROR::list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 2046, in send_notification
+    setting = settings[0]
+IndexError: list index out of range
+2023-02-13 05:28:18,587:DEBUG::
+2023-02-13 05:28:18,587:DEBUG::====================================================================================================
+2023-02-13 05:28:18,588:INFO::Database logger :: Logging Active
+2023-02-13 05:28:18,588:DEBUG::
+2023-02-13 05:28:19,968:DEBUG::
+2023-02-13 05:28:19,968:DEBUG::====================================================================================================
+2023-02-13 05:28:19,969:INFO::Database logger :: Logging Active
+2023-02-13 05:28:19,969:DEBUG::
+2023-02-13 05:39:45,739:DEBUG::
+2023-02-13 05:39:45,740:DEBUG::====================================================================================================
+2023-02-13 05:39:45,741:INFO::Database logger :: Logging Active
+2023-02-13 05:39:45,741:DEBUG::
+2023-02-13 05:40:14,686:DEBUG::
+2023-02-13 05:40:14,686:DEBUG::====================================================================================================
+2023-02-13 05:40:14,687:INFO::Database logger :: Logging Active
+2023-02-13 05:40:14,687:DEBUG::
+2023-02-13 05:45:49,492:DEBUG::
+2023-02-13 05:45:49,492:DEBUG::====================================================================================================
+2023-02-13 05:45:49,493:INFO::Database logger :: Logging Active
+2023-02-13 05:45:49,493:DEBUG::
+2023-02-13 05:45:51,263:DEBUG::
+2023-02-13 05:45:51,264:DEBUG::====================================================================================================
+2023-02-13 05:45:51,264:INFO::Database logger :: Logging Active
+2023-02-13 05:45:51,264:DEBUG::
+2023-02-13 05:48:08,247:DEBUG::
+2023-02-13 05:48:08,248:DEBUG::====================================================================================================
+2023-02-13 05:48:08,248:INFO::Database logger :: Logging Active
+2023-02-13 05:48:08,248:DEBUG::
+2023-02-13 05:49:22,239:DEBUG::
+2023-02-13 05:49:22,240:DEBUG::====================================================================================================
+2023-02-13 05:49:22,240:INFO::Database logger :: Logging Active
+2023-02-13 05:49:22,241:DEBUG::
+2023-02-13 05:49:58,659:DEBUG::
+2023-02-13 05:49:58,660:DEBUG::====================================================================================================
+2023-02-13 05:49:58,660:INFO::Database logger :: Logging Active
+2023-02-13 05:49:58,660:DEBUG::
+2023-02-13 05:57:47,327:DEBUG::
+2023-02-13 05:57:47,328:DEBUG::====================================================================================================
+2023-02-13 05:57:47,328:INFO::Database logger :: Logging Active
+2023-02-13 05:57:47,328:DEBUG::
+2023-02-13 15:45:48,259:DEBUG::
+2023-02-13 15:45:48,259:DEBUG::====================================================================================================
+2023-02-13 15:45:48,260:INFO::Database logger :: Logging Active
+2023-02-13 15:45:48,260:DEBUG::
+2023-02-13 15:46:13,653:DEBUG::
+2023-02-13 15:46:13,653:DEBUG::====================================================================================================
+2023-02-13 15:46:13,654:INFO::Database logger :: Logging Active
+2023-02-13 15:46:13,654:DEBUG::
+2023-02-13 16:04:10,906:DEBUG::
+2023-02-13 16:04:10,907:DEBUG::====================================================================================================
+2023-02-13 16:04:10,907:INFO::Database logger :: Logging Active
+2023-02-13 16:04:10,908:DEBUG::
+2023-02-13 23:07:05,658:DEBUG::
+2023-02-13 23:07:05,659:DEBUG::====================================================================================================
+2023-02-13 23:07:05,659:INFO::Database logger :: Logging Active
+2023-02-13 23:07:05,659:DEBUG::
+2023-02-13 23:13:59,509:DEBUG::
+2023-02-13 23:13:59,509:DEBUG::====================================================================================================
+2023-02-13 23:13:59,509:INFO::Database logger :: Logging Active
+2023-02-13 23:13:59,510:DEBUG::
+2023-02-13 23:14:15,746:DEBUG::
+2023-02-13 23:14:15,746:DEBUG::====================================================================================================
+2023-02-13 23:14:15,747:INFO::Database logger :: Logging Active
+2023-02-13 23:14:15,747:DEBUG::
+2023-02-13 23:14:40,422:DEBUG::
+2023-02-13 23:14:40,422:DEBUG::====================================================================================================
+2023-02-13 23:14:40,423:INFO::Database logger :: Logging Active
+2023-02-13 23:14:40,423:DEBUG::
+2023-02-13 23:16:19,014:DEBUG::
+2023-02-13 23:16:19,014:DEBUG::====================================================================================================
+2023-02-13 23:16:19,014:INFO::Database logger :: Logging Active
+2023-02-13 23:16:19,015:DEBUG::
+2023-02-13 23:16:36,153:DEBUG::
+2023-02-13 23:16:36,153:DEBUG::====================================================================================================
+2023-02-13 23:16:36,154:INFO::Database logger :: Logging Active
+2023-02-13 23:16:36,154:DEBUG::
+2023-02-13 23:16:37,922:DEBUG::
+2023-02-13 23:16:37,922:DEBUG::====================================================================================================
+2023-02-13 23:16:37,923:INFO::Database logger :: Logging Active
+2023-02-13 23:16:37,923:DEBUG::
+2023-02-13 23:16:49,967:ERROR::(sqlite3.OperationalError) no such function: NOW
+[SQL: INSERT INTO contact ("Contact_id", "Name", "Email", "Message", "Read", "Received") VALUES (?, ?, ?, ?, ?, NOW())]
+[parameters: ('4c2cca833e2c408dbadc5631b9895828', 'Adefolahan Akinsola', 'adefolahan.akinsola@neuralfarms.io', 'test', 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such function: NOW
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1904, in add_new_contact
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3444, in flush
+    self._flush(objects)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3584, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\session.py", line 3544, in _flush
+    flush_context.execute()
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\orm\persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\sql\elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\Adefolahan\miniconda3\envs\blog\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such function: NOW
+[SQL: INSERT INTO contact ("Contact_id", "Name", "Email", "Message", "Read", "Received") VALUES (?, ?, ?, ?, ?, NOW())]
+[parameters: ('4c2cca833e2c408dbadc5631b9895828', 'Adefolahan Akinsola', 'adefolahan.akinsola@neuralfarms.io', 'test', 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-02-13 23:23:22,684:DEBUG::
+2023-02-13 23:23:22,684:DEBUG::====================================================================================================
+2023-02-13 23:23:22,684:INFO::Database logger :: Logging Active
+2023-02-13 23:23:22,684:DEBUG::
+2023-02-13 23:23:37,674:DEBUG::
+2023-02-13 23:23:37,675:DEBUG::====================================================================================================
+2023-02-13 23:23:37,675:INFO::Database logger :: Logging Active
+2023-02-13 23:23:37,676:DEBUG::
+2023-02-13 23:24:01,569:ERROR::list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 2056, in send_notification
+    setting = settings[0]
+IndexError: list index out of range
+2023-02-13 23:24:34,215:ERROR::list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 2056, in send_notification
+    setting = settings[0]
+IndexError: list index out of range
+2023-02-13 23:24:46,671:ERROR::list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 2056, in send_notification
+    setting = settings[0]
+IndexError: list index out of range
+2023-02-13 23:38:38,131:DEBUG::
+2023-02-13 23:38:38,131:DEBUG::====================================================================================================
+2023-02-13 23:38:38,131:INFO::Database logger :: Logging Active
+2023-02-13 23:38:38,132:DEBUG::
+2023-02-13 23:39:11,594:DEBUG::
+2023-02-13 23:39:11,594:DEBUG::====================================================================================================
+2023-02-13 23:39:11,595:INFO::Database logger :: Logging Active
+2023-02-13 23:39:11,595:DEBUG::
+2023-02-13 23:41:37,769:DEBUG::
+2023-02-13 23:41:37,769:DEBUG::====================================================================================================
+2023-02-13 23:41:37,770:INFO::Database logger :: Logging Active
+2023-02-13 23:41:37,770:DEBUG::
+2023-02-13 23:45:22,170:DEBUG::
+2023-02-13 23:45:22,171:DEBUG::====================================================================================================
+2023-02-13 23:45:22,171:INFO::Database logger :: Logging Active
+2023-02-13 23:45:22,172:DEBUG::
+2023-02-13 23:46:57,240:DEBUG::
+2023-02-13 23:46:57,241:DEBUG::====================================================================================================
+2023-02-13 23:46:57,241:INFO::Database logger :: Logging Active
+2023-02-13 23:46:57,242:DEBUG::
+2023-02-13 23:47:04,898:ERROR::can't subtract offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in fetch_contact
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in <listcomp>
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1877, in dict
+    "received": timedelta(datetime.now(tz=app_tz) - self.Received)
+TypeError: can't subtract offset-naive and offset-aware datetimes
+2023-02-13 23:47:46,169:DEBUG::
+2023-02-13 23:47:46,170:DEBUG::====================================================================================================
+2023-02-13 23:47:46,170:INFO::Database logger :: Logging Active
+2023-02-13 23:47:46,171:DEBUG::
+2023-02-13 23:47:54,657:ERROR::an integer is required (got type datetime.datetime)
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in fetch_contact
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in <listcomp>
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1877, in dict
+    "received": timedelta(datetime.now(tz=app_tz) - datetime(self.Received))
+TypeError: an integer is required (got type datetime.datetime)
+2023-02-13 23:49:52,135:DEBUG::
+2023-02-13 23:49:52,136:DEBUG::====================================================================================================
+2023-02-13 23:49:52,136:INFO::Database logger :: Logging Active
+2023-02-13 23:49:52,137:DEBUG::
+2023-02-13 23:50:00,958:ERROR::tzinfo argument must be None or of a tzinfo subclass, not type 'datetime.datetime'
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in fetch_contact
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in <listcomp>
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1877, in dict
+    "received": timedelta(datetime.now(tz=app_tz) - datetime.now(self.Received))
+TypeError: tzinfo argument must be None or of a tzinfo subclass, not type 'datetime.datetime'
+2023-02-13 23:50:51,519:DEBUG::
+2023-02-13 23:50:51,521:DEBUG::====================================================================================================
+2023-02-13 23:50:51,521:INFO::Database logger :: Logging Active
+2023-02-13 23:50:51,522:DEBUG::
+2023-02-13 23:51:00,090:ERROR::can't subtract offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in fetch_contact
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in <listcomp>
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1877, in dict
+    "received": timedelta(datetime.now(tz=app_tz) - self.Received)
+TypeError: can't subtract offset-naive and offset-aware datetimes
+2023-02-13 23:52:35,927:DEBUG::
+2023-02-13 23:52:35,927:DEBUG::====================================================================================================
+2023-02-13 23:52:35,928:INFO::Database logger :: Logging Active
+2023-02-13 23:52:35,928:DEBUG::
+2023-02-13 23:52:53,156:ERROR::unsupported type for timedelta days component: datetime.timedelta
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in fetch_contact
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in <listcomp>
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1877, in dict
+    "received": timedelta(datetime.now() - self.Received)
+TypeError: unsupported type for timedelta days component: datetime.timedelta
+2023-02-13 23:54:51,217:DEBUG::
+2023-02-13 23:54:51,217:DEBUG::====================================================================================================
+2023-02-13 23:54:51,218:INFO::Database logger :: Logging Active
+2023-02-13 23:54:51,218:DEBUG::
+2023-02-13 23:55:00,396:ERROR::can't subtract offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in fetch_contact
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1971, in <listcomp>
+    contacts = [contact.dict() for contact in contacts]
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 1877, in dict
+    "received": datetime.now(tz=app_tz) - self.Received
+TypeError: can't subtract offset-naive and offset-aware datetimes
+2023-02-14 00:00:25,492:DEBUG::
+2023-02-14 00:00:25,493:DEBUG::====================================================================================================
+2023-02-14 00:00:25,493:INFO::Database logger :: Logging Active
+2023-02-14 00:00:25,494:DEBUG::
+2023-02-14 00:03:34,301:DEBUG::
+2023-02-14 00:03:34,302:DEBUG::====================================================================================================
+2023-02-14 00:03:34,302:INFO::Database logger :: Logging Active
+2023-02-14 00:03:34,302:DEBUG::
+2023-02-14 00:06:39,523:DEBUG::
+2023-02-14 00:06:39,524:DEBUG::====================================================================================================
+2023-02-14 00:06:39,524:INFO::Database logger :: Logging Active
+2023-02-14 00:06:39,525:DEBUG::
+2023-02-14 00:29:12,005:DEBUG::
+2023-02-14 00:29:12,005:DEBUG::====================================================================================================
+2023-02-14 00:29:12,007:INFO::Database logger :: Logging Active
+2023-02-14 00:29:12,007:DEBUG::
+2023-02-14 00:29:13,840:DEBUG::
+2023-02-14 00:29:13,841:DEBUG::====================================================================================================
+2023-02-14 00:29:13,841:INFO::Database logger :: Logging Active
+2023-02-14 00:29:13,843:DEBUG::
+2023-02-14 01:06:26,404:ERROR::list index out of range
+Traceback (most recent call last):
+  File "C:\Users\Adefolahan\Downloads\WA_AGRO-20221218T221833Z-001\BLOG\app\model.py", line 2066, in send_notification
+    setting = settings[0]
+IndexError: list index out of range
